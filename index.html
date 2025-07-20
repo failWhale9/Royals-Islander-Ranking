@@ -39,10 +39,12 @@ function createTable(data) {
     let rank = 0;
 
     // Create rank column
-    headerRow.appendChild("Rank")
+    const th = document.createElement('th');
+    th.textContent = "Rank"
+    headerRow.appendChild(th)
     
     headers.forEach(header => {
-        const th = document.createElement('th');
+        th = document.createElement('th');
         th.textContent = header.charAt(0).toUpperCase() + header.slice(1);
         headerRow.appendChild(th);
     });
@@ -57,10 +59,12 @@ function createTable(data) {
         const row = document.createElement('tr');
         
         // Add rank cell
-        row.appendChild(rank++)
+        const td = document.createElement('td');
+        td.textContent = rank++;
+        row.appendChild(td);
         
         headers.forEach(header => {
-            const td = document.createElement('td');
+            td = document.createElement('td');
             td.textContent = item[header];
             row.appendChild(td);
         });
