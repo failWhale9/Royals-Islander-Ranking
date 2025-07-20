@@ -44,7 +44,7 @@ function createTable(data) {
     headerRow.appendChild(th)
     
     headers.forEach(header => {
-        th = document.createElement('th');
+        const th = document.createElement('th');
         th.textContent = header.charAt(0).toUpperCase() + header.slice(1);
         headerRow.appendChild(th);
     });
@@ -64,7 +64,7 @@ function createTable(data) {
         row.appendChild(td);
         
         headers.forEach(header => {
-            td = document.createElement('td');
+            const td = document.createElement('td');
             td.textContent = item[header];
             row.appendChild(td);
         });
