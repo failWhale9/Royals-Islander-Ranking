@@ -36,7 +36,11 @@ function createTable(data) {
     const headers = Object.keys(data[0]);
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
+    let rank = 0;
 
+    // Create rank column
+    headerRow.appendChild("Rank")
+    
     headers.forEach(header => {
         const th = document.createElement('th');
         th.textContent = header.charAt(0).toUpperCase() + header.slice(1);
@@ -51,6 +55,10 @@ function createTable(data) {
 
     data.forEach(item => {
         const row = document.createElement('tr');
+        
+        // Add rank cell
+        row.appendChild(rank++)
+        
         headers.forEach(header => {
             const td = document.createElement('td');
             td.textContent = item[header];
