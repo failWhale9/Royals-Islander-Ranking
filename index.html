@@ -1,1 +1,84 @@
-hello world2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON Table Example</title>
+    <style>
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align: center;">User Data Table</h2>
+
+<div id="table-container"></div>
+
+<script>
+// Function to create and populate the table
+function createTable(data) {
+    const container = document.getElementById('table-container');
+    const table = document.createElement('table');
+
+    // Create table headers
+    const headers = Object.keys(data[0]);
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+
+    headers.forEach(header => {
+        const th = document.createElement('th');
+        th.textContent = header.charAt(0).toUpperCase() + header.slice(1);
+        headerRow.appendChild(th);
+    });
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Create table body
+    const tbody = document.createElement('tbody');
+
+    data.forEach(item => {
+        const row = document.createElement('tr');
+        headers.forEach(header => {
+            const td = document.createElement('td');
+            td.textContent = item[header];
+            row.appendChild(td);
+        });
+        tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+    container.appendChild(table);
+}
+
+// Fetch JSON data and build table
+fetch('islanders.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        createTable(data);
+    })
+    .catch(error => {
+        console.error('Error loading JSON:', error);
+        document.getElementById('table-container').innerText = 'Failed to load data.';
+    });
+</script>
+
+</body>
+</html>
