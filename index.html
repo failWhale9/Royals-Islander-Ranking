@@ -42,7 +42,7 @@ function createTable(data) {
     const container = document.getElementById('table-container');
     const table = document.createElement('table');
     table.id = "myTable";
-    table.class = "display";
+    table.classList.add('display');
 
     // Create table headers
     const headers = Object.keys(data[0]);
