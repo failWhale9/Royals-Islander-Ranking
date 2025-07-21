@@ -1,0 +1,56 @@
+table.mainTable {
+	width: 80% !important;
+	margin: 30px auto;
+	border-collapse: separate;   /* Important: allows gaps */
+	border-spacing: 10px;         /* Creates the gaps between cells */
+	font-family: Arial, sans-serif;
+}
+
+th, td {
+	background-color: #4CAF50;
+	color: white;
+	padding: 15px 20px;
+	text-align: left;
+	border: none;                 /* No borders on cells */
+	border-radius: 8px;           /* Rounded corners on each rectangle */
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional: subtle shadow for depth */
+	transition: background 0.3s;
+}
+
+th.Rank {
+	width: 50px;
+	text-align: center !important;
+}
+
+td.Rank {
+	text-align: center !important;
+	font-size: 24px;
+}
+
+td.Name {
+	font-family: Verdana, sans-serif;
+}
+
+th.Level {
+	width: 50px;
+}
+
+td.Level {
+	text-align: center !important;
+	font-size: 24px;
+}
+
+th {
+	background-color: #388E3C;    /* Slightly darker for headers */
+	text-transform: capitalize;
+}
+
+tr:hover td {
+	background-color: #66BB6A;    /* Lighter green on hover */
+}
+
+img {
+	object-fit: cover;
+	border-radius: 4px;
+	background-color: #eee;
+}

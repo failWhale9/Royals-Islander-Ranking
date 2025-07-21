@@ -7,23 +7,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JSON Table Example</title>
-    <style>
-        table {
-            width: 60%;
-            border-collapse: collapse;
-            margin: 20px auto;
-            font-family: Arial, sans-serif;
-        }
-        th, td {
-            padding: 12px;
-            border: 1px solid #ccc;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-    </style>
+    <title>MapleRoyals Islander Ranking</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="islander.css">
+
 </head>
 <body>
 
@@ -33,16 +20,13 @@
 
 <script>
 
-//$(document).ready( function () {
-//    $('#myTable').DataTable();
-//} );
-
 // Function to create and populate the table
 function createTable(data) {
     const container = document.getElementById('table-container');
     const table = document.createElement('table');
     table.id = "myTable";
     table.classList.add('display');
+    table.classList.add('mainTable');
 
     // Sort table by level descending
     data.sort((a, b) => {
@@ -69,6 +53,7 @@ function createTable(data) {
             case "Level":
                  const th = document.createElement('th');
                  th.textContent = header.charAt(0).toUpperCase() + header.slice(1);
+                 th.classList.add(header);
                  headerRow.appendChild(th);
                  break;
              default:
@@ -78,9 +63,6 @@ function createTable(data) {
     thead.appendChild(headerRow);
     table.appendChild(thead);
 
-    console.log(headers)
-    console.log(headerRow)
-
     // Create table body
     const tbody = document.createElement('tbody');
 
@@ -89,6 +71,7 @@ function createTable(data) {
         
         headers.forEach(header => {
             const td = document.createElement('td');
+            td.classList.add(header);
 
             switch (header) {
                 case "Rank":
@@ -103,7 +86,12 @@ function createTable(data) {
 
                     function tryLoadImage() {
                         if (formatIndex < formats.length) {
-                            img.src = `images/islanders/${baseName}.${formats[formatIndex]}`;
+                            try {
+                                img.src = `images/islanders/${baseName}.${formats[formatIndex]}`;
+                            }
+                            catch {
+
+                            }
                             img.onerror = () => {
                                 formatIndex++;
                                 tryLoadImage(); // Try next format
@@ -132,7 +120,15 @@ function createTable(data) {
     table.appendChild(tbody);
     container.appendChild(table);
 
-     $('#myTable').DataTable();
+     $('#myTable').DataTable({
+        pageLength: 20,
+        layout: {
+            topStart:'search',
+            topEnd:'paging',
+            bottomStart:'info',
+            bottomEnd:'paging'
+        }
+     });
 }
 
 // Fetch JSON data and build table
