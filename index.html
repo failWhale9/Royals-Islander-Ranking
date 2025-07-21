@@ -33,9 +33,9 @@
 
 <script>
 
-$(document).ready( function () {
-    $('#myTable').DataTable();
-} );
+//$(document).ready( function () {
+//    $('#myTable').DataTable();
+//} );
 
 // Function to create and populate the table
 function createTable(data) {
@@ -85,6 +85,8 @@ function createTable(data) {
 
     table.appendChild(tbody);
     container.appendChild(table);
+
+     $('#myTable').DataTable();
 }
 
 // Fetch JSON data and build table
