@@ -45,8 +45,8 @@ function createTable(data) {
     table.classList.add('display');
 
     data.sort((a, b) => {
-        const valA = a["Name"].toString().toLowerCase();
-        const valB = b["Name"].toString().toLowerCase();
+        const valA = a["Level"].toString().toLowerCase();
+        const valB = b["Level"].toString().toLowerCase();
         return valA.localeCompare(valB);
     });
 
