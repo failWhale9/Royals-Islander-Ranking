@@ -1,3 +1,17 @@
+@keyframes slideleft {
+  from { background-position: 0%; }
+  to { background-position: 900%; }
+}
+
+body {
+	background-color: #3366cc;
+	background-image: url("/images/clouds2.png");
+	background-repeat: repeat-x;
+	background-attachment: fixed;
+	background-position: bottom 100px;
+	animation: slideleft 600s infinite linear;
+}
+
 table.mainTable {
 	width: 80% !important;
 	margin: 30px auto;
