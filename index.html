@@ -44,10 +44,11 @@ function createTable(data) {
     table.id = "myTable";
     table.classList.add('display');
 
+    // Sort table by level descending
     data.sort((a, b) => {
         const valA = a["Level"];
         const valB = b["Level"];
-        return valA - valB;
+        return valB - valA;
     });
 
     // Create table headers
