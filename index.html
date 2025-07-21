@@ -57,34 +57,35 @@ function createTable(data) {
     const headerRow = document.createElement('tr');
     let rank = 1;
 
-    // Create rank column
-    const th = document.createElement('th');
-    th.textContent = "Rank"
-    headerRow.appendChild(th)
-
-    // Create Image column
-    th.textContent = "Image2"
-    headerRow.appendChild(th)
+    // Add calculated columns
+    headers.unshift("Image2");
+    headers.unshift("Rank");
     
     headers.forEach(header => {
-        const th = document.createElement('th');
-        th.textContent = header.charAt(0).toUpperCase() + header.slice(1);
-        headerRow.appendChild(th);
+        switch (header) {
+            case "Rank":
+            case "Image2": 
+            case "Name":
+            case "Level":
+                 const th = document.createElement('th');
+                 th.textContent = header.charAt(0).toUpperCase() + header.slice(1);
+                 headerRow.appendChild(th);
+                 break;
+             default:
+        }
     });
 
     thead.appendChild(headerRow);
     table.appendChild(thead);
+
+    console.log(headers)
+    console.log(headerRow)
 
     // Create table body
     const tbody = document.createElement('tbody');
 
     data.forEach(item => {
         const row = document.createElement('tr');
-        
-        // Add rank cell
-        const td = document.createElement('td');
-        td.textContent = rank++;
-        row.appendChild(td);
         
         headers.forEach(header => {
             const td = document.createElement('td');
@@ -95,11 +96,31 @@ function createTable(data) {
                     row.appendChild(td);
                     break;
                 case "Image2":
-                    td.textContent = data.Name.toString();
+                    const img = document.createElement('img');
+                    const baseName = item['Name'].toLowerCase();
+                    const formats = ['png', 'gif', 'bmp','jpg','jpeg'];
+                    let formatIndex = 0;
+
+                    function tryLoadImage() {
+                        if (formatIndex < formats.length) {
+                            img.src = `images/islanders/${baseName}.${formats[formatIndex]}`;
+                            img.onerror = () => {
+                                formatIndex++;
+                                tryLoadImage(); // Try next format
+                            };
+                        } else {
+                            img.onerror = null; // Prevent loop
+                            img.src = 'images/placeholder.png'; // Fallback image
+                        }
+                    }
+
+                    tryLoadImage();
+                    td.appendChild(img);
                     row.appendChild(td);
+                    break;
                 case "Name":
                 case "Level":
-                    td.textContent = rank++;
+                     td.textContent = item[header];
                     row.appendChild(td);
                     break;
                 default:
