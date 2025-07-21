@@ -27,7 +27,7 @@
 </head>
 <body>
 
-<h2 style="text-align: center;">User Data Table</h2>
+<h2 style="text-align: center;">MapleRoyals Islander Ranking</h2>
 
 <div id="table-container"></div>
 
@@ -61,6 +61,10 @@ function createTable(data) {
     const th = document.createElement('th');
     th.textContent = "Rank"
     headerRow.appendChild(th)
+
+    // Create Image column
+    th.textContent = "Image2"
+    headerRow.appendChild(th)
     
     headers.forEach(header => {
         const th = document.createElement('th');
@@ -90,9 +94,15 @@ function createTable(data) {
                     td.textContent = rank++;
                     row.appendChild(td);
                     break;
-                default:
-                    td.textContent = item[header];
+                case "Image2":
+                    td.textContent = data.Name;
                     row.appendChild(td);
+                case "Name":
+                case "Level":
+                    td.textContent = rank++;
+                    row.appendChild(td);
+                    break;
+                default:
             }
         });
         tbody.appendChild(row);
