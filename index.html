@@ -44,6 +44,12 @@ function createTable(data) {
     table.id = "myTable";
     table.classList.add('display');
 
+    data.sort((a, b) => {
+        const valA = a["Name"].toString().toLowerCase();
+        const valB = b["Name"].toString().toLowerCase();
+        return valA.localeCompare(valB);
+    });
+
     // Create table headers
     const headers = Object.keys(data[0]);
     const thead = document.createElement('thead');
