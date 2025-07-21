@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+
+<link href="DataTables/datatables.min.css" rel="stylesheet">
+ 
+<script src="DataTables/datatables.min.js"></script>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,9 +29,33 @@
 
 <h2 style="text-align: center;">User Data Table</h2>
 
+<table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data 2</td>
+        </tr>
+        <tr>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data 2</td>
+        </tr>
+    </tbody>
+</table>
+
 <div id="table-container"></div>
 
 <script>
+
+$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+
 // Function to create and populate the table
 function createTable(data) {
     const container = document.getElementById('table-container');
