@@ -121,6 +121,10 @@ th.Level {
 	width: 50px;
 }
 
+th.Image {
+	width: 100px;
+}
+
 td.Level {
 	text-align: center !important;
 	font-size: 24px;
