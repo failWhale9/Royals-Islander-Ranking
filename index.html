@@ -14,9 +14,13 @@
 </head>
 <body>
 
-<h2 style="text-align: center;">MapleRoyals Islander Ranking</h2>
+<img src="images/title.png" id="titleImage"></img>
 
 <div id="table-container"></div>
+
+<div id="footer">
+    <p>Page written and maintained by <img src="/images/shy.png"></p> 
+</div>
 
 <script>
 
@@ -43,13 +47,13 @@ function createTable(data) {
     let rank = 1;
 
     // Add calculated columns
-    headers.unshift("Image2");
+    headers.unshift("Image");
     headers.unshift("Rank");
     
     headers.forEach(header => {
         switch (header) {
             case "Rank":
-            case "Image2": 
+            case "Image": 
             case "Name":
             case "Level":
                  const th = document.createElement('th');
@@ -79,10 +83,10 @@ function createTable(data) {
                     td.textContent = rank++;
                     row.appendChild(td);
                     break;
-                case "Image2":
+                case "Image":
                     const img = document.createElement('img');
                     const baseName = item['Name'].toLowerCase();
-                    const formats = ['png', 'gif', 'bmp','jpg','jpeg'];
+                    const formats = ['png', 'gif'];
                     let formatIndex = 0;
 
                     function tryLoadImage() {
@@ -104,12 +108,40 @@ function createTable(data) {
                     }
 
                     tryLoadImage();
+                    img.classList.add("portrait");
                     td.appendChild(img);
                     row.appendChild(td);
                     break;
                 case "Name":
+                    const pname = document.createElement('p');
+                    pname.textContent = item[header];
+                    td.appendChild(pname);
+
+                    if (item['BadNews'] != "") {
+                        const pbad = document.createElement('p');
+                        pbad.textContent = "(" + item['BadNews'] + ")";
+                        pbad.classList.add("BadNews");
+                        td.appendChild(pbad);
+                    }
+
+                    if (item['Alias'] != "") {
+                        const palias = document.createElement('p');
+                        palias.textContent = "(formerly " + item['Alias'] + ")";
+                        palias.classList.add("Alias");
+                        td.appendChild(palias);
+                    }
+
+                    if (item['Alt'] != "") {
+                        const palt = document.createElement('p');
+                        palt.textContent = "(" + item['Alt'] + "'s alt)";
+                        palt.classList.add("Alt");
+                        td.appendChild(palt);
+                    }
+
+                    row.appendChild(td);
+                    break;
                 case "Level":
-                     td.textContent = item[header];
+                    td.textContent = item[header];
                     row.appendChild(td);
                     break;
                 default:

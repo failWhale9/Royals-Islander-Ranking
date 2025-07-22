@@ -1,15 +1,38 @@
+:root{
+	--cell: #388E3C;
+	--hover: #66BB6A;
+	--darker: #163b18;
+	--header: #4CAF50;
+}
+
 @keyframes slideleft {
   from { background-position: 1400%; }
   to { background-position: 0%; }
 }
 
+@media only screen and (min-width: 981px) {
 body {
 	background-color: #3366cc;
 	background-image: url("/images/clouds2.png");
 	background-repeat: repeat-x;
 	background-attachment: fixed;
 	animation: slideleft 600s infinite linear;
+	margin-bottom: 200px;
 }
+}
+
+@media only screen and (max-width: 980px) {
+body {
+	background-color: #3366cc;
+	background-image: url("/images/clouds2.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center bottom;
+	margin-bottom: 200px;
+}
+}
+
+
 
 table.mainTable {
 	width: 80% !important;
@@ -20,7 +43,7 @@ table.mainTable {
 }
 
 th, td {
-	background-color: #4CAF50;
+	background-color: var(--header);
 	color: white;
 	padding: 15px 20px;
 	text-align: left;
@@ -37,7 +60,7 @@ th, td {
 }
 
 div.dt-search {
-	background-color: #388E3C;
+	background-color: var(--cell);
 	color: white !important;
 	padding: 16px 20px;
 	border-radius: 8px;
@@ -48,7 +71,7 @@ div.dt-search {
 }
 
 div.dt-info {
-	background-color: #388E3C;
+	background-color: var(--cell);
 	color: white !important;
 	padding: 21px 20px;
 	border-radius: 8px;
@@ -59,7 +82,7 @@ div.dt-info {
 }
 
 div.dt-paging {
-	background-color: #388E3C;
+	background-color: var(--cell);
 	color: white !important;
 	padding: 15px 20px;
 	border-radius: 8px;
@@ -70,13 +93,13 @@ div.dt-paging {
 }
 
 div.dt-container .dt-paging .dt-paging-button:hover {
-	background-color: #388E3C;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #388E3C), color-stop(100%, #163b18));
-    background: -webkit-linear-gradient(top, #388E3C 0%, #163b18 100%);
-    background: -moz-linear-gradient(top, #388E3C 0%, #163b18 100%);
-    background: -ms-linear-gradient(top, #388E3C 0%, #163b18 100%);
-    background: -o-linear-gradient(top, #388E3C 0%, #163b18 100%);
-    background: linear-gradient(to bottom, #388E3C 0%, #163b18 100%)
+	background-color: var(--cell);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, var(--cell)), color-stop(100%, var(--darker)));
+    background: -webkit-linear-gradient(top, var(--cell) 0%, var(--darker) 100%);
+    background: -moz-linear-gradient(top, var(--cell) 0%, var(--darker) 100%);
+    background: -ms-linear-gradient(top, var(--cell) 0%, var(--darker) 100%);
+    background: -o-linear-gradient(top, var(--cell) 0%, var(--darker) 100%);
+    background: linear-gradient(to bottom, var(--cell) 0%, var(--darker) 100%)
 }
 
 th.Rank {
@@ -104,16 +127,54 @@ td.Level {
 }
 
 th {
-	background-color: #388E3C;    /* Slightly darker for headers */
+	background-color: var(--cell);    
 	text-transform: capitalize;
 }
 
 tr:hover td {
-	background-color: #66BB6A;    /* Lighter green on hover */
+	background-color: var(--hover);  
 }
 
-img {
+img.portrait {
 	object-fit: cover;
 	border-radius: 4px;
 	background-color: #eee;
+}
+
+p.BadNews {
+	color:#750c0c;
+	font-size:18px;
+}
+
+p.Alias {
+	font-size:18px;
+}
+
+p.Alt {
+	font-size:18px;
+}
+
+#titleImage {
+	display: block;
+	margin: auto;
+	width: 70%;
+}
+
+#footer {
+	background-color: var(--cell);
+	color: white !important;
+	padding: 0px 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+	font-family: Arial, sans-serif !important;
+	position:absolute;
+	left:38%;
+	p {
+		display: flex;
+		align-items: center;
+		margin: 8px 0px;
+	}
+	img {
+		margin: 8px 10px;
+	}
 }
