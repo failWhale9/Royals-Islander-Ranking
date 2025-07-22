@@ -22,6 +22,7 @@
 
 // Function to create and populate the table
 function createTable(data) {
+    $.fn.DataTable.ext.pager.numbers_length = 7;
     const container = document.getElementById('table-container');
     const table = document.createElement('table');
     table.id = "myTable";
@@ -122,6 +123,7 @@ function createTable(data) {
 
      $('#myTable').DataTable({
         pageLength: 20,
+        pagingType: 'numbers',
         layout: {
             topStart:'search',
             topEnd:'paging',
