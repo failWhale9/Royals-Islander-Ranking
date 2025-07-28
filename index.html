@@ -25,7 +25,9 @@
 <script>
 
 // Function to create and populate the table
-function createTable(data) {
+function createTable(jsons) {
+    data = jsons[0];
+    badges = jsons[1];
     $.fn.DataTable.ext.pager.numbers_length = 7;
     const container = document.getElementById('table-container');
     const table = document.createElement('table');
@@ -49,6 +51,7 @@ function createTable(data) {
     // Add calculated columns
     headers.unshift("Image");
     headers.unshift("Rank");
+    headers.push("Badges");
     
     headers.forEach(header => {
         switch (header) {
@@ -56,6 +59,7 @@ function createTable(data) {
             case "Image": 
             case "Name":
             case "Level":
+            case "Badges":
                  const th = document.createElement('th');
                  th.textContent = header.charAt(0).toUpperCase() + header.slice(1);
                  th.classList.add(header);
@@ -144,11 +148,17 @@ function createTable(data) {
                     td.textContent = item[header];
                     row.appendChild(td);
                     break;
+                case "Badges":
+                    td.textContent = " ";
+                    row.appendChild(td);
+                    break;
                 default:
             }
         });
         tbody.appendChild(row);
     });
+
+    console.log(table);
 
     table.appendChild(tbody);
     container.appendChild(table);
@@ -165,7 +175,40 @@ function createTable(data) {
      });
 }
 
+async function getJsonData() {
+    const jsons = ["islanders.json", "badges.json"];
+    const reqs = jsons.map(u=>fetch(u).then(response => {
+    if(!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+    })
+    );
+
+    const results = await Promise.all(reqs);
+
+    createTable(results);
+}
+
 // Fetch JSON data and build table
+
+
+
+//const jsons = ["islanders.json", "badges.json"];
+//const reqs = jsons.map(u=>fetch(u));
+
+//Promise.all(reqs).then(responses => {
+//        responses.forEach(response => {
+//            return response.json();
+//        });
+//    })
+//    .catch(error => {
+//        console.log(error);
+//    });
+
+getJsonData();
+
+/*
 fetch('islanders.json')
     .then(response => {
         if (!response.ok) {
@@ -180,6 +223,7 @@ fetch('islanders.json')
         console.error('Error loading JSON:', error);
         document.getElementById('table-container').innerText = 'Failed to load data.';
     });
+*/
 </script>
 
 </body>

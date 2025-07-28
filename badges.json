@@ -1,0 +1,308 @@
+[
+  {
+    "id": "magelander",
+    "type": "build",
+    "name": "Magelander",
+    "desc": "Has the stats to equip metal wand (20 LUK) and invested remaining AP into INT."
+  },
+  {
+    "id": "strlander",
+    "type": "build",
+    "name": "Pure STRlander",
+    "desc": "Has invested all AP into STR."
+  },
+  {
+    "id": "dexlander",
+    "type": "build",
+    "name": "Pure DEXlander",
+    "desc": "Has invested all AP into DEX."
+  },
+  {
+    "id": "nopointer",
+    "type": "build",
+    "name": "NoPointer",
+    "desc": "Has not invested any AP or SP."
+  },
+  {
+    "id": "maxdodge",
+    "type": "build",
+    "name": "Max Dodge",
+    "desc": "Has at least 152 avoid."
+  },
+  {
+    "id": "knifestrats",
+    "type": "build",
+    "name": "Knife Strats",
+    "desc": "Can hit minimum 80 damage with Fruit Knife equipped, unbuffed."
+  },
+  {
+    "id": "omok3",
+    "type": "item",
+    "name": "Omok Collector",
+    "desc": "Owns all three Omok table variants."
+  },
+  {
+    "id": "shirt2",
+    "type": "item",
+    "name": "Shirt +2",
+    "desc": "Owns a +2 scrolled top."
+  },
+  {
+    "id": "shirt3",
+    "type": "item",
+    "name": "Shirt +3",
+    "desc": "Owns a +3 scrolled top."
+  },
+  {
+    "id": "shirt4",
+    "type": "item",
+    "name": "Shirt +4",
+    "desc": "Owns a +4 scrolled top."
+  },
+  {
+    "id": "shirt5",
+    "type": "item",
+    "name": "Shirt +5",
+    "desc": "Owns a +5 scrolled top."
+  },
+  {
+    "id": "pants2",
+    "type": "item",
+    "name": "Pants +2",
+    "desc": "Owns a +2 scolled bottom."
+  },
+  {
+    "id": "pants3",
+    "type": "item",
+    "name": "Pants +3",
+    "desc": "Owns a +3 scrolled bottom."
+  },
+  {
+    "id": "pants4",
+    "type": "item",
+    "name": "Pants +4",
+    "desc": "Owns a +4 scrolled bottom."
+  },
+  {
+    "id": "pants5",
+    "type": "item",
+    "name": "Pants +5",
+    "desc": "Owns a +5 scrolled bottom."
+  },
+  {
+    "id": "gomu2",
+    "type": "item",
+    "name": "Gomu +2",
+    "desc": "Owns a +2 scrolled gomushin."
+  },
+  {
+    "id": "gomu3",
+    "type": "item",
+    "name": "Gomu +3",
+    "desc": "Owns a +3 scrolled gomushin."
+  },
+  {
+    "id": "gomu4",
+    "type": "item",
+    "name": "Gomu +4",
+    "desc": "Owns a +4 scrolled gomushin."
+  },
+  {
+    "id": "witch10",
+    "type": "item",
+    "name": "10 Stat Witch Hat",
+    "desc": "Owns a talking witch hat with +10 or more total stats."
+  },
+  {
+    "id": "witch20",
+    "type": "item",
+    "name": "20 Stat Witch Hat",
+    "desc": "Owns a talking witch hat with +20 or more total stats."
+  },
+  {
+    "id": "witch30",
+    "type": "item",
+    "name": "30 Stat Witch Hat",
+    "desc": "Owns a talking witch hat with +30 or more total stats."
+  },
+  {
+    "id": "chairs12",
+    "type": "item",
+    "name": "Chair Collector (12)",
+    "desc": "Owns at least 12 different chairs."
+  },
+  {
+    "id": "chairs24",
+    "type": "item",
+    "name": "Chair Collector (24)",
+    "desc": "Owns at least 24 different chairs."
+  },
+  {
+    "id": "chairs36",
+    "type": "item",
+    "name": "Chair Collector (36)",
+    "desc": "Owns at least 36 different chairs."
+  },
+  {
+    "id": "chairs48",
+    "type": "item",
+    "name": "Chair Collector (48)",
+    "desc": "Owns at least 48 different chairs."
+  },
+  {
+    "id": "meso500",
+    "type": "item",
+    "name": "Meso Hoarder (500m)",
+    "desc": "Holds at least 500,000,000 mesos."
+  },
+  {
+    "id": "meso1b",
+    "type": "item",
+    "name": "Meso Hoarder (1B)",
+    "desc": "Holds at least 1,000,000,000 mesos."
+  },
+  {
+    "id": "meso1b5",
+    "type": "item",
+    "name": "Meso Hoarder (1.5B)",
+    "desc": "Holds at least 1,500,000,000 mesos."
+  },
+  {
+    "id": "meso2b",
+    "type": "item",
+    "name": "Meso Hoarder (2B)",
+    "desc": "Holds at least 2,000,000,000 mesos."
+  },
+  {
+    "id": "umbrellas",
+    "type": "item",
+    "name": "Umbrella Collector",
+    "desc": "Owns one of each umbrella (Purple, Sky Blue, Green, Yellow, Beige, Red, Black, Maple)."
+  },
+  {
+    "id": "tubes",
+    "type": "item",
+    "name": "Tube Collector",
+    "desc": "Owns one of each tube (Blue Flowery, Red Flowery, Purple, Emergency Rescue, Black, Colorful, Duck (50), Duck (100)."
+  },
+  {
+    "id": "workgloves",
+    "type": "item",
+    "name": "Glove Collector",
+    "desc": "Owns one of each work glove color (White, Grey, Yellow, Blue, Red, Purple)."
+  },
+  {
+    "id": "roses",
+    "type": "item",
+    "name": "Rose Collector",
+    "desc": "Owns a blue-tagged rose of each color (Yellow, Red, White, Blue)."
+  },
+  {
+    "id": "perflights",
+    "type": "item",
+    "name": "Perfect Lights",
+    "desc": "Owns a perfect Maplemas Lights (53 attack, 16 speed)."
+  },
+  {
+    "id": "perfboard",
+    "type": "item",
+    "name": "Perfect Surfboard",
+    "desc": "Owns a perfect Gold Surfboard (48 attack, 11 jump)."
+  },
+  {
+    "id": "perfbrella",
+    "type": "item",
+    "name": "Perfect Maple Umbrella",
+    "desc": "Owns a perfect Maple Umbrella (55 attack, 19 speed)."
+  },
+  {
+    "id": "dynamic",
+    "type": "item",
+    "name": "Dynamic Hair",
+    "desc": "Owns the Dynamic Hair medal."
+  },
+  {
+    "id": "fence",
+    "type": "item",
+    "name": "Stolen Fence",
+    "desc": "Owns a Stolen Fence."
+  },
+  {
+    "id": "artifacthunt",
+    "type": "item",
+    "name": "Artifact Hunter",
+    "desc": "Owns the Artifact Hunter medal or Archaeologist hat/glasses."
+  },
+  {
+    "id": "lemons300",
+    "type": "item",
+    "name": "Lemon Collector",
+    "desc": "Owns at least 300 lemons."
+  },
+  {
+    "id": "annijq180",
+    "type": "achievement",
+    "name": "Anniversary Jumper (180s)",
+    "desc": "Completed Pink Bean's Birthday Challenge in 180s or less."
+  },
+  {
+    "id": "annijq150",
+    "type": "achievement",
+    "name": "Anniversary Jumper (150s)",
+    "desc": "Completed Pink Bean's Birthday Challenge in 150s or less."
+  },
+  {
+    "id": "annijq120",
+    "type": "achievement",
+    "name": "Anniversary Jumper (120s)",
+    "desc": "Completed Pink Bean's Birthday Challenge in 120s or less."
+  },
+  {
+    "id": "weenjq225",
+    "type": "achievement",
+    "name": "Halloween Jumper (225s)",
+    "desc": "Completed the Halloween Challenge in 225s or less."
+  },
+  {
+    "id": "weenjq270",
+    "type": "achievement",
+    "name": "Halloween Jumper (270s)",
+    "desc": "Completed the Halloween Challenge in 270s or less."
+  },
+  {
+    "id": "weenjq300",
+    "type": "achievement",
+    "name": "Halloween Jumper (300s)",
+    "desc": "Completed the Halloween Challenge in 300s or less."
+  },
+  {
+    "id": "damage200",
+    "type": "achievement",
+    "name": "Big Hit (200)",
+    "desc": "Has hit for over 200 damage (buffed)."
+  },
+  {
+    "id": "damage300",
+    "type": "achievement",
+    "name": "Big Hit (300)",
+    "desc": "Has hit for over 300 damage (buffed)."
+  },
+  {
+    "id": "damage500",
+    "type": "achievement",
+    "name": "Big Hit (500)",
+    "desc": "Has hit for over 500 damage (buffed)."
+  },
+  {
+    "id": "damage800",
+    "type": "achievement",
+    "name": "Big Hit (800)",
+    "desc": "Has hit for over 800 damage (buffed)."
+  },
+  {
+    "id": "damage1000",
+    "type": "achievement",
+    "name": "Big Hit (1000)",
+    "desc": "Has hit for over 1000 damage (buffed)."
+  }
+]
