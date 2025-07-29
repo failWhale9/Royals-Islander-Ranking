@@ -51,7 +51,7 @@ function createTable(jsons) {
     // Add calculated columns
     headers.unshift("Image");
     headers.unshift("Rank");
-    headers.push("Badges");
+    //headers.push("Badges");
     
     headers.forEach(header => {
         switch (header) {
@@ -71,7 +71,7 @@ function createTable(jsons) {
 
     thead.appendChild(headerRow);
     table.appendChild(thead);
-
+    
     // Create table body
     const tbody = document.createElement('tbody');
 
@@ -149,16 +149,36 @@ function createTable(jsons) {
                     row.appendChild(td);
                     break;
                 case "Badges":
-                    td.textContent = " ";
+
+                    if (item.hasOwnProperty('Badges') && item['Badges'] !== "")
+                    {
+                        const badgeType = ["build","achievement","item"];
+                        badgeType.forEach(function(type){
+                        item['Badges'].forEach(function(badge){
+                            const targetBadge = badges.find(item => item.id === badge)
+                            if(targetBadge.id === badge ) {
+                                if(targetBadge.type === type)
+                                {
+                                    const img = document.createElement('img');
+                                    img.src = '/images/badges/' + badge + '.png';
+                                    td.appendChild(img);
+                                }
+                            }
+                        })
+                    })
                     row.appendChild(td);
+                    }
+                    else
+                    {
+                        td.textContent = " ";
+                        row.appendChild(td);
+                    }
                     break;
                 default:
             }
         });
         tbody.appendChild(row);
     });
-
-    console.log(table);
 
     table.appendChild(tbody);
     container.appendChild(table);
