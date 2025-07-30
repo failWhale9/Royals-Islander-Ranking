@@ -160,7 +160,12 @@ function createTable(jsons) {
                                 if(targetBadge.type === type)
                                 {
                                     const img = document.createElement('img');
+                                    const div = document.createElement('div');
+                                    img.classList.add("Badge");
                                     img.src = '/images/badges/' + badge + '.png';
+                                    div.textContent = targetBadge.name + ": " + targetBadge.desc;
+                                    div.classList.add("BadgeHover");
+                                    img.appendChild(div);
                                     td.appendChild(img);
                                 }
                             }
