@@ -19,6 +19,17 @@ body {
 	animation: slideleft 600s infinite linear;
 	margin-bottom: 200px;
 }
+
+img.Badge {
+	max-width: 60px;
+}
+
+div.BadgeContainer {
+	max-width:60px;
+	max-height:60px;
+	display:inline-block;
+}
+
 }
 
 @media only screen and (max-width: 980px) {
@@ -30,6 +41,17 @@ body {
 	background-position: center bottom;
 	margin-bottom: 200px;
 }
+
+img.Badge {
+	max-width: 55px;
+}
+
+div.BadgeContainer {
+	max-width:55px;
+	max-height:55px;
+	display:inline-block;
+}
+
 }
 
 
@@ -41,6 +63,9 @@ table.mainTable {
 	border-spacing: 10px;         /* Creates the gaps between cells */
 	font-family: Arial, sans-serif;
 }
+
+.mainTable td { height: 150px; }
+.mainTable th { height: 50px; }
 
 th, td {
 	background-color: var(--header);
@@ -117,8 +142,17 @@ td.Name {
 	font-size:36px;
 }
 
+p.Name {
+	margin-bottom: 16px;
+	margin-top:16px;
+}
+
 th.Level {
 	width: 50px;
+}
+
+th.Badges {
+	width: 270px;
 }
 
 th.Image {
@@ -156,6 +190,46 @@ p.Alias {
 
 p.Alt {
 	font-size:18px;
+}
+
+td.Badges {
+	position:relative;
+	min-height:150px;
+	max-height:150px;
+	display: block;
+	overflow-x:visible;
+	overflow-y:scroll;
+	scrollbar-color: var(--header) var(--hover);
+	scrollbar-width: none;
+}
+
+div.BadgeContainer {
+	overflow:visible;
+	display: inline-block;
+}
+
+#sharedTooltip {
+	position:fixed;
+	text-align:center;
+	top:50%;
+	right:1%;
+	width:200px;
+	background: #163b18e5;
+	padding: 10px 10px;
+	border-radius: 8px;
+	color:white;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+	font-family: Arial, sans-serif !important;
+	z-index: 9999;	
+
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+#sharedTooltip.visible {
+	opacity: 1;
+  	visibility: visible;
 }
 
 #titleImage {

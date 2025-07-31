@@ -18,6 +18,11 @@
 
 <div id="table-container"></div>
 
+<div class="BadgeHover" id="sharedTooltip">
+    <div id="tooltipTitle"></div>
+    <span id="tooltipDesc"></span>
+</div>
+
 <div id="footer">
     <p>Page written and maintained by <img src="/images/shy.png"></p> 
 </div>
@@ -119,6 +124,7 @@ function createTable(jsons) {
                 case "Name":
                     const pname = document.createElement('p');
                     pname.textContent = item[header];
+                    pname.classList.add("Name");
                     td.appendChild(pname);
 
                     if (item['BadNews'] != "") {
@@ -159,14 +165,17 @@ function createTable(jsons) {
                             if(targetBadge.id === badge ) {
                                 if(targetBadge.type === type)
                                 {
-                                    const img = document.createElement('img');
                                     const div = document.createElement('div');
+                                    const img = document.createElement('img');
+                                    const tooltip = 'data-tooltip';
+                                    const title = 'data-title';
+                                    div.classList.add("BadgeContainer");
+                                    div.setAttribute(title, "♦ "+ targetBadge.name + " ♦");          
+                                    div.setAttribute(tooltip,targetBadge.desc);
                                     img.classList.add("Badge");
                                     img.src = '/images/badges/' + badge + '.png';
-                                    div.textContent = targetBadge.name + ": " + targetBadge.desc;
-                                    div.classList.add("BadgeHover");
-                                    img.appendChild(div);
-                                    td.appendChild(img);
+                                    div.appendChild(img);
+                                    td.appendChild(div);
                                 }
                             }
                         })
@@ -198,6 +207,29 @@ function createTable(jsons) {
             bottomEnd:'paging'
         }
      });
+
+
+    // Badge Tooltip Code
+    const tooltip = document.getElementById('sharedTooltip');
+    const tooltiptitle = document.getElementById('tooltipTitle');
+    const tooltipdesc = document.getElementById('tooltipDesc');
+    const badgeContainers = document.querySelectorAll('.BadgeContainer');
+
+    badgeContainers.forEach(container => {
+        container.addEventListener('mouseenter', () => {
+            const rect = container.getBoundingClientRect();
+            tooltip.style.top = `${rect.bottom + 8}px`;
+            tooltip.style.left = `${rect.left}px`;
+            tooltipDesc.textContent = container.dataset.tooltip;
+            tooltiptitle.textContent = container.dataset.title;
+            void tooltip.offsetWidth;
+            tooltip.classList.add('visible');
+        });
+
+        container.addEventListener('mouseleave', () => {
+        tooltip.classList.remove('visible');
+        });
+    });
 }
 
 async function getJsonData() {
@@ -215,40 +247,8 @@ async function getJsonData() {
     createTable(results);
 }
 
-// Fetch JSON data and build table
-
-
-
-//const jsons = ["islanders.json", "badges.json"];
-//const reqs = jsons.map(u=>fetch(u));
-
-//Promise.all(reqs).then(responses => {
-//        responses.forEach(response => {
-//            return response.json();
-//        });
-//    })
-//    .catch(error => {
-//        console.log(error);
-//    });
-
 getJsonData();
 
-/*
-fetch('islanders.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        createTable(data);
-    })
-    .catch(error => {
-        console.error('Error loading JSON:', error);
-        document.getElementById('table-container').innerText = 'Failed to load data.';
-    });
-*/
 </script>
 
 </body>
