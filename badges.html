@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<link href="DataTables/datatables.min.css" rel="stylesheet">
+ 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapleRoyals Islander Ranking: Badges</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="islander.css">
+
+</head>
+<body>
+
+<img src="images/title.png" id="titleImage"></img>
+
+<div id="badges-container"></div>
+
+<div class="BadgeHover" id="sharedTooltip">
+    <div id="tooltipTitle"></div>
+    <span id="tooltipDesc"></span>
+</div>
+
+<div id="footer">
+    <p>Page written and maintained by <img src="/images/shy.png"></p> 
+</div>
+
+<script>
+
+// Function to create and populate the table
+function createTable(jsons) {
+    data = jsons[0];
+    badges = jsons[1];
+    // Do a pass through badges, adding ownedBy
+
+    // For each islander, populate appropriate badges' ownedBy
+
+    // For each badge, put it in the table 
+
+    // Badge Tooltip Code
+    const tooltip = document.getElementById('sharedTooltip');
+    const tooltiptitle = document.getElementById('tooltipTitle');
+    const tooltipdesc = document.getElementById('tooltipDesc');
+    const badgeContainers = document.querySelectorAll('.BadgeContainer');
+
+    badgeContainers.forEach(container => {
+        container.addEventListener('mouseenter', () => {
+            const rect = container.getBoundingClientRect();
+            tooltip.style.top = `${rect.bottom + 8}px`;
+            tooltip.style.left = `${rect.left}px`;
+            tooltipDesc.textContent = container.dataset.tooltip;
+            tooltiptitle.textContent = container.dataset.title;
+            void tooltip.offsetWidth;
+            tooltip.classList.add('visible');
+        });
+
+        container.addEventListener('mouseleave', () => {
+        tooltip.classList.remove('visible');
+        });
+    });
+}
+
+async function getJsonData() {
+    const jsons = ["islanders.json", "badges.json"];
+    const reqs = jsons.map(u=>fetch(u).then(response => {
+    if(!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+    })
+    );
+
+    const results = await Promise.all(reqs);
+
+    createTable(results);
+}
+
+getJsonData();
+
+</script>
+
+</body>
+</html>

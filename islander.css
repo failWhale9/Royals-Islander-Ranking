@@ -64,7 +64,7 @@ table.mainTable {
 	font-family: Arial, sans-serif;
 }
 
-.mainTable td { height: 150px; }
+.mainTable td { height: 170px; }
 .mainTable th { height: 50px; }
 
 th, td {
@@ -74,7 +74,7 @@ th, td {
 	text-align: left;
 	border: none;                 
 	border-radius: 8px;          
-	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+	box-shadow: 2px 2px 8px rgba(0, 32, 1, 0.628)!important;
 	transition: background 0.3s;
 }
 
@@ -192,10 +192,14 @@ p.Alt {
 	font-size:18px;
 }
 
+td.Image > img {
+	max-height:150px;
+}
+
 td.Badges {
 	position:relative;
-	min-height:150px;
-	max-height:150px;
+	min-height:170px;
+	max-height:170px;
 	display: block;
 	overflow-x:visible;
 	overflow-y:scroll;
