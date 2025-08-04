@@ -14,11 +14,17 @@
 
 <img src="images/title.png" id="titleImage"></img>
 
+<div id="navbar">
+    <a href="./"><span class="navActive"> Rankings </span></a>
+    <a href=""><span class="navInactive"> Badges </span></a>
+</div>
+
 <div id="badges-container"></div>
 
 <div class="BadgeHover" id="sharedTooltip">
     <div id="tooltipTitle"></div>
-    <span id="tooltipDesc"></span>
+    <div id="tooltipDesc"></div>
+    <div id="tooltipOwn"></div>
 </div>
 
 <div id="footer">
@@ -32,15 +38,45 @@ function createTable(jsons) {
     data = jsons[0];
     badges = jsons[1];
     // Do a pass through badges, adding ownedBy
+    badges.forEach(badge => {
+        badge.ownedBy = [];
+    });
 
     // For each islander, populate appropriate badges' ownedBy
+    data.forEach(islander => {
+        if(islander.hasOwnProperty('Badges')) {
+            islander.Badges.forEach(badge => {
+                const foundBadge = badges.find(bdg => bdg.id === badge);
+                foundBadge.ownedBy.push(islander.Name);
+            })
+        }
+    });
 
     // For each badge, put it in the table 
+    const container = document.getElementById('badges-container');
+    badges.forEach(badge => {
+        if(!badge.hasOwnProperty('hidden') || badge.hidden == false) {
+            const div = document.createElement('div');
+            const img = document.createElement('img');
+            const tooltip = 'data-tooltip';
+            const title = 'data-title';
+            const ownedby = 'data-ownedby';
+            div.classList.add("BadgeContainer");
+            div.setAttribute(title, "♦ "+ badge.name + " ♦");          
+            div.setAttribute(tooltip,badge.desc);
+            div.setAttribute(ownedby, "Owned by: " + badge.ownedBy.join(', '));
+            img.classList.add("Badge");
+            img.src = '/images/badges/' + badge.id + '.png';
+            div.appendChild(img);
+            container.appendChild(div);
+        }
+    });
 
     // Badge Tooltip Code
     const tooltip = document.getElementById('sharedTooltip');
-    const tooltiptitle = document.getElementById('tooltipTitle');
-    const tooltipdesc = document.getElementById('tooltipDesc');
+    const tooltipTitle = document.getElementById('tooltipTitle');
+    const tooltipDesc = document.getElementById('tooltipDesc');
+    const tooltipOwn = document.getElementById('tooltipOwn');
     const badgeContainers = document.querySelectorAll('.BadgeContainer');
 
     badgeContainers.forEach(container => {
@@ -49,7 +85,8 @@ function createTable(jsons) {
             tooltip.style.top = `${rect.bottom + 8}px`;
             tooltip.style.left = `${rect.left}px`;
             tooltipDesc.textContent = container.dataset.tooltip;
-            tooltiptitle.textContent = container.dataset.title;
+            tooltipOwn.textContent = container.dataset.ownedby;
+            tooltipTitle.textContent = container.dataset.title;
             void tooltip.offsetWidth;
             tooltip.classList.add('visible');
         });

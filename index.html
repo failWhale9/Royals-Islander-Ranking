@@ -16,6 +16,11 @@
 
 <img src="images/title.png" id="titleImage"></img>
 
+<div id="navbar">
+    <a href=""><span class="navInactive"> Rankings </span></a>
+    <a href="/badges.html"><span class="navActive"> Badges </span></a>
+</div>
+
 <div id="table-container"></div>
 
 <div class="BadgeHover" id="sharedTooltip">
@@ -205,11 +210,14 @@ function createTable(jsons) {
             topEnd:'paging',
             bottomStart:'info',
             bottomEnd:'paging'
+        },
+        "drawCallback": function(settings) {
+            applyBadgeTooltips();
         }
      });
+}
 
-
-    // Badge Tooltip Code
+function applyBadgeTooltips() {
     const tooltip = document.getElementById('sharedTooltip');
     const tooltiptitle = document.getElementById('tooltipTitle');
     const tooltipdesc = document.getElementById('tooltipDesc');

@@ -27,282 +27,329 @@
     "id": "maxdodge",
     "type": "build",
     "name": "Max Dodge",
-    "desc": "Has at least 152 avoid."
+    "desc": "Has at least 152 avoid.",
+    "hidden": true
   },
   {
     "id": "knifestrats",
     "type": "build",
     "name": "Knife Strats",
-    "desc": "Can hit minimum 80 damage with Fruit Knife equipped, unbuffed."
+    "desc": "Can hit minimum 80 damage with Fruit Knife equipped, unbuffed.",
+    "hidden": true
   },
   {
     "id": "omok3",
     "type": "item",
     "name": "Omok Collector",
-    "desc": "Owns all three Omok table variants."
+    "desc": "Owns all three Omok table variants.",
+    "hidden": true
   },
   {
     "id": "shirt2",
     "type": "item",
     "name": "Shirt +2",
-    "desc": "Owns a +2 scrolled top."
+    "desc": "Owns a +2 scrolled top.",
+    "hidden": true
   },
   {
     "id": "shirt3",
     "type": "item",
     "name": "Shirt +3",
-    "desc": "Owns a +3 scrolled top."
+    "desc": "Owns a +3 scrolled top.",
+    "hidden": true
   },
   {
     "id": "shirt4",
     "type": "item",
     "name": "Shirt +4",
-    "desc": "Owns a +4 scrolled top."
+    "desc": "Owns a +4 scrolled top.",
+    "hidden": true
   },
   {
     "id": "shirt5",
     "type": "item",
     "name": "Shirt +5",
-    "desc": "Owns a +5 scrolled top."
+    "desc": "Owns a +5 scrolled top.",
+    "hidden": true
   },
   {
     "id": "pants2",
     "type": "item",
     "name": "Pants +2",
-    "desc": "Owns a +2 scolled bottom."
+    "desc": "Owns a +2 scolled bottom.",
+    "hidden": true
   },
   {
     "id": "pants3",
     "type": "item",
     "name": "Pants +3",
-    "desc": "Owns a +3 scrolled bottom."
+    "desc": "Owns a +3 scrolled bottom.",
+    "hidden": true
   },
   {
     "id": "pants4",
     "type": "item",
     "name": "Pants +4",
-    "desc": "Owns a +4 scrolled bottom."
+    "desc": "Owns a +4 scrolled bottom.",
+    "hidden": true
   },
   {
     "id": "pants5",
     "type": "item",
     "name": "Pants +5",
-    "desc": "Owns a +5 scrolled bottom."
+    "desc": "Owns a +5 scrolled bottom.",
+    "hidden": true
   },
   {
     "id": "gomu2",
     "type": "item",
     "name": "Gomu +2",
-    "desc": "Owns a +2 scrolled gomushin."
+    "desc": "Owns a +2 scrolled gomushin.",
+    "hidden": true
   },
   {
     "id": "gomu3",
     "type": "item",
     "name": "Gomu +3",
-    "desc": "Owns a +3 scrolled gomushin."
+    "desc": "Owns a +3 scrolled gomushin.",
+    "hidden": true
   },
   {
     "id": "gomu4",
     "type": "item",
     "name": "Gomu +4",
-    "desc": "Owns a +4 scrolled gomushin."
+    "desc": "Owns a +4 scrolled gomushin.",
+    "hidden": true
   },
   {
     "id": "witch10",
     "type": "item",
     "name": "10 Stat Witch Hat",
-    "desc": "Owns a talking witch hat with +10 or more total stats."
+    "desc": "Owns a talking witch hat with +10 or more total stats.",
+    "hidden": true
   },
   {
     "id": "witch20",
     "type": "item",
     "name": "20 Stat Witch Hat",
-    "desc": "Owns a talking witch hat with +20 or more total stats."
+    "desc": "Owns a talking witch hat with +20 or more total stats.",
+    "hidden": true
   },
   {
     "id": "witch30",
     "type": "item",
     "name": "30 Stat Witch Hat",
-    "desc": "Owns a talking witch hat with +30 or more total stats."
+    "desc": "Owns a talking witch hat with +30 or more total stats.",
+    "hidden": true
   },
   {
     "id": "chairs12",
     "type": "item",
     "name": "Chair Collector (12)",
-    "desc": "Owns at least 12 different chairs."
+    "desc": "Owns at least 12 different chairs.",
+    "hidden": true
   },
   {
     "id": "chairs24",
     "type": "item",
     "name": "Chair Collector (24)",
-    "desc": "Owns at least 24 different chairs."
+    "desc": "Owns at least 24 different chairs.",
+    "hidden": true
   },
   {
     "id": "chairs36",
     "type": "item",
     "name": "Chair Collector (36)",
-    "desc": "Owns at least 36 different chairs."
+    "desc": "Owns at least 36 different chairs.",
+    "hidden": true
   },
   {
     "id": "chairs48",
     "type": "item",
     "name": "Chair Collector (48)",
-    "desc": "Owns at least 48 different chairs."
+    "desc": "Owns at least 48 different chairs.",
+    "hidden": true
   },
   {
     "id": "meso500",
     "type": "item",
     "name": "Meso Hoarder (500m)",
-    "desc": "Holds at least 500,000,000 mesos."
+    "desc": "Holds at least 500,000,000 mesos.",
+    "hidden": true
   },
   {
     "id": "meso1b",
     "type": "item",
     "name": "Meso Hoarder (1B)",
-    "desc": "Holds at least 1,000,000,000 mesos."
+    "desc": "Holds at least 1,000,000,000 mesos.",
+    "hidden": true
   },
   {
     "id": "meso1b5",
     "type": "item",
     "name": "Meso Hoarder (1.5B)",
-    "desc": "Holds at least 1,500,000,000 mesos."
+    "desc": "Holds at least 1,500,000,000 mesos.",
+    "hidden": true
   },
   {
     "id": "meso2b",
     "type": "item",
     "name": "Meso Hoarder (2B)",
-    "desc": "Holds at least 2,000,000,000 mesos."
+    "desc": "Holds at least 2,000,000,000 mesos.",
+    "hidden": true
   },
   {
     "id": "umbrellas",
     "type": "item",
     "name": "Umbrella Collector",
-    "desc": "Owns one of each umbrella (Purple, Sky Blue, Green, Yellow, Beige, Red, Black, Maple)."
+    "desc": "Owns one of each umbrella (Purple, Sky Blue, Green, Yellow, Beige, Red, Black, Maple).",
+    "hidden": true
   },
   {
     "id": "tubes",
     "type": "item",
     "name": "Tube Collector",
-    "desc": "Owns one of each tube (Blue Flowery, Red Flowery, Purple, Emergency Rescue, Black, Colorful, Duck (50), Duck (100)."
+    "desc": "Owns one of each tube (Blue Flowery, Red Flowery, Purple, Emergency Rescue, Black, Colorful, Duck (50), Duck (100).",
+    "hidden": true
   },
   {
     "id": "workgloves",
     "type": "item",
     "name": "Glove Collector",
-    "desc": "Owns one of each work glove color (White, Grey, Yellow, Blue, Red, Purple)."
+    "desc": "Owns one of each work glove color (White, Grey, Yellow, Blue, Red, Purple).",
+    "hidden": true
   },
   {
     "id": "roses",
     "type": "item",
     "name": "Rose Collector",
-    "desc": "Owns a blue-tagged rose of each color (Yellow, Red, White, Blue)."
+    "desc": "Owns a blue-tagged rose of each color (Yellow, Red, White, Blue).",
+    "hidden": true
   },
   {
     "id": "perflights",
     "type": "item",
     "name": "Perfect Lights",
-    "desc": "Owns a perfect Maplemas Lights (53 attack, 16 speed)."
+    "desc": "Owns a perfect Maplemas Lights (53 attack, 16 speed).",
+    "hidden": true
   },
   {
     "id": "perfboard",
     "type": "item",
     "name": "Perfect Surfboard",
-    "desc": "Owns a perfect Gold Surfboard (48 attack, 11 jump)."
+    "desc": "Owns a perfect Gold Surfboard (48 attack, 11 jump).",
+    "hidden": true
   },
   {
     "id": "perfbrella",
     "type": "item",
     "name": "Perfect Maple Umbrella",
-    "desc": "Owns a perfect Maple Umbrella (55 attack, 19 speed)."
+    "desc": "Owns a perfect Maple Umbrella (55 attack, 19 speed).",
+    "hidden": true
   },
   {
     "id": "dynamic",
     "type": "item",
     "name": "Dynamic Hair",
-    "desc": "Owns the Dynamic Hair medal."
+    "desc": "Owns the Dynamic Hair medal.",
+    "hidden": true
   },
   {
     "id": "fence",
     "type": "item",
     "name": "Stolen Fence",
-    "desc": "Owns a Stolen Fence."
+    "desc": "Owns a Stolen Fence.",
+    "hidden": true
   },
   {
     "id": "artifacthunt",
     "type": "item",
     "name": "Artifact Hunter",
-    "desc": "Owns the Artifact Hunter medal or Archaeologist hat/glasses."
+    "desc": "Owns the Artifact Hunter medal or Archaeologist hat/glasses.",
+    "hidden": true
   },
   {
     "id": "lemons300",
     "type": "item",
     "name": "Lemon Collector",
-    "desc": "Owns at least 300 lemons."
+    "desc": "Owns at least 300 lemons.",
+    "hidden": true
   },
   {
     "id": "annijq180",
     "type": "achievement",
     "name": "Anniversary Jumper (180s)",
-    "desc": "Completed Pink Bean's Birthday Challenge in 180s or less."
+    "desc": "Completed Pink Bean's Birthday Challenge in 180s or less.",
+    "hidden": true
   },
   {
     "id": "annijq150",
     "type": "achievement",
     "name": "Anniversary Jumper (150s)",
-    "desc": "Completed Pink Bean's Birthday Challenge in 150s or less."
+    "desc": "Completed Pink Bean's Birthday Challenge in 150s or less.",
+    "hidden": true
   },
   {
     "id": "annijq120",
     "type": "achievement",
     "name": "Anniversary Jumper (120s)",
-    "desc": "Completed Pink Bean's Birthday Challenge in 120s or less."
+    "desc": "Completed Pink Bean's Birthday Challenge in 120s or less.",
+    "hidden": true
   },
   {
     "id": "weenjq225",
     "type": "achievement",
     "name": "Halloween Jumper (225s)",
-    "desc": "Completed the Halloween Challenge in 225s or less."
+    "desc": "Completed the Halloween Challenge in 225s or less.",
+    "hidden": true
   },
   {
     "id": "weenjq270",
     "type": "achievement",
     "name": "Halloween Jumper (270s)",
-    "desc": "Completed the Halloween Challenge in 270s or less."
+    "desc": "Completed the Halloween Challenge in 270s or less.",
+    "hidden": true
   },
   {
     "id": "weenjq300",
     "type": "achievement",
     "name": "Halloween Jumper (300s)",
-    "desc": "Completed the Halloween Challenge in 300s or less."
+    "desc": "Completed the Halloween Challenge in 300s or less.",
+    "hidden": true
   },
   {
     "id": "damage200",
     "type": "achievement",
     "name": "Big Hit (200)",
-    "desc": "Has hit for over 200 damage (buffed)."
+    "desc": "Has hit for over 200 damage (buffed).",
+    "hidden": true
   },
   {
     "id": "damage300",
     "type": "achievement",
     "name": "Big Hit (300)",
-    "desc": "Has hit for over 300 damage (buffed)."
+    "desc": "Has hit for over 300 damage (buffed).",
+    "hidden": true
   },
   {
     "id": "damage500",
     "type": "achievement",
     "name": "Big Hit (500)",
-    "desc": "Has hit for over 500 damage (buffed)."
+    "desc": "Has hit for over 500 damage (buffed).",
+    "hidden": true
   },
   {
     "id": "damage800",
     "type": "achievement",
     "name": "Big Hit (800)",
-    "desc": "Has hit for over 800 damage (buffed)."
+    "desc": "Has hit for over 800 damage (buffed).",
+    "hidden": true
   },
   {
     "id": "damage1000",
     "type": "achievement",
     "name": "Big Hit (1000)",
-    "desc": "Has hit for over 1000 damage (buffed)."
+    "desc": "Has hit for over 1000 damage (buffed).",
+    "hidden": true
   }
 ]

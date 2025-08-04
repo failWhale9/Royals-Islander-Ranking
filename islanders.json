@@ -5,14 +5,15 @@
     "Alias": "",
     "BadNews": "",
     "Alt": "",
-    "Badges":""
+    "Badges":[]
   },
   {
     "Name": "NamoAmituofo",
     "Level": "111",
     "Alias": "SUPPER",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":[]
   },
   {
     "Name": "Annot",
@@ -296,7 +297,7 @@
   },
   {
     "Name": "demosthes",
-    "Level": "53",
+    "Level": "55",
     "Alias": "",
     "BadNews": "",
     "Alt": ""
@@ -492,7 +493,7 @@
   },
   {
     "Name": "Fundlander",
-    "Level": "55",
+    "Level": "56",
     "Alias": "",
     "BadNews": "",
     "Alt": ""
@@ -765,7 +766,7 @@
   },
   {
     "Name": "Valtarre",
-    "Level": "45",
+    "Level": "46",
     "Alias": "",
     "BadNews": "",
     "Alt": ""
@@ -901,7 +902,8 @@
     "Level": "41",
     "Alias": "",
     "BadNews": "",
-    "Alt": "Lowly"
+    "Alt": "Lowly",
+    "Badges":["magelander"]
   },
   {
     "Name": "Ramleh",
@@ -1139,7 +1141,8 @@
     "Level": "38",
     "Alias": "",
     "BadNews": "",
-    "Alt": "Adaryn"
+    "Alt": "Adaryn",
+    "Badges":["magelander"]
   },
   {
     "Name": "nuber",
@@ -1615,7 +1618,8 @@
     "Level": "34",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["magelander"]
   },
   {
     "Name": "Moganji",
@@ -1724,7 +1728,7 @@
   },
   {
     "Name": "Ailand",
-    "Level": "40",
+    "Level": "41",
     "Alias": "",
     "BadNews": "",
     "Alt": ""
@@ -2081,10 +2085,11 @@
   },
   {
     "Name": "NoPointer",
-    "Level": "31",
+    "Level": "32",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["nopointer"]
   },
   {
     "Name": "FatGuyIRL",
@@ -2343,7 +2348,8 @@
     "Level": "30",
     "Alias": "",
     "BadNews": "",
-    "Alt": "Shylander"
+    "Alt": "Shylander",
+    "Badges":["magelander"]
   },
   {
     "Name": "Native",

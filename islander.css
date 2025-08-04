@@ -224,11 +224,19 @@ div.BadgeContainer {
 	color:white;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 	font-family: Arial, sans-serif !important;
+	font-size: 10pt;
 	z-index: 9999;	
-
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+#tooltipOwn {
+	color:#3366cc;
+}
+
+#tooltipTitle {
+	font-weight:bold;
 }
 
 #sharedTooltip.visible {
@@ -260,4 +268,48 @@ div.BadgeContainer {
 	img {
 		margin: 8px 10px;
 	}
+}
+
+#badges-container {
+	background-color: var(--cell);
+	padding: 0px 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+	width:80%;
+	height:500px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 20px;
+}
+
+#navbar .navActive {
+	background-color: var(--cell);
+	color: white !important;
+	padding: 5px 20px;
+	border-radius: 18px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+	font-family: Arial, sans-serif !important;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#navbar .navInactive {
+	background-color: var(--darker);
+	color: white !important;
+	padding: 5px 20px;
+	border-radius: 18px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+	font-family: Arial, sans-serif !important;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#navbar > a {
+	text-decoration: none;
+}
+
+#navbar {
+	text-align: center;
 }
