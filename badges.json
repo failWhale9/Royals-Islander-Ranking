@@ -177,6 +177,13 @@
     "desc": "Holds at least 500,000,000 mesos.",
     "hidden": true
   },
+    {
+    "id": "meso250",
+    "type": "item",
+    "name": "Meso Hoarder (250m)",
+    "desc": "Holds at least 250,000,000 mesos.",
+    "hidden": true
+  },
   {
     "id": "meso1b",
     "type": "item",
@@ -185,10 +192,10 @@
     "hidden": true
   },
   {
-    "id": "meso1b5",
+    "id": "meso700",
     "type": "item",
-    "name": "Meso Hoarder (1.5B)",
-    "desc": "Holds at least 1,500,000,000 mesos.",
+    "name": "Meso Hoarder (700m)",
+    "desc": "Holds at least 700,000,000 mesos.",
     "hidden": true
   },
   {
