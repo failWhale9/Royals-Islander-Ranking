@@ -1,5 +1,13 @@
 [
   {
+    "Name": "Thup",
+    "Level": "30",
+    "Alias": "",
+    "BadNews": "",
+    "Alt": "",
+    "Badges":[]
+  },
+  {
     "Name": "Lowly",
     "Level": "111",
     "Alias": "",
@@ -769,7 +777,8 @@
     "Level": "46",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["dexlander"]
   },
   {
     "Name": "inland",
