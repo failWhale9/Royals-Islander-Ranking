@@ -21,7 +21,7 @@
     "Alias": "SUPPER",
     "BadNews": "",
     "Alt": "",
-    "Badges":["gomu4"]
+    "Badges":["gomu4","artifacthunt"]
   },
   {
     "Name": "Annot",
@@ -52,7 +52,8 @@
     "Level": "83",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["artifacthunt"]
   },
   {
     "Name": "sawngo",
@@ -272,7 +273,8 @@
     "Level": "56",
     "Alias": "CrimsonClaw",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["dynamic"]
   },
   {
     "Name": "Ekob",
@@ -422,7 +424,8 @@
     "Level": "51",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["dynamic"]
   },
   {
     "Name": "Evacchi",
