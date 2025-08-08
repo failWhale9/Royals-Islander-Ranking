@@ -13,7 +13,7 @@
     "Alias": "",
     "BadNews": "",
     "Alt": "",
-    "Badges":[]
+    "Badges":["meso2b","gomu4"]
   },
   {
     "Name": "NamoAmituofo",
@@ -21,28 +21,31 @@
     "Alias": "SUPPER",
     "BadNews": "",
     "Alt": "",
-    "Badges":[]
+    "Badges":["gomu4"]
   },
   {
     "Name": "Annot",
     "Level": "96",
     "Alias": "Ereader",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges": ["gomu3","pants4","perflights","perfboard"]
   },
   {
     "Name": "Mooshy",
     "Level": "92",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["gomu3"]
   },
   {
     "Name": "Rally",
     "Level": "85",
     "Alias": "ROBINSON",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["witch30"]
   },
   {
     "Name": "snayl",
@@ -70,7 +73,8 @@
     "Level": "80",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["shirt5","pants4","witch40"]
   },
   {
     "Name": "IslandChrizz",
@@ -210,7 +214,8 @@
     "Level": "60",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges": ["perfbrella"]
   },
   {
     "Name": "Boobs",
@@ -252,7 +257,8 @@
     "Level": "56",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["gomu3","pants4","witch40","perfwand"]
   },
   {
     "Name": "Oahu",
@@ -273,7 +279,8 @@
     "Level": "55",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["gomu3","pants4"]
   },
   {
     "Name": "TheIslander",
@@ -343,7 +350,8 @@
     "Level": "52",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["shirt4"]
   },
   {
     "Name": "Phack",
@@ -399,7 +407,8 @@
     "Level": "51",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["witch30"]
   },
   {
     "Name": "Delfino",
@@ -827,7 +836,8 @@
     "Level": "43",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["pants3"]
   },
   {
     "Name": "BootyClapper",
@@ -869,7 +879,8 @@
     "Level": "42",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["witch30"]
   },
   {
     "Name": "Relate",
@@ -968,7 +979,8 @@
     "Level": "40",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["perfboard"]
   },
   {
     "Name": "Ichihime",
@@ -1207,7 +1219,8 @@
     "Level": "38",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["shirt4"]
   },
   {
     "Name": "daredemonai",
@@ -1242,7 +1255,8 @@
     "Level": "37",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["shirt5"]
   },
   {
     "Name": "Takoa",
