@@ -1,5 +1,13 @@
 [
   {
+    "Name": "nezukochan",
+    "Level": "34",
+    "Alias": "",
+    "BadNews": "",
+    "Alt": "",
+    "Badges":[]
+  },
+  {
     "Name": "Thup",
     "Level": "30",
     "Alias": "",
@@ -244,7 +252,8 @@
     "Level": "58",
     "Alias": "",
     "BadNews": "",
-    "Alt": ""
+    "Alt": "",
+    "Badges":["dynamic","fence"]
   },
   {
     "Name": "Taeha",
@@ -259,7 +268,7 @@
     "Alias": "",
     "BadNews": "",
     "Alt": "",
-    "Badges":["gomu3","pants4","witch40","perfwand"]
+    "Badges":["gomu3","pants4","witch40","perfwand","damage500","chairs36","workgloves","omok3"]
   },
   {
     "Name": "Oahu",
@@ -787,11 +796,11 @@
   },
   {
     "Name": "Valtarre",
-    "Level": "46",
+    "Level": "47",
     "Alias": "",
     "BadNews": "",
     "Alt": "",
-    "Badges":["dexlander"]
+    "Badges":["dexlander","damage200"]
   },
   {
     "Name": "inland",
