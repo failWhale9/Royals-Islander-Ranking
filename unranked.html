@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<link href="DataTables/datatables.min.css" rel="stylesheet">
+ 
+<script src="DataTables/datatables.min.js"></script>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapleRoyals Islander Ranking - Unranked Islanders</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="islander.css">
+
+</head>
+<body>
+
+<img src="images/title.png" id="titleImage"></img>
+
+<div id="navbar">
+    <a href="/index.html"><span class="navActive"> Rankings </span></a>
+    <a href="/badges.html"><span class="navActive"> Badges </span></a>
+    <a href=""><span class="navInactive"> Unranked Islanders </span></a>
+</div>
+
+<div id="table-container"></div>
+
+<div class="BadgeHover" id="sharedTooltip">
+    <div id="tooltipTitle"></div>
+    <span id="tooltipDesc"></span>
+</div>
+
+<div id="footer">
+    <p>Page written and maintained by <img src="/images/shy.png"></p> 
+</div>
+
+<script>
+
+// Function to create and populate the table
+function createTable(jsons) {
+    data = jsons[0];
+    badges = jsons[1];
+    $.fn.DataTable.ext.pager.numbers_length = 7;
+    const container = document.getElementById('table-container');
+    const table = document.createElement('table');
+    table.id = "myTable";
+    table.classList.add('display');
+    table.classList.add('mainTable');
+
+    // Filter out ranked islanders
+    data = data.filter(item => item.BadNews && item.BadNews !== "");
+
+    // Sort table by level descending
+    data.sort((a, b) => {
+        const valA = a["Level"];
+        const valB = b["Level"];
+        return valB - valA;
+    });
+
+    // Create table headers
+    const headers = Object.keys(data[0]);
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+
+    // Add calculated columns
+    headers.unshift("Image");
+    //headers.push("Badges");
+    
+    headers.forEach(header => {
+        switch (header) {
+            case "Image": 
+            case "Name":
+            case "Level":
+            case "Badges":
+                 const th = document.createElement('th');
+                 th.textContent = header.charAt(0).toUpperCase() + header.slice(1);
+                 th.classList.add(header);
+                 headerRow.appendChild(th);
+                 break;
+             default:
+        }
+    });
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+    
+    // Create table body
+    const tbody = document.createElement('tbody');
+
+    data.forEach(item => {
+        const row = document.createElement('tr');
+        
+        headers.forEach(header => {
+            const td = document.createElement('td');
+            td.classList.add(header);
+
+            switch (header) {
+                case "Image":
+                    const img = document.createElement('img');
+                    const baseName = item['Name'].toLowerCase();
+                    const formats = ['png', 'gif'];
+                    let formatIndex = 0;
+
+                    function tryLoadImage() {
+                        if (formatIndex < formats.length) {
+                            try {
+                                img.src = `images/islanders/${baseName}.${formats[formatIndex]}`;
+                            }
+                            catch {
+
+                            }
+                            img.onerror = () => {
+                                formatIndex++;
+                                tryLoadImage(); // Try next format
+                            };
+                        } else {
+                            img.onerror = null; // Prevent loop
+                            img.src = 'images/placeholder.png'; // Fallback image
+                        }
+                    }
+
+                    tryLoadImage();
+                    img.classList.add("portrait");
+                    td.appendChild(img);
+                    row.appendChild(td);
+                    break;
+                case "Name":
+                    const pname = document.createElement('p');
+                    pname.textContent = item[header];
+                    pname.classList.add("Name");
+                    td.appendChild(pname);
+
+                    if (item['BadNews'] != "") {
+                        const pbad = document.createElement('p');
+                        pbad.textContent = "(" + item['BadNews'] + ")";
+                        pbad.classList.add("BadNews");
+                        td.appendChild(pbad);
+                    }
+
+                    if (item['Alias'] != "") {
+                        const palias = document.createElement('p');
+                        palias.textContent = "(formerly " + item['Alias'] + ")";
+                        palias.classList.add("Alias");
+                        td.appendChild(palias);
+                    }
+
+                    if (item['Alt'] != "") {
+                        const palt = document.createElement('p');
+                        palt.textContent = "(" + item['Alt'] + "'s alt)";
+                        palt.classList.add("Alt");
+                        td.appendChild(palt);
+                    }
+
+                    row.appendChild(td);
+                    break;
+                case "Level":
+                    td.textContent = item[header];
+                    row.appendChild(td);
+                    break;
+                case "Badges":
+
+                    if (item.hasOwnProperty('Badges') && item['Badges'] !== "")
+                    {
+                        const badgeType = ["build","achievement","item"];
+                        badgeType.forEach(function(type){
+                        item['Badges'].forEach(function(badge){
+                            const targetBadge = badges.find(item => item.id === badge)
+                            if(targetBadge.id === badge ) {
+                                if(targetBadge.type === type)
+                                {
+                                    const div = document.createElement('div');
+                                    const img = document.createElement('img');
+                                    const tooltip = 'data-tooltip';
+                                    const title = 'data-title';
+                                    div.classList.add("BadgeContainer");
+                                    div.setAttribute(title, "♦ "+ targetBadge.name + " ♦");          
+                                    div.setAttribute(tooltip,targetBadge.desc);
+                                    img.classList.add("Badge");
+                                    img.src = '/images/badges/' + badge + '.png';
+                                    div.appendChild(img);
+                                    td.appendChild(div);
+                                }
+                            }
+                        })
+                    })
+                    row.appendChild(td);
+                    }
+                    else
+                    {
+                        td.textContent = " ";
+                        row.appendChild(td);
+                    }
+                    break;
+                default:
+            }
+        });
+        tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+    container.appendChild(table);
+
+     $('#myTable').DataTable({
+        pageLength: 20,
+        pagingType: 'numbers',
+        layout: {
+            topStart:'search',
+            topEnd:'paging',
+            bottomStart:'info',
+            bottomEnd:'paging'
+        },
+        "drawCallback": function(settings) {
+            applyBadgeTooltips();
+        }
+     });
+}
+
+function applyBadgeTooltips() {
+    const tooltip = document.getElementById('sharedTooltip');
+    const tooltiptitle = document.getElementById('tooltipTitle');
+    const tooltipdesc = document.getElementById('tooltipDesc');
+    const badgeContainers = document.querySelectorAll('.BadgeContainer');
+
+    badgeContainers.forEach(container => {
+        container.addEventListener('mouseenter', () => {
+            const rect = container.getBoundingClientRect();
+            tooltip.style.top = `${rect.bottom + 8}px`;
+            tooltip.style.left = `${rect.left}px`;
+            tooltipDesc.textContent = container.dataset.tooltip;
+            tooltiptitle.textContent = container.dataset.title;
+            void tooltip.offsetWidth;
+            tooltip.classList.add('visible');
+        });
+
+        container.addEventListener('mouseleave', () => {
+        tooltip.classList.remove('visible');
+        });
+    });
+}
+
+async function getJsonData() {
+    const jsons = ["islanders.json", "badges.json"];
+    const reqs = jsons.map(u=>fetch(u).then(response => {
+    if(!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+    })
+    );
+
+    const results = await Promise.all(reqs);
+
+    createTable(results);
+}
+
+getJsonData();
+
+</script>
+
+</body>
+</html>
