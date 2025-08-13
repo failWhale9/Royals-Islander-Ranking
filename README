@@ -1,1 +1,24 @@
-test
+This project serves to provide ranking data and other information to Islanders of MapleRoyals. 
+
+Files:
+islanders.json - Contains data for each Islander
+badges.json - Contains information for earnable badges
+islander.css - Style sheet for the entire site
+index.html - main ranking table
+badges.html - page that lists all badges
+unranked.html - page for unranked islanders (banned, deleted, boated, opt-out)
+
+To add an islander, create a new entry in islanders.json like this:
+
+  {
+    "Name": "Examplander",            // The character's in-game name, case-sensitive
+    "Level": "31",                    // The character's last known level
+    "Alias": "1lander, 2lander",      // If the character underwent any name changes, list the old names here
+    "BadNews": "Banned - mod sass",   // This property moves the character to the unranked list (use this if they are banned, deleted, left the island, or opted out of rankings)              
+    "Alt": "ExamplBoat",              // If this character is a known alt, put the main's name here
+    "Badges":["meso2b","gomu4"]       // Any earned badges go here. See badges.json and use the id.
+  },
+
+  You should also add a character image to the images/islanders directory, with the name of the islander as the filename, all lowercase (e.g. examplander.png). 
+
+  

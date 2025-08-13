@@ -1,2440 +1,1437 @@
 [
   {
+    "Name": "natscape",
+    "Level": "72",
+    "Alias": "Natscape",
+    "BadNews": "Opt-out of ranking"
+  },
+  {
+    "Name": "natnavi",
+    "Level": "35",
+    "BadNews": "Opt-out of ranking",
+    "Alt": "Natscape"
+  },
+  {
     "Name": "nezukochan",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
-    "Badges":[]
+    "Level": "34"
   },
   {
     "Name":"IslandLizard",
-    "Level":"31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level":"32"
   },
   {
     "Name": "Thup",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
-    "Badges":[]
+    "Level": "30"
   },
   {
     "Name": "Lowly",
     "Level": "111",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["meso2b","gomu4"]
   },
   {
     "Name": "NamoAmituofo",
     "Level": "111",
     "Alias": "SUPPER",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["gomu4","artifacthunt"]
   },
   {
     "Name": "Annot",
     "Level": "96",
     "Alias": "Ereader",
-    "BadNews": "",
-    "Alt": "",
     "Badges": ["gomu3","pants4","perflights","perfboard"]
   },
   {
     "Name": "Mooshy",
     "Level": "92",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["gomu3"]
   },
   {
     "Name": "Rally",
     "Level": "85",
     "Alias": "ROBINSON",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["witch30"]
   },
   {
     "Name": "snayl",
     "Level": "83",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["artifacthunt"]
   },
   {
     "Name": "sawngo",
-    "Level": "83",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "83"
   },
   {
     "Name": "IoIzor",
     "Level": "81",
-    "Alias": "",
-    "BadNews": "Deleted",
-    "Alt": ""
+    "BadNews": "Deleted"
   },
   {
     "Name": "Adaryn",
     "Level": "80",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["shirt5","pants4","witch40"]
   },
   {
     "Name": "IslandChrizz",
-    "Level": "75",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "75"
   },
   {
     "Name": "BlueCream",
-    "Level": "72",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "72"
   },
   {
     "Name": "Chokladkakan",
-    "Level": "72",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "72"
   },
   {
     "Name": "BoatlessMonk",
     "Level": "71",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500"]
   },
   {
     "Name": "IslandSlut",
-    "Level": "70",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "70"
   },
   {
     "Name": "kitsunyChang",
-    "Level": "69",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "69"
   },
   {
     "Name": "NewIslander",
-    "Level": "69",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "69"
   },
   {
     "Name": "Buikpijn",
-    "Level": "69",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "69"
   },
   {
     "Name": "DannysIsland",
     "Level": "67",
-    "Alias": "",
-    "BadNews": "Deleted, Banned - Botting",
-    "Alt": ""
+    "BadNews": "Deleted, Banned - Botting"
   },
   {
     "Name": "Slain",
-    "Level": "66",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "66"
   },
   {
     "Name": "PrinceSquidd",
-    "Level": "66",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "66"
   },
   {
     "Name": "sneils",
-    "Level": "66",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "66"
   },
   {
     "Name": "jung1e",
-    "Level": "66",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "66"
   },
   {
     "Name": "NPCs",
-    "Level": "64",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "64"
   },
   {
     "Name": "saulgoodman",
-    "Level": "63",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "63"
   },
   {
     "Name": "Crylou",
-    "Level": "63",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "63"
   },
   {
     "Name": "DjSammie",
-    "Level": "62",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "62"
   },
   {
     "Name": "MICKYISLAND",
-    "Level": "62",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "62"
   },
   {
     "Name": "Snowbelle",
-    "Level": "60",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "60"
   },
   {
     "Name": "Khebryl",
     "Level": "60",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges": ["perfbrella"]
   },
   {
     "Name": "Boobs",
-    "Level": "60",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "60"
   },
   {
     "Name": "Newbton",
-    "Level": "59",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "59"
   },
   {
     "Name": "Beaktoria",
-    "Level": "58",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "58"
   },
   {
     "Name": "HeroinAddict",
     "Level": "59",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["dynamic","fence"]
   },
   {
     "Name": "Taeha",
-    "Level": "57",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "57"
   },
   {
     "Name": "Shylander",
     "Level": "56",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["gomu3","pants4","witch40","perfwand","damage500","chairs36","workgloves","omok3"]
   },
   {
     "Name": "Oahu",
-    "Level": "57",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "57"
   },
   {
     "Name": "Islander",
     "Level": "56",
     "Alias": "CrimsonClaw",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["dynamic"]
   },
   {
     "Name": "Ekob",
     "Level": "55",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["gomu3","pants4"]
   },
   {
     "Name": "TheIslander",
-    "Level": "55",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "55"
   },
   {
     "Name": "Detached",
-    "Level": "55",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "55"
   },
   {
     "Name": "Barb",
-    "Level": "54",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "54"
   },
   {
     "Name": "fumumu",
-    "Level": "54",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "54"
   },
   {
     "Name": "demosthes",
-    "Level": "56",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
+    "Level": "57",
     "Badges":["gomu3","shirt3","damage300"]
   },
   {
     "Name": "Thelslander",
-    "Level": "55",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "55"
   },
   {
     "Name": "Zheedie",
-    "Level": "53",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "53"
   },
   {
     "Name": "MotorollaG",
-    "Level": "53",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "53"
   },
   {
     "Name": "DoctorSnail",
-    "Level": "52",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "52"
   },
   {
     "Name": "DrewIsland",
     "Level": "52",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["shirt4"]
   },
   {
     "Name": "Phack",
-    "Level": "52",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "52"
   },
   {
     "Name": "DwightK",
-    "Level": "52",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "52"
   },
   {
     "Name": "Anchorage",
-    "Level": "52",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "52"
   },
   {
     "Name": "KillingTime",
-    "Level": "52",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "52"
   },
   {
     "Name": "ShimaPanda",
-    "Level": "52",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "52"
   },
   {
     "Name": "YoungLePopo",
-    "Level": "51",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "51"
   },
   {
     "Name": "omgwow",
-    "Level": "51",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "51"
   },
   {
     "Name": "Permit",
     "Level": "51",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["witch30"]
   },
   {
     "Name": "Delfino",
-    "Level": "51",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "51"
   },
   {
     "Name": "BananaIsland",
     "Level": "51",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["dynamic"]
   },
   {
     "Name": "Evacchi",
-    "Level": "51",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "51"
   },
   {
     "Name": "WatIsHarbor",
     "Level": "51",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "BadNews": "Took the Boat in 2017"
   },
   {
     "Name": "WasteOfTime",
-    "Level": "51",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "51"
   },
   {
     "Name": "Fired",
-    "Level": "50",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "50"
   },
   {
     "Name": "IslandKush",
-    "Level": "50",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "50"
   },
   {
     "Name": "Bella",
-    "Level": "50",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "50"
   },
   {
     "Name": "Lonelymoo",
-    "Level": "50",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "50"
   },
   {
     "Name": "Vallug",
-    "Level": "50",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "50"
   },
   {
     "Name": "Homebone",
-    "Level": "50",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "50"
   },
   {
     "Name": "Setsunax3",
-    "Level": "50",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "50"
   },
   {
     "Name": "Slowride",
-    "Level": "50",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "50"
   },
   {
     "Name": "Ague",
-    "Level": "50",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "50"
   },
   {
     "Name": "Fundlander",
-    "Level": "56",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "56"
   },
   {
     "Name": "Oreliel",
-    "Level": "49",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "49"
   },
   {
     "Name": "VillageIdiot",
-    "Level": "49",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "49"
   },
   {
     "Name": "Frenzeys",
-    "Level": "49",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "49"
   },
   {
     "Name": "DragonAsh",
-    "Level": "48",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "48"
   },
   {
     "Name": "Woogie",
-    "Level": "48",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "48"
   },
   {
     "Name": "Daxos",
-    "Level": "48",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "48"
   },
   {
     "Name": "Staying",
-    "Level": "48",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "48"
   },
   {
     "Name": "MissedDaBoat",
-    "Level": "47",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "47"
   },
   {
     "Name": "mendroid",
-    "Level": "47",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "47"
   },
   {
     "Name": "WhiteCaviar",
-    "Level": "47",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "47"
   },
   {
     "Name": "islandmelan",
-    "Level": "47",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "47"
   },
   {
     "Name": "Vigi",
-    "Level": "47",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "47"
   },
   {
     "Name": "noob4ever",
-    "Level": "47",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "47"
   },
   {
     "Name": "PalmSap",
-    "Level": "47",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "47"
   },
   {
     "Name": "Aborigine",
-    "Level": "47",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "47"
   },
   {
     "Name": "snapplesx",
-    "Level": "47",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "47"
   },
   {
     "Name": "Tails183",
-    "Level": "46",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "46"
   },
   {
     "Name": "YesImaN00b",
-    "Level": "46",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "46"
   },
   {
     "Name": "IslandVanity",
-    "Level": "46",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "46"
   },
   {
     "Name": "minitaro",
-    "Level": "46",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "46"
   },
   {
     "Name": "SnowyHeartZ",
-    "Level": "46",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "46"
   },
   {
     "Name": "SnailKid",
-    "Level": "45",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "45"
   },
   {
     "Name": "cowe",
-    "Level": "45",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "45"
   },
   {
     "Name": "Imlost",
-    "Level": "45",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "45"
   },
   {
     "Name": "virus17",
-    "Level": "45",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "45"
   },
   {
     "Name": "Abolbo",
-    "Level": "45",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "45"
   },
   {
     "Name": "Floater",
     "Level": "45",
-    "Alias": "",
-    "BadNews": "Banned - RWT",
-    "Alt": ""
+    "BadNews": "Banned - RWT"
   },
   {
     "Name": "StarTropics",
-    "Level": "44",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "44"
   },
   {
     "Name": "Ataynep",
-    "Level": "44",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "44"
   },
   {
     "Name": "Xochi",
-    "Level": "44",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "44"
   },
   {
     "Name": "Catmint",
-    "Level": "44",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "44"
   },
   {
     "Name": "15kg",
     "Level": "44",
-    "Alias": "",
-    "BadNews": "Banned - Account Sharing",
-    "Alt": ""
+    "BadNews": "Banned - Account Sharing"
   },
   {
     "Name": "NoSkills",
-    "Level": "45",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "45"
   },
   {
     "Name": "Chibilander",
-    "Level": "44",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "44"
   },
   {
     "Name": "Schwer",
-    "Level": "44",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "44"
   },
   {
     "Name": "Genderfreak",
-    "Level": "44",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "44"
   },
   {
     "Name": "iHitSnail",
-    "Level": "44",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "44"
   },
   {
     "Name": "MewIslander",
-    "Level": "44",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "44"
   },
   {
     "Name": "Valtarre",
-    "Level": "47",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
+    "Level": "48",
     "Badges":["dexlander","damage200"]
   },
   {
     "Name": "inland",
-    "Level": "43",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "43"
   },
   {
     "Name": "Hoodwinker",
-    "Level": "43",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "43"
   },
   {
     "Name": "Lerick",
-    "Level": "43",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "43"
   },
   {
     "Name": "Isleturi",
-    "Level": "43",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "43"
   },
   {
     "Name": "lovegone",
-    "Level": "43",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "43"
   },
   {
     "Name": "MayFlowers",
-    "Level": "43",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "43"
   },
   {
     "Name": "BegPride",
     "Level": "43",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["pants3"]
   },
   {
     "Name": "BootyClapper",
-    "Level": "42",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "42"
   },
   {
     "Name": "RyuNoob",
-    "Level": "42",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "42"
   },
   {
     "Name": "Wavecap",
-    "Level": "42",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "42"
   },
   {
     "Name": "Basically",
-    "Level": "42",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "42"
   },
   {
     "Name": "Snooze",
-    "Level": "42",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "42"
   },
   {
     "Name": "gunpoint",
     "Level": "42",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["witch30"]
   },
   {
     "Name": "Relate",
-    "Level": "42",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "42"
   },
   {
     "Name": "MrBeef",
-    "Level": "41",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "41"
   },
   {
     "Name": "lootystays",
-    "Level": "41",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "41"
   },
   {
     "Name": "Cowbelle",
-    "Level": "41",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "41"
   },
   {
     "Name": "juman",
-    "Level": "41",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "41"
   },
   {
     "Name": "LowIy",
     "Level": "41",
-    "Alias": "",
-    "BadNews": "",
     "Alt": "Lowly",
     "Badges":["magelander"]
   },
   {
     "Name": "Ramleh",
-    "Level": "41",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "41"
   },
   {
     "Name": "Perfidious",
-    "Level": "41",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "41"
   },
   {
     "Name": "Granpulse",
-    "Level": "41",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "41"
   },
   {
     "Name": "ZakoZantern",
-    "Level": "40",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "40"
   },
   {
     "Name": "IslandBoyz",
-    "Level": "40",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "40"
   },
   {
     "Name": "Bream",
-    "Level": "40",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "40"
   },
   {
     "Name": "DevOnIsland",
-    "Level": "40",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "40"
   },
   {
     "Name": "Tsukishima",
     "Level": "40",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["perfboard"]
   },
   {
     "Name": "Ichihime",
-    "Level": "40",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "40"
   },
   {
     "Name": "Eurobeatnik",
-    "Level": "40",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "40"
   },
   {
     "Name": "philswife",
-    "Level": "40",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "40"
   },
   {
     "Name": "JohnLander",
-    "Level": "40",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "40"
   },
   {
     "Name": "TRAPBOI",
-    "Level": "40",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "40"
   },
   {
     "Name": "Noobtando",
-    "Level": "39",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "39"
   },
   {
     "Name": "OwenWasHer",
-    "Level": "39",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "39"
   },
   {
     "Name": "BadDecision",
-    "Level": "39",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "39"
   },
   {
     "Name": "Exthene",
-    "Level": "39",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "39"
   },
   {
     "Name": "BARF",
-    "Level": "39",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "39"
   },
   {
     "Name": "Gutter",
-    "Level": "39",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "39"
   },
   {
     "Name": "Secluded",
-    "Level": "39",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "39"
   },
   {
     "Name": "Boatphobia",
-    "Level": "39",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "39"
   },
   {
     "Name": "Lalafae",
-    "Level": "39",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "39"
   },
   {
     "Name": "NaughtyHoe",
-    "Level": "39",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "39"
   },
   {
     "Name": "Father",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "deadppl",
     "Level": "38",
-    "Alias": "",
-    "BadNews": "Banned - Botting",
-    "Alt": ""
+    "BadNews": "Banned - Botting"
   },
   {
     "Name": "Wienor",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "SoreTooth",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "ooYUIoo",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "IslandMyCity",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "TaZLaNDeR",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "Fortyeight",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "ChiefSmeng",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "Nauset",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "Deryn",
     "Level": "38",
-    "Alias": "",
-    "BadNews": "",
     "Alt": "Adaryn",
     "Badges":["magelander"]
   },
   {
     "Name": "nuber",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "Lelador",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "IslanderCye",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "tyeon",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "Kowlar",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "2ManyShrooms",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "Stratagem",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "Niikasd",
     "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["shirt4"]
   },
   {
     "Name": "daredemonai",
-    "Level": "38",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "38"
   },
   {
     "Name": "Speklap",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "xSnail",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "SadakoChan",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "Laxz",
     "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["shirt5"]
   },
   {
     "Name": "Takoa",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "Sincashy",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "Bwek",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "Noobley",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "Homemade",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "Adagaki",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "Jollybaby",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "Shimon",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "DDorian",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "BillyMaize1",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "steb",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "IslandAneu",
-    "Level": "37",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "37"
   },
   {
     "Name": "Shr00m",
-    "Level": "36",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "36"
   },
   {
     "Name": "Kidou",
-    "Level": "36",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "36"
   },
   {
     "Name": "IdleN---a",
-    "Level": "36",
-    "Alias": "",
-    "BadNews": "Name Censored",
-    "Alt": ""
+    "Level": "36"
   },
   {
     "Name": "BestBuddy",
-    "Level": "36",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "36"
   },
   {
     "Name": "Soriak",
-    "Level": "36",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "36"
   },
   {
     "Name": "NoBoat",
-    "Level": "36",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "36"
   },
   {
     "Name": "zagex",
-    "Level": "36",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "36"
   },
   {
     "Name": "SNAIL",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "StrandedHere",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "PermaIsland",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "Poop37",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "IslandMadnes",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "Rexiolander",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "Memphon",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "BL00",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "Boatophobic",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "iStayHere",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "IslandDango",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "Stumper",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "Hots",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "V0id",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "TheAmateur",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "kicsi",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "IslanderKarp",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "DumbIsland",
-    "Level": "35",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "35"
   },
   {
     "Name": "Vaudeville",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "StareDecisis",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "OneSlapMan",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "NoobGlitch",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "IwillStay",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "FULLDEXME",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "Eyesland",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "Auevaria",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "Gooods",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "Protato",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "IslandStory",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "iPokeSnails",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "openpro",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "BenHammer",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "Blueisland",
     "Level": "34",
-    "Alias": "",
-    "BadNews": "",
     "Alt": "Bluecream"
   },
   {
     "Name": "Puberty",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "Gump",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "IslandMage",
     "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["magelander"]
   },
   {
     "Name": "Moganji",
-    "Level": "34",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "34"
   },
   {
     "Name": "susube12",
-    "Level": "33",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "33"
   },
   {
     "Name": "ThisIsHome",
-    "Level": "33",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "33"
   },
   {
     "Name": "YuriGod",
-    "Level": "33",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "33"
   },
   {
     "Name": "Shave",
-    "Level": "33",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "33"
   },
   {
     "Name": "RXIslander",
-    "Level": "33",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "33"
   },
   {
     "Name": "Tailu",
-    "Level": "33",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "33"
   },
   {
     "Name": "LCH2",
-    "Level": "33",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "33"
   },
   {
     "Name": "WarSlug",
-    "Level": "33",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "33"
   },
   {
     "Name": "Taslynn",
-    "Level": "33",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "33"
   },
   {
     "Name": "GGInInDer",
-    "Level": "33",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "33"
   },
   {
     "Name": "Eilander",
-    "Level": "33",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "33"
   },
   {
     "Name": "EvilBetty",
-    "Level": "33",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "33"
   },
   {
     "Name": "j3ll79",
-    "Level": "33",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "33"
   },
   {
     "Name": "NomNomNomNom",
-    "Level": "33",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "33"
   },
   {
     "Name": "Ailand",
-    "Level": "41",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "41"
   },
   {
     "Name": "Nooburt",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "TrumpsBack",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "EverIslander",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "NoBoater",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "Villager",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "Landzerr",
     "Level": "32",
-    "Alias": "",
-    "BadNews": "Banned - Fly Hacks in JQ",
-    "Alt": ""
+    "BadNews": "Banned - Fly Hacks in JQ"
   },
   {
     "Name": "Jale",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "Harutsuki",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "BaDonkaDonk",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "IOSYS",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "Deidara",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "Chimney",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "Bralette",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "Whack",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "LoveIsland",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "l3asic",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "HotThot",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "NekoStuffs",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "Vista",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "Nullbyte",
     "Level": "33",
-    "Alias": "SirNyanta",
-    "BadNews": "",
-    "Alt": ""
+    "Alias": "SirNyanta"
   },
   {
     "Name": "iCanAssist",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "Deity",
-    "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "32"
   },
   {
     "Name": "ShotCaller",
     "Level": "31",
-    "Alias": "",
-    "BadNews": "",
     "Alt": "Annot"
   },
   {
     "Name": "TurtleHermlt",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "Isolander",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "islandmop",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "IslandLord",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "DiJeeSammie",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "Deported",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "Apis",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "Islanderrs",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "geologic",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "DBIslander",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "VoidOfBliss",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "TnnT",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "SnailEmperor",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "page99",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "Schnitzel",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "Kendria",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "SlappyJr",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "iCantSwim",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "IslanderJoel",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "Kasuto",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "Crazily",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "Quitlander",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "Nature",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "Accel",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "COM002",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "PenIsland",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "MereCat",
-    "Level": "31",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "31"
   },
   {
     "Name": "NoPointer",
     "Level": "32",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": "",
     "Badges":["nopointer"]
   },
   {
     "Name": "FatGuyIRL",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Snailblazer",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "FatherID",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "IslandForeve",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "CalledShot",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Grylls",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Fabulous",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Oniisan",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "safehouse",
     "Level": "30",
-    "Alias": "",
-    "BadNews": "",
     "Alt": "Annot"
   },
   {
     "Name": "SnailQueen",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "slit",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "PhilJackson",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "NoBoatJoe",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Nekosei",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Lentil",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Gids",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "EiIander",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "j3lly9",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "wulfy",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "jelly",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "RainbowH0e",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "JulesIsland",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Kuchkii",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Neislander",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Aquaroad",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Moirai",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "TheFoggiest",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Ecliptic",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Striver",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Flux",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Rednalsi",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "wargreymon",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Command",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "sidemirrors",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "hoejoe",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Ambivert",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Shellcaster",
     "Level": "30",
-    "Alias": "",
-    "BadNews": "",
     "Alt": "Shylander",
     "Badges":["magelander"]
   },
   {
     "Name": "Native",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "MeStuck",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Stoven",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "Gumptwo",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "IslandTessa",
-    "Level": "30",
-    "Alias": "",
-    "BadNews": "",
-    "Alt": ""
+    "Level": "30"
   },
   {
     "Name": "BOIBUTT",
     "Level": "30",
-    "Alias": "",
-    "BadNews": "",
     "Alt": "TRAPBOI"
   }
 ]

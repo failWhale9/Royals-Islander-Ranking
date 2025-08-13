@@ -136,14 +136,14 @@ function createTable(jsons) {
                         td.appendChild(pbad);
                     }
 
-                    if (item['Alias'] != "") {
+                    if (item.hasOwnProperty("Alias") && item['Alias'] != "") {
                         const palias = document.createElement('p');
                         palias.textContent = "(formerly " + item['Alias'] + ")";
                         palias.classList.add("Alias");
                         td.appendChild(palias);
                     }
 
-                    if (item['Alt'] != "") {
+                    if (item.hasOwnProperty("Alt") && item['Alt'] != "") {
                         const palt = document.createElement('p');
                         palt.textContent = "(" + item['Alt'] + "'s alt)";
                         palt.classList.add("Alt");

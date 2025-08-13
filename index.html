@@ -19,6 +19,7 @@
 <div id="navbar">
     <a href=""><span class="navInactive"> Rankings </span></a>
     <a href="/badges.html"><span class="navActive"> Badges </span></a>
+    <a href="/unranked.html"><span class="navActive"> Unranked Islanders </span></a>
 </div>
 
 <div id="table-container"></div>
@@ -86,6 +87,12 @@ function createTable(jsons) {
     const tbody = document.createElement('tbody');
 
     data.forEach(item => {
+
+        if(item.hasOwnProperty("BadNews") && item["BadNews"] != "")
+        {
+            return;
+        }
+
         const row = document.createElement('tr');
         
         headers.forEach(header => {
@@ -132,21 +139,14 @@ function createTable(jsons) {
                     pname.classList.add("Name");
                     td.appendChild(pname);
 
-                    if (item['BadNews'] != "") {
-                        const pbad = document.createElement('p');
-                        pbad.textContent = "(" + item['BadNews'] + ")";
-                        pbad.classList.add("BadNews");
-                        td.appendChild(pbad);
-                    }
-
-                    if (item['Alias'] != "") {
+                    if (item.hasOwnProperty("Alias") && item['Alias'] != "") {
                         const palias = document.createElement('p');
                         palias.textContent = "(formerly " + item['Alias'] + ")";
                         palias.classList.add("Alias");
                         td.appendChild(palias);
                     }
 
-                    if (item['Alt'] != "") {
+                    if (item.hasOwnProperty("Alt") && item['Alt'] != "") {
                         const palt = document.createElement('p');
                         palt.textContent = "(" + item['Alt'] + "'s alt)";
                         palt.classList.add("Alt");
