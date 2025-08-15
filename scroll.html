@@ -44,31 +44,35 @@
     <input type="submit" value="New Item" onclick="newItem()">
 </div>
 
+<!-- Inventory XY Values: 
+ Top Left: 84,618
+ Each X: +36
+ Each Y: +34
+ Shoe: 225,237
+-->
+
+<div class="scrollsim">
+<img id="draggableImage" src="images/scroll/10.png" style="position:absolute; top:84px; left:618px;" draggable="true">
+<img id="baseItem" src="images/scroll/gomu.png" style="position:absolute; top:225px; left:237px;">
+<div id="dropZone" style="position:absolute; top:217px; left:237px; width:30px; height:30px;"></div>
+<img id="char" src="/images/scroll/toben-neutral.gif" style="position:absolute; top:150px; left:442px; z-index: 9998;">
+<img id="face" src="" style="position:absolute; top:152px; left:444px; z-index: 9999;">
+<img id="scrollYes" src="" style="position:absolute; top:-10px; left:337px;">
+<img id="scrollNo" src="" style="position:absolute; top:60px; left:413px;">
+</div>
+
 
 
 
 <div class="scrolldiv">
     <p>Stats:</p>
     <div>
-        <span>Scrolls Used:</span><span></span>
-        <span>Bases Used:</span><span></span>
-        <span>Best Result:</span><span></span>
+        <span id="scrollStat">Scrolls Used:</span><span></span>
+        <span id="scrollStat">Bases Used:</span><span></span>
+        <span id="scrollStat">Best Result:</span><span></span>
     </div>
     <input type="submit" value="Reset Stats">
 </div>
-
-
-<img id="draggableImage" src="images/shy.png" draggable="true" />
-
-<div id="dropZone" style="width: 100px; height: 100px; border: 2px dashed gray;">
-  Drop image here
-</div>
-
-
-
-
-
-
 
 
 
@@ -135,12 +139,54 @@ dropZone.addEventListener("drop", (e) => {
   }
 });
 
-// Your custom function
-function onImageDropped() {
-  alert("Image dropped on the target!");
+function badResult()
+{
+  let sound = new Audio('/images/scroll/no.mp3');
+  const noAnim = document.getElementById('scrollNo');
+  const face = document.getElementById('face');
+  sound.play();
+  noAnim.style.display = 'block';
+  noAnim.src = '';
+  noAnim.src = 'images/scroll/no.gif';
+  face.src ='/images/scroll/toben-smile.png';
+  setTimeout(function() {
+    face.src ='';
+  }, 1000);
 }
 
-</script>
+function goodResult()
+{
+  let sound = new Audio('/images/scroll/yes.mp3');
+  const yesAnim = document.getElementById('scrollYes');
+  const face = document.getElementById('face');
+  sound.play();
+  yesAnim.style.display = 'block';
+  yesAnim.src = '';
+  yesAnim.src = 'images/scroll/yes.gif';
+  face.src ='/images/scroll/toben-smile.png';
+  setTimeout(function() {
+    face.src ='';
+  }, 1000);
+}
 
+
+function onImageDropped() {
+  if(Math.random() >= 0.9)
+  {
+    goodResult();
+  }
+  else
+  {
+    badResult();
+  }
+}
+
+// todo:
+// mouse pointer
+// random emotes
+// image box hover
+// scroll box hover
+
+</script>
 </body>
 </html>
