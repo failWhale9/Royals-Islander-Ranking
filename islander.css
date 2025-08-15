@@ -270,6 +270,15 @@ div.BadgeContainer {
 	}
 }
 
+div.scrolldiv {
+	background-color: var(--cell);
+	color: white !important;
+	padding: 0px 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+	font-family: Arial, sans-serif !important;
+}
+
 #badges-container {
 	background-color: var(--cell);
 	padding: 0px 20px;
