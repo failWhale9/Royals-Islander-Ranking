@@ -306,6 +306,27 @@ div.baseTop {
 div.baseBox {
 	background-color:#131b6faa;
 	width:230px;
+	border-radius: 4px;
+	outline: 1px solid #131b6faa;
+	outline-offset: 1px;
+}
+
+div.scrollBox {
+	background-color:#131b6faa;
+	width:290px;
+	border-radius: 4px;
+	outline: 1px solid #131b6faa;
+	outline-offset: 1px;
+}
+
+#gomuBox {
+	visibility: hidden;
+	position:fixed;
+}
+
+#gomuBox.visible {
+	opacity: 1;
+  	visibility: visible;
 }
 
 div.baseImgBox {
@@ -332,6 +353,20 @@ div.baseStats{
 	width:65%;
 }
 
+div.scrollStats{
+	color:white;
+	font-family: sans-serif;
+	font-size:12px;
+	float:right;
+	width:65%;
+	margin-top:5px;
+}
+
+div.scrollStats > p {
+	margin-top: 3px;
+	margin-bottom:3px;
+}
+
 span.itemTitle {
 	color:white;
 	font-family:sans-serif;
@@ -345,7 +380,7 @@ ul.statList{
 	font-family: monospace;
 	font-size:11px;
 	margin-top:0px;
-	padding-left:7px;
+	padding-left:14px;
 }
 
 span.statValue{
@@ -359,6 +394,8 @@ ul.statList li::before {
 	color:#ff6600;
 	font-size:8px;
 	font-weight:800;
+	position: absolute;
+	left: 5px;
 }
 
 

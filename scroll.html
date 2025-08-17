@@ -26,7 +26,7 @@
 
 <div class="scrolldiv">
     <label>Base item: </label> 
-    <select id="itemBase" onchange="baseChange()">
+    <select id="itemBaseSelect" onchange="baseChange()">
         <option value ="gomu">White Gomushin</option>
         <option value ="stripeM">Blue One-Lined T-Shirt</option>
         <option value ="stripeF">Red Striped T-Shirt</option>
@@ -36,7 +36,7 @@
 
     <label>Character: </label>
     <select id="character" onchange="charChange()">
-        <option value ="toben">Toben</option>
+        <option value ="toben">Default</option>
         <option value ="namo">Namo</option>
         <option value ="lowly">Lowly</option>
         <option value ="mooshy">Mooshy</option>
@@ -75,40 +75,55 @@
 </div>
 
 
-<div id="gomuBase">
-  <img src="images/gomutest.jpg">
-  <div id="baseBox" class="baseBox">
-    <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">White Gomushin</span>
-    <div class="baseTop">
-      <div class="baseImgBox">
-        <img class="baseImg "src="images/scroll/gomu.png">
-      </div>
-      <div class="baseStats">
-        <ul style="list-style:none;padding-left:10px;margin-top:0px;">
-          <li>REQ LV: 11</li>
-          <li>REQ STR: 0</li>
-          <li>REQ DEX: 0</li>
-          <li>REQ INT: 0</li>
-          <li>REQ LUK: 0</li>
-          <li>REQ FAM: 0</li>
-          <li style="color:#999999">ITEM LEV: -</li>
-          <li style="color:#999999">ITEM EXP: -</li>
-        </ul>
-      </div>
+<img src="images/gomutest.jpg">
+
+
+<div id="gomuBox" class="baseBox">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">White Gomushin</span> <span id="itemTag" class="itemTitle">(+0)</span>
+  <div class="baseTop">
+    <div class="baseImgBox">
+      <img class="baseImg "src="images/scroll/gomu.png">
     </div>
-    <div style="clear: both;"></div>
-    <img src="images/scroll/classes.png">
-    <ul class="statList">
-      <li>CATEGORY: SHOES</li>
-      <li>DEX: +<span class="statValue">12</span></li>
-      <li>WEAPON DEF.: <span class="statValue">9</span></li>
-      <li>SPEED: +<span class="statValue">12</span></li>
-      <li>JUMP: +<span class="statValue">20</span></li>
-      <li>NUMBER OF UPGRADES AVAILABLE: <span class="statValue">0</span></li>
-    </ul>
+    <div class="baseStats">
+      <ul style="list-style:none;padding-left:10px;margin-top:0px;">
+        <li>REQ LV: 11</li>
+        <li>REQ STR: 0</li>
+        <li>REQ DEX: 0</li>
+        <li>REQ INT: 0</li>
+        <li>REQ LUK: 0</li>
+        <li>REQ FAM: 0</li>
+        <li style="color:#999999">ITEM LEV: -</li>
+        <li style="color:#999999">ITEM EXP: -</li>
+      </ul>
+    </div>
   </div>
+  <div style="clear: both;"></div>
+  <img src="images/scroll/classes.png">
+  <ul class="statList">
+    <li>CATEGORY: SHOES</li>
+    <li id="gomuDexLi">DEX: <span class="statValue">+</span><span id="gomuDex" class="statValue">0</span></li>
+    <li id="gomuWdefLi">WEAPON DEF.: <span id="gomuWdef" class="statValue">9</span></li>
+    <li id="gomuAccLi">ACCURACY: <span  class="statValue">+</span><span id="gomuAcc" class="statValue">0</span></li>
+    <li id="gomuAvoLi">AVOIDABILITY: <span class="statValue">+</span><span id="gomuAvo" class="statValue">0</span></li>
+    <li id="gomuSpdLi">SPEED: <span class="statValue">+</span><span id="gomuSpd" class="statValue">0</span></li>
+    <li id="gomuJmpLi">JUMP: <span class="statValue">+</span><span id="gomuJmp" class="statValue">0</span></li>
+    <li>NUMBER OF UPGRADES AVAILABLE: <span id="gomuSlt" class="statValue">0</span></li>
+  </ul>
 </div>
 
+<div id="scrollBox" class="scrollBox">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">Scroll for Shoes for Jump 10%</span>
+  <div style="clear: both;"></div>
+  <div class="baseImgBox" style="margin-left:10px;margin-top:5px;margin-bottom:18px;">
+    <img class="baseImg "src="images/scroll/10.png" style="top:23px;">
+  </div>
+  <div class="scrollStats">
+    <p>Improves jump on shoes.</p>
+    <p>Success rate: 10%, jump +5,</p>
+    <p>DEX+3, speed+1.</p>
+  </div>
+  <div style="clear: both;"></div>
+</div>
 
 
 
@@ -130,7 +145,9 @@ function baseChange() {
     // Clear item box
     // Populate inventory
     // Change equip view
+
     // Reset stats
+    newItem();
 
 }
 
@@ -138,8 +155,52 @@ function charChange() {
 
 }
 
+function getRandomInteger(min, max) {
+  min = Math.ceil(min); // Ensure min is an integer
+  max = Math.floor(max); // Ensure max is an integer
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function newItem() {
+
+    const baseType = document.getElementById("itemBaseSelect");
+
+    switch(baseType.value) {
+      case "gomu":
+        let wdef = 0;
+        let spd = 0;
+        const gomuSpd = document.getElementById("gomuSpd");
+        const gomuWdef = document.getElementById("gomuWdef");
+        const gomuSlt = document.getElementById("gomuSlt");
+        const gomuDexLi = document.getElementById("gomuDexLi");
+        const gomuAccLi = document.getElementById("gomuAccLi");
+        const gomuAvoLi = document.getElementById("gomuAvoLi");
+        const gomuJmpLi = document.getElementById("gomuJmpLi");
+        
+        if(Math.random() >= 0.8) {
+          wdef = getRandomInteger(3,10);
+          spd = getRandomInteger(1,8);
+        }
+        else {
+          wdef = getRandomInteger(3,5);
+          spd = getRandomInteger(1,3);
+        }
+        console.log("wdef = " + wdef + "    spd = " + spd);
+        gomuSpd.textContent = spd;
+        gomuWdef.textContent = wdef;
+        gomuSlt.textContent = "5";
+        gomuDexLi.style.display = "none";
+        gomuAccLi.style.display = "none";
+        gomuAvoLi.style.display = "none";
+        gomuJmpLi.style.display = "none";
+
+        break;
+      default:
+        break;
+    }
+
     // Roll for new item
+
     // Refresh item box
 }
 
@@ -215,11 +276,29 @@ function onImageDropped() {
   }
 }
 
+//Base Tooltip Code
+const tooltip = document.getElementById('gomuBox'); // eventually replace with find-all
+const hoverable = document.getElementById('dropZone');
+
+hoverable.addEventListener('mouseenter', () => {
+    const rect = hoverable.getBoundingClientRect();
+    tooltip.style.top = `${rect.bottom + 8}px`;
+    tooltip.style.left = `${rect.left}px`;
+    void tooltip.offsetWidth;
+    tooltip.classList.add('visible');
+});
+
+hoverable.addEventListener('mouseleave', () => {
+  tooltip.classList.remove('visible');
+});
+
 // todo:
 // mouse pointer
 // random emotes
 // image box hover
 // scroll box hover
+// Sound effect for new item button (click?)
+// extend background so item doesn't escape
 
 </script>
 </body>
