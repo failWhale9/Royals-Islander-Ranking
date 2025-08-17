@@ -17,7 +17,7 @@
   },
   {
     "Name":"IslandLizard",
-    "Level":"32"
+    "Level":"34"
   },
   {
     "Name": "Thup",
@@ -38,7 +38,7 @@
     "Name": "Annot",
     "Level": "96",
     "Alias": "Ereader",
-    "Badges": ["gomu3","pants4","perflights","perfboard"]
+    "Badges": ["gomu3","pants4","perflights","perfboard","chairs12"]
   },
   {
     "Name": "Mooshy",
@@ -487,7 +487,7 @@
   },
   {
     "Name": "Valtarre",
-    "Level": "48",
+    "Level": "49",
     "Badges":["dexlander","damage200"]
   },
   {
@@ -995,7 +995,7 @@
     "Level": "33"
   },
   {
-    "Name": "ThisIsHome",
+    "Name": "ThislsHome",
     "Level": "33"
   },
   {
@@ -1255,7 +1255,7 @@
   },
   {
     "Name": "NoPointer",
-    "Level": "32",
+    "Level": "33",
     "Badges":["nopointer"]
   },
   {

@@ -298,6 +298,70 @@ div.scrollsim {
 	margin-bottom: 15px;
 }
 
+div.baseTop {
+	margin-left:10px;
+	margin-top:10px;
+}
+
+div.baseBox {
+	background-color:#131b6faa;
+	width:230px;
+}
+
+div.baseImgBox {
+	width:68px;
+	height:68px;
+	background-color: #ffffffaa;
+	float:left;
+	position:relative;
+}
+
+img.baseImg {
+	transform: scale(2);
+	image-rendering: pixelated;
+	position:absolute;
+	top:32px;
+	left:20px;
+}
+
+div.baseStats{
+	color:white;
+	font-family: monospace;
+	font-size:10px;
+	float:right;
+	width:65%;
+}
+
+span.itemTitle {
+	color:white;
+	font-family:sans-serif;
+	font-weight:bold;
+	font-size:12px;
+}
+
+ul.statList{
+	list-style: none;
+	color:#ffeecc;
+	font-family: monospace;
+	font-size:11px;
+	margin-top:0px;
+	padding-left:7px;
+}
+
+span.statValue{
+	color:white;
+	font-weight: bold;
+}
+
+ul.statList li::before {
+	content:"+";
+	font-family: sans-serif;
+	color:#ff6600;
+	font-size:8px;
+	font-weight:800;
+}
+
+
 #badges-container {
 	background-color: var(--cell);
 	padding: 0px 20px;
