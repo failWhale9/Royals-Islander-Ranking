@@ -329,6 +329,16 @@ div.scrollBox {
   	visibility: visible;
 }
 
+#scrollBox {
+	visibility: hidden;
+	position:fixed;
+}
+
+#scrollBox.visible {
+	opacity: 1;
+  	visibility: visible;
+}
+
 div.baseImgBox {
 	width:68px;
 	height:68px;

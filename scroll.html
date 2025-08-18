@@ -52,9 +52,10 @@
 -->
 
 <div class="scrollsim">
-<img id="draggableImage" src="images/scroll/10.png" style="position:absolute; top:84px; left:618px;" draggable="true">
-<img id="baseItem" src="images/scroll/gomu.png" style="position:absolute; top:225px; left:237px;">
-<div id="dropZone" style="position:absolute; top:217px; left:237px; width:30px; height:30px;"></div>
+<img id="shoejmp10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="position:absolute; top:84px; left:618px;" draggable="true" data-title="Scroll for Shoes for Jump 10%" data-desc1="Improves jump on shoes." data-desc2="Success rate: 10%, jump +5," data-desc3="DEX+3, speed+1.">
+<img id="shoedex10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="position:absolute; top:84px; left:654px;" draggable="true" data-title="Scroll for Shoes for DEX 10%" data-desc1="Improves dexterity on shoes." data-desc2="Success rate: 10%, Avoidability" data-desc3="+5, accuraccy +3, speed+1">
+<img id="gomu" class="dropZone activeBase" src="images/scroll/gomu.png" style="position:absolute; top:225px; left:237px;">
+<!--<div id="dropZone" style="position:absolute; top:217px; left:237px; width:30px; height:30px;"></div>-->
 <img id="char" src="/images/scroll/toben-neutral.gif" style="position:absolute; top:150px; left:442px; z-index: 9998;">
 <img id="face" src="" style="position:absolute; top:152px; left:444px; z-index: 9999;">
 <img id="scrollYes" src="" style="position:absolute; top:-10px; left:337px;">
@@ -67,9 +68,9 @@
 <div class="scrolldiv">
     <p>Stats:</p>
     <div>
-        <span id="scrollStat">Scrolls Used:</span><span></span>
-        <span id="scrollStat">Bases Used:</span><span></span>
-        <span id="scrollStat">Best Result:</span><span></span>
+        <span id="scrollStat">Scrolls Used:</span><span id="scrollStatValue">0</span>
+        <span id="scrollStat">Bases Used:</span><span id="scrollStatValue">0</span>
+        <span id="scrollStat">Best Result:</span><span id="scrollStatValue">N/A</span>
     </div>
     <input type="submit" value="Reset Stats">
 </div>
@@ -79,7 +80,7 @@
 
 
 <div id="gomuBox" class="baseBox">
-  <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">White Gomushin</span> <span id="itemTag" class="itemTitle">(+0)</span>
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">White Gomushin</span> <span id="gomuTag" class="itemTitle">(+0)</span>
   <div class="baseTop">
     <div class="baseImgBox">
       <img class="baseImg "src="images/scroll/gomu.png">
@@ -112,15 +113,15 @@
 </div>
 
 <div id="scrollBox" class="scrollBox">
-  <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">Scroll for Shoes for Jump 10%</span>
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span id="scrolltipTitle" class="itemTitle">Scroll for Shoes for Jump 10%</span>
   <div style="clear: both;"></div>
   <div class="baseImgBox" style="margin-left:10px;margin-top:5px;margin-bottom:18px;">
     <img class="baseImg "src="images/scroll/10.png" style="top:23px;">
   </div>
   <div class="scrollStats">
-    <p>Improves jump on shoes.</p>
-    <p>Success rate: 10%, jump +5,</p>
-    <p>DEX+3, speed+1.</p>
+    <p id="scrolltipDesc1">Improves jump on shoes.</p>
+    <p id="scrolltipDesc2">Success rate: 10%, jump +5,</p>
+    <p id="scrolltipDesc3">DEX+3, speed+1.</p>
   </div>
   <div style="clear: both;"></div>
 </div>
@@ -137,14 +138,107 @@
 
 <script>
 
-const image = document.getElementById("draggableImage");
-const dropZone = document.getElementById("dropZone");
+const draggables = document.querySelectorAll('.draggableImage');
+const dropZone = document.querySelectorAll('.dropZone.activeBase');
+
+// When drag starts, set data
+draggables.forEach(draggable => {
+  draggable.addEventListener("dragstart", (e) => {
+    e.dataTransfer.setData("text/plain", e.target.id); // optional: can set more specific info
+  });
+});
+
+// Allow drop on the dropZone
+dropZone[0].addEventListener("dragover", (e) => {
+  e.preventDefault(); // Necessary to allow dropping
+});
+
+// Handle drop
+dropZone[0].addEventListener("drop", (e) => {
+  e.preventDefault();
+  const scrollType = e.dataTransfer.getData("text/plain");
+  scrollActivated(scrollType, dropZone[0].id);
+
+});
+
+function updateTag(tag) {
+  if (tag.textContent == "") {
+    tag.textContent = "(+1)";
+  }
+  else {
+    tag.textContent = "(+" + (parseInt(tag.textContent[2]) + 1) + ")";
+  }
+}
+
+function scrollActivated(scrollType, baseType) {
+
+  console.log(baseType);
+  const baseEle = document.getElementById(baseType);
+  let slots = document.getElementById(baseType + "Slt");
+
+  if(parseInt(slots.textContent) <= 0) {
+    // make sound?
+    return;
+  }
+
+  switch(scrollType) {
+    case "shoejmp10": {
+      const spd = document.getElementById(baseType + "Spd");
+      const jmp = document.getElementById(baseType + "Jmp");
+      const dex = document.getElementById(baseType + "Dex");
+      const dexLi = document.getElementById(baseType + "DexLi");
+      const jmpLi = document.getElementById(baseType + "JmpLi");
+      const gomuTag = document.getElementById("gomuTag");
+      if(Math.random() >= 0.9) {
+        goodResult();
+        dexLi.style.display = "block";
+        jmpLi.style.display = "block";
+        spd.textContent = parseInt(spd.textContent) + 1;
+        jmp.textContent = parseInt(jmp.textContent) + 5;
+        dex.textContent = parseInt(dex.textContent) + 3;
+        slots.textContent = parseInt(slots.textContent) - 1;
+        updateTag(gomuTag);
+      }
+      else {
+        badResult();
+        slots.textContent = parseInt(slots.textContent) - 1;
+      }
+      break;
+    }
+    case "shoedex10": {
+      const spd = document.getElementById(baseType + "Spd");
+      const acc = document.getElementById(baseType + "Acc");
+      const avo = document.getElementById(baseType + "Avo");
+      const accLi = document.getElementById(baseType + "AccLi");
+      const avoLi = document.getElementById(baseType + "AvoLi");
+      const gomuTag = document.getElementById("gomuTag");
+     if(Math.random() >= 0.9) {
+        goodResult();
+        accLi.style.display = "block";
+        avoLi.style.display = "block";
+        spd.textContent = parseInt(spd.textContent) + 1;
+        avo.textContent = parseInt(avo.textContent) + 5;
+        acc.textContent = parseInt(acc.textContent) + 3;
+        slots.textContent = parseInt(slots.textContent) - 1;
+        updateTag(gomuTag);
+      }
+      else {
+        badResult();
+        slots.textContent = parseInt(slots.textContent) - 1;
+      }
+      break;
+    }
+    default:
+      break;
+  }
+}
 
 function baseChange() {
 
     // Clear item box
     // Populate inventory
     // Change equip view
+    // change dropZone or w/e
 
     // Reset stats
     newItem();
@@ -171,11 +265,16 @@ function newItem() {
         let spd = 0;
         const gomuSpd = document.getElementById("gomuSpd");
         const gomuWdef = document.getElementById("gomuWdef");
+        const gomuJmp = document.getElementById("gomuJmp");
+        const gomuDex = document.getElementById("gomuDex");
+        const gomuAcc = document.getElementById("gomuAcc");
+        const gomuAvo = document.getElementById("gomuAvo");
         const gomuSlt = document.getElementById("gomuSlt");
         const gomuDexLi = document.getElementById("gomuDexLi");
         const gomuAccLi = document.getElementById("gomuAccLi");
         const gomuAvoLi = document.getElementById("gomuAvoLi");
         const gomuJmpLi = document.getElementById("gomuJmpLi");
+        const gomuTag = document.getElementById("gomuTag");
         
         if(Math.random() >= 0.8) {
           wdef = getRandomInteger(3,10);
@@ -188,7 +287,12 @@ function newItem() {
         console.log("wdef = " + wdef + "    spd = " + spd);
         gomuSpd.textContent = spd;
         gomuWdef.textContent = wdef;
+        gomuJmp.textContent = "0";
+        gomuDex.textContent = "0";
+        gomuAcc.textContent = "0";
+        gomuAvo.textContent = "0";
         gomuSlt.textContent = "5";
+        gomuTag.textContent = "";
         gomuDexLi.style.display = "none";
         gomuAccLi.style.display = "none";
         gomuAvoLi.style.display = "none";
@@ -198,41 +302,7 @@ function newItem() {
       default:
         break;
     }
-
-    // Roll for new item
-
-    // Refresh item box
 }
-
-function shoeJump10() {
-    // roll
-    // update item box
-}
-
-// When drag starts, set data
-image.addEventListener("dragstart", (e) => {
-  e.dataTransfer.setData("text/plain", e.target.id); // optional: can set more specific info
-});
-
-// Allow drop on the dropZone
-dropZone.addEventListener("dragover", (e) => {
-  e.preventDefault(); // Necessary to allow dropping
-});
-
-// Handle drop
-dropZone.addEventListener("drop", (e) => {
-  e.preventDefault();
-  const data = e.dataTransfer.getData("text/plain");
-
-  console.log(data);
-
-  // You can check if it's the correct image if needed
-  if (data === "draggableImage") {
-    // Trigger your custom function
-    
-    onImageDropped();
-  }
-});
 
 function badResult()
 {
@@ -264,21 +334,9 @@ function goodResult()
   }, 1000);
 }
 
-
-function onImageDropped() {
-  if(Math.random() >= 0.9)
-  {
-    goodResult();
-  }
-  else
-  {
-    badResult();
-  }
-}
-
 //Base Tooltip Code
 const tooltip = document.getElementById('gomuBox'); // eventually replace with find-all
-const hoverable = document.getElementById('dropZone');
+const hoverable = document.getElementById('gomu');
 
 hoverable.addEventListener('mouseenter', () => {
     const rect = hoverable.getBoundingClientRect();
@@ -292,13 +350,42 @@ hoverable.addEventListener('mouseleave', () => {
   tooltip.classList.remove('visible');
 });
 
+// Scroll Tooltip Code
+const scrolltip = document.getElementById('scrollBox');
+const scrolltipTitle = document.getElementById('scrolltipTitle');
+const scrolltipDesc1 = document.getElementById('scrolltipDesc1');
+const scrolltipDesc2 = document.getElementById('scrolltipDesc2');
+const scrolltipDesc3 = document.getElementById('scrolltipDesc3');
+const hoverscrolls = document.querySelectorAll('.hoverscroll');
+
+hoverscrolls.forEach(container => {
+    container.addEventListener('mouseenter', () => {
+      const rect = container.getBoundingClientRect();
+      scrolltip.style.top = `${rect.bottom + 8}px`;
+      scrolltip.style.left = `${rect.left}px`;
+      scrolltipTitle.textContent = container.dataset.title;
+      scrolltipDesc1.textContent = container.dataset.desc1;
+      scrolltipDesc2.textContent = container.dataset.desc2;
+      scrolltipDesc3.textContent = container.dataset.desc3;
+      void scrolltip.offsetWidth;
+      scrolltip.classList.add('visible');
+    });
+
+    container.addEventListener('mouseleave', () => {
+      scrolltip.classList.remove('visible');
+    });
+});
+
+
 // todo:
 // mouse pointer
 // random emotes
 // image box hover
 // scroll box hover
 // Sound effect for new item button (click?)
-// extend background so item doesn't escape
+// extend background so item doesn't escape (or make it hover higher?)
+// anticheat
+// item tag colors?
 
 </script>
 </body>
