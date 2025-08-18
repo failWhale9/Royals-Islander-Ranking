@@ -54,14 +54,17 @@
 
 <div class="scrollsim">
 <!-- Scrolls -->
-<img id="shoejmp10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="position:absolute; top:84px; left:618px;" draggable="true" data-title="Scroll for Shoes for Jump 10%" data-desc1="Improves jump on shoes." data-desc2="Success rate: 10%, jump +5," data-desc3="DEX+3, speed+1.">
-<img id="shoedex10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="position:absolute; top:84px; left:654px;" draggable="true" data-title="Scroll for Shoes for DEX 10%" data-desc1="Improves dexterity on shoes." data-desc2="Success rate: 10%, Avoidability" data-desc3="+5, accuraccy +3, speed+1">
+<img id="shoejmp10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Scroll for Shoes for Jump 10%" data-desc1="Improves jump on shoes." data-desc2="Success rate: 10%, jump +5," data-desc3="DEX+3, speed+1.">
+<img id="shoedex10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="display:none; position:absolute; top:84px; left:654px;" draggable="true" data-title="Scroll for Shoes for DEX 10%" data-desc1="Improves dexterity on shoes." data-desc2="Success rate: 10%, Avoidability" data-desc3="+5, accuraccy +3, speed+1">
+<img id="topdef10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Scroll for Topwear for DEF 10%" data-desc1="Improves weapon def. on topwear." data-desc2="Success rate:10%, weapon def. +5," data-desc3="magic def. +3, MaxHP+10.">
+<img id="botdef10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Scroll for Bottomwear for DEF 10%" data-desc1="Improves weapon def. on the bottomwear." data-desc2="Success rate:10%, weapon def.+5," data-desc3="magic def.+3, MaxHP+10.">
+
 <!-- Bases -->
-<img id="gomu" class="dropZone activeBase" src="images/scroll/gomu.png" style="position:absolute; top:225px; left:237px;">
+<img id="gomu" class="dropZone activeBase" src="images/scroll/gomu.png" style="display:none; position:absolute; top:225px; left:237px;">
 <img id="stripeM" class="dropZone" src="images/scroll/stripeM.png" style="display:none; position:absolute; top:154px; left:203px;">
 <img id="stripeF" class="dropZone" src="images/scroll/stripeF.png" style="display:none; position:absolute; top:155px; left:205px;">
 <img id="ice" class="dropZone" src="images/scroll/ice.png" style="display:none; position:absolute; top:184px; left:206px;">
-<img id="sweat" class="dropZone" src="images/scroll/sweat.png" style="position:absolute; top:186px; left:207px;">
+<img id="sweat" class="dropZone" src="images/scroll/sweat.png" style="display:none; position:absolute; top:186px; left:207px;">
 <img id="char" src="/images/scroll/toben-neutral.gif" style="position:absolute; top:150px; left:442px; z-index: 9998;">
 <img id="face" src="" style="position:absolute; top:152px; left:444px; z-index: 9999;">
 <img id="scrollYes" src="" style="position:absolute; top:-10px; left:337px;">
@@ -82,7 +85,35 @@
 </div>
 
 
-<img src="images/gomutest.jpg">
+<div id="stripeMBox" class="baseBox">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">Blue One-Lined T-Shirt</span> <span id="stripeMTag" class="itemTitle">(+0)</span>
+  <div class="baseTop">
+    <div class="baseImgBox">
+      <img class="baseImg "src="images/scroll/stripeM.png" style="top:22px;">
+    </div>
+    <div class="baseStats">
+      <ul style="list-style:none;padding-left:10px;margin-top:0px;">
+        <li>REQ LV: 11</li>
+        <li>REQ STR: 0</li>
+        <li>REQ DEX: 0</li>
+        <li>REQ INT: 0</li>
+        <li>REQ LUK: 0</li>
+        <li>REQ FAM: 0</li>
+        <li style="color:#999999">ITEM LEV: -</li>
+        <li style="color:#999999">ITEM EXP: -</li>
+      </ul>
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+  <img src="images/scroll/classes.png">
+  <ul class="statList">
+    <li>CATEGORY: TOP</li>
+    <li id="stripeMHpLi">HP: <span class="statValue">+</span><span id="stripeMHp" class="statValue">0</span></li>
+    <li id="stripeMWdefLi">WEAPON DEF: <span id="stripeMWdef" class="statValue">0</span></li>
+    <li id="stripeMMdefLi">MAGIC DEF: <span id="stripeMMdef" class="statValue">0</span></li>
+    <li>NUMBER OF UPGRADES AVAILABLE: <span id="stripeMSlt" class="statValue">0</span></li>
+  </ul>
+</div>
 
 
 <div id="gomuBox" class="baseBox">
@@ -109,7 +140,7 @@
   <ul class="statList">
     <li>CATEGORY: SHOES</li>
     <li id="gomuDexLi">DEX: <span class="statValue">+</span><span id="gomuDex" class="statValue">0</span></li>
-    <li id="gomuWdefLi">WEAPON DEF.: <span id="gomuWdef" class="statValue">9</span></li>
+    <li id="gomuWdefLi">WEAPON DEF.: <span id="gomuWdef" class="statValue">0</span></li>
     <li id="gomuAccLi">ACCURACY: <span  class="statValue">+</span><span id="gomuAcc" class="statValue">0</span></li>
     <li id="gomuAvoLi">AVOIDABILITY: <span class="statValue">+</span><span id="gomuAvo" class="statValue">0</span></li>
     <li id="gomuSpdLi">SPEED: <span class="statValue">+</span><span id="gomuSpd" class="statValue">0</span></li>
@@ -132,12 +163,6 @@
   <div style="clear: both;"></div>
 </div>
 
-
-
-
-
-
-
 <div id="footer">
     <p>Page written and maintained by <img src="/images/shy.png"></p> 
 </div>
@@ -145,27 +170,28 @@
 <script>
 
 const draggables = document.querySelectorAll('.draggableImage');
-const dropZone = document.querySelectorAll('.dropZone.activeBase');
+const dropZone = document.querySelectorAll('.dropZone');
 
 // When drag starts, set data
 draggables.forEach(draggable => {
   draggable.addEventListener("dragstart", (e) => {
     let sound = new Audio('/images/scroll/DragStart.mp3');
     sound.play();
-    e.dataTransfer.setData("text/plain", e.target.id); // optional: can set more specific info
+    e.dataTransfer.setData("text/plain", e.target.id);
   });
 });
 
-// Allow drop on the dropZone
-dropZone[0].addEventListener("dragover", (e) => {
-  e.preventDefault(); // Necessary to allow dropping
-});
+dropZone.forEach(zone => {
 
-// Handle drop
-dropZone[0].addEventListener("drop", (e) => {
-  e.preventDefault();
-  const scrollType = e.dataTransfer.getData("text/plain");
-  scrollActivated(scrollType, dropZone[0].id);
+  zone.addEventListener("dragover",(e) => {
+    e.preventDefault();
+  });
+
+  zone.addEventListener("drop", (e) => {
+    e.preventDefault();
+    const scrollType = e.dataTransfer.getData("text/plain");
+    scrollActivated(scrollType, zone.id);
+});
 
 });
 
@@ -180,10 +206,10 @@ function updateTag(tag) {
 
 function scrollActivated(scrollType, baseType) {
 
-  console.log(baseType);
-  const baseEle = document.getElementById(baseType);
+  //const baseEle = document.getElementById(baseType);
   let slots = document.getElementById(baseType + "Slt");
-
+  console.log(baseType);
+  console.log(slots);
   if(parseInt(slots.textContent) <= 0) {
     // make sound?
     return;
@@ -236,6 +262,29 @@ function scrollActivated(scrollType, baseType) {
       }
       break;
     }
+    case "topdef10": {
+      const wdef = document.getElementById(baseType + "Wdef");
+      const mdef = document.getElementById(baseType + "Mdef");
+      const hp = document.getElementById(baseType + "Hp");
+      const mdefLi = document.getElementById(baseType + "MdefLi");
+      const hpLi = document.getElementById(baseType + "HpLi");
+      const tag = document.getElementById(baseType + "Tag");
+      if(Math.random() >= 0.9) {
+        goodResult();
+        mdefLi.style.display = "block";
+        hpLi.style.display = "block";
+        wdef.textContent = parseInt(wdef.textContent) + 5;
+        mdef.textContent = parseInt(mdef.textContent) + 3;
+        hp.textContent = parseInt(hp.textContent) + 10;
+        slots.textContent = parseInt(slots.textContent) - 1;
+        updateTag(tag);
+      }
+      else {
+        badResult();
+        slots.textContent = parseInt(slots.textContent) - 1;
+      }
+      break;
+    }
     default:
       break;
   }
@@ -254,11 +303,9 @@ function baseChange(event) {
       base.classList.remove("activeBase");
     });
 
-    console.log(event.target.value);
-
     // Populate inventory
     switch(event.target.value) {
-      case "gomu":
+      case "gomu": {
         const shoejmp10 = document.getElementById("shoejmp10");
         const shoedex10 = document.getElementById("shoedex10");
         const gomu = document.getElementById("gomu");
@@ -267,18 +314,40 @@ function baseChange(event) {
         gomu.style.display = "block";
         gomu.classList.add("activeBase");
         break;
-      case "stripeM":
+      }
+      case "stripeM": {
+          const topdef10 = document.getElementById("topdef10");
+          const stripeM = document.getElementById("stripeM");
+          topdef10.style.display = "block";
+          stripeM.style.display = "block";
+          stripeM.classList.add("activeBase");
         break;
-      case "stripeF":
+      }
+      case "stripeF": {
+          const topdef10 = document.getElementById("topdef10");
+          const stripeF = document.getElementById("stripeF");
+          topdef10.style.display = "block";
+          stripeF.style.display = "block";
+          stripeF.classList.add("activeBase");
         break;
-      case "ice":
+      }
+      case "ice": {
+          const botdef10 = document.getElementById("botdef10");
+          const ice = document.getElementById("ice");
+          botdef10.style.display = "block";
+          ice.style.display = "block";
+          ice.classList.add("activeBase");
         break;
-      case "sweat":
+      }
+      case "sweat": {
+          const botdef10 = document.getElementById("botdef10");
+          const sweat = document.getElementById("sweat");
+          botdef10.style.display = "block";
+          sweat.style.display = "block";
+          sweat.classList.add("activeBase");
         break;
+      }
     }
-
-    // Change equip view
-    // change dropZone or w/e
 
     // Reset stats
     newItem();
@@ -302,7 +371,7 @@ function newItem() {
     sound.play();
 
     switch(baseType.value) {
-      case "gomu":
+      case "gomu": {
         let wdef = 0;
         let spd = 0;
         const gomuSpd = document.getElementById("gomuSpd");
@@ -338,8 +407,34 @@ function newItem() {
         gomuAccLi.style.display = "none";
         gomuAvoLi.style.display = "none";
         gomuJmpLi.style.display = "none";
-
         break;
+      }
+      case "stripeM": {
+        let wdef = 0;
+        let mdef = 0;
+        let hp = 0;
+        const stripeMWdef = document.getElementById("stripeMWdef");
+        const stripeMMdef = document.getElementById("stripeMMdef");
+        const stripeMHp = document.getElementById("stripeMHp");
+        const stripeMSlt = document.getElementById("stripeMSlt");
+        const stripeMMdefLi = document.getElementById("stripeMMdefLi");
+        const stripeMHpLi = document.getElementById("stripeMHpLi");
+        const stripeMTag = document.getElementById("stripeMTag");
+        if(Math.random() >= 0.8) {
+          wdef = getRandomInteger(9,18);
+        }
+        else {
+          wdef = getRandomInteger(9,13);
+        }
+        stripeMWdef.textContent = wdef;
+        stripeMMdef.textContent = "0";
+        stripeMHp.textContent = "0";
+        stripeMSlt.textContent = "7";
+        stripeMTag.textContent = "";
+        stripeMMdefLi.style.display = "none";
+        stripeMHpLi.style.display = "none";
+        break;
+      }
       default:
         break;
     }
@@ -376,19 +471,23 @@ function goodResult()
 }
 
 //Base Tooltip Code
-const tooltip = document.getElementById('gomuBox'); // eventually replace with find-all
-const hoverable = document.getElementById('gomu');
+const baseBoxes = document.querySelectorAll('.baseBox');
+const bases = document.querySelectorAll('.dropZone');
 
-hoverable.addEventListener('mouseenter', () => {
-    const rect = hoverable.getBoundingClientRect();
-    tooltip.style.top = `${rect.bottom - 42}px`;
-    tooltip.style.left = `${rect.left}px`;
-    void tooltip.offsetWidth;
-    tooltip.classList.add('visible');
-});
+bases.forEach(base => {
+  let baseBoxID = base.id + "Box";
+  let baseBox = document.getElementById(baseBoxID);
+  base.addEventListener('mouseenter', () => {
+    const rect = base.getBoundingClientRect();
+    baseBox.style.top = `${rect.bottom - 42}px`;
+    baseBox.style.left = `${rect.left}px`;
+    void baseBox.offsetWidth;
+    baseBox.classList.add('visible');
+  });
 
-hoverable.addEventListener('mouseleave', () => {
-  tooltip.classList.remove('visible');
+  base.addEventListener('mouseleave', () => {
+    baseBox.classList.remove('visible');
+  });
 });
 
 // Scroll Tooltip Code
@@ -417,6 +516,7 @@ hoverscrolls.forEach(container => {
     });
 });
 
+// Anticheat code
 const antiCheat = (mutationsList, observer) => {
   for (const mutation of mutationsList) {
     if(mutation.type == "characterData") {
@@ -445,6 +545,7 @@ observer.observe(document.body,obsconfig);
 // background music
 // stats
 // item tag colors?
+// cheat clown
 
 </script>
 </body>

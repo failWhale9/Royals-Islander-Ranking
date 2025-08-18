@@ -319,13 +319,13 @@ div.scrollBox {
 	outline-offset: 1px;
 }
 
-#gomuBox {
+#gomuBox, #stripeMBox {
 	visibility: hidden;
 	position:fixed;
 	pointer-events: none;
 }
 
-#gomuBox.visible {
+#gomuBox.visible, #stripeMBox.visible {
 	opacity: 1;
   	visibility: visible;
 }
