@@ -33,6 +33,8 @@
         <option value ="stripeF">Red Striped T-Shirt</option>
         <option value ="ice">Ice Jeans</option>
         <option value ="sweat">Grey Thick Sweat Pants</option>
+        <option value ="wdana">White Bandana</option>
+
     </select>
 
     <label>Character: </label>
@@ -58,6 +60,8 @@
 <img id="shoedex10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="display:none; position:absolute; top:84px; left:654px;" draggable="true" data-title="Scroll for Shoes for DEX 10%" data-desc1="Improves dexterity on shoes." data-desc2="Success rate: 10%, Avoidability" data-desc3="+5, accuraccy +3, speed+1">
 <img id="topdef10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Scroll for Topwear for DEF 10%" data-desc1="Improves weapon def. on topwear." data-desc2="Success rate:10%, weapon def. +5," data-desc3="magic def. +3, MaxHP+10.">
 <img id="botdef10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Scroll for Bottomwear for DEF 10%" data-desc1="Improves weapon def. on the bottomwear." data-desc2="Success rate:10%, weapon def.+5," data-desc3="magic def.+3, MaxHP+10.">
+<img id="hatdef10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Scroll for Helmet for DEF 10%" data-desc1="Improves helmet def." data-desc2="Success Rate:10%, weapon def.+5," data-desc3="magic def.+3, accuracy+1.">
+<img id="hatdef60" class="draggableImage hoverscroll" src="images/scroll/60.png" style="display:none; position:absolute; top:84px; left:654px;" draggable="true" data-title="Scroll for Helmet for DEF 60%" data-desc1="Improves helmet def." data-desc2="Success rate:60%, weapon def.+2," data-desc3="magic def, +1.">
 
 <!-- Bases -->
 <img id="gomu" class="dropZone activeBase" src="images/scroll/gomu.png" style="display:none; position:absolute; top:225px; left:237px;">
@@ -65,6 +69,7 @@
 <img id="stripeF" class="dropZone" src="images/scroll/stripeF.png" style="display:none; position:absolute; top:155px; left:205px;">
 <img id="ice" class="dropZone" src="images/scroll/ice.png" style="display:none; position:absolute; top:184px; left:206px;">
 <img id="sweat" class="dropZone" src="images/scroll/sweat.png" style="display:none; position:absolute; top:186px; left:207px;">
+<img id="wdana" class="dropZone" src="images/scroll/wdana.png" style="display:none; position:absolute; top:55px; left:205px;">
 <img id="char" src="/images/scroll/toben-neutral.gif" style="position:absolute; top:150px; left:442px; z-index: 9998;">
 <img id="face" src="" style="position:absolute; top:152px; left:444px; z-index: 9999;">
 <img id="scrollYes" src="" style="position:absolute; top:-10px; left:337px;">
@@ -115,6 +120,125 @@
   </ul>
 </div>
 
+<div id="stripeFBox" class="baseBox">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">Red-Striped T-Shirt</span> <span id="stripeFTag" class="itemTitle">(+0)</span>
+  <div class="baseTop">
+    <div class="baseImgBox">
+      <img class="baseImg "src="images/scroll/stripeF.png" style="top:22px;">
+    </div>
+    <div class="baseStats">
+      <ul style="list-style:none;padding-left:10px;margin-top:0px;">
+        <li>REQ LV: 11</li>
+        <li>REQ STR: 0</li>
+        <li>REQ DEX: 0</li>
+        <li>REQ INT: 0</li>
+        <li>REQ LUK: 0</li>
+        <li>REQ FAM: 0</li>
+        <li style="color:#999999">ITEM LEV: -</li>
+        <li style="color:#999999">ITEM EXP: -</li>
+      </ul>
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+  <img src="images/scroll/classes.png">
+  <ul class="statList">
+    <li>CATEGORY: TOP</li>
+    <li id="stripeFHpLi">HP: <span class="statValue">+</span><span id="stripeFHp" class="statValue">0</span></li>
+    <li id="stripeFWdefLi">WEAPON DEF: <span id="stripeFWdef" class="statValue">0</span></li>
+    <li id="stripeFMdefLi">MAGIC DEF: <span id="stripeFMdef" class="statValue">0</span></li>
+    <li>NUMBER OF UPGRADES AVAILABLE: <span id="stripeFSlt" class="statValue">0</span></li>
+  </ul>
+</div>
+
+<div id="iceBox" class="baseBox">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">Ice Jeans</span> <span id="iceTag" class="itemTitle">(+0)</span>
+  <div class="baseTop">
+    <div class="baseImgBox">
+      <img class="baseImg "src="images/scroll/ice.png" style="top:22px;">
+    </div>
+    <div class="baseStats">
+      <ul style="list-style:none;padding-left:10px;margin-top:0px;">
+        <li>REQ LV: 16</li>
+        <li>REQ STR: 0</li>
+        <li>REQ DEX: 0</li>
+        <li>REQ INT: 0</li>
+        <li>REQ LUK: 0</li>
+        <li>REQ FAM: 0</li>
+        <li style="color:#999999">ITEM LEV: -</li>
+        <li style="color:#999999">ITEM EXP: -</li>
+      </ul>
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+  <img src="images/scroll/classes.png">
+  <ul class="statList">
+    <li>CATEGORY: BOTTOM</li>
+    <li id="iceHpLi">HP: <span class="statValue">+</span><span id="iceHp" class="statValue">0</span></li>
+    <li id="iceWdefLi">WEAPON DEF: <span id="iceWdef" class="statValue">0</span></li>
+    <li id="iceMdefLi">MAGIC DEF: <span id="iceMdef" class="statValue">0</span></li>
+    <li>NUMBER OF UPGRADES AVAILABLE: <span id="iceSlt" class="statValue">0</span></li>
+  </ul>
+</div>
+
+<div id="sweatBox" class="baseBox">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">Grey Thick Sweat Pants</span> <span id="sweatTag" class="itemTitle">(+0)</span>
+  <div class="baseTop">
+    <div class="baseImgBox">
+      <img class="baseImg "src="images/scroll/sweat.png" style="top:22px;">
+    </div>
+    <div class="baseStats">
+      <ul style="list-style:none;padding-left:10px;margin-top:0px;">
+        <li>REQ LV: 11</li>
+        <li>REQ STR: 0</li>
+        <li>REQ DEX: 0</li>
+        <li>REQ INT: 0</li>
+        <li>REQ LUK: 0</li>
+        <li>REQ FAM: 0</li>
+        <li style="color:#999999">ITEM LEV: -</li>
+        <li style="color:#999999">ITEM EXP: -</li>
+      </ul>
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+  <img src="images/scroll/classes.png">
+  <ul class="statList">
+    <li>CATEGORY: BOTTOM</li>
+    <li id="sweatHpLi">HP: <span class="statValue">+</span><span id="sweatHp" class="statValue">0</span></li>
+    <li id="sweatWdefLi">WEAPON DEF: <span id="sweatWdef" class="statValue">0</span></li>
+    <li id="sweatMdefLi">MAGIC DEF: <span id="sweatMdef" class="statValue">0</span></li>
+    <li>NUMBER OF UPGRADES AVAILABLE: <span id="sweatSlt" class="statValue">0</span></li>
+  </ul>
+</div>
+
+<div id="wdanaBox" class="baseBox">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">White Bandana</span> <span id="wdanaTag" class="itemTitle">(+0)</span>
+  <div class="baseTop">
+    <div class="baseImgBox">
+      <img class="baseImg "src="images/scroll/wdana.png" style="top:22px;">
+    </div>
+    <div class="baseStats">
+      <ul style="list-style:none;padding-left:10px;margin-top:0px;">
+        <li>REQ LV: 10</li>
+        <li>REQ STR: 0</li>
+        <li>REQ DEX: 0</li>
+        <li>REQ INT: 0</li>
+        <li>REQ LUK: 0</li>
+        <li>REQ FAM: 0</li>
+        <li style="color:#999999">ITEM LEV: -</li>
+        <li style="color:#999999">ITEM EXP: -</li>
+      </ul>
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+  <img src="images/scroll/classes.png">
+  <ul class="statList">
+    <li>CATEGORY: HAT</li>
+    <li id="wdanaAccLi">ACCURACY: <span class="statValue">+</span><span id="wdanaAcc" class="statValue">0</span></li>
+    <li id="wdanaWdefLi">WEAPON DEF: <span id="wdanaWdef" class="statValue">0</span></li>
+    <li id="wdanaMdefLi">MAGIC DEF: <span id="wdanaMdef" class="statValue">0</span></li>
+    <li>NUMBER OF UPGRADES AVAILABLE: <span id="wdanaSlt" class="statValue">0</span></li>
+  </ul>
+</div>
 
 <div id="gomuBox" class="baseBox">
   <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">White Gomushin</span> <span id="gomuTag" class="itemTitle">(+0)</span>
@@ -153,7 +277,7 @@
   <span style="color:#55ccff; padding-left:5px;">●</span> <span id="scrolltipTitle" class="itemTitle">Scroll for Shoes for Jump 10%</span>
   <div style="clear: both;"></div>
   <div class="baseImgBox" style="margin-left:10px;margin-top:5px;margin-bottom:18px;">
-    <img class="baseImg "src="images/scroll/10.png" style="top:23px;">
+    <img id="scrolltipImg" class="baseImg "src="images/scroll/10.png" style="top:23px;">
   </div>
   <div class="scrollStats">
     <p id="scrolltipDesc1">Improves jump on shoes.</p>
@@ -347,6 +471,16 @@ function baseChange(event) {
           sweat.classList.add("activeBase");
         break;
       }
+      case "wdana": {
+        const hatdef10 = document.getElementById("hatdef10");
+        const hatdef60 = document.getElementById("hatdef60");
+        const wdana = document.getElementById("wdana");
+        hatdef10.style.display = "block";
+        hatdef60.style.display = "block";
+        wdana.style.display = "block";
+        wdana.classList.add("activeBase");
+        break;
+      }
     }
 
     // Reset stats
@@ -359,8 +493,8 @@ function charChange() {
 }
 
 function getRandomInteger(min, max) {
-  min = Math.ceil(min); // Ensure min is an integer
-  max = Math.floor(max); // Ensure max is an integer
+  min = Math.ceil(min); 
+  max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -435,6 +569,58 @@ function newItem() {
         stripeMHpLi.style.display = "none";
         break;
       }
+      case "stripeF": {
+        let wdef = 0;
+        let mdef = 0;
+        let hp = 0;
+        const stripeFWdef = document.getElementById("stripeFWdef");
+        const stripeFMdef = document.getElementById("stripeFMdef");
+        const stripeFHp = document.getElementById("stripeFHp");
+        const stripeFSlt = document.getElementById("stripeFSlt");
+        const stripeFMdefLi = document.getElementById("stripeFMdefLi");
+        const stripeFHpLi = document.getElementById("stripeFHpLi");
+        const stripeFTag = document.getElementById("stripeFTag");
+        if(Math.random() >= 0.8) {
+          wdef = getRandomInteger(9,18);
+        }
+        else {
+          wdef = getRandomInteger(9,13);
+        }
+        stripeFWdef.textContent = wdef;
+        stripeFMdef.textContent = "0";
+        stripeFHp.textContent = "0";
+        stripeFSlt.textContent = "7";
+        stripeFTag.textContent = "";
+        stripeFMdefLi.style.display = "none";
+        stripeFHpLi.style.display = "none";
+        break;
+      }
+      case "wdana": {
+        let wdef = 0;
+        let mdef = 0;
+        let acc = 0;
+        const wdanaWdef = document.getElementById("wdanaWdef");
+        const wdanaMdef = document.getElementById("wdanaMdef");
+        const wdanaAcc = document.getElementById("wdanaAcc");
+        const wdanaSlt = document.getElementById("wdanaSlt");
+        const wdanaMdefLi = document.getElementById("wdanaMdefLi");
+        const wdanaAccLi = document.getElementById("wdanaAccLi");
+        const wdanaTag = document.getElementById("wdanaTag");
+        if(Math.random() >= 0.8) {
+          wdef = getRandomInteger(7,14);
+        }
+        else {
+          wdef = getRandomInteger(7,9);
+        }
+        wdanaWdef.textContent = wdef;
+        wdanaMdef.textContent = "0";
+        wdanaAcc.textContent = "0";
+        wdanaSlt.textContent = "7";
+        wdanaTag.textContent = "";
+        wdanaMdefLi.style.display = "none";
+        wdanaAccLi.style.display = "none";
+        break;
+      }
       default:
         break;
     }
@@ -496,6 +682,7 @@ const scrolltipTitle = document.getElementById('scrolltipTitle');
 const scrolltipDesc1 = document.getElementById('scrolltipDesc1');
 const scrolltipDesc2 = document.getElementById('scrolltipDesc2');
 const scrolltipDesc3 = document.getElementById('scrolltipDesc3');
+const scrolltipImg = document.getElementById('scrolltipImg');
 const hoverscrolls = document.querySelectorAll('.hoverscroll');
 
 hoverscrolls.forEach(container => {
@@ -507,6 +694,7 @@ hoverscrolls.forEach(container => {
       scrolltipDesc1.textContent = container.dataset.desc1;
       scrolltipDesc2.textContent = container.dataset.desc2;
       scrolltipDesc3.textContent = container.dataset.desc3;
+      scrolltipImg.src = container.src;
       void scrolltip.offsetWidth;
       scrolltip.classList.add('visible');
     });
