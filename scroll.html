@@ -26,7 +26,8 @@
 
 <div class="scrolldiv">
     <label>Base item: </label> 
-    <select id="itemBaseSelect" onchange="baseChange()">
+    <select id="itemBaseSelect" onchange="baseChange(event)">
+        <option value ="none">-------------</option>
         <option value ="gomu">White Gomushin</option>
         <option value ="stripeM">Blue One-Lined T-Shirt</option>
         <option value ="stripeF">Red Striped T-Shirt</option>
@@ -52,10 +53,15 @@
 -->
 
 <div class="scrollsim">
+<!-- Scrolls -->
 <img id="shoejmp10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="position:absolute; top:84px; left:618px;" draggable="true" data-title="Scroll for Shoes for Jump 10%" data-desc1="Improves jump on shoes." data-desc2="Success rate: 10%, jump +5," data-desc3="DEX+3, speed+1.">
 <img id="shoedex10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="position:absolute; top:84px; left:654px;" draggable="true" data-title="Scroll for Shoes for DEX 10%" data-desc1="Improves dexterity on shoes." data-desc2="Success rate: 10%, Avoidability" data-desc3="+5, accuraccy +3, speed+1">
+<!-- Bases -->
 <img id="gomu" class="dropZone activeBase" src="images/scroll/gomu.png" style="position:absolute; top:225px; left:237px;">
-<!--<div id="dropZone" style="position:absolute; top:217px; left:237px; width:30px; height:30px;"></div>-->
+<img id="stripeM" class="dropZone" src="images/scroll/stripeM.png" style="display:none; position:absolute; top:154px; left:203px;">
+<img id="stripeF" class="dropZone" src="images/scroll/stripeF.png" style="display:none; position:absolute; top:155px; left:205px;">
+<img id="ice" class="dropZone" src="images/scroll/ice.png" style="display:none; position:absolute; top:184px; left:206px;">
+<img id="sweat" class="dropZone" src="images/scroll/sweat.png" style="position:absolute; top:186px; left:207px;">
 <img id="char" src="/images/scroll/toben-neutral.gif" style="position:absolute; top:150px; left:442px; z-index: 9998;">
 <img id="face" src="" style="position:absolute; top:152px; left:444px; z-index: 9999;">
 <img id="scrollYes" src="" style="position:absolute; top:-10px; left:337px;">
@@ -144,6 +150,8 @@ const dropZone = document.querySelectorAll('.dropZone.activeBase');
 // When drag starts, set data
 draggables.forEach(draggable => {
   draggable.addEventListener("dragstart", (e) => {
+    let sound = new Audio('/images/scroll/DragStart.mp3');
+    sound.play();
     e.dataTransfer.setData("text/plain", e.target.id); // optional: can set more specific info
   });
 });
@@ -233,10 +241,42 @@ function scrollActivated(scrollType, baseType) {
   }
 }
 
-function baseChange() {
+function baseChange(event) {
 
-    // Clear item box
+    // Clear scrolls and bases
+    const scrolls = document.querySelectorAll('.hoverscroll');
+    const bases = document.querySelectorAll('.dropZone');
+    scrolls.forEach(scroll => {
+      scroll.style.display = "none";
+    });
+    bases.forEach(base => {
+      base.style.display = "none";
+      base.classList.remove("activeBase");
+    });
+
+    console.log(event.target.value);
+
     // Populate inventory
+    switch(event.target.value) {
+      case "gomu":
+        const shoejmp10 = document.getElementById("shoejmp10");
+        const shoedex10 = document.getElementById("shoedex10");
+        const gomu = document.getElementById("gomu");
+        shoejmp10.style.display = "block";
+        shoedex10.style.display = "block";
+        gomu.style.display = "block";
+        gomu.classList.add("activeBase");
+        break;
+      case "stripeM":
+        break;
+      case "stripeF":
+        break;
+      case "ice":
+        break;
+      case "sweat":
+        break;
+    }
+
     // Change equip view
     // change dropZone or w/e
 
@@ -258,6 +298,8 @@ function getRandomInteger(min, max) {
 function newItem() {
 
     const baseType = document.getElementById("itemBaseSelect");
+    let sound = new Audio('/images/scroll/NewBase.mp3');
+    sound.play();
 
     switch(baseType.value) {
       case "gomu":
@@ -284,7 +326,6 @@ function newItem() {
           wdef = getRandomInteger(3,5);
           spd = getRandomInteger(1,3);
         }
-        console.log("wdef = " + wdef + "    spd = " + spd);
         gomuSpd.textContent = spd;
         gomuWdef.textContent = wdef;
         gomuJmp.textContent = "0";
@@ -340,7 +381,7 @@ const hoverable = document.getElementById('gomu');
 
 hoverable.addEventListener('mouseenter', () => {
     const rect = hoverable.getBoundingClientRect();
-    tooltip.style.top = `${rect.bottom + 8}px`;
+    tooltip.style.top = `${rect.bottom - 42}px`;
     tooltip.style.left = `${rect.left}px`;
     void tooltip.offsetWidth;
     tooltip.classList.add('visible');
@@ -376,15 +417,33 @@ hoverscrolls.forEach(container => {
     });
 });
 
+const antiCheat = (mutationsList, observer) => {
+  for (const mutation of mutationsList) {
+    if(mutation.type == "characterData") {
+      if(mutation.target.parentElement.nodeName != "BODY") {
+        let sound = new Audio('/images/scroll/cheat.mp3');
+        sound.play();
+        mutation.target.parentElement.textContent = "CHEATER!";
+      }
+    } 
+  }
+}
+
+const observer = new MutationObserver(antiCheat);
+let obsconfig = {
+  childList: true,
+  subtree: true,
+  characterData: true
+}
+observer.observe(document.body,obsconfig);
+
+
 
 // todo:
 // mouse pointer
 // random emotes
-// image box hover
-// scroll box hover
-// Sound effect for new item button (click?)
-// extend background so item doesn't escape (or make it hover higher?)
-// anticheat
+// background music
+// stats
 // item tag colors?
 
 </script>

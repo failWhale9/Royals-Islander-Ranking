@@ -285,11 +285,11 @@ div.scrolldiv {
 }
 
 div.scrollsim {
-	background-image: url('images/scroll/background.png');
+	background-image: url('images/scroll/background2.png');
 	background-size: cover;
 	position:relative;
 	width: 946px;
-	height: 432px;
+	height: 480px;
 	border-radius: 8px;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 	margin-left: auto;
@@ -322,6 +322,7 @@ div.scrollBox {
 #gomuBox {
 	visibility: hidden;
 	position:fixed;
+	pointer-events: none;
 }
 
 #gomuBox.visible {
