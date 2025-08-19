@@ -319,13 +319,13 @@ div.scrollBox {
 	outline-offset: 1px;
 }
 
-#gomuBox, #stripeMBox, #stripeFBox, #iceBox, #sweatBox, #wdanaBox {
+#gomuBox, #stripeMBox, #stripeFBox, #iceBox, #sweatBox, #wdanaBox, #witchBox {
 	visibility: hidden;
 	position:fixed;
 	pointer-events: none;
 }
 
-#gomuBox.visible, #stripeMBox.visible, #stripeFBox.visible, #iceBox.visible, #sweatBox.visible, #wdanaBox.visible {
+#gomuBox.visible, #stripeMBox.visible, #stripeFBox.visible, #iceBox.visible, #sweatBox.visible, #wdanaBox.visible, #witchBox.visible {
 	opacity: 1;
   	visibility: visible;
 }
