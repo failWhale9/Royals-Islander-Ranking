@@ -313,6 +313,36 @@
   </ul>
 </div>
 
+<div id="broomBox" class="baseBox">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">Broomstick</span> <span id="broomTag" class="itemTitle">(+0)</span>
+  <div class="baseTop">
+    <div class="baseImgBox">
+      <img class="baseImg "src="images/scroll/broom.png" style="top:17px;left:19px;">
+    </div>
+    <div class="baseStats">
+      <ul style="list-style:none;padding-left:10px;margin-top:0px;">
+        <li>REQ LV: 20</li>
+        <li>REQ STR: 0</li>
+        <li>REQ DEX: 0</li>
+        <li>REQ INT: 0</li>
+        <li>REQ LUK: 0</li>
+        <li>REQ FAM: 0</li>
+        <li style="color:#999999">ITEM LEV: -</li>
+        <li style="color:#999999">ITEM EXP: -</li>
+      </ul>
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+  <img src="images/scroll/classes.png">
+  <ul class="statList">
+    <li>CATEGORY: ONE-HANDED SWORD</li>
+    <li>ATTACK SPEED: FAST</li>
+    <li id="broomWatkLi">WEAPON ATTACK: <span id="broomWatk" class="statValue">0</span></li>
+    <li id="broomSpdLi">SPEED: <span class="statValue">+</span><span id="broomSpd" class="statValue">0</span></li>
+    <li>NUMBER OF UPGRADES AVAILABLE: <span id="broomSlt" class="statValue">0</span></li>
+  </ul>
+</div>
+
 <div id="scrollBox" class="scrollBox">
   <span style="color:#55ccff; padding-left:5px;">●</span> <span id="scrolltipTitle" class="itemTitle">Scroll for Shoes for Jump 10%</span>
   <div style="clear: both;"></div>
@@ -373,8 +403,6 @@ function scrollActivated(scrollType, baseType) {
 
   //const baseEle = document.getElementById(baseType);
   let slots = document.getElementById(baseType + "Slt");
-  console.log(baseType);
-  console.log(slots);
   if(parseInt(slots.textContent) <= 0) {
     // make sound?
     return;
@@ -493,8 +521,47 @@ function scrollActivated(scrollType, baseType) {
       }
       break;
     }
+    case "witchscr": {
+
+      let stats = [];
+      const tag = document.getElementById(baseType + "Tag");
+
+      if(baseType == "witch") {
+        const wdef = document.getElementById(baseType + "Wdef");
+        const mdef = document.getElementById(baseType + "Mdef");
+        const mp = document.getElementById(baseType + "Mp");
+        const str = document.getElementById(baseType + "Str");
+        const dex = document.getElementById(baseType + "Dex");
+        const int = document.getElementById(baseType + "Int");
+        const luk = document.getElementById(baseType + "Luk");       
+        stats = [wdef,mdef,mp,str,dex,int,luk];
+      }
+      if(baseType == "broom") {
+        const watk = document.getElementById(baseType + "Watk");
+        const spd = document.getElementById(baseType + "Spd");
+        stats = [watk,spd];
+
+      }
+
+      stats.forEach(stat => {
+        if(parseInt(stat.textContent) > 0) {
+           let roll = getRandomInteger(-5,5);
+           stat.textContent = parseInt(stat.textContent) + roll;
+           if(parseInt(stat.textContent) <= 0) {
+              let li = document.getElementById(stat.id + "Li");
+              li.style.display = "none";
+           }
+        }
+      });
+
+      goodResult();
+      slots.textContent = parseInt(slots.textContent) - 1;
+      updateTag(tag);
+      break;
+    }
     default:
       break;
+
   }
 }
 
@@ -571,6 +638,14 @@ function baseChange(event) {
         witchscr.style.display = "block";
         witch.style.display = "block";
         witch.classList.add("activeBase");
+        break;
+      }
+      case "broom": {
+        const witchscr = document.getElementById("witchscr");
+        const broom = document.getElementById("broom");
+        witchscr.style.display = "block";
+        broom.style.display = "block";
+        broom.classList.add("activeBase");
         break;
       }
     }
@@ -809,6 +884,22 @@ function newItem() {
     
         break;
       }
+      case "broom": {    
+        const broomWatk = document.getElementById("broomWatk");
+        const broomSpd = document.getElementById("broomSpd");
+        const broomSlt = document.getElementById("broomSlt");
+        const broomWatkLi = document.getElementById("broomWatkLi");
+        const broomSpdLi = document.getElementById("broomSpdLi");
+        const broomTag = document.getElementById("broomTag");
+
+        broomWatk.textContent = "31";
+        broomSpd.textContent = "5";
+        broomSlt.textContent = "7";
+        broomTag.textContent = "";
+        broomWatkLi.style.display = "block";
+        broomSpdLi.style.display = "block";  
+        break;
+      }
       default:
         break;
     }
@@ -923,7 +1014,7 @@ observer.observe(document.body,obsconfig);
 // background music
 // stats
 // item tag colors?
-// cheat clown
+// cheat clown + bad luck
 
 </script>
 </body>
