@@ -36,6 +36,9 @@
         <option value ="wdana">White Bandana</option>
         <option value ="witch">Talking Witch Hat</option>
         <option value ="broom">Broomstick</option>
+        <option value ="wbeltR">Witch's Crimson Belt</option>
+        <option value ="wbeltB">Witch's Ocean Blue Belt</option>
+        <option value ="wbeltP">Witch's Deep Purple Belt</option>
 
     </select>
 
@@ -65,6 +68,8 @@
 <img id="hatdef10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Scroll for Helmet for DEF 10%" data-desc1="Improves helmet def." data-desc2="Success Rate:10%, weapon" data-desc3="def.+5, magic def.+3," data-desc4="accuracy+1.">
 <img id="hatdef60" class="draggableImage hoverscroll" src="images/scroll/60.png" style="display:none; position:absolute; top:84px; left:654px;" draggable="true" data-title="Scroll for Helmet for DEF 60%" data-desc1="Improves helmet def." data-desc2="Success rate:60%, weapon def." data-desc3="+2, magic def, +1." data-desc4="">
 <img id="witchscr" class="draggableImage hoverscroll" src="images/scroll/witchscr.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Normal Witch Scroll" data-desc1="A scroll that, depending on" data-desc2="chance, will either improve or" data-desc3="worsen the Talking Witch Hat" data-desc4="or Broomstick obtained from the Witch.">
+<img id="beltscr" class="draggableImage hoverscroll" src="images/scroll/witchscr.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Witch's Belt Scroll" data-desc1="A scroll that, depending on" data-desc2="chance, will either improve or" data-desc3="worsen the Witch's Belts" data-desc4="obtained from the Witch.">
+
 
 <!-- Bases -->
 <img id="gomu" class="dropZone activeBase" src="images/scroll/gomu.png" style="display:none; position:absolute; top:225px; left:237px;">
@@ -75,6 +80,11 @@
 <img id="wdana" class="dropZone" src="images/scroll/wdana.png" style="display:none; position:absolute; top:55px; left:205px;">
 <img id="witch" class="dropZone" src="images/scroll/witch.png" style="display:none; position:absolute; top:49px; left:202px;">
 <img id="broom" class="dropZone" src="images/scroll/broom.png" style="display:none; position:absolute; top:145px; left:266px;">
+<img id="wbeltR" class="dropZone" src="images/scroll/wbeltR.png" style="display:none; position:absolute; top:185px; left:235px;">
+<img id="wbeltB" class="dropZone" src="images/scroll/wbeltB.png" style="display:none; position:absolute; top:185px; left:235px;">
+<img id="wbeltP" class="dropZone" src="images/scroll/wbeltP.png" style="display:none; position:absolute; top:185px; left:235px;">
+
+<!-- Effects -->
 <img id="char" src="/images/scroll/toben-neutral.gif" style="position:absolute; top:150px; left:442px; z-index: 9998;">
 <img id="face" src="" style="position:absolute; top:152px; left:444px; z-index: 9999;">
 <img id="scrollYes" src="" style="position:absolute; top:-10px; left:337px;">
@@ -340,6 +350,99 @@
     <li id="broomWatkLi">WEAPON ATTACK: <span id="broomWatk" class="statValue">0</span></li>
     <li id="broomSpdLi">SPEED: <span class="statValue">+</span><span id="broomSpd" class="statValue">0</span></li>
     <li>NUMBER OF UPGRADES AVAILABLE: <span id="broomSlt" class="statValue">0</span></li>
+  </ul>
+</div>
+
+<div id="wbeltBBox" class="baseBox">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">Witch's Ocean Blue Belt</span> <span id="wbeltBTag" class="itemTitle">(+0)</span>
+  <div class="baseTop">
+    <div class="baseImgBox">
+      <img class="baseImg "src="images/scroll/wbeltB.png" style="top:17px;left:19px;">
+    </div>
+    <div class="baseStats">
+      <ul style="list-style:none;padding-left:10px;margin-top:0px;">
+        <li>REQ LV: 55</li>
+        <li>REQ STR: 0</li>
+        <li>REQ DEX: 0</li>
+        <li>REQ INT: 0</li>
+        <li>REQ LUK: 0</li>
+        <li>REQ FAM: 0</li>
+        <li style="color:#999999">ITEM LEV: -</li>
+        <li style="color:#999999">ITEM EXP: -</li>
+      </ul>
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+  <img src="images/scroll/classes.png">
+  <ul class="statList">
+    <li>CATEGORY: BELT</li>
+    <li id="wbeltBWdefLi">WEAPON DEF.: <span id="wbeltBWdef" class="statValue">0</span></li>
+    <li id="wbeltBMdefLi">MAGIC DEF.: <span id="wbeltBMdef" class="statValue">0</span></li>
+    <li id="wbeltBSpdLi">SPEED: <span class="statValue">+</span><span id="wbeltBSpd" class="statValue">0</span></li>
+    <li>NUMBER OF UPGRADES AVAILABLE: <span id="wbeltBSlt" class="statValue">0</span></li>
+  </ul>
+</div>
+
+<div id="wbeltRBox" class="baseBox">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">Witch's Crimson Belt</span> <span id="wbeltRTag" class="itemTitle">(+0)</span>
+  <div class="baseTop">
+    <div class="baseImgBox">
+      <img class="baseImg "src="images/scroll/wbeltR.png" style="top:17px;left:19px;">
+    </div>
+    <div class="baseStats">
+      <ul style="list-style:none;padding-left:10px;margin-top:0px;">
+        <li>REQ LV: 30</li>
+        <li>REQ STR: 0</li>
+        <li>REQ DEX: 0</li>
+        <li>REQ INT: 0</li>
+        <li>REQ LUK: 0</li>
+        <li>REQ FAM: 0</li>
+        <li style="color:#999999">ITEM LEV: -</li>
+        <li style="color:#999999">ITEM EXP: -</li>
+      </ul>
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+  <img src="images/scroll/classes.png">
+  <ul class="statList">
+    <li>CATEGORY: BELT</li>
+    <li id="wbeltRWdefLi">WEAPON DEF.: <span id="wbeltRWdef" class="statValue">0</span></li>
+    <li id="wbeltRMdefLi">MAGIC DEF.: <span id="wbeltRMdef" class="statValue">0</span></li>
+    <li id="wbeltRJmpLi">JUMP: <span class="statValue">+</span><span id="wbeltRJmp" class="statValue">0</span></li>
+    <li>NUMBER OF UPGRADES AVAILABLE: <span id="wbeltRSlt" class="statValue">0</span></li>
+  </ul>
+</div>
+
+<div id="wbeltPBox" class="baseBox">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span class="itemTitle">Witch's Deep Purple Belt</span> <span id="wbeltPTag" class="itemTitle">(+0)</span>
+  <div class="baseTop">
+    <div class="baseImgBox">
+      <img class="baseImg "src="images/scroll/wbeltP.png" style="top:17px;left:19px;">
+    </div>
+    <div class="baseStats">
+      <ul style="list-style:none;padding-left:10px;margin-top:0px;">
+        <li>REQ LV: 85</li>
+        <li>REQ STR: 0</li>
+        <li>REQ DEX: 0</li>
+        <li>REQ INT: 0</li>
+        <li>REQ LUK: 0</li>
+        <li>REQ FAM: 0</li>
+        <li style="color:#999999">ITEM LEV: -</li>
+        <li style="color:#999999">ITEM EXP: -</li>
+      </ul>
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+  <img src="images/scroll/classes.png">
+  <ul class="statList">
+    <li>CATEGORY: BELT</li>
+    <li id="wbeltPWatkLi">WEAPON ATTACK: <span id="wbeltPWatk" class="statValue">0</span></li>
+    <li id="wbeltPMatkLi">MAGIC ATTACK: <span id="wbeltPMatk" class="statValue">0</span></li>
+    <li id="wbeltPWdefLi">WEAPON DEF.: <span id="wbeltPWdef" class="statValue">0</span></li>
+    <li id="wbeltPMdefLi">MAGIC DEF.: <span id="wbeltPMdef" class="statValue">0</span></li>
+    <li id="wbeltPSpdLi">SPEED: <span class="statValue">+</span><span id="wbeltPSpd" class="statValue">0</span></li>
+    <li id="wbeltPJmpLi">JUMP: <span class="statValue">+</span><span id="wbeltPJmp" class="statValue">0</span></li>
+    <li>NUMBER OF UPGRADES AVAILABLE: <span id="wbeltPSlt" class="statValue">0</span></li>
   </ul>
 </div>
 
@@ -648,6 +751,30 @@ function baseChange(event) {
         broom.classList.add("activeBase");
         break;
       }
+      case "wbeltR": {
+        const beltscr = document.getElementById("beltscr");
+        const wbeltR = document.getElementById("wbeltR");
+        beltscr.style.display = "block";
+        wbeltR.style.display = "block";
+        wbeltR.classList.add("activeBase");
+        break;
+      }
+      case "wbeltB": {
+        const beltscr = document.getElementById("beltscr");
+        const wbeltB = document.getElementById("wbeltB");
+        beltscr.style.display = "block";
+        wbeltB.style.display = "block";
+        wbeltB.classList.add("activeBase");
+        break;
+      }
+      case "wbeltP": {
+        const beltscr = document.getElementById("beltscr");
+        const wbeltP = document.getElementById("wbeltP");
+        beltscr.style.display = "block";
+        wbeltP.style.display = "block";
+        wbeltP.classList.add("activeBase");
+        break;
+      }
     }
 
     // Reset stats
@@ -900,6 +1027,78 @@ function newItem() {
         broomSpdLi.style.display = "block";  
         break;
       }
+      case "wbeltR": {    
+        const wbeltRWdef = document.getElementById("wbeltRWdef");
+        const wbeltRMdef = document.getElementById("wbeltRMdef");
+        const wbeltRJmp = document.getElementById("wbeltRJmp");
+        const wbeltRSlt = document.getElementById("wbeltRSlt");
+        const wbeltRWdefLi = document.getElementById("wbeltRWdefLi");
+        const wbeltRMdefLi = document.getElementById("wbeltRMdefLi");
+        const wbeltRJmpLi = document.getElementById("wbeltRJmpLi");
+        const wbeltRTag = document.getElementById("wbeltRTag");
+
+        wbeltRWdef.textContent = "20";
+        wbeltRMdef.textContent = "20";
+        wbeltRJmp.textContent = "2";
+        wbeltRSlt.textContent = "3";
+        wbeltRTag.textContent = "";
+        wbeltRWdefLi.style.display = "block";
+        wbeltRMdefLi.style.display = "block";
+        wbeltRJmpLi.style.display = "block";  
+        break;
+      }
+      case "wbeltB": {    
+        const wbeltBWdef = document.getElementById("wbeltBWdef");
+        const wbeltBMdef = document.getElementById("wbeltBMdef");
+        const wbeltBSpd = document.getElementById("wbeltBSpd");
+        const wbeltBSlt = document.getElementById("wbeltBSlt");
+        const wbeltBWdefLi = document.getElementById("wbeltBWdefLi");
+        const wbeltBMdefLi = document.getElementById("wbeltBMdefLi");
+        const wbeltBJmpLi = document.getElementById("wbeltBJmpLi");
+        const wbeltBTag = document.getElementById("wbeltBTag");
+
+        wbeltBWdef.textContent = "45";
+        wbeltBMdef.textContent = "45";
+        wbeltBSpd.textContent = "2";
+        wbeltBSlt.textContent = "3";
+        wbeltBTag.textContent = "";
+        wbeltBWdefLi.style.display = "block";
+        wbeltBMdefLi.style.display = "block";
+        wbeltBJmpLi.style.display = "block";  
+        break;
+      }
+      case "wbeltP": {    
+        const wbeltPWdef = document.getElementById("wbeltPWdef");
+        const wbeltPMdef = document.getElementById("wbeltPMdef");
+        const wbeltPWatk = document.getElementById("wbeltPWatk");
+        const wbeltPMatk = document.getElementById("wbeltPMatk");
+        const wbeltPSpd = document.getElementById("wbeltPSpd");
+        const wbeltPJmp = document.getElementById("wbeltPJmp");
+        const wbeltPSlt = document.getElementById("wbeltPSlt");
+        const wbeltPWdefLi = document.getElementById("wbeltPWdefLi");
+        const wbeltPMdefLi = document.getElementById("wbeltPMdefLi");
+        const wbeltPWatkLi = document.getElementById("wbeltPWatkLi");
+        const wbeltPMatkLi = document.getElementById("wbeltPMatkLi");
+        const wbeltPSpdLi = document.getElementById("wbeltPSpdLi");
+        const wbeltPJmpLi = document.getElementById("wbeltPJmpLi");
+        const wbeltPTag = document.getElementById("wbeltPTag");
+
+        wbeltPWatk.textContent = "1";
+        wbeltPMatk.textContent = "1";
+        wbeltPWdef.textContent = "60";
+        wbeltPMdef.textContent = "60";
+        wbeltPSpd.textContent = "2";
+        wbeltPJmp.textContent = "2";
+        wbeltPSlt.textContent = "3";
+        wbeltPTag.textContent = "";
+        wbeltPWatkLi.style.display = "block";
+        wbeltPMatkLi.style.display = "block";
+        wbeltPWdefLi.style.display = "block";
+        wbeltPMdefLi.style.display = "block";
+        wbeltPSpdLi.style.display = "block";  
+        wbeltPJmpLi.style.display = "block";  
+        break;
+      }
       default:
         break;
     }
@@ -1015,6 +1214,7 @@ observer.observe(document.body,obsconfig);
 // stats
 // item tag colors?
 // cheat clown + bad luck
+// character behind item box
 
 </script>
 </body>
