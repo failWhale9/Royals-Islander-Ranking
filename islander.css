@@ -18,6 +18,15 @@ body {
 	background-attachment: fixed;
 	animation: slideleft 600s infinite linear;
 	margin-bottom: 200px;
+	cursor: default;
+}
+
+.custom-cursor {
+	cursor: url('images/scroll/cursor1.png'), pointer;
+}
+
+.custom-cursor-clicked {
+    cursor: url('images/scroll/cursor2.png'), pointer;
 }
 
 img.Badge {
@@ -285,7 +294,7 @@ div.scrolldiv {
 }
 
 div.scrollsim {
-	background-image: url('images/scroll/background2.png');
+	background-image: url('images/scroll/background1.png');
 	background-size: cover;
 	position:relative;
 	width: 946px;
@@ -309,6 +318,7 @@ div.baseBox {
 	border-radius: 4px;
 	outline: 1px solid #131b6faa;
 	outline-offset: 1px;
+	z-index: 9999;
 }
 
 div.scrollBox {
