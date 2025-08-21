@@ -122,7 +122,8 @@
   },
   {
     "Name": "jung1e",
-    "Level": "66"
+    "Level": "66",
+    "BadNews":"Took the Boat in 2025"
   },
   {
     "Name": "NPCs",
@@ -487,7 +488,7 @@
   },
   {
     "Name": "Valtarre",
-    "Level": "49",
+    "Level": "50",
     "Badges":["dexlander","damage200"]
   },
   {
