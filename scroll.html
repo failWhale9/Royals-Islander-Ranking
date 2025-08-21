@@ -25,7 +25,7 @@
 
 
 <div class="scrolldiv">
-    <label>Base item: </label> 
+    <label class="menuText">Base item: </label> 
     <select id="itemBaseSelect" onchange="baseChange(event)">
         <option value ="none">-------------</option>
         <option value ="gomu">White Gomushin</option>
@@ -42,7 +42,7 @@
 
     </select>
 
-    <label>Character: </label>
+    <label class="menuText">Character: </label>
     <select id="character" onchange="charChange()">
         <option value ="toben">Default</option>
         <option value ="namo">Namo</option>
@@ -94,14 +94,13 @@
 
 
 
-<div class="scrolldiv">
-    <p>Stats:</p>
-    <div>
-        <span id="scrollStat">Scrolls Used:</span><span id="scrollStatValue">0</span>
-        <span id="scrollStat">Bases Used:</span><span id="scrollStatValue">0</span>
-        <span id="scrollStat">Best Result:</span><span id="scrollStatValue">N/A</span>
+<div class="scrolldiv" style="padding: 20px 20px 30px 20px;">
+    <div class="statContainer">
+        <span class="scrollStat"><p>Scrolls Used:</p><p id="scrUsed" class="scrollStatValue">0</p></span>
+        <span class="scrollStat"><p>Bases Used:</p><p id="basUsed" class="scrollStatValue">0</p></span>
+        <span class="scrollStat"><p>Best Result:</p><p id="bestRes" class="scrollStatValue" style="font-size: 20px">N/A</p></span>
     </div>
-    <input type="submit" value="Reset Stats">
+    <input type="submit" value="Reset Stats" onclick="resetStats()" style="float:right;margin-bottom:10px;">
 </div>
 
 
@@ -469,6 +468,7 @@
 
 const draggables = document.querySelectorAll('.draggableImage');
 const dropZone = document.querySelectorAll('.dropZone');
+let best = 0;
 
 // When drag starts, set data
 draggables.forEach(draggable => {
@@ -643,8 +643,6 @@ function updateTagColor(baseType) {
     }
   }
   else { // orange or grey
-    console.log(tag);
-    console.log(baseType);
     if(tag.textContent != "" && parseInt(tag.textContent[2]) > 0) {
       title.style.color = "#ff8811";
       tag.style.color = "#ff8811";
@@ -671,8 +669,11 @@ function updateTag(baseType) {
 }
 
 function scrollActivated(scrollType, baseType) {
-
   let slots = document.getElementById(baseType + "Slt");
+  let total = 0;
+  let recordStr = "";
+  const baseName = document.getElementById(baseType + "Title").textContent;
+
   if(parseInt(slots.textContent) <= 0) {
     // make sound?
     document.body.classList.remove('custom-cursor-clicked');
@@ -700,6 +701,10 @@ function scrollActivated(scrollType, baseType) {
         badResult();
         slots.textContent = parseInt(slots.textContent) - 1;
       }
+      let tagCount = document.getElementById(baseType + "Tag").textContent[2];
+      total = spd.textContent + jmp.textContent;
+      if(tagCount === undefined) {recordStr = spd.textContent + "spd, " + jmp.textContent + "jmp";}
+      else{recordStr ="(+" + document.getElementById(baseType + "Tag").textContent[2] + "): " + spd.textContent + "spd, " + jmp.textContent + "jmp";} 
       break;
     }
     case "shoedex10": {
@@ -722,6 +727,10 @@ function scrollActivated(scrollType, baseType) {
         badResult();
         slots.textContent = parseInt(slots.textContent) - 1;
       }
+      let tagCount = document.getElementById(baseType + "Tag").textContent[2];
+      total = spd.textContent + jmp.textContent;
+      if(tagCount === undefined) {recordStr = spd.textContent + "spd, " + jmp.textContent + "jmp";}
+      else{recordStr = "(+" + document.getElementById(baseType + "Tag").textContent[2] + "): " + spd.textContent + "spd, " + jmp.textContent + "jmp";} 
       break;
     }
     case "botdef10":
@@ -745,6 +754,11 @@ function scrollActivated(scrollType, baseType) {
         badResult();
         slots.textContent = parseInt(slots.textContent) - 1;
       }
+      let tagCount = document.getElementById(baseType + "Tag").textContent[2];
+      total = wdef.textContent;
+      if(tagCount === undefined) {recordStr = wdef.textContent + "def";}
+      else{recordStr = "(+" + document.getElementById(baseType + "Tag").textContent[2] + "): " + wdef.textContent + "def";} 
+      //console.log("Total: " + total + "   Best: " + best);
       break;
     }
     case "hatdef10": {
@@ -767,6 +781,10 @@ function scrollActivated(scrollType, baseType) {
         badResult();
         slots.textContent = parseInt(slots.textContent) - 1;
       }
+      let tagCount = document.getElementById(baseType + "Tag").textContent[2];
+      total = wdef.textContent;
+      if(tagCount === undefined) {recordStr = wdef.textContent + "def";}
+      else{recordStr = "(+" + document.getElementById(baseType + "Tag").textContent[2] + "): " + wdef.textContent + "def";} 
       break;
     }
     case "hatdef60": {
@@ -785,12 +803,17 @@ function scrollActivated(scrollType, baseType) {
         badResult();
         slots.textContent = parseInt(slots.textContent) - 1;
       }
+      let tagCount = document.getElementById(baseType + "Tag").textContent[2];
+      total = wdef.textContent;
+      if(tagCount === undefined) {recordStr = wdef.textContent + "def";}
+      else{recordStr = "(+" + document.getElementById(baseType + "Tag").textContent[2] + "): " + wdef.textContent + "def";} 
       break;
     }
     case "beltscr":
     case "witchscr": {
-
       let stats = [];
+      let bestStats = [];
+      let statNames = [];
 
       if(baseType == "witch") {
         const wdef = document.getElementById(baseType + "Wdef");
@@ -801,24 +824,31 @@ function scrollActivated(scrollType, baseType) {
         const int = document.getElementById(baseType + "Int");
         const luk = document.getElementById(baseType + "Luk");       
         stats = [wdef,mdef,mp,str,dex,int,luk];
+        bestStats = [str,dex,int,luk];
+        statNames = ["str","dex","int","luk"];
       }
       if(baseType == "broom") {
         const watk = document.getElementById(baseType + "Watk");
         const spd = document.getElementById(baseType + "Spd");
         stats = [watk,spd];
-
+        bestStats = [watk,spd];
+        statNames = ["watk","spd"];
       }
       if(baseType == "wbeltR") {
         const wdef = document.getElementById(baseType + "Wdef");
         const mdef = document.getElementById(baseType + "Mdef");
         const jmp = document.getElementById(baseType + "Jmp");
         stats = [wdef,mdef,jmp];
+        bestStats = [jmp];
+        statNames = ["jmp"];
       }
       if(baseType == "wbeltB") {
         const wdef = document.getElementById(baseType + "Wdef");
         const mdef = document.getElementById(baseType + "Mdef");
         const spd = document.getElementById(baseType + "Spd");
         stats = [wdef,mdef,spd];
+        bestStats = [spd];
+        statNames = ["spd"];
       }
       if(baseType == "wbeltP") {
         const wdef = document.getElementById(baseType + "Wdef");
@@ -828,6 +858,8 @@ function scrollActivated(scrollType, baseType) {
         const watk = document.getElementById(baseType + "Watk");
         const matk = document.getElementById(baseType + "Matk");
         stats = [wdef,mdef,spd,jmp,watk,matk];
+        bestStats = [watk,spd,jmp];
+        statNames = ["watk","spd","jmp"];
       }
 
       stats.forEach(stat => {
@@ -841,16 +873,39 @@ function scrollActivated(scrollType, baseType) {
            }
         }
       });
-
       goodResult();
       slots.textContent = parseInt(slots.textContent) - 1;
       updateTag(baseType);
+      total = 0;
+      bestStats.forEach(stat => {
+        total = total + parseInt(stat.textContent);
+      });
+
+      recordStr = "";
+
+      bestStats.forEach((stat, index) => {
+        if(parseInt(stat.textContent) > 0) {
+          recordStr += (parseInt(stat.textContent) + statNames[index] + " ");
+        }
+      });
+
+
+      console.log("total: "+total+"     recordStr: "+recordStr);
       break;
     }
     default:
       break;
   }
   document.body.classList.remove('custom-cursor-clicked');
+  const scrUsed = document.getElementById("scrUsed");
+  const bestRes = document.getElementById("bestRes");
+  scrUsed.textContent = parseInt(scrUsed.textContent) + 1;
+  if(parseInt(slots.textContent) == 0) {
+    if(total > best) {
+      best = total;
+      bestRes.textContent = recordStr;
+    }
+  }
 }
 
 function baseChange(event) {
@@ -974,8 +1029,19 @@ function baseChange(event) {
       }
     }
 
-    // Reset stats
+    resetStats();
     newItem();
+
+}
+
+function resetStats() {
+  const scrUsed = document.getElementById("scrUsed");
+  const basUsed = document.getElementById("basUsed");
+  const bestRes = document.getElementById("bestRes");
+  scrUsed.textContent = "0";
+  basUsed.textContent = "0";
+  bestRes.textContent = "N/A";
+  best = 0;
 
 }
 
@@ -1251,7 +1317,7 @@ function newItem() {
         const wbeltBSlt = document.getElementById("wbeltBSlt");
         const wbeltBWdefLi = document.getElementById("wbeltBWdefLi");
         const wbeltBMdefLi = document.getElementById("wbeltBMdefLi");
-        const wbeltBJmpLi = document.getElementById("wbeltBJmpLi");
+        const wbeltBSpdLi = document.getElementById("wbeltBSpdLi");
         const wbeltBTag = document.getElementById("wbeltBTag");
 
         wbeltBWdef.textContent = "45";
@@ -1261,7 +1327,7 @@ function newItem() {
         wbeltBTag.textContent = "";
         wbeltBWdefLi.style.display = "block";
         wbeltBMdefLi.style.display = "block";
-        wbeltBJmpLi.style.display = "block";  
+        wbeltBSpdLi.style.display = "block";  
         break;
       }
       case "wbeltP": {    
@@ -1300,6 +1366,8 @@ function newItem() {
         break;
     }
     updateTagColor(baseType.value);
+    const basUsed = document.getElementById("basUsed");
+    basUsed.textContent = parseInt(basUsed.textContent) + 1;
 }
 
 function badResult()
@@ -1427,7 +1495,6 @@ cursorDiv.addEventListener('mouseup', function() {
 // todo:
 // random emotes
 // background music
-// stats
 // characters
 // cheat clown + bad luck
 // style stats and controls
