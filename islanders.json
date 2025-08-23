@@ -443,7 +443,8 @@
   },
   {
     "Name": "StarTropics",
-    "Level": "45"
+    "Level": "45",
+    "Badges": ["damage500","chairs24","gomu3"]
   },
   {
     "Name": "Ataynep",
