@@ -70,7 +70,7 @@
 <img id="hatdef60" class="draggableImage hoverscroll" src="images/scroll/60.png" style="display:none; position:absolute; top:84px; left:654px;" draggable="true" data-title="Scroll for Helmet for DEF 60%" data-desc1="Improves helmet def." data-desc2="Success rate:60%, weapon def." data-desc3="+2, magic def, +1." data-desc4="">
 <img id="witchscr" class="draggableImage hoverscroll" src="images/scroll/witchscr.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Normal Witch Scroll" data-desc1="A scroll that, depending on" data-desc2="chance, will either improve or" data-desc3="worsen the Talking Witch Hat" data-desc4="or Broomstick obtained from the Witch.">
 <img id="beltscr" class="draggableImage hoverscroll" src="images/scroll/witchscr.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Witch's Belt Scroll" data-desc1="A scroll that, depending on" data-desc2="chance, will either improve or" data-desc3="worsen the Witch's Belts" data-desc4="obtained from the Witch.">
-<img id="1hsatk" class="draggableImage hoverscroll" src="images/scroll/10.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Scroll for One-Handed Sword for ATT 10%" data-desc1="Improves attack on" data-desc2="one-handed sword." data-desc3="Success rate:10%, weapon" data-desc4="attack+5, STR+3, weapon def.+1.">
+<img id="1hsatk10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Scroll for One-Handed Sword for ATT 10%" data-desc1="Improves attack on" data-desc2="one-handed sword." data-desc3="Success rate:10%, weapon" data-desc4="attack+5, STR+3, weapon def.+1.">
 <img id="chaos" class="draggableImage hoverscroll" src="images/scroll/chaos.png" style="display:none; position:absolute; top:84px; left:654px;" draggable="true" data-title="Chaos Scroll 60%" data-desc1="Alters the equipment for better" data-desc2="or worse. Not available on" data-desc3="Cash Items." data-desc4="Success rate:60%">
 
 
@@ -510,7 +510,7 @@
     <li id="basketDexLi">DEX: <span class="statValue">+</span><span id="basketDex" class="statValue">0</span></li>
     <li id="basketIntLi">INT: <span class="statValue">+</span><span id="basketInt" class="statValue">0</span></li>
     <li id="basketLukLi">LUK: <span class="statValue">+</span><span id="basketLuk" class="statValue">0</span></li>
-    <li id="basketHpLi">MP: <span class="statValue">+</span><span id="basketHp" class="statValue">0</span></li>
+    <li id="basketHpLi">HP: <span class="statValue">+</span><span id="basketHp" class="statValue">0</span></li>
     <li id="basketWatkLi">WEAPON ATTACK: <span id="basketWatk" class="statValue">0</span></li>
     <li id="basketWdefLi">WEAPON DEF.: <span id="basketWdef" class="statValue">0</span></li>
     <li id="basketSpdLi">SPEED: <span class="statValue">+</span><span id="basketSpd" class="statValue">0</span></li>
@@ -680,6 +680,16 @@ function updateTagColor(baseType) {
     case "wbeltP": {
       baseline = 126;
       total = watk + matk + wdef + mdef + spd + jmp;
+      break;
+    }
+    case "lights": {
+      baseline = 53;
+      total = watk + wdef + str + spd;
+      break;
+    }
+    case "basket": {
+      baseline = 16;
+      total = watk + wdef + spd + str + dex + int + luk + parseInt(hp/10);
       break;
     }
     default:
@@ -966,6 +976,62 @@ function scrollActivated(scrollType, baseType) {
       console.log("total: "+total+"     recordStr: "+recordStr);
       break;
     }
+    case "1hsatk10": {
+      let stats = [];
+      let bestStats = [];
+      let statNames = [];
+      const wdef = document.getElementById(baseType + "Wdef");
+      const watk = document.getElementById(baseType + "Watk");
+      const str = document.getElementById(baseType + "Str");
+      const strLi = document.getElementById(baseType + "StrLi");
+      const wdefLi = document.getElementById(baseType + "WdefLi");
+      if(Math.random() >= 0.9) {
+        goodResult();
+        wdefLi.style.display = "block";
+        strLi.style.display = "block";
+        wdef.textContent = parseInt(wdef.textContent) + 1;
+        watk.textContent = parseInt(watk.textContent) + 5;
+        str.textContent = parseInt(str.textContent) + 3;
+        slots.textContent = parseInt(slots.textContent) - 1;
+        updateTag(baseType);
+      }
+      else {
+        badResult();
+        slots.textContent = parseInt(slots.textContent) - 1;
+      }
+      let tagCount = document.getElementById(baseType + "Tag").textContent[2];
+
+      if(baseType == "lights") {
+        const spd = document.getElementById(baseType + "Spd");
+        stats = [wdef,watk,spd,str];
+        bestStats = [watk,spd];
+        statNames = ["watk","spd"];
+      }
+      if(baseType == "basket") {
+        const spd = document.getElementById(baseType + "Spd");
+        const dex = document.getElementById(baseType + "Dex");
+        const int = document.getElementById(baseType + "Int");
+        const luk = document.getElementById(baseType + "Luk");
+        const hp = document.getElementById(baseType + "Hp");
+        stats = [wdef,watk,spd,str,dex,int,luk,hp];
+        bestStats = [watk,spd];
+        statNames = ["watk","spd"];
+      }
+
+      total = 0;
+      bestStats.forEach(stat => {
+        total = total + parseInt(stat.textContent);
+      });
+
+      recordStr = "";
+
+      bestStats.forEach((stat, index) => {
+        if(parseInt(stat.textContent) > 0) {
+          recordStr += (parseInt(stat.textContent) + statNames[index] + " ");
+        }
+      });
+      break;
+    }
     default:
       break;
   }
@@ -1101,7 +1167,7 @@ function baseChange(event) {
         break;
       }
       case "lights": {
-        const hsatk = document.getElementById("1hsatk");
+        const hsatk = document.getElementById("1hsatk10");
         const chaos = document.getElementById("chaos");
         const lights = document.getElementById("lights");
         hsatk.style.display = "block";
@@ -1112,7 +1178,7 @@ function baseChange(event) {
         break;
       }
       case "basket": {
-        const hsatk = document.getElementById("1hsatk");
+        const hsatk = document.getElementById("1hsatk10");
         const chaos = document.getElementById("chaos");
         const basket = document.getElementById("basket");
         hsatk.style.display = "block";
@@ -1490,6 +1556,50 @@ function newItem() {
         lightsSpdLi.style.display = "block";  
         lightsStrLi.style.display = "none";
         lightsWdefLi.style.display = "none";
+        break;
+      }
+      case "basket": {    
+        const basketWatk = document.getElementById("basketWatk");
+        const basketWdef = document.getElementById("basketWdef");
+        const basketHp = document.getElementById("basketHp");
+        const basketStr = document.getElementById("basketStr");
+        const basketDex = document.getElementById("basketDex");
+        const basketInt = document.getElementById("basketInt");
+        const basketLuk = document.getElementById("basketLuk");
+        const basketSpd = document.getElementById("basketSpd");
+
+        const basketSlt = document.getElementById("basketSlt");
+
+        const basketWatkLi = document.getElementById("basketWatkLi");
+        const basketWdefLi = document.getElementById("basketWdefLi");
+        const basketHpLi = document.getElementById("basketHpLi");
+        const basketSpdLi = document.getElementById("basketSpdLi");
+        const basketStrLi = document.getElementById("basketStrLi");
+        const basketDexLi = document.getElementById("basketDexLi");
+        const basketIntLi = document.getElementById("basketIntLi");
+        const basketLukLi = document.getElementById("basketLukLi");
+  
+        const basketTag = document.getElementById("basketTag");
+
+        basketWatk.textContent = "1";
+        basketWdef.textContent = "0";
+        basketSpd.textContent = "10";
+        basketStr.textContent = "1";
+        basketDex.textContent = "1";
+        basketInt.textContent = "1";
+        basketLuk.textContent = "1";
+        basketHp.textContent = "10";
+        basketSlt.textContent = "7";
+        basketTag.textContent = "";
+        basketSpdLi.style.display = "block";
+        basketWatkLi.style.display = "block";
+        basketWdefLi.style.display = "none";
+        basketHpLi.style.display = "block";
+        basketStrLi.style.display = "block";
+        basketDexLi.style.display = "block";
+        basketIntLi.style.display = "block";
+        basketLukLi.style.display = "block";
+    
         break;
       }
       default:
