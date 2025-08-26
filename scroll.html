@@ -39,6 +39,8 @@
           <option value ="wbeltR">Witch's Crimson Belt</option>
           <option value ="wbeltB">Witch's Ocean Blue Belt</option>
           <option value ="wbeltP">Witch's Deep Purple Belt</option>
+          <option value ="lights">Maplemas Lights</option>
+          <option value ="basket">Pumpkin Basket (2006 SE)</option>
       </select>
 
     <label class="menuText">Character: </label>
@@ -68,6 +70,8 @@
 <img id="hatdef60" class="draggableImage hoverscroll" src="images/scroll/60.png" style="display:none; position:absolute; top:84px; left:654px;" draggable="true" data-title="Scroll for Helmet for DEF 60%" data-desc1="Improves helmet def." data-desc2="Success rate:60%, weapon def." data-desc3="+2, magic def, +1." data-desc4="">
 <img id="witchscr" class="draggableImage hoverscroll" src="images/scroll/witchscr.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Normal Witch Scroll" data-desc1="A scroll that, depending on" data-desc2="chance, will either improve or" data-desc3="worsen the Talking Witch Hat" data-desc4="or Broomstick obtained from the Witch.">
 <img id="beltscr" class="draggableImage hoverscroll" src="images/scroll/witchscr.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Witch's Belt Scroll" data-desc1="A scroll that, depending on" data-desc2="chance, will either improve or" data-desc3="worsen the Witch's Belts" data-desc4="obtained from the Witch.">
+<img id="1hsatk" class="draggableImage hoverscroll" src="images/scroll/10.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Scroll for One-Handed Sword for ATT 10%" data-desc1="Improves attack on" data-desc2="one-handed sword." data-desc3="Success rate:10%, weapon" data-desc4="attack+5, STR+3, weapon def.+1.">
+<img id="chaos" class="draggableImage hoverscroll" src="images/scroll/chaos.png" style="display:none; position:absolute; top:84px; left:654px;" draggable="true" data-title="Chaos Scroll 60%" data-desc1="Alters the equipment for better" data-desc2="or worse. Not available on" data-desc3="Cash Items." data-desc4="Success rate:60%">
 
 
 <!-- Bases -->
@@ -82,6 +86,8 @@
 <img id="wbeltR" class="dropZone" src="images/scroll/wbeltR.png" style="display:none; position:absolute; top:185px; left:235px;">
 <img id="wbeltB" class="dropZone" src="images/scroll/wbeltB.png" style="display:none; position:absolute; top:185px; left:235px;">
 <img id="wbeltP" class="dropZone" src="images/scroll/wbeltP.png" style="display:none; position:absolute; top:185px; left:235px;">
+<img id="lights" class="dropZone" src="images/scroll/lights.png" style="display:none; position:absolute; top:150px; left:266px;">
+<img id="basket" class="dropZone" src="images/scroll/basket.png" style="display:none; position:absolute; top:150px; left:270px;">
 
 <!-- Effects -->
 <img id="char" src="/images/scroll/toben-neutral.gif" style="position:absolute; top:150px; left:442px; z-index: 9990;">
@@ -441,6 +447,74 @@
     <li id="wbeltPSpdLi">SPEED: <span class="statValue">+</span><span id="wbeltPSpd" class="statValue">0</span></li>
     <li id="wbeltPJmpLi">JUMP: <span class="statValue">+</span><span id="wbeltPJmp" class="statValue">0</span></li>
     <li>NUMBER OF UPGRADES AVAILABLE: <span id="wbeltPSlt" class="statValue">0</span></li>
+  </ul>
+</div>
+
+<div id="lightsBox" class="baseBox">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span id="lightsTitle" class="itemTitle">Maplemas Lights</span> <span id="lightsTag" class="itemTitle">(+0)</span>
+  <div class="baseTop">
+    <div class="baseImgBox">
+      <img class="baseImg "src="images/scroll/lights.png" style="top:17px;left:19px;">
+    </div>
+    <div class="baseStats">
+      <ul style="list-style:none;padding-left:10px;margin-top:0px;">
+        <li>REQ LV: 25</li>
+        <li>REQ STR: 0</li>
+        <li>REQ DEX: 0</li>
+        <li>REQ INT: 0</li>
+        <li>REQ LUK: 0</li>
+        <li>REQ FAM: 0</li>
+        <li style="color:#999999">ITEM LEV: -</li>
+        <li style="color:#999999">ITEM EXP: -</li>
+      </ul>
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+  <img src="images/scroll/classes.png">
+  <ul class="statList">
+    <li>CATEGORY: ONE-HANDED SWORD</li>
+    <li>ATTACK SPEED: FAST</li>
+    <li id="lightsStrLi">STR: <span class="statValue">+</span><span id="lightsStr" class="statValue">0</span></li>
+    <li id="lightsWatkLi">WEAPON ATTACK: <span id="lightsWatk" class="statValue">0</span></li>
+    <li id="lightsWdefLi">WEAPON DEF.: <span id="lightsWdef" class="statValue">0</span></li>
+    <li id="lightsSpdLi">SPEED: <span class="statValue">+</span><span id="lightsSpd" class="statValue">0</span></li>
+    <li>NUMBER OF UPGRADES AVAILABLE: <span id="lightsSlt" class="statValue">0</span></li>
+  </ul>
+</div>
+
+<div id="basketBox" class="baseBox">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span id="basketTitle" class="itemTitle">Pumpkin Basket (2006 SE)</span> <span id="basketTag" class="itemTitle">(+0)</span>
+  <div class="baseTop">
+    <div class="baseImgBox">
+      <img class="baseImg "src="images/scroll/basket.png" style="top:17px;left:19px;">
+    </div>
+    <div class="baseStats">
+      <ul style="list-style:none;padding-left:10px;margin-top:0px;">
+        <li>REQ LV: 0</li>
+        <li>REQ STR: 0</li>
+        <li>REQ DEX: 0</li>
+        <li>REQ INT: 0</li>
+        <li>REQ LUK: 0</li>
+        <li>REQ FAM: 0</li>
+        <li style="color:#999999">ITEM LEV: -</li>
+        <li style="color:#999999">ITEM EXP: -</li>
+      </ul>
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+  <img src="images/scroll/classes.png">
+  <ul class="statList">
+    <li>CATEGORY: ONE-HANDED SWORD</li>
+    <li>ATTACK SPEED: FASTER</li>
+    <li id="basketStrLi">STR: <span class="statValue">+</span><span id="basketStr" class="statValue">0</span></li>
+    <li id="basketDexLi">DEX: <span class="statValue">+</span><span id="basketDex" class="statValue">0</span></li>
+    <li id="basketIntLi">INT: <span class="statValue">+</span><span id="basketInt" class="statValue">0</span></li>
+    <li id="basketLukLi">LUK: <span class="statValue">+</span><span id="basketLuk" class="statValue">0</span></li>
+    <li id="basketHpLi">MP: <span class="statValue">+</span><span id="basketHp" class="statValue">0</span></li>
+    <li id="basketWatkLi">WEAPON ATTACK: <span id="basketWatk" class="statValue">0</span></li>
+    <li id="basketWdefLi">WEAPON DEF.: <span id="basketWdef" class="statValue">0</span></li>
+    <li id="basketSpdLi">SPEED: <span class="statValue">+</span><span id="basketSpd" class="statValue">0</span></li>
+    <li>NUMBER OF UPGRADES AVAILABLE: <span id="basketSlt" class="statValue">0</span></li>
   </ul>
 </div>
 
@@ -1026,6 +1100,28 @@ function baseChange(event) {
         bg.style.backgroundImage = "url(images/scroll/background2.png)";
         break;
       }
+      case "lights": {
+        const hsatk = document.getElementById("1hsatk");
+        const chaos = document.getElementById("chaos");
+        const lights = document.getElementById("lights");
+        hsatk.style.display = "block";
+        chaos.style.display = "block";
+        lights.style.display = "block";
+        lights.classList.add("activeBase");
+        bg.style.backgroundImage = "url(images/scroll/background1.png)";
+        break;
+      }
+      case "basket": {
+        const hsatk = document.getElementById("1hsatk");
+        const chaos = document.getElementById("chaos");
+        const basket = document.getElementById("basket");
+        hsatk.style.display = "block";
+        chaos.style.display = "block";
+        basket.style.display = "block";
+        basket.classList.add("activeBase");
+        bg.style.backgroundImage = "url(images/scroll/background2.png)";
+        break;
+      }
     }
 
     resetStats();
@@ -1359,6 +1455,41 @@ function newItem() {
         wbeltPMdefLi.style.display = "block";
         wbeltPSpdLi.style.display = "block";  
         wbeltPJmpLi.style.display = "block";  
+        break;
+      }
+      case "lights": {    
+        let watk = 0;
+        let spd = 0;
+        const lightsStr = document.getElementById("lightsStr");
+        const lightsWatk = document.getElementById("lightsWatk");
+        const lightsWdef = document.getElementById("lightsWdef");
+        const lightsSpd = document.getElementById("lightsSpd");
+        const lightsSlt = document.getElementById("lightsSlt");
+        const lightsWatkLi = document.getElementById("lightsWatkLi");
+        const lightsSpdLi = document.getElementById("lightsSpdLi");
+        const lightsStrLi = document.getElementById("lightsStrLi");
+        const lightsWdefLi = document.getElementById("lightsWdefLi");
+        const lightsTag = document.getElementById("lightsTag");
+
+        if(Math.random() >= 0.8) {
+          watk = getRandomInteger(38,53);
+          spd = getRandomInteger(9,16);
+        }
+        else {
+          watk = getRandomInteger(38,48);
+          spd = getRandomInteger(9,11);
+        }
+
+        lightsWatk.textContent = watk;
+        lightsSpd.textContent = spd;
+        lightsSlt.textContent = "7";
+        lightsTag.textContent = "";
+        lightsStr.textContent = "0";
+        lightsWdef.textContent = "0";
+        lightsWatkLi.style.display = "block";
+        lightsSpdLi.style.display = "block";  
+        lightsStrLi.style.display = "none";
+        lightsWdefLi.style.display = "none";
         break;
       }
       default:
