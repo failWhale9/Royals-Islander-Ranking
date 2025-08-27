@@ -17,7 +17,7 @@
 <img src="images/title.png" id="titleImage"></img>
 
 <div id="navbar">
-    <a href=""><span class="navInactive"> Rankings </span></a>
+    <a href="/index.html"><span class="navActive"> Rankings </span></a>
     <a href="/badges.html"><span class="navActive"> Badges </span></a>
     <a href="/unranked.html"><span class="navActive"> Unranked Islanders </span></a>
 </div>
@@ -44,11 +44,17 @@
       </select>
 
     <label class="menuText">Character: </label>
-    <select id="character" onchange="charChange()">
+    <select id="character" onchange="charChange(event)">
         <option value ="toben">Default</option>
         <option value ="namo">Namo</option>
         <option value ="lowly">Lowly</option>
         <option value ="mooshy">Mooshy</option>
+        <option value ="annot">Annot</option>
+        <option value ="chrizz">IslandChrizz</option>
+        <option value ="lolzor">IoIzor</option>
+        <option value ="sawngo">Sawngo</option>
+        <option value ="adaryn">Adaryn</option>
+        <option value ="rally">Rally</option>
     </select>
     <input type="submit" value="New Item" onclick="newItem()">
 </div>
@@ -74,18 +80,25 @@
 <img id="chaos" class="draggableImage hoverscroll" src="images/scroll/chaos.png" style="display:none; position:absolute; top:84px; left:654px;" draggable="true" data-title="Chaos Scroll 60%" data-desc1="Alters the equipment for better" data-desc2="or worse. Not available on" data-desc3="Cash Items." data-desc4="Success rate:60%">
 
 <!--Clutter-->
-<img id="arrows" class="draggableImage hoverscroll" src="images/scroll/arrows.png" style="position:absolute; top:81px; left:654px;" draggable="true" data-title="Arrow for Bow" data-desc1="A barrel full of arrows." data-desc2="Only usable with bows." data-desc3="Attack +1" data-desc4="">
-<img id="redpot" class="draggableImage hoverscroll" src="images/scroll/redpot.png" style="position:absolute; top:83px; left:691px;" draggable="true" data-title="Red Potion" data-desc1="A potion made out of red herbs." data-desc2="Recovers 50 HP." data-desc3="" data-desc4="">
-<img id="redpot2" class="draggableImage hoverscroll" src="images/scroll/redpot.png" style="position:absolute; top:83px; left:727px;" draggable="true" data-title="Red Potion" data-desc1="A potion made out of red herbs." data-desc2="Recovers 50 HP." data-desc3="" data-desc4="">
-<img id="redpot3" class="draggableImage hoverscroll" src="images/scroll/redpot.png" style="position:absolute; top:117px; left:620px;" draggable="true" data-title="Red Potion" data-desc1="A potion made out of red herbs." data-desc2="Recovers 50 HP." data-desc3="" data-desc4="">
-<img id="redpot4" class="draggableImage hoverscroll" src="images/scroll/redpot.png" style="position:absolute; top:117px; left:654px;" draggable="true" data-title="Red Potion" data-desc1="A potion made out of red herbs." data-desc2="Recovers 50 HP." data-desc3="" data-desc4="">
-<img id="bolts" class="draggableImage hoverscroll" src="images/scroll/bolts.png" style="position:absolute; top:115px; left:689px;" draggable="true" data-title="Arrow for Crossbow" data-desc1="A barrel full of arrows." data-desc2="Only usable with crossbows." data-desc3="Attack +1" data-desc4="">
-<img id="apple" class="draggableImage hoverscroll" src="images/scroll/apple.png" style="position:absolute; top:118px; left:729px;" draggable="true" data-title="Green Apple" data-desc1="Sour and crunchy green apple." data-desc2="Recovers MP +30." data-desc3="" data-desc4="">
-<img id="apple2" class="draggableImage hoverscroll" src="images/scroll/apple.png" style="position:absolute; top:152px; left:620px;" draggable="true" data-title="Green Apple" data-desc1="Sour and crunchy green apple." data-desc2="Recovers MP +30." data-desc3="" data-desc4="">
-<img id="lemon" class="draggableImage hoverscroll" src="images/scroll/lemon.png" style="position:absolute; top:154px; left:656px;" draggable="true" data-title="Lemon" data-desc1="Very sour." data-desc2="Recovers around 150 MP." data-desc3="" data-desc4="">
-<img id="bluepot" class="draggableImage hoverscroll" src="images/scroll/bluepot.png" style="position:absolute; top:151px; left:691px;" draggable="true" data-title="Blue Potion" data-desc1="A potion made out of blue herbs." data-desc2="Recovers 100 MP." data-desc3="" data-desc4="">
-<img id="bluepot2" class="draggableImage hoverscroll" src="images/scroll/bluepot.png" style="position:absolute; top:151px; left:727px;" draggable="true" data-title="Blue Potion" data-desc1="A potion made out of blue herbs." data-desc2="Recovers 100 MP." data-desc3="" data-desc4="">
-<img id="bullet" class="draggableImage hoverscroll" src="images/scroll/bullet.png" style="position:absolute; top:192px; left:620px;" draggable="true" data-title="Bullet" data-desc1="A bullet made out of steel. A set" data-desc2="contains numerous bullets and" data-desc3="once they are used up, they'll" data-desc4="need to be recharged. Attack + 10">
+<img id="clutter1" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:83px; left:655px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutter2" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:83px; left:691px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutter3" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:83px; left:727px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutter4" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:117px; left:619px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutter5" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:117px; left:655px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutter6" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:117px; left:691px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutter7" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:117px; left:727px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutter8" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:152px; left:619px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutter9" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:152px; left:655px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutterA" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:152px; left:691px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutterB" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:152px; left:727px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutterC" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:185px; left:619px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutterD" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:185px; left:655px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutterE" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:185px; left:691px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutterF" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:185px; left:727px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutterG" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:219px; left:619px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+<img id="clutterH" class="draggableImage hoverscroll clutter" src="images/scroll/redpot.png" style="position:absolute; top:219px; left:655px;" draggable="true" data-title="" data-desc1="" data-desc2="" data-desc3="" data-desc4="" data-top="0" data-left="0">
+
+
 
 <!-- Bases -->
 <img id="gomu" class="dropZone activeBase" src="images/scroll/gomu.png" style="display:none; position:absolute; top:225px; left:237px;">
@@ -102,9 +115,20 @@
 <img id="lights" class="dropZone" src="images/scroll/lights.png" style="display:none; position:absolute; top:150px; left:266px;">
 <img id="basket" class="dropZone" src="images/scroll/basket.png" style="display:none; position:absolute; top:150px; left:270px;">
 
-<!-- Effects -->
-<img id="char" src="/images/scroll/toben-neutral.gif" style="position:absolute; top:150px; left:442px; z-index: 9990;">
+<!-- Characters -->
+<img id="toben" class="character activeChar" src="/images/scroll/toben.gif" style="position:absolute; top:150px; left:442px; z-index: 9990;">
+<img id="lowly" class="character" src="/images/scroll/lowly.gif" style="display:none; position:absolute; top:140px; left:435px; z-index: 9990;">
+<img id="namo" class="character" src="/images/scroll/namo.gif" style="display:none; position:absolute; top:152px; left:427px; z-index: 9990;">
+<img id="annot" class="character" src="/images/scroll/annot.gif" style="display:none; position:absolute; top:144px; left:436px; z-index: 9990;">
+<img id="mooshy" class="character" src="/images/scroll/mooshy.gif" style="display:none; position:absolute; top:141px; left:423px; z-index: 9990;">
+<img id="chrizz" class="character" src="/images/scroll/chrizz.gif" style="display:none; position:absolute; top:148px; left:425px; z-index: 9990;">
+<img id="lolzor" class="character" src="/images/scroll/lolzor.gif" style="display:none; position:absolute; top:146px; left:425px; z-index: 9990;">
+<img id="sawngo" class="character" src="/images/scroll/sawngo.gif" style="display:none; position:absolute; top:124px; left:442px; z-index: 9990;">
+<img id="adaryn" class="character" src="/images/scroll/adaryn.gif" style="display:none; position:absolute; top:118px; left:424px; z-index: 9990;">
+<img id="rally" class="character" src="/images/scroll/rally.gif" style="display:none; position:absolute; top:150px; left:438px; z-index: 9990;">
 <img id="face" src="" style="position:absolute; top:152px; left:444px; z-index: 9999;">
+
+<!-- Effects -->
 <img id="scrollYes" src="" style="position:absolute; top:-10px; left:337px;">
 <img id="scrollNo" src="" style="position:absolute; top:60px; left:413px;">
 </div>
@@ -579,6 +603,203 @@ dropZone.forEach(zone => {
 
 });
 
+function addClutter(skipFirst) {
+  const clutters = document.querySelectorAll('.clutter');
+  const options = ["redpot","bluepot","arrows","bolts","apple","lemon","bullet","meat","orange"];
+  const title = 'data-title';
+  const desc1 = 'data-desc1';
+  const desc2 = 'data-desc2';
+  const desc3 = 'data-desc3';
+  const desc4 = 'data-desc4';
+  const top = 'data-top';
+  const left = 'data-left';
+
+  clutters.forEach((clutter, index) => {
+    let rIndex = Math.floor(Math.random()*options.length);
+    let item = options[rIndex];
+
+    if (index === 0 && skipFirst == true) { 
+      return; 
+    }
+
+    if(Math.random() >= 0.98) {
+        let yOff = 1;
+        let xOff = 2;
+        clutter.setAttribute(title,"Onyx Apple");
+        clutter.setAttribute(desc1,"A rare, ripe apple imbued with");
+        clutter.setAttribute(desc2,"power. Recovers 90% HP & MP,");
+        clutter.setAttribute(desc3,"and provides +100 W.Att, +100 M.");
+        clutter.setAttribute(desc4,"Att, +20 Def for 10 minutes.");
+        clutter.src = "images/scroll/appo.png";
+        clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
+        clutter.setAttribute(top,yOff);
+        clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
+        clutter.style.left = (parseInt(clutter.style.left) - parseInt(clutter.getAttribute(left))) + "px";
+        clutter.setAttribute(left,xOff);
+        clutter.style.left = (parseInt(clutter.style.left) + xOff) + "px";
+        clutter.style.display = "block";
+        return;
+      }
+
+    switch(item) {
+      case "redpot": {
+        let yOff = 0;
+        let xOff = 0;
+        clutter.setAttribute(title,"Red Potion");
+        clutter.setAttribute(desc1,"A potion made out of red herbs.");
+        clutter.setAttribute(desc2,"Recovers 50 HP.");
+        clutter.setAttribute(desc3,"");
+        clutter.setAttribute(desc4,"");
+        clutter.src = "images/scroll/redpot.png";
+        clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
+        clutter.setAttribute(top,yOff);
+        clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
+        clutter.style.left = (parseInt(clutter.style.left) - parseInt(clutter.getAttribute(left))) + "px";
+        clutter.setAttribute(left,xOff);
+        clutter.style.left = (parseInt(clutter.style.left) + xOff) + "px";
+        break;
+      }
+      case "bluepot": {
+        let yOff = 0;
+        let xOff = 0;
+        clutter.setAttribute(title,"Blue Potion");
+        clutter.setAttribute(desc1,"A potion made out of blue herbs.");
+        clutter.setAttribute(desc2,"Recovers 100 MP.");
+        clutter.setAttribute(desc3,"");
+        clutter.setAttribute(desc4,"");
+        clutter.src = "images/scroll/bluepot.png";
+        clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
+        clutter.setAttribute(top,yOff);
+        clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
+        clutter.style.left = (parseInt(clutter.style.left) - parseInt(clutter.getAttribute(left))) + "px";
+        clutter.setAttribute(left,xOff);
+        clutter.style.left = (parseInt(clutter.style.left) + xOff) + "px";
+        break;
+      }
+      case "arrows": {
+        let yOff = -3;
+        let xOff = 0;
+        clutter.setAttribute(title,"Arrow for Bow");
+        clutter.setAttribute(desc1,"A barrel full of arrows.");
+        clutter.setAttribute(desc2,"Only usable with bows.");
+        clutter.setAttribute(desc3,"Attack +1");
+        clutter.setAttribute(desc4,"");
+        clutter.src = "images/scroll/arrows.png";
+        clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
+        clutter.setAttribute(top,yOff);
+        clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
+        clutter.style.left = (parseInt(clutter.style.left) - parseInt(clutter.getAttribute(left))) + "px";
+        clutter.setAttribute(left,xOff);
+        clutter.style.left = (parseInt(clutter.style.left) + xOff) + "px";
+        break;
+      }
+      case "bolts": {
+        let yOff = -3;
+        let xOff = 0;
+        clutter.setAttribute(title,"Arrow for Crossbow");
+        clutter.setAttribute(desc1,"A barrel full of arrows.");
+        clutter.setAttribute(desc2,"Only usable with crossbows.");
+        clutter.setAttribute(desc3,"Attack +1");
+        clutter.setAttribute(desc4,"");
+        clutter.src = "images/scroll/bolts.png";
+        clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
+        clutter.setAttribute(top,yOff);
+        clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
+        clutter.style.left = (parseInt(clutter.style.left) - parseInt(clutter.getAttribute(left))) + "px";
+        clutter.setAttribute(left,xOff);
+        clutter.style.left = (parseInt(clutter.style.left) + xOff) + "px";
+        break;
+      }
+      case "apple": {
+        let yOff = 1;
+        let xOff = 2;
+        clutter.setAttribute(title,"Green Apple");
+        clutter.setAttribute(desc1,"Sour and crunchy green apple.");
+        clutter.setAttribute(desc2,"Recovers MP +30.");
+        clutter.setAttribute(desc3,"");
+        clutter.setAttribute(desc4,"");
+        clutter.src = "images/scroll/apple.png";
+        clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
+        clutter.setAttribute(top,yOff);
+        clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
+        clutter.style.left = (parseInt(clutter.style.left) - parseInt(clutter.getAttribute(left))) + "px";
+        clutter.setAttribute(left,xOff);
+        clutter.style.left = (parseInt(clutter.style.left) + xOff) + "px";
+        break;
+      }
+      case "lemon": {
+        let yOff = 4;
+        let xOff = 1;
+        clutter.setAttribute(title,"Lemon");
+        clutter.setAttribute(desc1,"Very sour.");
+        clutter.setAttribute(desc2,"Recovers around 150 MP.");
+        clutter.setAttribute(desc3,"");
+        clutter.setAttribute(desc4,"");
+        clutter.src = "images/scroll/lemon.png";
+        clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
+        clutter.setAttribute(top,yOff);
+        clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
+        clutter.style.left = (parseInt(clutter.style.left) - parseInt(clutter.getAttribute(left))) + "px";
+        clutter.setAttribute(left,xOff);
+        clutter.style.left = (parseInt(clutter.style.left) + xOff) + "px";
+        break;
+      }
+      case "bullet": {
+        let yOff = 6;
+        let xOff = 2;
+        clutter.setAttribute(title,"Bullet");
+        clutter.setAttribute(desc1,"A bullet made out of steel. A set");
+        clutter.setAttribute(desc2,"contains numerous bullets and");
+        clutter.setAttribute(desc3,"once they are used up, they'll");
+        clutter.setAttribute(desc4,"need to be recharged. Attack + 10");
+        clutter.src = "images/scroll/bullet.png";
+        clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
+        clutter.setAttribute(top,yOff);
+        clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
+        clutter.style.left = (parseInt(clutter.style.left) - parseInt(clutter.getAttribute(left))) + "px";
+        clutter.setAttribute(left,xOff);
+        clutter.style.left = (parseInt(clutter.style.left) + xOff) + "px";
+        break;
+      }
+      case "meat": {
+        let yOff = -1;
+        let xOff = 0;
+        clutter.setAttribute(title,"Meat");
+        clutter.setAttribute(desc1,"A tasty-looking meat.");
+        clutter.setAttribute(desc2,"Recovers around 100 HP.");
+        clutter.setAttribute(desc3,"");
+        clutter.setAttribute(desc4,"");
+        clutter.src = "images/scroll/meat.png";
+        clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
+        clutter.setAttribute(top,yOff);
+        clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
+        clutter.style.left = (parseInt(clutter.style.left) - parseInt(clutter.getAttribute(left))) + "px";
+        clutter.setAttribute(left,xOff);
+        clutter.style.left = (parseInt(clutter.style.left) + xOff) + "px";
+        break;
+      }
+      case "orange": {
+        let yOff = 3;
+        let xOff = 1;
+        clutter.setAttribute(title,"Orange");
+        clutter.setAttribute(desc1,"A sweet, tasty orange.");
+        clutter.setAttribute(desc2,"Recovers around 50 MP.");
+        clutter.setAttribute(desc3,"");
+        clutter.setAttribute(desc4,"");
+        clutter.src = "images/scroll/orange.png";
+        clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
+        clutter.setAttribute(top,yOff);
+        clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
+        clutter.style.left = (parseInt(clutter.style.left) - parseInt(clutter.getAttribute(left))) + "px";
+        clutter.setAttribute(left,xOff);
+        clutter.style.left = (parseInt(clutter.style.left) + xOff) + "px";
+        break;
+      }
+    }
+    clutter.style.display = "block";
+  });
+}
+
 function updateTagColor(baseType) {
 // Tag Color
   // < 0 : grey
@@ -851,7 +1072,6 @@ function scrollActivated(scrollType, baseType) {
       total = wdef.textContent;
       if(tagCount === undefined) {recordStr = wdef.textContent + "def";}
       else{recordStr = "(+" + document.getElementById(baseType + "Tag").textContent[2] + "): " + wdef.textContent + "def";} 
-      //console.log("Total: " + total + "   Best: " + best);
       break;
     }
     case "hatdef10": {
@@ -1097,12 +1317,11 @@ function scrollActivated(scrollType, baseType) {
           recordStr += (parseInt(stat.textContent) + statNames[index] + " ");
         }
       });
-
-
-      console.log("total: "+total+"     recordStr: "+recordStr);
       break;
     }
     default:
+      document.body.classList.remove('custom-cursor-clicked');
+      return;
       break;
   }
   document.body.classList.remove('custom-cursor-clicked');
@@ -1142,6 +1361,7 @@ function baseChange(event) {
         gomu.style.display = "block";
         gomu.classList.add("activeBase");
         bg.style.backgroundImage = "url(images/scroll/background1.png)";
+        addClutter(true);
         break;
       }
       case "stripeM": {
@@ -1151,6 +1371,7 @@ function baseChange(event) {
           stripeM.style.display = "block";
           stripeM.classList.add("activeBase");
           bg.style.backgroundImage = "url(images/scroll/background1.png)";
+          addClutter(false);
         break;
       }
       case "stripeF": {
@@ -1160,6 +1381,7 @@ function baseChange(event) {
           stripeF.style.display = "block";
           stripeF.classList.add("activeBase");
           bg.style.backgroundImage = "url(images/scroll/background1.png)";
+          addClutter(false);
         break;
       }
       case "ice": {
@@ -1169,6 +1391,7 @@ function baseChange(event) {
           ice.style.display = "block";
           ice.classList.add("activeBase");
           bg.style.backgroundImage = "url(images/scroll/background1.png)";
+          addClutter(false);
         break;
       }
       case "sweat": {
@@ -1178,6 +1401,7 @@ function baseChange(event) {
           sweat.style.display = "block";
           sweat.classList.add("activeBase");
           bg.style.backgroundImage = "url(images/scroll/background1.png)";
+          addClutter(false);
         break;
       }
       case "wdana": {
@@ -1189,6 +1413,7 @@ function baseChange(event) {
         wdana.style.display = "block";
         wdana.classList.add("activeBase");
         bg.style.backgroundImage = "url(images/scroll/background1.png)";
+        addClutter(true);
         break;
       }
       case "witch": {
@@ -1198,6 +1423,7 @@ function baseChange(event) {
         witch.style.display = "block";
         witch.classList.add("activeBase");
         bg.style.backgroundImage = "url(images/scroll/background2.png)";
+        addClutter(false);
         break;
       }
       case "broom": {
@@ -1207,6 +1433,7 @@ function baseChange(event) {
         broom.style.display = "block";
         broom.classList.add("activeBase");
         bg.style.backgroundImage = "url(images/scroll/background2.png)";
+        addClutter(false);
         break;
       }
       case "wbeltR": {
@@ -1216,6 +1443,7 @@ function baseChange(event) {
         wbeltR.style.display = "block";
         wbeltR.classList.add("activeBase");
         bg.style.backgroundImage = "url(images/scroll/background2.png)";
+        addClutter(false);
         break;
       }
       case "wbeltB": {
@@ -1225,6 +1453,7 @@ function baseChange(event) {
         wbeltB.style.display = "block";
         wbeltB.classList.add("activeBase");
         bg.style.backgroundImage = "url(images/scroll/background2.png)";
+        addClutter(false);
         break;
       }
       case "wbeltP": {
@@ -1234,6 +1463,7 @@ function baseChange(event) {
         wbeltP.style.display = "block";
         wbeltP.classList.add("activeBase");
         bg.style.backgroundImage = "url(images/scroll/background2.png)";
+        addClutter(false);
         break;
       }
       case "lights": {
@@ -1245,6 +1475,7 @@ function baseChange(event) {
         lights.style.display = "block";
         lights.classList.add("activeBase");
         bg.style.backgroundImage = "url(images/scroll/background1.png)";
+        addClutter(true);
         break;
       }
       case "basket": {
@@ -1256,10 +1487,11 @@ function baseChange(event) {
         basket.style.display = "block";
         basket.classList.add("activeBase");
         bg.style.backgroundImage = "url(images/scroll/background2.png)";
+        addClutter(true);
         break;
       }
     }
-
+    
     resetStats();
     newItem();
 
@@ -1276,7 +1508,18 @@ function resetStats() {
 
 }
 
-function charChange() {
+function charChange(event) {
+  const characters = document.querySelectorAll('.character');
+  const newCharStr = event.target.value;
+  const newChar = document.getElementById(newCharStr);
+
+  characters.forEach(char => {
+      char.style.display = "none";
+      char.classList.remove('activeChar');
+  });
+
+  newChar.style.display = "block";
+  newChar.classList.add('activeChar');
 
 }
 
