@@ -73,6 +73,19 @@
 <img id="1hsatk10" class="draggableImage hoverscroll" src="images/scroll/10.png" style="display:none; position:absolute; top:84px; left:618px;" draggable="true" data-title="Scroll for One-Handed Sword for ATT 10%" data-desc1="Improves attack on" data-desc2="one-handed sword." data-desc3="Success rate:10%, weapon" data-desc4="attack+5, STR+3, weapon def.+1.">
 <img id="chaos" class="draggableImage hoverscroll" src="images/scroll/chaos.png" style="display:none; position:absolute; top:84px; left:654px;" draggable="true" data-title="Chaos Scroll 60%" data-desc1="Alters the equipment for better" data-desc2="or worse. Not available on" data-desc3="Cash Items." data-desc4="Success rate:60%">
 
+<!--Clutter-->
+<img id="arrows" class="draggableImage hoverscroll" src="images/scroll/arrows.png" style="position:absolute; top:81px; left:654px;" draggable="true" data-title="Arrow for Bow" data-desc1="A barrel full of arrows." data-desc2="Only usable with bows." data-desc3="Attack +1" data-desc4="">
+<img id="redpot" class="draggableImage hoverscroll" src="images/scroll/redpot.png" style="position:absolute; top:83px; left:691px;" draggable="true" data-title="Red Potion" data-desc1="A potion made out of red herbs." data-desc2="Recovers 50 HP." data-desc3="" data-desc4="">
+<img id="redpot2" class="draggableImage hoverscroll" src="images/scroll/redpot.png" style="position:absolute; top:83px; left:727px;" draggable="true" data-title="Red Potion" data-desc1="A potion made out of red herbs." data-desc2="Recovers 50 HP." data-desc3="" data-desc4="">
+<img id="redpot3" class="draggableImage hoverscroll" src="images/scroll/redpot.png" style="position:absolute; top:117px; left:620px;" draggable="true" data-title="Red Potion" data-desc1="A potion made out of red herbs." data-desc2="Recovers 50 HP." data-desc3="" data-desc4="">
+<img id="redpot4" class="draggableImage hoverscroll" src="images/scroll/redpot.png" style="position:absolute; top:117px; left:654px;" draggable="true" data-title="Red Potion" data-desc1="A potion made out of red herbs." data-desc2="Recovers 50 HP." data-desc3="" data-desc4="">
+<img id="bolts" class="draggableImage hoverscroll" src="images/scroll/bolts.png" style="position:absolute; top:115px; left:689px;" draggable="true" data-title="Arrow for Crossbow" data-desc1="A barrel full of arrows." data-desc2="Only usable with crossbows." data-desc3="Attack +1" data-desc4="">
+<img id="apple" class="draggableImage hoverscroll" src="images/scroll/apple.png" style="position:absolute; top:118px; left:729px;" draggable="true" data-title="Green Apple" data-desc1="Sour and crunchy green apple." data-desc2="Recovers MP +30." data-desc3="" data-desc4="">
+<img id="apple2" class="draggableImage hoverscroll" src="images/scroll/apple.png" style="position:absolute; top:152px; left:620px;" draggable="true" data-title="Green Apple" data-desc1="Sour and crunchy green apple." data-desc2="Recovers MP +30." data-desc3="" data-desc4="">
+<img id="lemon" class="draggableImage hoverscroll" src="images/scroll/lemon.png" style="position:absolute; top:154px; left:656px;" draggable="true" data-title="Lemon" data-desc1="Very sour." data-desc2="Recovers around 150 MP." data-desc3="" data-desc4="">
+<img id="bluepot" class="draggableImage hoverscroll" src="images/scroll/bluepot.png" style="position:absolute; top:151px; left:691px;" draggable="true" data-title="Blue Potion" data-desc1="A potion made out of blue herbs." data-desc2="Recovers 100 MP." data-desc3="" data-desc4="">
+<img id="bluepot2" class="draggableImage hoverscroll" src="images/scroll/bluepot.png" style="position:absolute; top:151px; left:727px;" draggable="true" data-title="Blue Potion" data-desc1="A potion made out of blue herbs." data-desc2="Recovers 100 MP." data-desc3="" data-desc4="">
+<img id="bullet" class="draggableImage hoverscroll" src="images/scroll/bullet.png" style="position:absolute; top:192px; left:620px;" draggable="true" data-title="Bullet" data-desc1="A bullet made out of steel. A set" data-desc2="contains numerous bullets and" data-desc3="once they are used up, they'll" data-desc4="need to be recharged. Attack + 10">
 
 <!-- Bases -->
 <img id="gomu" class="dropZone activeBase" src="images/scroll/gomu.png" style="display:none; position:absolute; top:225px; left:237px;">
@@ -777,13 +790,12 @@ function scrollActivated(scrollType, baseType) {
         spd.textContent = parseInt(spd.textContent) + 1;
         jmp.textContent = parseInt(jmp.textContent) + 5;
         dex.textContent = parseInt(dex.textContent) + 3;
-        slots.textContent = parseInt(slots.textContent) - 1;
         updateTag(baseType);
       }
       else {
         badResult();
-        slots.textContent = parseInt(slots.textContent) - 1;
       }
+      slots.textContent = parseInt(slots.textContent) - 1;
       let tagCount = document.getElementById(baseType + "Tag").textContent[2];
       total = spd.textContent + jmp.textContent;
       if(tagCount === undefined) {recordStr = spd.textContent + "spd, " + jmp.textContent + "jmp";}
@@ -803,13 +815,12 @@ function scrollActivated(scrollType, baseType) {
         spd.textContent = parseInt(spd.textContent) + 1;
         avo.textContent = parseInt(avo.textContent) + 5;
         acc.textContent = parseInt(acc.textContent) + 3;
-        slots.textContent = parseInt(slots.textContent) - 1;
         updateTag(baseType);
       }
       else {
-        badResult();
-        slots.textContent = parseInt(slots.textContent) - 1;
+        badResult();    
       }
+      slots.textContent = parseInt(slots.textContent) - 1;
       let tagCount = document.getElementById(baseType + "Tag").textContent[2];
       total = spd.textContent + jmp.textContent;
       if(tagCount === undefined) {recordStr = spd.textContent + "spd, " + jmp.textContent + "jmp";}
@@ -830,13 +841,12 @@ function scrollActivated(scrollType, baseType) {
         wdef.textContent = parseInt(wdef.textContent) + 5;
         mdef.textContent = parseInt(mdef.textContent) + 3;
         hp.textContent = parseInt(hp.textContent) + 10;
-        slots.textContent = parseInt(slots.textContent) - 1;
         updateTag(baseType);
       }
       else {
         badResult();
-        slots.textContent = parseInt(slots.textContent) - 1;
       }
+      slots.textContent = parseInt(slots.textContent) - 1;
       let tagCount = document.getElementById(baseType + "Tag").textContent[2];
       total = wdef.textContent;
       if(tagCount === undefined) {recordStr = wdef.textContent + "def";}
@@ -857,13 +867,12 @@ function scrollActivated(scrollType, baseType) {
         wdef.textContent = parseInt(wdef.textContent) + 5;
         mdef.textContent = parseInt(mdef.textContent) + 3;
         acc.textContent = parseInt(acc.textContent) + 1;
-        slots.textContent = parseInt(slots.textContent) - 1;
         updateTag(baseType);
       }
       else {
         badResult();
-        slots.textContent = parseInt(slots.textContent) - 1;
       }
+      slots.textContent = parseInt(slots.textContent) - 1;
       let tagCount = document.getElementById(baseType + "Tag").textContent[2];
       total = wdef.textContent;
       if(tagCount === undefined) {recordStr = wdef.textContent + "def";}
@@ -879,13 +888,12 @@ function scrollActivated(scrollType, baseType) {
         mdefLi.style.display = "block";
         wdef.textContent = parseInt(wdef.textContent) + 2;
         mdef.textContent = parseInt(mdef.textContent) + 1;
-        slots.textContent = parseInt(slots.textContent) - 1;
         updateTag(baseType);
       }
       else {
         badResult();
-        slots.textContent = parseInt(slots.textContent) - 1;
       }
+      slots.textContent = parseInt(slots.textContent) - 1;
       let tagCount = document.getElementById(baseType + "Tag").textContent[2];
       total = wdef.textContent;
       if(tagCount === undefined) {recordStr = wdef.textContent + "def";}
@@ -971,9 +979,6 @@ function scrollActivated(scrollType, baseType) {
           recordStr += (parseInt(stat.textContent) + statNames[index] + " ");
         }
       });
-
-
-      console.log("total: "+total+"     recordStr: "+recordStr);
       break;
     }
     case "1hsatk10": {
@@ -992,13 +997,12 @@ function scrollActivated(scrollType, baseType) {
         wdef.textContent = parseInt(wdef.textContent) + 1;
         watk.textContent = parseInt(watk.textContent) + 5;
         str.textContent = parseInt(str.textContent) + 3;
-        slots.textContent = parseInt(slots.textContent) - 1;
         updateTag(baseType);
       }
       else {
         badResult();
-        slots.textContent = parseInt(slots.textContent) - 1;
       }
+      slots.textContent = parseInt(slots.textContent) - 1;
       let tagCount = document.getElementById(baseType + "Tag").textContent[2];
 
       if(baseType == "lights") {
@@ -1030,6 +1034,72 @@ function scrollActivated(scrollType, baseType) {
           recordStr += (parseInt(stat.textContent) + statNames[index] + " ");
         }
       });
+      break;
+    }
+    case "chaos": {
+      let stats = [];
+      let bestStats = [];
+      let statNames = [];
+
+      if(baseType == "lights") {
+        const wdef = document.getElementById(baseType + "Wdef");
+        const watk = document.getElementById(baseType + "Watk");
+        const str = document.getElementById(baseType + "Str");
+        const spd = document.getElementById(baseType + "Spd");
+   
+        stats = [wdef,watk,str,spd];
+        bestStats = [watk,spd];
+        statNames = ["watk","spd"];
+      }
+      if(baseType == "basket") {
+        const wdef = document.getElementById(baseType + "Wdef");
+        const watk = document.getElementById(baseType + "Watk");
+        const str = document.getElementById(baseType + "Str");
+        const spd = document.getElementById(baseType + "Spd");
+        const hp = document.getElementById(baseType + "Hp");
+        const dex = document.getElementById(baseType + "Dex");
+        const int = document.getElementById(baseType + "Int");
+        const luk = document.getElementById(baseType + "Luk");    
+        stats = [watk,spd,wdef,str,dex,int,luk,hp];
+        bestStats = [watk,spd];
+        statNames = ["watk","spd"];
+      }
+
+      if(Math.random() >= 0.4) {
+        stats.forEach(stat => {
+          if(parseInt(stat.textContent) > 0) {
+            let roll = getRandomInteger(-5,5);
+            stat.textContent = parseInt(stat.textContent) + roll;
+            if(parseInt(stat.textContent) <= 0) {
+                let li = document.getElementById(stat.id + "Li");
+                li.style.display = "none";
+                stat.textContent = 0;
+            }
+          }
+        });
+        goodResult();
+        updateTag(baseType);
+      }
+      else {
+        badResult();
+      }
+      slots.textContent = parseInt(slots.textContent) - 1;
+  
+      total = 0;
+      bestStats.forEach(stat => {
+        total = total + parseInt(stat.textContent);
+      });
+
+      recordStr = "";
+
+      bestStats.forEach((stat, index) => {
+        if(parseInt(stat.textContent) > 0) {
+          recordStr += (parseInt(stat.textContent) + statNames[index] + " ");
+        }
+      });
+
+
+      console.log("total: "+total+"     recordStr: "+recordStr);
       break;
     }
     default:
