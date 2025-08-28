@@ -1,5 +1,65 @@
 [
   {
+    "Name":"Remain",
+    "Level":"30"
+  },
+  {
+    "Name":"Lilbuddy",
+    "Level":"30"
+  },
+  {
+    "Name":"IslandLife",
+    "Level":"30"
+  },
+  {
+    "Name":"Eagoya",
+    "Level":"30"
+  },
+  {
+    "Name":"COTTONFARMER",
+    "Level":"30"
+  },
+  {
+    "Name":"Blindman",
+    "Level":"30"
+  },
+  {
+    "Name":"BenjiPrice",
+    "Level":"30"
+  },
+  {
+    "Name":"Sebasdfg3",
+    "Level":"32"
+  },
+  {
+    "Name":"LanderLegend",
+    "Level":"34"
+  },
+  {
+    "Name":"Atren",
+    "Level":"34"
+  },
+  {
+    "Name":"poop1",
+    "Level":"40"
+  },
+  {
+    "Name":"ImStranded",
+    "Level":"32"
+  },
+  {
+    "Name":"Bodoh",
+    "Level":"31"
+  },
+  {
+    "Name":"Sn4ilBasher",
+    "Level":"46"
+  },
+  {
+    "Name":"Noll",
+    "Level":"46"
+  },
+  {
     "Name": "natscape",
     "Level": "72",
     "Alias": "Natscape",
@@ -72,7 +132,7 @@
   },
   {
     "Name": "IslandChrizz",
-    "Level": "75"
+    "Level": "72"
   },
   {
     "Name": "BlueCream",
@@ -93,7 +153,7 @@
   },
   {
     "Name": "kitsunyChang",
-    "Level": "69"
+    "Level": "68"
   },
   {
     "Name": "NewIslander",
@@ -201,7 +261,7 @@
   },
   {
     "Name": "Detached",
-    "Level": "55"
+    "Level": "56"
   },
   {
     "Name": "Barb",
@@ -222,7 +282,7 @@
   },
   {
     "Name": "Zheedie",
-    "Level": "53"
+    "Level": "58"
   },
   {
     "Name": "MotorollaG",
@@ -378,7 +438,7 @@
   },
   {
     "Name": "Vigi",
-    "Level": "47"
+    "Level": "53"
   },
   {
     "Name": "noob4ever",
@@ -394,7 +454,7 @@
   },
   {
     "Name": "snapplesx",
-    "Level": "47"
+    "Level": "48"
   },
   {
     "Name": "Tails183",
@@ -489,7 +549,7 @@
   },
   {
     "Name": "Valtarre",
-    "Level": "50",
+    "Level": "51",
     "Badges":["dexlander","damage300"]
   },
   {
@@ -586,7 +646,8 @@
   },
   {
     "Name": "ZakoZantern",
-    "Level": "40"
+    "Level": "40",
+    "Badges":["dynamic"]
   },
   {
     "Name": "IslandBoyz",
@@ -742,7 +803,7 @@
   },
   {
     "Name": "Niikasd",
-    "Level": "38",
+    "Level": "40",
     "Badges":["shirt4"]
   },
   {
@@ -912,11 +973,15 @@
   },
   {
     "Name": "DumbIsland",
-    "Level": "35"
+    "Level": "38"
   },
   {
     "Name": "Vaudeville",
     "Level": "34"
+  },
+  {
+    "Name": "VaudeviIle",
+    "Level": "31"
   },
   {
     "Name": "StareDecisis",
@@ -990,7 +1055,7 @@
   },
   {
     "Name": "Moganji",
-    "Level": "34"
+    "Level": "40"
   },
   {
     "Name": "susube12",
@@ -1119,7 +1184,7 @@
   },
   {
     "Name": "HotThot",
-    "Level": "32"
+    "Level": "33"
   },
   {
     "Name": "NekoStuffs",
