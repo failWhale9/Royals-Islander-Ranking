@@ -366,6 +366,10 @@ img.baseImg {
 	left:20px;
 }
 
+.character {
+	user-select: none;
+}
+
 div.baseStats{
 	color:white;
 	font-family: monospace;

@@ -39,8 +39,6 @@
           <option value ="wbeltR">Witch's Crimson Belt</option>
           <option value ="wbeltB">Witch's Ocean Blue Belt</option>
           <option value ="wbeltP">Witch's Deep Purple Belt</option>
-          <option value ="lights">Maplemas Lights</option>
-          <option value ="basket">Pumpkin Basket (2006 SE)</option>
       </select>
 
     <label class="menuText">Character: </label>
@@ -56,7 +54,9 @@
         <option value ="adaryn">Adaryn</option>
         <option value ="rally">Rally</option>
     </select>
-    <input type="submit" value="New Item" onclick="newItem()">
+    <input type="submit" value="New Item" onclick="newItem()" style="margin-left:20px;">
+    <label class="menuText">SFX: </label><input type="checkbox" id="sfxBox" checked>
+    <label class="menuText">BGM: </label><input type="checkbox" id="bgmBox" onclick="playMusic()">
 </div>
 
 <!-- Inventory XY Values: 
@@ -127,10 +127,14 @@
 <img id="adaryn" class="character" src="/images/scroll/adaryn.gif" style="display:none; position:absolute; top:118px; left:424px; z-index: 9990;">
 <img id="rally" class="character" src="/images/scroll/rally.gif" style="display:none; position:absolute; top:150px; left:438px; z-index: 9990;">
 <img id="face" src="" style="position:absolute; top:152px; left:444px; z-index: 9999;">
+<div id="eat" class="eatZone" style="display:none; position:absolute; top:180px; left:452px; width:10px; height:10px; z-index: 9999;"></div>
+
 
 <!-- Effects -->
 <img id="scrollYes" src="" style="position:absolute; top:-10px; left:337px;">
 <img id="scrollNo" src="" style="position:absolute; top:60px; left:413px;">
+<audio id="bgm1" class="music" src="/images/scroll/bgm1.mp3"></audio>
+<audio id="bgm2" class="music" src="/images/scroll/bgm2.mp3"></audio>
 </div>
 
 
@@ -578,15 +582,25 @@
 
 const draggables = document.querySelectorAll('.draggableImage');
 const dropZone = document.querySelectorAll('.dropZone');
+const eatZone = document.getElementById("eat");
 let best = 0;
+let appos = 0;
 
 // When drag starts, set data
 draggables.forEach(draggable => {
   draggable.addEventListener("dragstart", (e) => {
-    let sound = new Audio('/images/scroll/DragStart.mp3');
-    sound.play();
+    playSound("DragStart");
     e.dataTransfer.setData("text/plain", e.target.id);
   });
+});
+
+eat.addEventListener("dragover",(e) => {
+    e.preventDefault();
+  });
+eat.addEventListener("drop", (e) => {
+    e.preventDefault();
+    const item = e.dataTransfer.getData("text/plain");
+    eatActivated(item);
 });
 
 dropZone.forEach(zone => {
@@ -983,6 +997,28 @@ function updateTag(baseType) {
     tag.textContent = "(+" + (parseInt(tag.textContent[2]) + 1) + ")";
   }
   updateTagColor(baseType);
+}
+
+function eatActivated(item){
+  const ele = document.getElementById(item);
+
+  if(ele.dataset.title == "Onyx Apple") {
+    appos = appos + 1;
+    playSound("eat");
+    if(appos > 19) {
+      playSound("secret");
+      const sel = document.getElementById("itemBaseSelect");
+      let opt1 = document.createElement('option');
+      let opt2 = document.createElement('option');
+      opt1.value = "lights";
+      opt1.innerHTML = "Maplemas Lights";
+      opt2.value = "basket";
+      opt2.innerHTML = "Pumpkin Basket (2006 SE)";
+      sel.appendChild(opt1);
+      sel.appendChild(opt2);
+    }
+  }
+  document.body.classList.remove('custom-cursor-clicked');
 }
 
 function scrollActivated(scrollType, baseType) {
@@ -1491,6 +1527,7 @@ function baseChange(event) {
         break;
       }
     }
+    playMusic();
     
     resetStats();
     newItem();
@@ -1512,14 +1549,23 @@ function charChange(event) {
   const characters = document.querySelectorAll('.character');
   const newCharStr = event.target.value;
   const newChar = document.getElementById(newCharStr);
+  const eat = document.getElementById("eat");
 
   characters.forEach(char => {
       char.style.display = "none";
       char.classList.remove('activeChar');
   });
 
+  if(newCharStr == "lowly") {
+    eat.style.display = "block";
+  }
+  else {
+    eat.style.display = "none";
+  }
+
   newChar.style.display = "block";
   newChar.classList.add('activeChar');
+  playSound("char");
 
 }
 
@@ -1529,11 +1575,47 @@ function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function playSound(sound) {
+  const sfxBox = document.getElementById("sfxBox");
+  if (sfxBox.checked) {
+    let sfx = new Audio("/images/scroll/" + sound + ".mp3");
+    sfx.play();
+  }
+}
+
+
+
+function playMusic(music) {
+  const bgmBox = document.getElementById("bgmBox");
+  const bgm1 = document.getElementById("bgm1");
+  const allMusic = document.querySelectorAll('.music');
+  const activeBase = document.querySelectorAll('.activeBase');
+
+  allMusic.forEach(music => {
+      music.pause();
+  });
+
+  if (bgmBox.checked) {
+    if(music == null) {
+      if(activeBase[0].id == "witch" || activeBase[0].id == "broom" || activeBase[0].id == "wbeltR" || activeBase[0].id == "wbeltB" || activeBase[0].id == "wbeltP" || activeBase[0].id == "basket" ) {
+        bgm2.volume = 0.4;
+        bgm2.play();
+      }
+      else {
+        bgm1.volume = 0.4;
+        bgm1.play();
+      }
+    }
+    else {
+      // custom music
+    }
+  }
+}
+
 function newItem() {
 
     const baseType = document.getElementById("itemBaseSelect");
-    let sound = new Audio('/images/scroll/NewBase.mp3');
-    sound.play();
+    playSound("NewBase");
 
     switch(baseType.value) {
       case "gomu": {
@@ -1925,10 +2007,9 @@ function newItem() {
 
 function badResult()
 {
-  let sound = new Audio('/images/scroll/no.mp3');
   const noAnim = document.getElementById('scrollNo');
   const face = document.getElementById('face');
-  sound.play();
+  playSound("no");
   noAnim.style.display = 'block';
   noAnim.src = '';
   noAnim.src = 'images/scroll/no.gif';
@@ -1940,10 +2021,9 @@ function badResult()
 
 function goodResult()
 {
-  let sound = new Audio('/images/scroll/yes.mp3');
   const yesAnim = document.getElementById('scrollYes');
   const face = document.getElementById('face');
-  sound.play();
+  playSound("yes");
   yesAnim.style.display = 'block';
   yesAnim.src = '';
   yesAnim.src = 'images/scroll/yes.gif';
@@ -2007,9 +2087,9 @@ hoverscrolls.forEach(container => {
 const antiCheat = (mutationsList, observer) => {
   for (const mutation of mutationsList) {
     if(mutation.type == "characterData") {
+      console.log(mutation.target.parentElement);
       if(mutation.target.parentElement.nodeName != "BODY") {
-        let sound = new Audio('/images/scroll/cheat.mp3');
-        sound.play();
+        playSound("cheat");
         mutation.target.parentElement.textContent = "CHEATER!";
       }
     } 
@@ -2046,14 +2126,11 @@ cursorDiv.addEventListener('mouseup', function() {
 
 
 // todo:
-// random emotes
+// emotes (sad and chaos)
 // background music
 // music/sfx toggle
 // tutorial bubbles
-// prevent highlight
-// characters
 // cheat clown + bad luck
-// style stats and controls
 // mobile compatibility
 // virus17 easter egg
 
