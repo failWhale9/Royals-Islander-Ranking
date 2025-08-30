@@ -125,7 +125,7 @@
 <img id="lolzor" class="character" src="/images/scroll/lolzor.gif" style="display:none; position:absolute; top:146px; left:425px; z-index: 9990;">
 <img id="sawngo" class="character" src="/images/scroll/sawngo.gif" style="display:none; position:absolute; top:124px; left:442px; z-index: 9990;">
 <img id="adaryn" class="character" src="/images/scroll/adaryn.gif" style="display:none; position:absolute; top:118px; left:424px; z-index: 9990;">
-<img id="rally" class="character" src="/images/scroll/rally.gif" style="display:none; position:absolute; top:150px; left:438px; z-index: 9990;">
+<img id="rally" class="character" src="/images/scroll/rally.gif" style="display:none; position:absolute; top:152px; left:437px; z-index: 9990;">
 <img id="face" src="" style="position:absolute; top:152px; left:444px; z-index: 9999;">
 <div id="eat" class="eatZone" style="display:none; position:absolute; top:180px; left:452px; width:10px; height:10px; z-index: 9999;"></div>
 
@@ -2005,32 +2005,34 @@ function newItem() {
     basUsed.textContent = parseInt(basUsed.textContent) + 1;
 }
 
-function badResult()
+function emote(emo) 
 {
-  const noAnim = document.getElementById('scrollNo');
   const face = document.getElementById('face');
-  playSound("no");
-  noAnim.style.display = 'block';
-  noAnim.src = '';
-  noAnim.src = 'images/scroll/no.gif';
-  face.src ='/images/scroll/toben-smile.png';
+  const char = document.querySelectorAll('.activeChar');
+  face.src = "/images/scroll/" + char[0].id + "-" + emo + ".png";
   setTimeout(function() {
     face.src ='';
   }, 1000);
 }
 
+function badResult()
+{
+  const noAnim = document.getElementById('scrollNo');
+  playSound("no");
+  noAnim.style.display = 'block';
+  noAnim.src = '';
+  noAnim.src = 'images/scroll/no.gif';
+  emote("cry");
+}
+
 function goodResult()
 {
   const yesAnim = document.getElementById('scrollYes');
-  const face = document.getElementById('face');
   playSound("yes");
   yesAnim.style.display = 'block';
   yesAnim.src = '';
   yesAnim.src = 'images/scroll/yes.gif';
-  face.src ='/images/scroll/toben-smile.png';
-  setTimeout(function() {
-    face.src ='';
-  }, 1000);
+  emote("smile");
 }
 
 //Base Tooltip Code
@@ -2126,7 +2128,7 @@ cursorDiv.addEventListener('mouseup', function() {
 
 
 // todo:
-// emotes (sad and chaos)
+// chaos scroll emote based on total
 // tutorial bubbles
 // cheat clown + bad luck
 // mobile compatibility
