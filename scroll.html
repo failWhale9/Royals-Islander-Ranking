@@ -53,6 +53,7 @@
         <option value ="sawngo">Sawngo</option>
         <option value ="adaryn">Adaryn</option>
         <option value ="rally">Rally</option>
+        <option value ="virus17">Virus17</option>
     </select>
     <input type="submit" value="New Item" onclick="newItem()" style="margin-left:20px;">
     <label class="menuText">SFX: </label><input type="checkbox" id="sfxBox" checked>
@@ -126,11 +127,14 @@
 <img id="sawngo" class="character" src="/images/scroll/sawngo.gif" style="display:none; position:absolute; top:124px; left:442px; z-index: 9990;">
 <img id="adaryn" class="character" src="/images/scroll/adaryn.gif" style="display:none; position:absolute; top:118px; left:424px; z-index: 9990;">
 <img id="rally" class="character" src="/images/scroll/rally.gif" style="display:none; position:absolute; top:152px; left:437px; z-index: 9990;">
+<img id="virus17" class="character" src="/images/scroll/virus17.gif" style="display:none; position:absolute; top:138px; left:437px; z-index: 9990;">
 <img id="face" src="" style="position:absolute; top:152px; left:444px; z-index: 9999;">
 <div id="eat" class="eatZone" style="display:none; position:absolute; top:180px; left:452px; width:10px; height:10px; z-index: 9999;"></div>
 
 
 <!-- Effects -->
+<img id="tut1" src="/images/scroll/tut1.png" style="position:absolute; top:65px; left:416px; z-index: 5000;">
+<img id="tut2" src="/images/scroll/tut2.png" style="position:absolute; top:91px; left:414px; z-index: 4000;">
 <img id="scrollYes" src="" style="position:absolute; top:-10px; left:337px;">
 <img id="scrollNo" src="" style="position:absolute; top:60px; left:413px;">
 <audio id="bgm1" class="music" src="/images/scroll/bgm1.mp3"></audio>
@@ -294,9 +298,9 @@
   <img src="images/scroll/classes.png">
   <ul class="statList">
     <li>CATEGORY: HAT</li>
-    <li id="wdanaAccLi">ACCURACY: <span class="statValue">+</span><span id="wdanaAcc" class="statValue">0</span></li>
     <li id="wdanaWdefLi">WEAPON DEF: <span id="wdanaWdef" class="statValue">0</span></li>
     <li id="wdanaMdefLi">MAGIC DEF: <span id="wdanaMdef" class="statValue">0</span></li>
+    <li id="wdanaAccLi">ACCURACY: <span class="statValue">+</span><span id="wdanaAcc" class="statValue">0</span></li>
     <li>NUMBER OF UPGRADES AVAILABLE: <span id="wdanaSlt" class="statValue">0</span></li>
   </ul>
 </div>
@@ -1022,6 +1026,8 @@ function eatActivated(item){
 }
 
 function scrollActivated(scrollType, baseType) {
+  const tut2 = document.getElementById("tut2");
+  tut2.style.display = "none";
   let slots = document.getElementById(baseType + "Slt");
   let total = 0;
   let recordStr = "";
@@ -1116,7 +1122,17 @@ function scrollActivated(scrollType, baseType) {
       const acc = document.getElementById(baseType + "Acc");
       const mdefLi = document.getElementById(baseType + "MdefLi");
       const accLi = document.getElementById(baseType + "AccLi");
-      if(Math.random() >= 0.9) {
+      const char = document.querySelectorAll('.activeChar');
+      if(char[0].id == "virus17") {
+        goodResult();
+        mdefLi.style.display = "block";
+        accLi.style.display = "block";
+        wdef.textContent = parseInt(wdef.textContent) + 5;
+        mdef.textContent = parseInt(mdef.textContent) + 3;
+        acc.textContent = parseInt(acc.textContent) + 1;
+        updateTag(baseType);
+      }
+      else if(Math.random() >= 0.9) {
         goodResult();
         mdefLi.style.display = "block";
         accLi.style.display = "block";
@@ -1209,9 +1225,12 @@ function scrollActivated(scrollType, baseType) {
         statNames = ["watk","spd","jmp"];
       }
 
+      let csTotal = 0;
+
       stats.forEach(stat => {
         if(parseInt(stat.textContent) > 0) {
            let roll = getRandomInteger(-5,5);
+           csTotal += roll;
            stat.textContent = parseInt(stat.textContent) + roll;
            if(parseInt(stat.textContent) <= 0) {
               let li = document.getElementById(stat.id + "Li");
@@ -1220,7 +1239,13 @@ function scrollActivated(scrollType, baseType) {
            }
         }
       });
-      goodResult();
+      if(csTotal > 0) {
+        goodResult("smile");
+      }
+      else {
+        goodResult("cry");
+      }
+      
       slots.textContent = parseInt(slots.textContent) - 1;
       updateTag(baseType);
       total = 0;
@@ -1321,10 +1346,13 @@ function scrollActivated(scrollType, baseType) {
         statNames = ["watk","spd"];
       }
 
+      let csTotal = 0;
+
       if(Math.random() >= 0.4) {
         stats.forEach(stat => {
           if(parseInt(stat.textContent) > 0) {
             let roll = getRandomInteger(-5,5);
+            csTotal += roll;
             stat.textContent = parseInt(stat.textContent) + roll;
             if(parseInt(stat.textContent) <= 0) {
                 let li = document.getElementById(stat.id + "Li");
@@ -1333,7 +1361,12 @@ function scrollActivated(scrollType, baseType) {
             }
           }
         });
-        goodResult();
+        if(csTotal > 0) {
+          goodResult("smile");
+        }
+        else {
+          goodResult("cry");
+        }
         updateTag(baseType);
       }
       else {
@@ -1375,6 +1408,8 @@ function scrollActivated(scrollType, baseType) {
 function baseChange(event) {
 
     const bg = document.getElementById("scrollsim");
+    const tut1 = document.getElementById("tut1");
+    tut1.style.display = "none";
     // Clear scrolls and bases
     const scrolls = document.querySelectorAll('.hoverscroll');
     const bases = document.querySelectorAll('.dropZone');
@@ -1776,7 +1811,11 @@ function newItem() {
         const wdanaMdefLi = document.getElementById("wdanaMdefLi");
         const wdanaAccLi = document.getElementById("wdanaAccLi");
         const wdanaTag = document.getElementById("wdanaTag");
-        if(Math.random() >= 0.8) {
+        const char = document.querySelectorAll('.activeChar');
+        if(char[0].id == "virus17") {
+          wdef = 13;
+        }
+        else if(Math.random() >= 0.8) {
           wdef = getRandomInteger(7,14);
         }
         else {
@@ -2025,14 +2064,16 @@ function badResult()
   emote("cry");
 }
 
-function goodResult()
+function goodResult(em)
 {
   const yesAnim = document.getElementById('scrollYes');
   playSound("yes");
   yesAnim.style.display = 'block';
   yesAnim.src = '';
   yesAnim.src = 'images/scroll/yes.gif';
-  emote("smile");
+  if(em == null)
+    em = "smile";
+  emote(em);
 }
 
 //Base Tooltip Code
@@ -2128,11 +2169,9 @@ cursorDiv.addEventListener('mouseup', function() {
 
 
 // todo:
-// chaos scroll emote based on total
-// tutorial bubbles
 // cheat clown + bad luck
 // mobile compatibility
-// virus17 easter egg
+// virus17 item tag
 
 
 </script>
