@@ -1090,7 +1090,7 @@ function newItem() {
         const gomuJmpLi = document.getElementById("gomuJmpLi");
         const gomuTag = document.getElementById("gomuTag");
         
-        if(Math.random() >= 0.8) {
+        if(Math.random() >= 0.95) {
           wdef = getRandomInteger(3,10);
           spd = getRandomInteger(1,8);
         }
