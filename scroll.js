@@ -480,7 +480,7 @@ function scrollActivated(scrollType, baseType) {
       }
       slots.textContent = parseInt(slots.textContent) - 1;
       let tagCount = document.getElementById(baseType + "Tag").textContent[2];
-      total = spd.textContent + jmp.textContent;
+      total = parseInt(spd.textContent) + parseInt(jmp.textContent);
       if(tagCount === undefined) {recordStr = spd.textContent + "spd, " + jmp.textContent + "jmp";}
       else{recordStr ="(+" + document.getElementById(baseType + "Tag").textContent[2] + "): " + spd.textContent + "spd, " + jmp.textContent + "jmp";} 
       break;
@@ -489,7 +489,7 @@ function scrollActivated(scrollType, baseType) {
       const spd = document.getElementById(baseType + "Spd");
       const acc = document.getElementById(baseType + "Acc");
       const avo = document.getElementById(baseType + "Avo");
-      const jmp = document.getElementById(baseType + "Avo");
+      const jmp = document.getElementById(baseType + "Jmp");
       const accLi = document.getElementById(baseType + "AccLi");
       const avoLi = document.getElementById(baseType + "AvoLi");
      if(Math.random() >= odds10) {
@@ -506,7 +506,7 @@ function scrollActivated(scrollType, baseType) {
       }
       slots.textContent = parseInt(slots.textContent) - 1;
       let tagCount = document.getElementById(baseType + "Tag").textContent[2];
-      total = spd.textContent + jmp.textContent;
+      total = parseInt(spd.textContent) + parseInt(jmp.textContent);
       if(tagCount === undefined) {recordStr = spd.textContent + "spd, " + jmp.textContent + "jmp";}
       else{recordStr = "(+" + document.getElementById(baseType + "Tag").textContent[2] + "): " + spd.textContent + "spd, " + jmp.textContent + "jmp";} 
       break;
@@ -532,7 +532,7 @@ function scrollActivated(scrollType, baseType) {
       }
       slots.textContent = parseInt(slots.textContent) - 1;
       let tagCount = document.getElementById(baseType + "Tag").textContent[2];
-      total = wdef.textContent;
+      total = parseInt(wdef.textContent);
       if(tagCount === undefined) {recordStr = wdef.textContent + "def";}
       else{recordStr = "(+" + document.getElementById(baseType + "Tag").textContent[2] + "): " + wdef.textContent + "def";} 
       break;
@@ -567,7 +567,7 @@ function scrollActivated(scrollType, baseType) {
       }
       slots.textContent = parseInt(slots.textContent) - 1;
       let tagCount = document.getElementById(baseType + "Tag").textContent[2];
-      total = wdef.textContent;
+      total = parseInt(wdef.textContent);
       if(tagCount === undefined) {recordStr = wdef.textContent + "def";}
       else{recordStr = "(+" + document.getElementById(baseType + "Tag").textContent[2] + "): " + wdef.textContent + "def";} 
       break;
@@ -588,7 +588,7 @@ function scrollActivated(scrollType, baseType) {
       }
       slots.textContent = parseInt(slots.textContent) - 1;
       let tagCount = document.getElementById(baseType + "Tag").textContent[2];
-      total = wdef.textContent;
+      total = parseInt(wdef.textContent);
       if(tagCount === undefined) {recordStr = wdef.textContent + "def";}
       else{recordStr = "(+" + document.getElementById(baseType + "Tag").textContent[2] + "): " + wdef.textContent + "def";} 
       break;
