@@ -60,7 +60,7 @@ function addClutter(skipFirst) {
       return; 
     }
 
-    if(Math.random() >= 0.985) {
+    if(Math.random() >= 0.995) {
         let yOff = 1;
         let xOff = 2;
         clutter.setAttribute(title,"Onyx Apple");
