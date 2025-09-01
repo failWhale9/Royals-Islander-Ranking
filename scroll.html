@@ -128,6 +128,7 @@
 <img id="adaryn" class="character" src="/images/scroll/adaryn.gif" style="display:none; position:absolute; top:118px; left:424px; z-index: 9990;">
 <img id="rally" class="character" src="/images/scroll/rally.gif" style="display:none; position:absolute; top:152px; left:437px; z-index: 9990;">
 <img id="virus17" class="character" src="/images/scroll/virus17.gif" style="display:none; position:absolute; top:138px; left:437px; z-index: 9990;">
+<img id="glitch" class="character" src="/images/scroll/glitch.gif" style="display:none; position:absolute; top:150px; left:442px; z-index: 9990;">
 <img id="face" src="" style="position:absolute; top:152px; left:444px; z-index: 9999;">
 <div id="eat" class="eatZone" style="display:none; position:absolute; top:180px; left:452px; width:10px; height:10px; z-index: 9999;"></div>
 
@@ -587,6 +588,11 @@
 const draggables = document.querySelectorAll('.draggableImage');
 const dropZone = document.querySelectorAll('.dropZone');
 const eatZone = document.getElementById("eat");
+let odds10 = 0.9;
+let odds60 = 0.4;
+let oddsChaos = 0.4;
+let chaosMin = -5;
+let chaosMax = 5;
 let best = 0;
 let appos = 0;
 
@@ -1046,7 +1052,7 @@ function scrollActivated(scrollType, baseType) {
       const dex = document.getElementById(baseType + "Dex");
       const dexLi = document.getElementById(baseType + "DexLi");
       const jmpLi = document.getElementById(baseType + "JmpLi");
-      if(Math.random() >= 0.9) {
+      if(Math.random() >= odds10) {
         goodResult();
         dexLi.style.display = "block";
         jmpLi.style.display = "block";
@@ -1069,9 +1075,10 @@ function scrollActivated(scrollType, baseType) {
       const spd = document.getElementById(baseType + "Spd");
       const acc = document.getElementById(baseType + "Acc");
       const avo = document.getElementById(baseType + "Avo");
+      const jmp = document.getElementById(baseType + "Avo");
       const accLi = document.getElementById(baseType + "AccLi");
       const avoLi = document.getElementById(baseType + "AvoLi");
-     if(Math.random() >= 0.9) {
+     if(Math.random() >= odds10) {
         goodResult();
         accLi.style.display = "block";
         avoLi.style.display = "block";
@@ -1097,7 +1104,7 @@ function scrollActivated(scrollType, baseType) {
       const hp = document.getElementById(baseType + "Hp");
       const mdefLi = document.getElementById(baseType + "MdefLi");
       const hpLi = document.getElementById(baseType + "HpLi");
-      if(Math.random() >= 0.9) {
+      if(Math.random() >= odds10) {
         goodResult();
         mdefLi.style.display = "block";
         hpLi.style.display = "block";
@@ -1132,7 +1139,7 @@ function scrollActivated(scrollType, baseType) {
         acc.textContent = parseInt(acc.textContent) + 1;
         updateTag(baseType);
       }
-      else if(Math.random() >= 0.9) {
+      else if(Math.random() >= odds10) {
         goodResult();
         mdefLi.style.display = "block";
         accLi.style.display = "block";
@@ -1155,7 +1162,7 @@ function scrollActivated(scrollType, baseType) {
       const wdef = document.getElementById(baseType + "Wdef");
       const mdef = document.getElementById(baseType + "Mdef");
       const mdefLi = document.getElementById(baseType + "MdefLi");
-      if(Math.random() >= 0.4) {
+      if(Math.random() >= odds60) {
         goodResult();
         mdefLi.style.display = "block";
         wdef.textContent = parseInt(wdef.textContent) + 2;
@@ -1229,7 +1236,7 @@ function scrollActivated(scrollType, baseType) {
 
       stats.forEach(stat => {
         if(parseInt(stat.textContent) > 0) {
-           let roll = getRandomInteger(-5,5);
+           let roll = getRandomInteger(chaosMin,chaosMax);
            csTotal += roll;
            stat.textContent = parseInt(stat.textContent) + roll;
            if(parseInt(stat.textContent) <= 0) {
@@ -1271,7 +1278,7 @@ function scrollActivated(scrollType, baseType) {
       const str = document.getElementById(baseType + "Str");
       const strLi = document.getElementById(baseType + "StrLi");
       const wdefLi = document.getElementById(baseType + "WdefLi");
-      if(Math.random() >= 0.9) {
+      if(Math.random() >= odds10) {
         goodResult();
         wdefLi.style.display = "block";
         strLi.style.display = "block";
@@ -1348,10 +1355,10 @@ function scrollActivated(scrollType, baseType) {
 
       let csTotal = 0;
 
-      if(Math.random() >= 0.4) {
+      if(Math.random() >= oddsChaos) {
         stats.forEach(stat => {
           if(parseInt(stat.textContent) > 0) {
-            let roll = getRandomInteger(-5,5);
+            let roll = getRandomInteger(chaosMin,chaosMax);
             csTotal += roll;
             stat.textContent = parseInt(stat.textContent) + roll;
             if(parseInt(stat.textContent) <= 0) {
@@ -2132,8 +2139,39 @@ const antiCheat = (mutationsList, observer) => {
     if(mutation.type == "characterData") {
       console.log(mutation.target.parentElement);
       if(mutation.target.parentElement.nodeName != "BODY") {
+        const bg = document.getElementById('scrollsim');
+        const allMusic = document.querySelectorAll('.music');
+        const charSelect = document.getElementById('character');
+        const sfxBox = document.getElementById('sfxBox');
+        const bgmBox = document.getElementById('bgmBox');
         playSound("cheat");
         mutation.target.parentElement.textContent = "CHEATER!";
+        bg.style.filter = "invert(100%) contrast(200%)";
+
+        charSelect.disabled = true;
+        sfxBox.disabled = true;
+        bgmBox.disabled = true;
+
+        const characters = document.querySelectorAll('.character');
+        const newChar = document.getElementById("glitch");
+
+        characters.forEach(char => {
+            char.style.display = "none";
+            char.classList.remove('activeChar');
+        });
+
+        newChar.style.display = "block";
+        newChar.classList.add('activeChar');
+
+        chaosMax = 0;
+        oddsChaos = 0;
+        odds60 = 0.6;
+        odds10 = 0.97;
+
+        allMusic.forEach(music => {
+            music.pause();
+        });
+
       }
     } 
   }
@@ -2166,12 +2204,32 @@ cursorDiv.addEventListener('mouseup', function() {
   document.body.classList.remove('custom-cursor-clicked');
 });
 
+// Mobile support
+
+function handleClick(event) {
+  const activeBase = document.querySelectorAll('.activeBase');
+  scrollActivated(event.currentTarget.id, activeBase[0].id);
+}
+
+const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+function applyClickListener(e) {
+  const scrolls = document.querySelectorAll('.draggableImage.hoverscroll:not(.clutter)');
+  scrolls.forEach(scroll => {
+    console.log(e);
+    if (e.matches) { scroll.addEventListener("click", handleClick);} 
+    else { scroll.removeEventListener("click", handleClick);}
+  });
+
+}
+
+applyClickListener(mediaQuery);
+mediaQuery.addEventListener("change", applyClickListener);
+
 
 
 // todo:
-// cheat clown + bad luck
 // mobile compatibility
-// virus17 item tag
 
 
 </script>
