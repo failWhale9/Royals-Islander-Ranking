@@ -429,7 +429,7 @@ function eatActivated(item){
   if(ele.dataset.title == "Onyx Apple") {
     appos = appos + 1;
     playSound("eat");
-    if(appos > 19) {
+    if(appos > 9) {
       playSound("secret");
       const sel = document.getElementById("itemBaseSelect");
       let opt1 = document.createElement('option');
