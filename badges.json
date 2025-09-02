@@ -322,5 +322,23 @@
     "type": "achievement",
     "name": "Big Hit (1000)",
     "desc": "Has hit for over 1000 damage (buffed)."
+  },
+  {
+    "id": "perfstart",
+    "type": "item",
+    "name": "Perfect Starters",
+    "desc": "Owns a perfect Sword (24wa), Hand Axe (24wa), and Club (26wa)."
+  },
+  {
+    "id": "pet14",
+    "type": "item",
+    "name": "14-Stat Pet",
+    "desc": "Owns a pet equip with a total +14 to speed/jump."
+  },
+  {
+    "id": "pet15",
+    "type": "item",
+    "name": "15-Stat Pet",
+    "desc": "Owns a pet equip with a total +15 to speed/jump."
   }
 ]
