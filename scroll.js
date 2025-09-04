@@ -1480,8 +1480,8 @@ function badResult()
   const noAnim = document.getElementById('scrollNo');
   playSound("no");
   noAnim.style.display = 'block';
-  noAnim.src = '';
-  noAnim.src = 'images/scroll/no.gif';
+  const timestamp = new Date().getTime();
+  noAnim.src = 'images/scroll/no.gif?t=' + timestamp;
   emote("cry");
 }
 
@@ -1490,8 +1490,10 @@ function goodResult(em)
   const yesAnim = document.getElementById('scrollYes');
   playSound("yes");
   yesAnim.style.display = 'block';
-  yesAnim.src = '';
-  yesAnim.src = 'images/scroll/yes.gif';
+  //yesAnim.src = '';
+  //yesAnim.src = 'images/scroll/yes.gif';
+  const timestamp = new Date().getTime();
+  yesAnim.src = 'images/scroll/yes.gif?t=' + timestamp;
   if(em == null)
     em = "smile";
   emote(em);
