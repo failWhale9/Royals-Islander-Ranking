@@ -297,31 +297,31 @@
     "id": "damage200",
     "type": "achievement",
     "name": "Big Hit (200)",
-    "desc": "Has hit for over 200 damage (buffed)."
+    "desc": "Has hit for over 200 damage (Only buff allowed is NX weather buffs)."
   },
   {
     "id": "damage300",
     "type": "achievement",
     "name": "Big Hit (300)",
-    "desc": "Has hit for over 300 damage (buffed)."
+    "desc": "Has hit for over 300 damage (Only buff allowed is NX weather buffs)."
   },
   {
     "id": "damage500",
     "type": "achievement",
     "name": "Big Hit (500)",
-    "desc": "Has hit for over 500 damage (buffed)."
+    "desc": "Has hit for over 500 damage (Only buff allowed is NX weather buffs)."
   },
   {
     "id": "damage800",
     "type": "achievement",
     "name": "Big Hit (800)",
-    "desc": "Has hit for over 800 damage (buffed)."
+    "desc": "Has hit for over 800 damage (Only buff allowed is NX weather buffs)."
   },
   {
     "id": "damage1000",
     "type": "achievement",
     "name": "Big Hit (1000)",
-    "desc": "Has hit for over 1000 damage (buffed)."
+    "desc": "Has hit for over 1000 damage (Only buff allowed is NX weather buffs)."
   },
   {
     "id": "perfstart",
@@ -340,5 +340,35 @@
     "type": "item",
     "name": "15-Stat Pet",
     "desc": "Owns a pet equip with a total +15 to speed/jump."
+  },
+  {
+    "id": "ashes",
+    "type": "achievement",
+    "name": "Ashes",
+    "desc": "Failed 30 consecutive scrolls in one sitting."
+  },
+  {
+    "id": "broom20",
+    "type": "item",
+    "name": "20 Speed Broom",
+    "desc": "Owns a 20+ speed broomstick."
+  },
+  {
+    "id": "broom25",
+    "type": "item",
+    "name": "25 Speed Broom",
+    "desc": "Owns a 25+ speed broomstick."
+  },
+  {
+    "id": "broom30",
+    "type": "item",
+    "name": "30 Speed Broom",
+    "desc": "Owns a 30+ speed broomstick."
+  },
+  {
+    "id": "bluexmas",
+    "type": "item",
+    "name": "Blue Maplemas",
+    "desc": "Owns blue-tagged versions of each Christmas weapon (Maplemas lights, Christmas Tree, Maplemas Tree, Versalmas Cactus)."
   }
 ]

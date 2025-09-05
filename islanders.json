@@ -86,7 +86,7 @@
   {
     "Name": "Lowly",
     "Level": "111",
-    "Badges":["meso2b","gomu4","witch40","chairs36","damage1000","roses","fence","omok3","workgloves","perfbrella","strlander","umbrellas","tubes","pet14","shirt3"]
+    "Badges":["meso2b","gomu4","witch40","chairs36","damage1000","roses","fence","omok3","workgloves","perfbrella","strlander","umbrellas","tubes","pet14","shirt3","broom30"]
   },
   {
     "Name": "NamoAmituofo",
@@ -128,7 +128,7 @@
   {
     "Name": "Adaryn",
     "Level": "80",
-    "Badges":["shirt5","pants4","witch40"]
+    "Badges":["shirt5","pants4","witch40","broom20"]
   },
   {
     "Name": "IslandChrizz",
@@ -145,7 +145,7 @@
   {
     "Name": "BoatlessMonk",
     "Level": "72",
-    "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500"]
+    "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500","broom20"]
   },
   {
     "Name": "IslandSlut",
@@ -238,7 +238,7 @@
   {
     "Name": "Shylander",
     "Level": "56",
-    "Badges":["gomu3","pants4","witch40","perfwand","damage500","chairs36","workgloves","omok3"]
+    "Badges":["gomu3","pants4","witch40","perfwand","damage500","chairs36","workgloves","omok3","pet14","broom25"]
   },
   {
     "Name": "Oahu",
@@ -273,8 +273,8 @@
   },
   {
     "Name": "demosthes",
-    "Level": "59",
-    "Badges":["gomu3","shirt3","damage300"]
+    "Level": "60",
+    "Badges":["gomu3","shirt3","damage500"]
   },
   {
     "Name": "Thelslander",
@@ -332,7 +332,8 @@
   },
   {
     "Name": "Delfino",
-    "Level": "51"
+    "Level": "51",
+    "Badges":["fence"]
   },
   {
     "Name": "BananaIsland",
@@ -550,7 +551,7 @@
   {
     "Name": "Valtarre",
     "Level": "52",
-    "Badges":["dexlander","damage300"]
+    "Badges":["dexlander","damage300","gomu2"]
   },
   {
     "Name": "inland",
