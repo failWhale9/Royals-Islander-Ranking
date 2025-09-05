@@ -16,12 +16,7 @@
 
 <img src="images/title.png" id="titleImage"></img>
 
-<div id="navbar">
-    <a href="/index.html"><span class="navActive"> Rankings </span></a>
-    <a href="/badges.html"><span class="navActive"> Badges </span></a>
-    <span class="navInactive"> Unranked Islanders </span>
-    <a href="/scroll.html"><span class="navActive"> Scroll Simulator </span></a>
-</div>
+<div id="navbar"></div>
 
 <div id="table-container"></div>
 
@@ -35,6 +30,21 @@
 </div>
 
 <script>
+
+//navbar code
+fetch('/navbar.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const currentPage = location.pathname;
+        document.querySelectorAll('#navbar a').forEach(link => {
+            //console.log("href:" + link.getAttribute('href') + "   currentpage:" + currentPage);
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add("navInactive");
+                link.removeAttribute('href');
+            }
+        });
+    }).catch(error => console.error('Error loading navbar:', error));
 
 // Function to create and populate the table
 function createTable(jsons) {

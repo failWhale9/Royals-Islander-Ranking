@@ -10,6 +10,21 @@ let chaosMax = 5;
 let best = 0;
 let appos = 0;
 
+//navbar code
+fetch('/navbar.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const currentPage = location.pathname;
+        document.querySelectorAll('#navbar a').forEach(link => {
+            //console.log("href:" + link.getAttribute('href') + "   currentpage:" + currentPage);
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add("navInactive");
+                link.removeAttribute('href');
+            }
+        });
+    }).catch(error => console.error('Error loading navbar:', error));
+
 // When drag starts, set data
 draggables.forEach(draggable => {
   draggable.addEventListener("dragstart", (e) => {
