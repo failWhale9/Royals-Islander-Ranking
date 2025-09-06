@@ -114,6 +114,7 @@
   {
     "Name": "snayl",
     "Level": "83",
+    "Alias": "NPCs, Fired",
     "Badges":["artifacthunt"]
   },
   {
@@ -184,10 +185,6 @@
     "Name": "jung1e",
     "Level": "66",
     "BadNews":"Took the Boat in 2025"
-  },
-  {
-    "Name": "NPCs",
-    "Level": "64"
   },
   {
     "Name": "saulgoodman",
@@ -352,10 +349,6 @@
   {
     "Name": "WasteOfTime",
     "Level": "51"
-  },
-  {
-    "Name": "Fired",
-    "Level": "50"
   },
   {
     "Name": "IslandKush",
