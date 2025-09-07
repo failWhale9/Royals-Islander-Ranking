@@ -77,7 +77,7 @@
   },
   {
     "Name":"IslandLizard",
-    "Level":"40"
+    "Level":"41"
   },
   {
     "Name": "Thup",
@@ -497,7 +497,7 @@
   },
   {
     "Name": "StarTropics",
-    "Level": "47",
+    "Level": "48",
     "Badges": ["damage500","chairs24","gomu3"]
   },
   {

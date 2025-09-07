@@ -492,3 +492,21 @@ label.menuText {
 #navbar {
 	text-align: center;
 }
+
+.guildTable {
+	display: flex; 
+    justify-content: center;
+}
+
+.guildTag {
+	width:230px; 
+	image-rendering: pixelated;
+}
+
+.guildTagTd {
+	max-width:220px;
+}
+
+.guildNotesTd {
+	max-width:400px;
+}
