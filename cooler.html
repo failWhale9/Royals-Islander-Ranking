@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<link href="DataTables/datatables.min.css" rel="stylesheet">
+ 
+<script src="DataTables/datatables.min.js"></script>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapleRoyals Islander Ranking - Cooler Box Simulator</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="islander.css">
+</head>
+<body>
+
+<img src="images/title.png" id="titleImage"></img>
+
+<div id="navbar"></div>
+
+
+<input type="submit" value="Open Cooler" onclick="openCooler()" style="margin-left:20px;">
+
+<div id="coolerMsg"></div>
+
+<div id="coolerList">
+  <ul>
+    <li id="ch_palm" class="chair" style="display:none;"> Palm Tree Beach Chair: <span> 0 </span> </li>
+    <li id="ch_beach" class="chair" style="display:none;"> Beach Chair: <span> 0 </span> </li>
+    <li id="ch_beachb" class="chair" style="display:none;"> Blue Beach Chair: <span> 0 </span> </li>
+    <li id="ch_mirror" class="chair" style="display:none;"> Mirror Chair: <span> 0 </span> </li>
+    <li id="ch_beachr" class="chair" style="display:none;"> Red Beach Chair: <span> 0 </span> </li>
+    <li id="nx_gogg" class="chair" style="display:none;"> Cloudy Swimming Goggles: <span> 0 </span> </li>
+    <li id="nx_shortsu" class="chair" style="display:none;"> Tiny Blue Swimshorts: <span> 0 </span> </li>
+    <li id="nx_shortsb" class="chair" style="display:none;"> Tiny Black Swimshorts: <span> 0 </span> </li>
+    <li id="nx_bikp" class="chair" style="display:none;"> Pink Strapless Bikini: <span> 0 </span> </li>
+    <li id="nx_bikb" class="chair" style="display:none;"> Blue Strapless Bikini: <span> 0 </span> </li>
+    <li id="pp_melon" class="chair" style="display:none;"> Melon Popsicle: <span> 0 </span> </li>
+    <li id="pp_straw" class="chair" style="display:none;"> Strawberry Popsicle: <span> 0 </span> </li>
+    <li id="pp_water" class="chair" style="display:none;"> Watermelon Popsicle: <span> 0 </span> </li>
+    <li id="pp_choc" class="chair" style="display:none;"> Chocolate Popsicle (Eqp): <span> 0 </span> </li>
+    <li id="pt_coco" class="chair" style="display:none;"> Coconut Drink: <span> 0 </span> </li>
+    <li id="pt_cone" class="chair" style="display:none;"> Slimecream Cone: <span> 0 </span> </li>
+    <li id="pt_choco" class="chair" style="display:none;"> Chocolate Popsicle: <span> 0 </span> </li>
+    <li id="pt_flask" class="chair" style="display:none;"> Hydration Flask: <span> 0 </span> </li>
+    <li id="pt_sunb" class="chair" style="display:none;"> Sunblock: <span> 0 </span> </li>
+    <li id="pt_icepop" class="chair" style="display:none;"> Ice Cream Pop: <span> 0 </span> </li>
+    <li id="pt_bubble" class="chair" style="display:none;"> Bubble Gum: <span> 0 </span> </li>
+    <li id="pt_boba" class="chair" style="display:none;"> Bubble Tea: <span> 0 </span> </li>
+    <li id="pt_setdew" class="chair" style="display:none;"> Sunset Dew: <span> 0 </span> </li>
+    <li id="pt_melon" class="chair" style="display:none;"> Watermelon: <span> 0 </span> </li>
+    <li id="pt_redbean" class="chair" style="display:none;"> Red Bean Sundae: <span> 0 </span> </li>
+    <li id="pt_royal" class="chair" style="display:none;"> Royal Cola: <span> 0 </span> </li>
+    <li id="pt_risedew" class="chair" style="display:none;"> Sunrise Dew: <span> 0 </span> </li>
+    <li id="pt_bbq" class="chair" style="display:none;"> Maple BBQ: <span> 0 </span> </li>
+    <li id="eq_slip" class="chair" style="display:none;"> Beach Slippers: <span> 0 </span> </li>
+    <li id="eq_surfb" class="chair" style="display:none;"> Black Surfboard: <span> 0 </span> </li>
+    <li id="eq_tubed" class="chair" style="display:none;"> Duck Tube: <span> 0 </span> </li>
+    <li id="eq_brellau" class="chair" style="display:none;"> Sky Blue Umbrella: <span> 0 </span> </li>
+    <li id="eq_tubec" class="chair" style="display:none;"> Colorful Tube: <span> 0 </span> </li>
+    <li id="eq_hula" class="chair" style="display:none;"> Hula Hoop: <span> 0 </span> </li>
+    <li id="eq_tubep" class="chair" style="display:none;"> Purple Tube: <span> 0 </span> </li>
+    <li id="eq_surfr" class="chair" style="display:none;"> Red Surfboard: <span> 0 </span> </li>
+    <li id="eq_brellay" class="chair" style="display:none;"> Yellow Umbrella: <span> 0 </span> </li>
+    <li id="eq_brellab" class="chair" style="display:none;"> Black Umbrella: <span> 0 </span> </li>
+    <li id="eq_tubee" class="chair" style="display:none;"> Emergency Rescue Tube: <span> 0 </span> </li>
+    <li id="eq_tuber" class="chair" style="display:none;"> Red Flowery Tube: <span> 0 </span> </li>
+    <li id="eq_surf" class="chair" style="display:none;"> Surfboard: <span> 0 </span> </li>
+    <li id="eq_tubeu" class="chair" style="display:none;"> Blue Flowery Tube: <span> 0 </span> </li>
+    <li id="eq_lifeg" class="chair" style="display:none;"> Lifeguard Saver: <span> 0 </span> </li>
+    <li id="eq_surfp" class="chair" style="display:none;"> Purple Surfboard: <span> 0 </span> </li>
+    <li id="eq_tubeb" class="chair" style="display:none;"> Black Tube: <span> 0 </span> </li>
+    <li id="eq_surfg" class="chair" style="display:none;"> Gold Surfboard: <span> 0 </span> </li>
+    <li id="eq_brellag" class="chair" style="display:none;"> Green Umbrella: <span> 0 </span> </li>
+    <li id="eq_brellar" class="chair" style="display:none;"> Red Umbrella: <span> 0 </span> </li>
+    <li id="eq_brellai" class="chair" style="display:none;"> Beige Umbrella: <span> 0 </span> </li>
+    <li id="eq_tubedy" class="chair" style="display:none;"> Duck Tube (Yellow): <span> 0 </span> </li>
+    <li id="eq_tuna" class="chair" style="display:none;"> Frozen Tuna: <span> 0 </span> </li>
+    <li id="eq_surfgr" class="chair" style="display:none;"> Green Surfboard: <span> 0 </span> </li>
+    <li id="eq_brellalp" class="chair" style="display:none;"> Light Purple Umbrella: <span> 0 </span> </li>
+  </ul>
+
+
+</div>
+
+<div id="coolerStats">
+
+
+</div>
+
+<div id="footer">
+    <p>Page written and maintained by <img src="/images/shy.png"></p> 
+</div>
+<script>
+
+// You have gained items in the Use tab (item qty)
+// You have gained an item in the Eqp tab (item)
+
+const items = [
+  {name: "Palm Tree Beach Chair", type: "Chair", chance:0.577200577200577, id:"ch_palm"},
+  {name: "Beach Chair", type: "Chair", chance:0.336700336700337, id:"ch_beach"},
+  {name: "Blue Beach Chair", type: "Chair", chance:0.336700336700337, id:"ch_beachb"},
+  {name: "Mirror Chair", type: "Chair", chance:0.240500240500241, id:"ch_mirror"},
+  {name: "Red Beach Chair", type: "Chair", chance:0.240500240500241, id:"ch_beachr"},
+  {name: "Cloudy Swimming Goggles", type: "NX Equip", chance:0.625300625300625, id:"nx_gogg"},
+  {name: "Tiny Blue Swimshorts", type: "NX Equip", chance:0.432900432900433, id:"nx_shortsu"},
+  {name: "Tiny Black Swimshorts", type: "NX Equip", chance:0.288600288600289, id:"nx_shortsb"},
+  {name: "Pink Strapless Bikini", type: "NX Equip", chance:0.144300144300144, id:"nx_bikp"},
+  {name: "Blue Strapless Bikini", type: "NX Equip", chance:0.0481000481000481, id:"nx_bikb"},
+  {name: "Melon Popsicle", type: "Popsicle Equip", chance:0.288600288600289, id:"pp_melon"},
+  {name: "Strawberry Popsicle", type: "Popsicle Equip", chance:0.288600288600289, id:"pp_straw"},
+  {name: "Watermelon Popsicle", type: "Popsicle Equip", chance:0.240500240500241, id:"pp_water"},
+  {name: "Chocolate Popsicle (Eqp)", type: "Popsicle Equip", chance:0.144300144300144, id:"pp_choc"},
+  {name: "Coconut Drink", type: "Potion", chance:10.966810966811, id:"pt_coco"},
+  {name: "Slimecream Cone", type: "Potion", chance:10.9187109187109, id:"pt_cone"},
+  {name: "Chocolate Popsicle", type: "Potion", chance:9.47570947570948, id:"pt_choco"},
+  {name: "Hydration Flask", type: "Potion", chance:8.70610870610871, id:"pt_flask"},
+  {name: "Sunblock", type: "Potion", chance:5.72390572390572, id:"pt_sunb"},
+  {name: "Ice Cream Pop", type: "Potion", chance:5.62770562770563, id:"pt_icepop"},
+  {name: "Bubble Gum", type: "Potion", chance:5.29100529100529, id:"pt_bubble"},
+  {name: "Bubble Tea", type: "Potion", chance:5.14670514670515, id:"pt_boba"},
+  {name: "Sunset Dew", type: "Potion", chance:5.14670514670515, id:"pt_setdew"},
+  {name: "Watermelon", type: "Potion", chance:4.90620490620491, id:"pt_melon"},
+  {name: "Red Bean Sundae", type: "Potion", chance:4.81000481000481, id:"pt_redbean"},
+  {name: "Royal Cola", type: "Potion", chance:4.76190476190476, id:"pt_royal"},
+  {name: "Sunrise Dew", type: "Potion", chance:4.71380471380471, id:"pt_risedew"},
+  {name: "Maple BBQ", type: "Potion", chance:4.42520442520443, id:"pt_bbq"},
+  {name: "Beach Slippers", type: "Sandals", chance:1.05820105820106, id:"eq_slip"},
+  {name: "Black Surfboard", type: "Weapon", chance:0.432900432900433, id:"eq_surfb"},
+  {name: "Duck Tube", type: "Weapon", chance:0.336700336700337, id:"eq_tubed"},
+  {name: "Sky Blue Umbrella", type: "Weapon", chance:0.288600288600289, id:"eq_brellau"},
+  {name: "Colorful Tube", type: "Weapon", chance:0.240500240500241, id:"eq_tubec"},
+  {name: "Hula Hoop", type: "Weapon", chance:0.240500240500241, id:"eq_hula"},
+  {name: "Purple Tube", type: "Weapon", chance:0.240500240500241, id:"eq_tubep"},
+  {name: "Red Surfboard", type: "Weapon", chance:0.240500240500241, id:"eq_surfr"},
+  {name: "Yellow Umbrella", type: "Weapon", chance:0.240500240500241, id:"eq_brellay"},
+  {name: "Black Umbrella", type: "Weapon", chance:0.192400192400192, id:"eq_brellab"},
+  {name: "Emergency Rescue Tube", type: "Weapon", chance:0.192400192400192, id:"eq_tubee"},
+  {name: "Red Flowery Tube", type: "Weapon", chance:0.192400192400192, id:"eq_tuber"},
+  {name: "Surfboard", type: "Weapon", chance:0.192400192400192, id:"eq_surf"},
+  {name: "Blue Flowery Tube", type: "Weapon", chance:0.144300144300144, id:"eq_tubeu"},
+  {name: "Lifeguard Saver", type: "Weapon", chance:0.144300144300144, id:"eq_lifeg"},
+  {name: "Purple Surfboard", type: "Weapon", chance:0.144300144300144, id:"eq_surfp"},
+  {name: "Black Tube", type: "Weapon", chance:0.0962000962000962, id:"eq_tubeb"},
+  {name: "Gold Surfboard", type: "Weapon", chance:0.0962000962000962, id:"eq_surfg"},
+  {name: "Green Umbrella", type: "Weapon", chance:0.0962000962000962, id:"eq_brellag"},
+  {name: "Red Umbrella", type: "Weapon", chance:0.0962000962000962, id:"eq_brellar"},
+  {name: "Beige Umbrella", type: "Weapon", chance:0.0481000481000481, id:"eq_brellai"},
+  {name: "Duck Tube (Yellow)", type: "Weapon", chance:0.0481000481000481, id:"eq_tubedy"},
+  {name: "Frozen Tuna", type: "Weapon", chance:0.0481000481000481, id:"eq_tuna"},
+  {name: "Green Surfboard", type: "Weapon", chance:0.0481000481000481, id:"eq_surfgr"},
+  {name: "Light Purple Umbrella", type: "Weapon", chance:0.0481000481000481, id:"eq_brellalp"}
+];
+
+function openCooler() {
+  const roll = Math.random();
+
+}
+
+</script>
+</body>
+</html>
