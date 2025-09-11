@@ -242,6 +242,28 @@ div.BadgeContainer {
 	transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
 }
 
+#coolerTooltip {
+	position:fixed;
+	text-align:center;
+	width:200px;
+	background: #163b18e5;
+	padding: 10px 10px;
+	border-radius: 8px;
+	color:white;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+	font-family: Arial, sans-serif !important;
+	font-size: 10pt;
+	z-index: 9999;	
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+#coolerTooltip.visible {
+	opacity: 1;
+  	visibility: visible;
+}
+
 #tooltipOwn {
 	color:#3366cc;
 }
@@ -509,4 +531,23 @@ label.menuText {
 
 .guildNotesTd {
 	max-width:400px;
+}
+
+li.equip {
+	color:#fff600;
+	font-weight: bold;
+}
+
+li.chair {
+	color:#c000ff;
+	font-weight: bold;
+}
+
+li.popsicle {
+	color:#003cff;
+	font-weight: bold;
+}
+
+li.potion {
+	color:#d1d1d1;
 }

@@ -17,144 +17,724 @@
 
 <div id="navbar"></div>
 
+<div class="scrolldiv" style="max-width:400px;height:180px;">
+<div style="float:right">
+  <input type="radio" id="option1" name="dataSet" value="2024" checked>
+  <label for="option1" class="tooltip" data-tooltip-content="Probabilities based on actual data from opening 2079 coolers. (Thanks Adaryn, Rally, and jung1e!)">2024 Dataset</label><br>
+  <input type="radio" id="option2" name="dataSet" value="Norm">
+  <label for="option2" class="tooltip" data-tooltip-content="Probabilities extrapolated and normalized from 2024 data based on assumptions: Probability of each category is an integer number, each item within a category has the same probability.">Theoretical Normalized</label><br>
+</div>
+<img src="/images/cooler/cooler.png" style="image-rendering: pixelated; width:62px;" onclick="openCooler()">
 
-<input type="submit" value="Open Cooler" onclick="openCooler()" style="margin-left:20px;">
+<p>
+  <span>Coolers Opened: </span><span id="coolerQty">0</span>
+</p>
+<input type="button" value="Reset" onclick=reset() style="float:right;">
+<div><img src="" id="thumb" style="display:none;margin-right:10px;"><span id="coolerMsg"></span></div>
+<div id="statMsg"></div>
 
-<div id="coolerMsg"></div>
+</div>
 
-<div id="coolerList">
+
+<div id="coolerList" style="max-width:400px;" class="scrolldiv">
   <ul>
+    <li id="eq_slip" class="equip" style="display:none;"> Beach Slippers: <span> 0 </span> </li>
+    <li id="eq_surfb" class="equip" style="display:none;"> Black Surfboard: <span> 0 </span> </li>
+    <li id="eq_tubed" class="equip" style="display:none;"> Duck Tube: <span> 0 </span> </li>
+    <li id="eq_brellau" class="equip" style="display:none;"> Sky Blue Umbrella: <span> 0 </span> </li>
+    <li id="eq_tubec" class="equip" style="display:none;"> Colorful Tube: <span> 0 </span> </li>
+    <li id="eq_hula" class="equip" style="display:none;"> Hula Hoop: <span> 0 </span> </li>
+    <li id="eq_tubep" class="equip" style="display:none;"> Purple Tube: <span> 0 </span> </li>
+    <li id="eq_surfr" class="equip" style="display:none;"> Red Surfboard: <span> 0 </span> </li>
+    <li id="eq_brellay" class="equip" style="display:none;"> Yellow Umbrella: <span> 0 </span> </li>
+    <li id="eq_brellab" class="equip" style="display:none;"> Black Umbrella: <span> 0 </span> </li>
+    <li id="eq_tubee" class="equip" style="display:none;"> Emergency Rescue Tube: <span> 0 </span> </li>
+    <li id="eq_tuber" class="equip" style="display:none;"> Red Flowery Tube: <span> 0 </span> </li>
+    <li id="eq_surf" class="equip" style="display:none;"> Surfboard: <span> 0 </span> </li>
+    <li id="eq_tubeu" class="equip" style="display:none;"> Blue Flowery Tube: <span> 0 </span> </li>
+    <li id="eq_lifeg" class="equip" style="display:none;"> Lifeguard Saver: <span> 0 </span> </li>
+    <li id="eq_surfp" class="equip" style="display:none;"> Purple Surfboard: <span> 0 </span> </li>
+    <li id="eq_tubeb" class="equip" style="display:none;"> Black Tube: <span> 0 </span> </li>
+    <li id="eq_surfg" class="equip" style="display:none;"> Gold Surfboard: <span> 0 </span> </li>
+    <li id="eq_brellag" class="equip" style="display:none;"> Green Umbrella: <span> 0 </span> </li>
+    <li id="eq_brellar" class="equip" style="display:none;"> Red Umbrella: <span> 0 </span> </li>
+    <li id="eq_brellai" class="equip" style="display:none;"> Beige Umbrella: <span> 0 </span> </li>
+    <li id="eq_tubedy" class="equip" style="display:none;"> Duck Tube (Yellow): <span> 0 </span> </li>
+    <li id="eq_tuna" class="equip" style="display:none;"> Frozen Tuna: <span> 0 </span> </li>
+    <li id="eq_surfgr" class="equip" style="display:none;"> Green Surfboard: <span> 0 </span> </li>
+    <li id="eq_brellalp" class="equip" style="display:none;"> Light Purple Umbrella: <span> 0 </span> </li>
     <li id="ch_palm" class="chair" style="display:none;"> Palm Tree Beach Chair: <span> 0 </span> </li>
     <li id="ch_beach" class="chair" style="display:none;"> Beach Chair: <span> 0 </span> </li>
     <li id="ch_beachb" class="chair" style="display:none;"> Blue Beach Chair: <span> 0 </span> </li>
     <li id="ch_mirror" class="chair" style="display:none;"> Mirror Chair: <span> 0 </span> </li>
     <li id="ch_beachr" class="chair" style="display:none;"> Red Beach Chair: <span> 0 </span> </li>
-    <li id="nx_gogg" class="chair" style="display:none;"> Cloudy Swimming Goggles: <span> 0 </span> </li>
-    <li id="nx_shortsu" class="chair" style="display:none;"> Tiny Blue Swimshorts: <span> 0 </span> </li>
-    <li id="nx_shortsb" class="chair" style="display:none;"> Tiny Black Swimshorts: <span> 0 </span> </li>
-    <li id="nx_bikp" class="chair" style="display:none;"> Pink Strapless Bikini: <span> 0 </span> </li>
-    <li id="nx_bikb" class="chair" style="display:none;"> Blue Strapless Bikini: <span> 0 </span> </li>
-    <li id="pp_melon" class="chair" style="display:none;"> Melon Popsicle: <span> 0 </span> </li>
-    <li id="pp_straw" class="chair" style="display:none;"> Strawberry Popsicle: <span> 0 </span> </li>
-    <li id="pp_water" class="chair" style="display:none;"> Watermelon Popsicle: <span> 0 </span> </li>
-    <li id="pp_choc" class="chair" style="display:none;"> Chocolate Popsicle (Eqp): <span> 0 </span> </li>
-    <li id="pt_coco" class="chair" style="display:none;"> Coconut Drink: <span> 0 </span> </li>
-    <li id="pt_cone" class="chair" style="display:none;"> Slimecream Cone: <span> 0 </span> </li>
-    <li id="pt_choco" class="chair" style="display:none;"> Chocolate Popsicle: <span> 0 </span> </li>
-    <li id="pt_flask" class="chair" style="display:none;"> Hydration Flask: <span> 0 </span> </li>
-    <li id="pt_sunb" class="chair" style="display:none;"> Sunblock: <span> 0 </span> </li>
-    <li id="pt_icepop" class="chair" style="display:none;"> Ice Cream Pop: <span> 0 </span> </li>
-    <li id="pt_bubble" class="chair" style="display:none;"> Bubble Gum: <span> 0 </span> </li>
-    <li id="pt_boba" class="chair" style="display:none;"> Bubble Tea: <span> 0 </span> </li>
-    <li id="pt_setdew" class="chair" style="display:none;"> Sunset Dew: <span> 0 </span> </li>
-    <li id="pt_melon" class="chair" style="display:none;"> Watermelon: <span> 0 </span> </li>
-    <li id="pt_redbean" class="chair" style="display:none;"> Red Bean Sundae: <span> 0 </span> </li>
-    <li id="pt_royal" class="chair" style="display:none;"> Royal Cola: <span> 0 </span> </li>
-    <li id="pt_risedew" class="chair" style="display:none;"> Sunrise Dew: <span> 0 </span> </li>
-    <li id="pt_bbq" class="chair" style="display:none;"> Maple BBQ: <span> 0 </span> </li>
-    <li id="eq_slip" class="chair" style="display:none;"> Beach Slippers: <span> 0 </span> </li>
-    <li id="eq_surfb" class="chair" style="display:none;"> Black Surfboard: <span> 0 </span> </li>
-    <li id="eq_tubed" class="chair" style="display:none;"> Duck Tube: <span> 0 </span> </li>
-    <li id="eq_brellau" class="chair" style="display:none;"> Sky Blue Umbrella: <span> 0 </span> </li>
-    <li id="eq_tubec" class="chair" style="display:none;"> Colorful Tube: <span> 0 </span> </li>
-    <li id="eq_hula" class="chair" style="display:none;"> Hula Hoop: <span> 0 </span> </li>
-    <li id="eq_tubep" class="chair" style="display:none;"> Purple Tube: <span> 0 </span> </li>
-    <li id="eq_surfr" class="chair" style="display:none;"> Red Surfboard: <span> 0 </span> </li>
-    <li id="eq_brellay" class="chair" style="display:none;"> Yellow Umbrella: <span> 0 </span> </li>
-    <li id="eq_brellab" class="chair" style="display:none;"> Black Umbrella: <span> 0 </span> </li>
-    <li id="eq_tubee" class="chair" style="display:none;"> Emergency Rescue Tube: <span> 0 </span> </li>
-    <li id="eq_tuber" class="chair" style="display:none;"> Red Flowery Tube: <span> 0 </span> </li>
-    <li id="eq_surf" class="chair" style="display:none;"> Surfboard: <span> 0 </span> </li>
-    <li id="eq_tubeu" class="chair" style="display:none;"> Blue Flowery Tube: <span> 0 </span> </li>
-    <li id="eq_lifeg" class="chair" style="display:none;"> Lifeguard Saver: <span> 0 </span> </li>
-    <li id="eq_surfp" class="chair" style="display:none;"> Purple Surfboard: <span> 0 </span> </li>
-    <li id="eq_tubeb" class="chair" style="display:none;"> Black Tube: <span> 0 </span> </li>
-    <li id="eq_surfg" class="chair" style="display:none;"> Gold Surfboard: <span> 0 </span> </li>
-    <li id="eq_brellag" class="chair" style="display:none;"> Green Umbrella: <span> 0 </span> </li>
-    <li id="eq_brellar" class="chair" style="display:none;"> Red Umbrella: <span> 0 </span> </li>
-    <li id="eq_brellai" class="chair" style="display:none;"> Beige Umbrella: <span> 0 </span> </li>
-    <li id="eq_tubedy" class="chair" style="display:none;"> Duck Tube (Yellow): <span> 0 </span> </li>
-    <li id="eq_tuna" class="chair" style="display:none;"> Frozen Tuna: <span> 0 </span> </li>
-    <li id="eq_surfgr" class="chair" style="display:none;"> Green Surfboard: <span> 0 </span> </li>
-    <li id="eq_brellalp" class="chair" style="display:none;"> Light Purple Umbrella: <span> 0 </span> </li>
+    <li id="pp_melon" class="popsicle" style="display:none;"> Melon Popsicle: <span> 0 </span> </li>
+    <li id="pp_straw" class="popsicle" style="display:none;"> Strawberry Popsicle: <span> 0 </span> </li>
+    <li id="pp_water" class="popsicle" style="display:none;"> Watermelon Popsicle: <span> 0 </span> </li>
+    <li id="pp_choc" class="popsicle" style="display:none;"> Chocolate Popsicle (Eqp): <span> 0 </span> </li>
+    <li id="nx_gogg" class="nx" style="display:none;"> Cloudy Swimming Goggles: <span> 0 </span> </li>
+    <li id="nx_shortsu" class="nx" style="display:none;"> Tiny Blue Swimshorts: <span> 0 </span> </li>
+    <li id="nx_shortsb" class="nx" style="display:none;"> Tiny Black Swimshorts: <span> 0 </span> </li>
+    <li id="nx_bikp" class="nx" style="display:none;"> Pink Strapless Bikini: <span> 0 </span> </li>
+    <li id="nx_bikb" class="nx" style="display:none;"> Blue Strapless Bikini: <span> 0 </span> </li>
+    <li id="pt_coco" class="potion" style="display:none;"> Coconut Drink: <span> 0 </span> </li>
+    <li id="pt_cone" class="potion" style="display:none;"> Slimecream Cone: <span> 0 </span> </li>
+    <li id="pt_choco" class="potion" style="display:none;"> Chocolate Popsicle: <span> 0 </span> </li>
+    <li id="pt_flask" class="potion" style="display:none;"> Hydration Flask: <span> 0 </span> </li>
+    <li id="pt_sunb" class="potion" style="display:none;"> Sunblock: <span> 0 </span> </li>
+    <li id="pt_icepop" class="potion" style="display:none;"> Ice Cream Pop: <span> 0 </span> </li>
+    <li id="pt_bubble" class="potion" style="display:none;"> Bubble Gum: <span> 0 </span> </li>
+    <li id="pt_boba" class="potion" style="display:none;"> Bubble Tea: <span> 0 </span> </li>
+    <li id="pt_setdew" class="potion" style="display:none;"> Sunset Dew: <span> 0 </span> </li>
+    <li id="pt_melon" class="potion" style="display:none;"> Watermelon: <span> 0 </span> </li>
+    <li id="pt_redbean" class="potion" style="display:none;"> Red Bean Sundae: <span> 0 </span> </li>
+    <li id="pt_royal" class="potion" style="display:none;"> Royal Cola: <span> 0 </span> </li>
+    <li id="pt_risedew" class="potion" style="display:none;"> Sunrise Dew: <span> 0 </span> </li>
+    <li id="pt_bbq" class="potion" style="display:none;"> Maple BBQ: <span> 0 </span> </li>
   </ul>
 
 
 </div>
 
-<div id="coolerStats">
-
-
-</div>
+<div id="coolerTooltip"></div>
 
 <div id="footer">
     <p>Page written and maintained by <img src="/images/shy.png"></p> 
 </div>
 <script>
 
+//navbar code
+fetch('/navbar.html')
+  .then(response => response.text())
+  .then(data => {
+      document.getElementById('navbar').innerHTML = data;
+      const currentPage = location.pathname;
+      document.querySelectorAll('#navbar a').forEach(link => {
+          //console.log("href:" + link.getAttribute('href') + "   currentpage:" + currentPage);
+          if (link.getAttribute('href') === currentPage) {
+              link.classList.add("navInactive");
+              link.removeAttribute('href');
+          }
+      });
+  }).catch(error => console.error('Error loading navbar:', error));
+
+  //toolip code
+
+  const hoverables = document.querySelectorAll('.tooltip');
+  const tooltip = document.getElementById('coolerTooltip');
+  hoverables.forEach(item=>{
+    item.addEventListener('mouseenter', () => {
+        const content = item.getAttribute('data-tooltip-content');
+        tooltip.textContent = content;
+
+        const rect = item.getBoundingClientRect();
+        tooltip.style.top = `${rect.bottom - 20}px`;
+        tooltip.style.left = `${rect.left + 180}px`;
+        //tooltip.style.display = 'block';
+        tooltip.classList.add('visible');
+    });
+
+    item.addEventListener('mouseleave', () => {
+        //tooltip.style.display = 'none';
+        tooltip.classList.remove('visible');
+    });
+  });
+
 // You have gained items in the Use tab (item qty)
 // You have gained an item in the Eqp tab (item)
 
 const items = [
-  {name: "Palm Tree Beach Chair", type: "Chair", chance:0.577200577200577, id:"ch_palm"},
-  {name: "Beach Chair", type: "Chair", chance:0.336700336700337, id:"ch_beach"},
-  {name: "Blue Beach Chair", type: "Chair", chance:0.336700336700337, id:"ch_beachb"},
-  {name: "Mirror Chair", type: "Chair", chance:0.240500240500241, id:"ch_mirror"},
-  {name: "Red Beach Chair", type: "Chair", chance:0.240500240500241, id:"ch_beachr"},
-  {name: "Cloudy Swimming Goggles", type: "NX Equip", chance:0.625300625300625, id:"nx_gogg"},
-  {name: "Tiny Blue Swimshorts", type: "NX Equip", chance:0.432900432900433, id:"nx_shortsu"},
-  {name: "Tiny Black Swimshorts", type: "NX Equip", chance:0.288600288600289, id:"nx_shortsb"},
-  {name: "Pink Strapless Bikini", type: "NX Equip", chance:0.144300144300144, id:"nx_bikp"},
-  {name: "Blue Strapless Bikini", type: "NX Equip", chance:0.0481000481000481, id:"nx_bikb"},
-  {name: "Melon Popsicle", type: "Popsicle Equip", chance:0.288600288600289, id:"pp_melon"},
-  {name: "Strawberry Popsicle", type: "Popsicle Equip", chance:0.288600288600289, id:"pp_straw"},
-  {name: "Watermelon Popsicle", type: "Popsicle Equip", chance:0.240500240500241, id:"pp_water"},
-  {name: "Chocolate Popsicle (Eqp)", type: "Popsicle Equip", chance:0.144300144300144, id:"pp_choc"},
-  {name: "Coconut Drink", type: "Potion", chance:10.966810966811, id:"pt_coco"},
-  {name: "Slimecream Cone", type: "Potion", chance:10.9187109187109, id:"pt_cone"},
-  {name: "Chocolate Popsicle", type: "Potion", chance:9.47570947570948, id:"pt_choco"},
-  {name: "Hydration Flask", type: "Potion", chance:8.70610870610871, id:"pt_flask"},
-  {name: "Sunblock", type: "Potion", chance:5.72390572390572, id:"pt_sunb"},
-  {name: "Ice Cream Pop", type: "Potion", chance:5.62770562770563, id:"pt_icepop"},
-  {name: "Bubble Gum", type: "Potion", chance:5.29100529100529, id:"pt_bubble"},
-  {name: "Bubble Tea", type: "Potion", chance:5.14670514670515, id:"pt_boba"},
-  {name: "Sunset Dew", type: "Potion", chance:5.14670514670515, id:"pt_setdew"},
-  {name: "Watermelon", type: "Potion", chance:4.90620490620491, id:"pt_melon"},
-  {name: "Red Bean Sundae", type: "Potion", chance:4.81000481000481, id:"pt_redbean"},
-  {name: "Royal Cola", type: "Potion", chance:4.76190476190476, id:"pt_royal"},
-  {name: "Sunrise Dew", type: "Potion", chance:4.71380471380471, id:"pt_risedew"},
-  {name: "Maple BBQ", type: "Potion", chance:4.42520442520443, id:"pt_bbq"},
-  {name: "Beach Slippers", type: "Sandals", chance:1.05820105820106, id:"eq_slip"},
-  {name: "Black Surfboard", type: "Weapon", chance:0.432900432900433, id:"eq_surfb"},
-  {name: "Duck Tube", type: "Weapon", chance:0.336700336700337, id:"eq_tubed"},
-  {name: "Sky Blue Umbrella", type: "Weapon", chance:0.288600288600289, id:"eq_brellau"},
-  {name: "Colorful Tube", type: "Weapon", chance:0.240500240500241, id:"eq_tubec"},
-  {name: "Hula Hoop", type: "Weapon", chance:0.240500240500241, id:"eq_hula"},
-  {name: "Purple Tube", type: "Weapon", chance:0.240500240500241, id:"eq_tubep"},
-  {name: "Red Surfboard", type: "Weapon", chance:0.240500240500241, id:"eq_surfr"},
-  {name: "Yellow Umbrella", type: "Weapon", chance:0.240500240500241, id:"eq_brellay"},
-  {name: "Black Umbrella", type: "Weapon", chance:0.192400192400192, id:"eq_brellab"},
-  {name: "Emergency Rescue Tube", type: "Weapon", chance:0.192400192400192, id:"eq_tubee"},
-  {name: "Red Flowery Tube", type: "Weapon", chance:0.192400192400192, id:"eq_tuber"},
-  {name: "Surfboard", type: "Weapon", chance:0.192400192400192, id:"eq_surf"},
-  {name: "Blue Flowery Tube", type: "Weapon", chance:0.144300144300144, id:"eq_tubeu"},
-  {name: "Lifeguard Saver", type: "Weapon", chance:0.144300144300144, id:"eq_lifeg"},
-  {name: "Purple Surfboard", type: "Weapon", chance:0.144300144300144, id:"eq_surfp"},
-  {name: "Black Tube", type: "Weapon", chance:0.0962000962000962, id:"eq_tubeb"},
-  {name: "Gold Surfboard", type: "Weapon", chance:0.0962000962000962, id:"eq_surfg"},
-  {name: "Green Umbrella", type: "Weapon", chance:0.0962000962000962, id:"eq_brellag"},
-  {name: "Red Umbrella", type: "Weapon", chance:0.0962000962000962, id:"eq_brellar"},
-  {name: "Beige Umbrella", type: "Weapon", chance:0.0481000481000481, id:"eq_brellai"},
-  {name: "Duck Tube (Yellow)", type: "Weapon", chance:0.0481000481000481, id:"eq_tubedy"},
-  {name: "Frozen Tuna", type: "Weapon", chance:0.0481000481000481, id:"eq_tuna"},
-  {name: "Green Surfboard", type: "Weapon", chance:0.0481000481000481, id:"eq_surfgr"},
-  {name: "Light Purple Umbrella", type: "Weapon", chance:0.0481000481000481, id:"eq_brellalp"}
+  {name: "Beach Slippers", type: "Sandals", chance:1.05820105820106, id:"eq_slip", norm:0.16666666666667},
+  {name: "Black Surfboard", type: "Weapon", chance:0.432900432900433, id:"eq_surfb", norm:0.16666666666667},
+  {name: "Duck Tube", type: "Weapon", chance:0.336700336700337, id:"eq_tubed", norm:0.16666666666667},
+  {name: "Sky Blue Umbrella", type: "Weapon", chance:0.288600288600289, id:"eq_brellau", norm:0.16666666666667},
+  {name: "Colorful Tube", type: "Weapon", chance:0.240500240500241, id:"eq_tubec", norm:0.16666666666667},
+  {name: "Hula Hoop", type: "Weapon", chance:0.240500240500241, id:"eq_hula", norm:0.16666666666667},
+  {name: "Purple Tube", type: "Weapon", chance:0.240500240500241, id:"eq_tubep", norm:0.16666666666667},
+  {name: "Red Surfboard", type: "Weapon", chance:0.240500240500241, id:"eq_surfr", norm:0.16666666666667},
+  {name: "Yellow Umbrella", type: "Weapon", chance:0.240500240500241, id:"eq_brellay", norm:0.16666666666667},
+  {name: "Black Umbrella", type: "Weapon", chance:0.192400192400192, id:"eq_brellab", norm:0.16666666666667},
+  {name: "Emergency Rescue Tube", type: "Weapon", chance:0.192400192400192, id:"eq_tubee", norm:0.16666666666667},
+  {name: "Red Flowery Tube", type: "Weapon", chance:0.192400192400192, id:"eq_tuber", norm:0.16666666666667},
+  {name: "Surfboard", type: "Weapon", chance:0.192400192400192, id:"eq_surf", norm:0.16666666666667},
+  {name: "Blue Flowery Tube", type: "Weapon", chance:0.144300144300144, id:"eq_tubeu", norm:0.16666666666667},
+  {name: "Lifeguard Saver", type: "Weapon", chance:0.144300144300144, id:"eq_lifeg", norm:0.16666666666667},
+  {name: "Purple Surfboard", type: "Weapon", chance:0.144300144300144, id:"eq_surfp", norm:0.16666666666667},
+  {name: "Black Tube", type: "Weapon", chance:0.0962000962000962, id:"eq_tubeb", norm:0.16666666666667},
+  {name: "Gold Surfboard", type: "Weapon", chance:0.0962000962000962, id:"eq_surfg", norm:0.16666666666667},
+  {name: "Green Umbrella", type: "Weapon", chance:0.0962000962000962, id:"eq_brellag", norm:0.16666666666667},
+  {name: "Red Umbrella", type: "Weapon", chance:0.0962000962000962, id:"eq_brellar", norm:0.16666666666667},
+  {name: "Beige Umbrella", type: "Weapon", chance:0.0481000481000481, id:"eq_brellai", norm:0.16666666666667},
+  {name: "Duck Tube (Yellow)", type: "Weapon", chance:0.0481000481000481, id:"eq_tubedy", norm:0.16666666666667},
+  {name: "Frozen Tuna", type: "Weapon", chance:0.0481000481000481, id:"eq_tuna", norm:0.16666666666667},
+  {name: "Green Surfboard", type: "Weapon", chance:0.0481000481000481, id:"eq_surfgr", norm:0.16666666666667},
+  {name: "Light Purple Umbrella", type: "Weapon", chance:0.0481000481000481, id:"eq_brellalp", norm:0.16666666666667},
+  {name: "Palm Tree Beach Chair", type: "Chair", chance:0.577200577200577, id:"ch_palm", norm:0.4},
+  {name: "Beach Chair", type: "Chair", chance:0.336700336700337, id:"ch_beach", norm:0.4},
+  {name: "Blue Beach Chair", type: "Chair", chance:0.336700336700337, id:"ch_beachb", norm:0.4},
+  {name: "Mirror Chair", type: "Chair", chance:0.240500240500241, id:"ch_mirror", norm:0.4},
+  {name: "Red Beach Chair", type: "Chair", chance:0.240500240500241, id:"ch_beachr", norm:0.4},
+  {name: "Melon Popsicle", type: "Popsicle Equip", chance:0.288600288600289, id:"pp_melon", norm:0.25},
+  {name: "Strawberry Popsicle", type: "Popsicle Equip", chance:0.288600288600289, id:"pp_straw", norm:0.25},
+  {name: "Watermelon Popsicle", type: "Popsicle Equip", chance:0.240500240500241, id:"pp_water", norm:0.25},
+  {name: "Chocolate Popsicle (Eqp)", type: "Popsicle Equip", chance:0.144300144300144, id:"pp_choc", norm:0.25},
+  {name: "Cloudy Swimming Goggles", type: "NX Equip", chance:0.625300625300625, id:"nx_gogg", norm:0.4},
+  {name: "Tiny Blue Swimshorts", type: "NX Equip", chance:0.432900432900433, id:"nx_shortsu", norm:0.4},
+  {name: "Tiny Black Swimshorts", type: "NX Equip", chance:0.288600288600289, id:"nx_shortsb", norm:0.4},
+  {name: "Pink Strapless Bikini", type: "NX Equip", chance:0.144300144300144, id:"nx_bikp", norm:0.4},
+  {name: "Blue Strapless Bikini", type: "NX Equip", chance:0.0481000481000481, id:"nx_bikb", norm:0.4},
+  {name: "Coconut Drink", type: "Potion", chance:10.966810966811, id:"pt_coco", norm:10},
+  {name: "Slimecream Cone", type: "Potion", chance:10.9187109187109, id:"pt_cone", norm:10},
+  {name: "Chocolate Popsicle", type: "Potion", chance:9.47570947570948, id:"pt_choco", norm:10},
+  {name: "Hydration Flask", type: "Potion", chance:8.70610870610871, id:"pt_flask", norm:10},
+  {name: "Sunblock", type: "Potion", chance:5.72390572390572, id:"pt_sunb", norm:5},
+  {name: "Ice Cream Pop", type: "Potion", chance:5.62770562770563, id:"pt_icepop", norm:5},
+  {name: "Bubble Gum", type: "Potion", chance:5.29100529100529, id:"pt_bubble", norm:5},
+  {name: "Bubble Tea", type: "Potion", chance:5.14670514670515, id:"pt_boba", norm:5},
+  {name: "Sunset Dew", type: "Potion", chance:5.14670514670515, id:"pt_setdew", norm:5},
+  {name: "Watermelon", type: "Potion", chance:4.90620490620491, id:"pt_melon", norm:5},
+  {name: "Red Bean Sundae", type: "Potion", chance:4.81000481000481, id:"pt_redbean", norm:5},
+  {name: "Royal Cola", type: "Potion", chance:4.76190476190476, id:"pt_royal", norm:5},
+  {name: "Sunrise Dew", type: "Potion", chance:4.71380471380471, id:"pt_risedew", norm:5},
+  {name: "Maple BBQ", type: "Potion", chance:4.42520442520443, id:"pt_bbq", norm:5}
 ];
 
-function openCooler() {
-  const roll = Math.random();
+function getRandomInteger(min, max) {
+  min = Math.ceil(min); 
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function reset() {
+  const coolerList = document.getElementById("coolerList");
+  const msgBox = document.getElementById("coolerMsg");
+  const coolerQty = document.getElementById("coolerQty");
+  const itemThumb = document.getElementById("thumb");
+  const statMsg = document.getElementById("statMsg");
+
+  Array.from(coolerList.firstElementChild.children).forEach(item =>{
+    item.style.display = "none";
+    item.firstElementChild.textContent = "0";
+  });
+
+  msgBox.textContent = "";
+  itemThumb.style.display = "none";
+  coolerQty.textContent = "0";
+  statMsg.textContent = "";
 
 }
+
+function playSound() {
+   let sfx = new Audio("/images/scroll/DragStart.mp3");
+   sfx.play();
+}
+
+function getDataset() {
+  const radioButtons = document.querySelectorAll('input[name="dataSet"]');
+  let selectedValue = null;
+  for (const radioButton of radioButtons) {
+      if (radioButton.checked) {
+          selectedValue = radioButton.value;
+          break;
+      }
+  }
+  return(selectedValue);
+  }
+
+function openCooler() {
+
+  let cProb = 0;
+  let qty = 0;
+  let msg = "";
+  let stat = "";
+  let selectedItem = null;
+  const roll = Math.random()*100;
+  
+  if(getDataset() == "Norm") {
+    for (const item of items) {
+      cProb += item.norm;
+      if (roll < cProb) {
+        selectedItem = item;
+        break;
+      }
+    }
+  }
+  else {
+    for (const item of items) {
+      cProb += item.chance;
+      if (roll < cProb) {
+        selectedItem = item;
+        break;
+      }
+    }
+  }
+
+  if(selectedItem == null) {
+    openCooler();
+    return;
+  }
+
+  playSound();
+  
+  let str = 0;
+  let dex = 0;
+  let int = 0;
+  let luk = 0;
+  let spd = 0;
+  let watk = 0;
+  let matk = 0;
+  let mdef = 0;
+  let wdef = 0;
+  let jmp = 0;
+  let avo = 0;
+  let acc = 0;
+  let hp = 0;
+  let mp = 0;
+
+  switch(selectedItem.id) {
+    case "ch_palm":
+      qty = 1;
+      break;
+    case "ch_beach":
+      qty = 1;
+      break;
+    case "ch_beachb":
+      qty = 1;
+      break;
+    case "ch_mirror":
+      qty = 1;
+      break;
+    case "ch_beachr":
+      qty = 1;
+      break;
+    case "nx_gogg":
+      qty = 1;
+      break;
+    case "nx_shortsu":
+      qty = 1;
+      break;
+    case "nx_shortsb":
+      qty = 1;
+      break;
+    case "nx_bikp":
+      qty = 1;
+      break;
+    case "nx_bikb":
+      qty = 1;
+      break;
+    case "pp_melon":
+      qty = 1;
+      break;
+    case "pp_straw":
+      qty = 1;
+      break;
+    case "pp_water":
+      qty = 1;
+      break;
+    case "pp_choc":
+      qty = 1;
+      break;
+    case "pt_coco":
+      qty = getRandomInteger(10,20);
+      break;
+    case "pt_cone":
+      qty = getRandomInteger(10,20);
+      break;
+    case "pt_choco":
+      qty = getRandomInteger(1,2);
+      break;
+    case "pt_flask":
+      qty = getRandomInteger(10,20);
+      break;
+    case "pt_sunb":
+      qty = getRandomInteger(1,3);
+      break;
+    case "pt_icepop":
+      qty = getRandomInteger(10,40);
+      break;
+    case "pt_bubble":
+      qty = getRandomInteger(1,2);
+      break;
+    case "pt_boba":
+      qty = getRandomInteger(1,2);
+      break;
+    case "pt_setdew":
+      qty = getRandomInteger(10,20);
+      break;
+    case "pt_melon":
+      qty = getRandomInteger(10,40);
+      break;
+    case "pt_redbean":
+      qty = getRandomInteger(10,40);
+      break;
+    case "pt_royal":
+      qty = getRandomInteger(1,3);
+      break;
+    case "pt_risedew":
+      qty = getRandomInteger(10,20);
+      break;
+    case "pt_bbq":
+      qty = getRandomInteger(1,3);
+      break;
+    case "eq_slip":
+      qty = 1;
+      if(Math.random() >= 0.95) {
+        str = getRandomInteger(0,7);
+        dex = getRandomInteger(0,7);
+        int = getRandomInteger(0,7);
+        luk = getRandomInteger(0,7);
+        spd = getRandomInteger(4,11);
+        stat = "GODLY! " + str + "str " + dex + "dex " + int + "int " + luk + "luk " + spd + "spd"; 
+      }
+      else {
+        str = getRandomInteger(0,2);
+        dex = getRandomInteger(0,2);
+        int = getRandomInteger(0,2);
+        luk = getRandomInteger(0,2);
+        spd = getRandomInteger(4,6);
+        stat = str + "str " + dex + "dex " + int + "int " + luk + "luk " + spd + "spd"; 
+      } 
+      break;
+    case "eq_surfb":
+        if(Math.random() >= 0.95) {
+        str = getRandomInteger(1,8);
+        watk = getRandomInteger(59,74);
+        stat = "GODLY! " + watk + "watk " + str + "str "; 
+      }
+      else {
+        str = getRandomInteger(1,3);
+        watk = getRandomInteger(59,69);
+        stat = watk + "watk " + str + "str "; 
+      }
+      qty = 1;
+      break;
+    case "eq_tubed":
+      if(Math.random() >= 0.95) {
+        spd = getRandomInteger(4,11);
+        avo = getRandomInteger(2,9);
+        watk = getRandomInteger(60,75);
+        stat = "GODLY! " + watk + "watk " + spd + "spd "+ avo + "avo "; 
+      }
+      else {
+        spd = getRandomInteger(4,6);
+        avo = getRandomInteger(2,4);
+        watk = getRandomInteger(60,70);
+        stat = watk + "watk " + spd + "spd "+ avo + "avo ";
+      }
+      qty = 1;
+      break;
+    case "eq_brellau":
+      if(Math.random() >= 0.95) {
+        matk = getRandomInteger(13,22);
+        watk = getRandomInteger(13,22);
+        stat = "GODLY! " + watk + "watk " + matk + "matk "; 
+      }
+      else {
+        matk = getRandomInteger(13,17);
+        watk = getRandomInteger(13,17);
+        stat = watk + "watk " + matk + "matk "; 
+      }
+      qty = 1;
+      qty = 1;
+      break;
+    case "eq_tubec":
+      if(Math.random() >= 0.95) {
+        jmp = getRandomInteger(9,16);
+        watk = getRandomInteger(80,95);
+        stat = "GODLY! " + watk + "watk " + jmp + "jmp "; 
+      }
+      else {
+        jmp = getRandomInteger(9,11);
+        watk = getRandomInteger(80,90);
+        stat = "GODLY! " + watk + "watk " + jmp + "jmp "; 
+      }
+      qty = 1;
+      break;
+    case "eq_hula":
+      if(Math.random() >= 0.95) {
+        watk = getRandomInteger(59,74);
+        stat = "GODLY! " + watk + "watk "; 
+      }
+      else {
+        watk = getRandomInteger(59,69);
+        stat = watk + "watk "; 
+      }
+      qty = 1;
+      qty = 1;
+      break;
+    case "eq_tubep":
+      if(Math.random() >= 0.95) {
+        mp = getRandomInteger(45,60);
+        watk = getRandomInteger(50,65);
+        stat = "GODLY! " + watk + "watk " + mp + "mp "; 
+      }
+      else {
+        mp = getRandomInteger(45,55);
+        watk = getRandomInteger(50,60);
+        stat = watk + "watk " + mp + "mp "; 
+      }
+      qty = 1;
+      break;
+    case "eq_surfr":
+      if(Math.random() >= 0.95) {
+        spd = getRandomInteger(4,11);
+        watk = getRandomInteger(94,109);
+        stat = "GODLY! " + watk + "watk " + spd + "spd "; 
+      }
+      else {
+        spd = getRandomInteger(4,6);
+        watk = getRandomInteger(94,104);
+        stat = watk + "watk " + spd + "spd "; 
+      }
+      qty = 1;
+      break;
+    case "eq_brellay":
+      if(Math.random() >= 0.95) {
+        matk = getRandomInteger(47,62);
+        watk = getRandomInteger(47,62);
+        stat = "GODLY! " + watk + "watk " + matk + "matk "; 
+      }
+      else {
+        matk = getRandomInteger(47,57);
+        watk = getRandomInteger(47,57);
+        stat = watk + "watk " + matk + "matk "; 
+      }
+      qty = 1;
+      break;
+    case "eq_brellab":
+      if(Math.random() >= 0.95) {
+        matk = getRandomInteger(80,95);
+        watk = getRandomInteger(80,95);
+        stat = "GODLY! " + watk + "watk " + matk + "matk "; 
+      }
+      else {
+        matk = getRandomInteger(80,90);
+        watk = getRandomInteger(80,90);
+        stat = watk + "watk " + matk + "matk "; 
+      }
+      qty = 1;
+      break;
+    case "eq_tubee":
+      if(Math.random() >= 0.95) {
+        hp = getRandomInteger(140,165);
+        watk = getRandomInteger(70,85);
+        stat = "GODLY! " + watk + "watk " + hp + "hp "; 
+      }
+      else {
+        hp = getRandomInteger(140,160);
+        watk = getRandomInteger(70,80);
+        stat = watk + "watk " + hp + "hp "; 
+      }
+      qty = 1;
+      break;
+    case "eq_tuber":
+      if(Math.random() >= 0.95) {
+        spd = getRandomInteger(9,16);
+        watk = getRandomInteger(36,49);
+        stat = "GODLY! " + watk + "watk " + spd + "spd "; 
+      }
+      else {
+        spd = getRandomInteger(9,11);
+        watk = getRandomInteger(36,44);
+        stat = watk + "watk " + spd + "spd "; 
+      }
+      qty = 1;
+      break;
+    case "eq_surf":
+      if(Math.random() >= 0.95) {
+        jmp = getRandomInteger(4,11);
+        watk = getRandomInteger(43,58);
+        stat = "GODLY! " + watk + "watk " + jmp + "jmp "; 
+      }
+      else {
+        jmp = getRandomInteger(4,6);
+        watk = getRandomInteger(43,53);
+        stat = watk + "watk " + jmp + "jmp "; 
+      }
+      qty = 1;
+      break;
+    case "eq_tubeu":
+      if(Math.random() >= 0.95) {
+        acc = getRandomInteger(9,16);
+        watk = getRandomInteger(13,22);
+        stat = "GODLY! " + watk + "watk " + acc + "acc "; 
+      }
+      else {
+        avo = getRandomInteger(9,11);
+        watk = getRandomInteger(13,17);
+        stat = watk + "watk " + acc + "acc "; 
+      }
+      qty = 1;
+      break;
+    case "eq_lifeg":
+      if(Math.random() >= 0.95) {
+        spd = getRandomInteger(9,16);
+        watk = getRandomInteger(35,48);
+        stat = "GODLY! " + watk + "spd " + matk + "spd "; 
+      }
+      else {
+        spd = getRandomInteger(9,11);
+        watk = getRandomInteger(35,43);
+        stat = watk + "watk " + spd + "spd "; 
+      }
+      qty = 1;
+      qty = 1;
+      break;
+    case "eq_surfp":
+      if(Math.random() >= 0.95) {
+        spd = getRandomInteger(4,11);
+        watk = getRandomInteger(94,109);
+        stat = "GODLY! " + watk + "watk " + spd + "spd "; 
+      }
+      else {
+        spd = getRandomInteger(4,6);
+        watk = getRandomInteger(94,104);
+        stat = "GODLY! " + watk + "watk " + spd + "spd "; 
+      }
+      qty = 1;
+      break;
+    case "eq_tubeb":
+      if(Math.random() >= 0.95) {
+        avo = getRandomInteger(9,16);
+        watk = getRandomInteger(60,75);
+        stat = "GODLY! " + watk + "watk " + avo + "avo "; 
+      }
+      else {
+        avo = getRandomInteger(9,11);
+        watk = getRandomInteger(60,70);
+        stat = watk + "watk " + avo + "avo "; 
+      }
+      qty = 1;
+      break;
+    case "eq_surfg":
+      if(Math.random() >= 0.95) {
+        jmp = getRandomInteger(4,11);
+        watk = getRandomInteger(35,48);
+        stat = "GODLY! " + watk + "watk " + jmp + "jmp "; 
+      }
+      else {
+        jmp = getRandomInteger(4,6);
+        watk = getRandomInteger(35,43);
+        stat = watk + "watk " + jmp + "jmp "; 
+      }
+      qty = 1;
+      break;
+    case "eq_brellag":
+      if(Math.random() >= 0.95) {
+        matk = getRandomInteger(22,33);
+        watk = getRandomInteger(10,19);
+        stat = "GODLY! " + watk + "watk " + matk + "matk "; 
+      }
+      else {
+        matk = getRandomInteger(22,28);
+        watk = getRandomInteger(10,14);
+        stat = watk + "watk " + matk + "matk "; 
+      }
+      qty = 1;
+      break;
+    case "eq_brellar":
+      if(Math.random() >= 0.95) {
+        jmp = getRandomInteger(2,9);
+        watk = getRandomInteger(68,83);
+        stat = "GODLY! " + watk + "watk " + jmp + "jmp "; 
+      }
+      else {
+        jmp = getRandomInteger(2,4);
+        watk = getRandomInteger(68,78);
+        stat = watk + "watk " + jmp + "jmp "; 
+      }
+      qty = 1;
+      break;
+    case "eq_brellai":
+      if(Math.random() >= 0.95) {
+        matk = getRandomInteger(55,70);
+        watk = getRandomInteger(55,70);
+        stat = "GODLY! " + watk + "watk " + matk + "matk "; 
+      }
+      else {
+        matk = getRandomInteger(55,65);
+        watk = getRandomInteger(55,65);
+        stat = watk + "watk " + matk + "matk "; 
+      }
+      qty = 1;
+      break;
+    case "eq_tubedy":
+      if(Math.random() >= 0.95) {
+        spd = getRandomInteger(4,11);
+        watk = getRandomInteger(85,100);
+        avo = getRandomInteger(2,9);
+        stat = "GODLY! " + watk + "watk " + spd + "spd " + avo + "avo "; 
+      }
+      else {
+        spd = getRandomInteger(4,6);
+        watk = getRandomInteger(85,95);
+        avo = getRandomInteger(2,4);
+        stat = watk + "watk " + spd + "spd "+ avo + "avo "; 
+      }
+      qty = 1;
+      break;
+    case "eq_tuna":
+      if(Math.random() >= 0.95) {
+        watk = getRandomInteger(80,95);
+        stat = "GODLY! " + watk + "watk "; 
+      }
+      else {
+        watk = getRandomInteger(80,90);
+        stat = watk + "watk "; 
+      }
+      qty = 1;
+      break;
+    case "eq_surfgr":
+      if(Math.random() >= 0.95) {
+        dex = getRandomInteger(1,8);
+        watk = getRandomInteger(70,85);
+        stat = "GODLY! " + watk + "watk " + dex + "dex "; 
+      }
+      else {
+        dex = getRandomInteger(1,3);
+        watk = getRandomInteger(70,80);
+        stat = watk + "watk " + dex + "dex "; 
+      }
+      qty = 1;
+      break;
+    case "eq_brellalp":
+      if(Math.random() >= 0.95) {
+        matk = getRandomInteger(35,48);
+        watk = getRandomInteger(36,51);
+        stat = "GODLY! " + watk + "watk " + matk + "matk "; 
+      }
+      else {
+        matk = getRandomInteger(35,43);
+        watk = getRandomInteger(36,46);
+        stat = watk + "watk " + matk + "matk "; 
+      }
+      qty = 1;
+      break;
+  }
+
+  if(qty == 1) {
+    msg = "You got a " + selectedItem.name + "!";
+  }
+  else {
+    msg = "You got " + qty + " " + selectedItem.name + "s!";
+  }
+
+  const itemLi = document.getElementById(selectedItem.id);
+  const msgBox = document.getElementById("coolerMsg");
+  const coolerQty = document.getElementById("coolerQty");
+  const itemQty = itemLi.firstElementChild;
+  const itemThumb = document.getElementById("thumb");
+  const statMsg = document.getElementById("statMsg");
+  itemLi.style.display = "block";
+  itemQty.textContent = parseInt(itemQty.textContent) + qty;
+  msgBox.textContent = msg;
+  coolerQty.textContent = parseInt(coolerQty.textContent) + 1;
+  itemThumb.src = "/images/cooler/" + selectedItem.id + ".png";
+  itemThumb.style.display = "inline";
+  statMsg.textContent = stat;
+  
+}
+
 
 </script>
 </body>
