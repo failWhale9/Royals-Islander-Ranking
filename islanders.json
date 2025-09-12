@@ -4,6 +4,10 @@
     "Level":"30"
   },
   {
+    "Name":"AtashiShima",
+    "Level":"37"
+  },
+  {
     "Name":"Lilbuddy",
     "Level":"30"
   },
@@ -225,7 +229,7 @@
   },
   {
     "Name": "HeroinAddict",
-    "Level": "61",
+    "Level": "62",
     "Badges":["dynamic","fence"]
   },
   {
@@ -544,7 +548,7 @@
   {
     "Name": "Valtarre",
     "Level": "52",
-    "Badges":["dexlander","damage300","gomu2"]
+    "Badges":["dexlander","damage300","gomu2","fence"]
   },
   {
     "Name": "inland",
