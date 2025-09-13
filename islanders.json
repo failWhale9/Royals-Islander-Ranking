@@ -4,6 +4,10 @@
     "Level":"30"
   },
   {
+    "Name":"AtashiShima",
+    "Level":"37"
+  },
+  {
     "Name":"Lilbuddy",
     "Level":"30"
   },
@@ -179,7 +183,8 @@
   },
   {
     "Name": "sneils",
-    "Level": "66"
+    "Level": "66",
+    "Badges":["fence"]
   },
   {
     "Name": "jung1e",
@@ -188,7 +193,8 @@
   },
   {
     "Name": "saulgoodman",
-    "Level": "63"
+    "Level": "63",
+    "Badges":["fence"]
   },
   {
     "Name": "Crylou",
@@ -316,7 +322,8 @@
   },
   {
     "Name": "YoungLePopo",
-    "Level": "51"
+    "Level": "51",
+    "Badges":["fence"]
   },
   {
     "Name": "omgwow",
@@ -392,7 +399,8 @@
   },
   {
     "Name": "VillageIdiot",
-    "Level": "49"
+    "Level": "49",
+    "Badges":["fence"]
   },
   {
     "Name": "Frenzeys",
@@ -428,7 +436,8 @@
   },
   {
     "Name": "islandmelan",
-    "Level": "47"
+    "Level": "47",
+    "Badges":["fence"]
   },
   {
     "Name": "Vigi",
@@ -456,7 +465,8 @@
   },
   {
     "Name": "YesImaN00b",
-    "Level": "46"
+    "Level": "46",
+    "Badges":["fence"]
   },
   {
     "Name": "IslandVanity",
@@ -544,7 +554,7 @@
   {
     "Name": "Valtarre",
     "Level": "52",
-    "Badges":["dexlander","damage300","gomu2"]
+    "Badges":["dexlander","damage300","gomu2","fence"]
   },
   {
     "Name": "inland",
@@ -789,7 +799,8 @@
   },
   {
     "Name": "2ManyShrooms",
-    "Level": "38"
+    "Level": "38",
+    "Badges":["fence"]
   },
   {
     "Name": "Stratagem",
@@ -835,7 +846,8 @@
   },
   {
     "Name": "Noobley",
-    "Level": "37"
+    "Level": "37",
+    "Badges":["fence"]
   },
   {
     "Name": "Homemade",
@@ -1019,7 +1031,8 @@
   },
   {
     "Name": "iPokeSnails",
-    "Level": "34"
+    "Level": "34",
+    "Badges":["fence"]
   },
   {
     "Name": "openpro",
@@ -1027,7 +1040,8 @@
   },
   {
     "Name": "BenHammer",
-    "Level": "34"
+    "Level": "34",
+    "Badges":["fence"]
   },
   {
     "Name": "Blueisland",
@@ -1036,7 +1050,8 @@
   },
   {
     "Name": "Puberty",
-    "Level": "34"
+    "Level": "34",
+    "Badges":["fence"]
   },
   {
     "Name": "Gump",
@@ -1045,7 +1060,7 @@
   {
     "Name": "IslandMage",
     "Level": "34",
-    "Badges":["magelander"]
+    "Badges":["magelander","fence"]
   },
   {
     "Name": "Moganji",
@@ -1284,7 +1299,8 @@
   },
   {
     "Name": "Kasuto",
-    "Level": "31"
+    "Level": "31",
+    "Badges":["fence"]
   },
   {
     "Name": "Crazily",
@@ -1438,7 +1454,8 @@
   },
   {
     "Name": "Flux",
-    "Level": "30"
+    "Level": "30",
+    "Badges":["fence"]
   },
   {
     "Name": "wargreymon",
