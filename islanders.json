@@ -81,7 +81,8 @@
   },
   {
     "Name":"IslandLizard",
-    "Level":"43"
+    "Level":"43",
+    "Badges":["pet14","gomu2"]
   },
   {
     "Name": "Thup",
@@ -231,7 +232,7 @@
   },
   {
     "Name": "HeroinAddict",
-    "Level": "62",
+    "Level": "63",
     "Badges":["dynamic","fence"]
   },
   {
@@ -508,7 +509,7 @@
   {
     "Name": "StarTropics",
     "Level": "48",
-    "Badges": ["damage500","chairs24","gomu3"]
+    "Badges": ["damage500","chairs24","gomu3","pet14"]
   },
   {
     "Name": "Ataynep",
@@ -553,7 +554,7 @@
   },
   {
     "Name": "Valtarre",
-    "Level": "52",
+    "Level": "53",
     "Badges":["dexlander","damage300","gomu2","fence"]
   },
   {
