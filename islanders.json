@@ -242,7 +242,7 @@
   {
     "Name": "Shylander",
     "Level": "56",
-    "Badges":["gomu3","pants4","witch40","perfwand","damage500","chairs36","workgloves","omok3","pet14","broom25"]
+    "Badges":["gomu3","pants4","witch40","perfwand","damage500","chairs36","workgloves","omok3","pet14","broom25","fence"]
   },
   {
     "Name": "Oahu",
@@ -278,7 +278,7 @@
   {
     "Name": "demosthes",
     "Level": "60",
-    "Badges":["gomu3","shirt3","damage500"]
+    "Badges":["gomu3","shirt3","damage500","fence"]
   },
   {
     "Name": "Thelslander",
@@ -555,7 +555,7 @@
   {
     "Name": "Valtarre",
     "Level": "53",
-    "Badges":["dexlander","damage300","gomu2","fence"]
+    "Badges":["dexlander","damage300","gomu2","fence","lemons300"]
   },
   {
     "Name": "inland",
