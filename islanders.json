@@ -1,5 +1,85 @@
 [
   {
+    "Name":"wtherow",
+    "Level":"30"
+  },
+  {
+    "Name":"KokoroKun",
+    "Level":"30"
+  },
+  {
+    "Name":"AURALANDER",
+    "Level":"30"
+  },
+  {
+    "Name":"Obamanation",
+    "Level":"31"
+  },
+  {
+    "Name":"Lahgsmore",
+    "Level":"31"
+  },
+  {
+    "Name":"Minus80",
+    "Level":"32"
+  },
+  {
+    "Name":"Bobert",
+    "Level":"32"
+  },
+  {
+    "Name":"Kasshern",
+    "Level":"33"
+  },
+  {
+    "Name":"BillGate",
+    "Level":"35"
+  },
+  {
+    "Name":"KillerTofu",
+    "Level":"38"
+  },
+  {
+    "Name":"gargant",
+    "Level":"42"
+  },
+  {
+    "Name":"VIPOptimus",
+    "Level":"30"
+  },
+  {
+    "Name":"TExecutioner",
+    "Level":"30"
+  },
+  {
+    "Name":"IslandRogue",
+    "Level":"30"
+  },
+  {
+    "Name":"Maperustory",
+    "Level":"31"
+  },
+  {
+    "Name":"M4PLEST0RY",
+    "Level":"32"
+  },
+  {
+    "Name":"IslandMagi",
+    "Level":"32"
+  },
+  {
+    "Name":"Clarence3",
+    "Level":"34"
+  },
+  {
+    "Name":"6974892",
+    "Level":"34"
+  },
+  {
+    "Name":"imIsolated",
+    "Level":"39"
+  },
+  {
     "Name":"Remain",
     "Level":"30"
   },
@@ -91,7 +171,7 @@
   {
     "Name": "Lowly",
     "Level": "111",
-    "Badges":["meso2b","gomu4","witch40","chairs36","damage1000","roses","fence","omok3","workgloves","perfbrella","strlander","umbrellas","tubes","pet14","shirt3","broom30"]
+    "Badges":["meso2b","gomu4","witch40","chairs36","damage1000","roses","fence","omok3","workgloves","perfbrella","strlander","umbrellas","tubes","pet14","shirt3","broom30","ashes"]
   },
   {
     "Name": "NamoAmituofo",
@@ -172,7 +252,7 @@
   {
     "Name": "DannysIsland",
     "Level": "67",
-    "BadNews": "Deleted, Banned - Botting"
+    "BadNews": "Banned - Botting"
   },
   {
     "Name": "Slain",
@@ -242,7 +322,7 @@
   {
     "Name": "Shylander",
     "Level": "56",
-    "Badges":["gomu3","pants4","witch40","perfwand","damage500","chairs36","workgloves","omok3","pet14","broom25","fence"]
+    "Badges":["gomu3","pants4","witch40","perfwand","damage500","chairs36","workgloves","omok3","pet14","broom25","fence","damage500"]
   },
   {
     "Name": "Oahu",
@@ -503,7 +583,7 @@
   },
   {
     "Name": "Floater",
-    "Level": "45",
+    "Level": "42",
     "BadNews": "Banned - RWT"
   },
   {
@@ -860,7 +940,7 @@
   },
   {
     "Name": "Jollybaby",
-    "Level": "37"
+    "Level": "38"
   },
   {
     "Name": "Shimon",
@@ -1028,7 +1108,7 @@
   },
   {
     "Name": "IslandStory",
-    "Level": "34"
+    "Level": "37"
   },
   {
     "Name": "iPokeSnails",
@@ -1170,7 +1250,7 @@
   },
   {
     "Name": "Deidara",
-    "Level": "32"
+    "Level": "33"
   },
   {
     "Name": "Chimney",
@@ -1186,7 +1266,7 @@
   },
   {
     "Name": "LoveIsland",
-    "Level": "32"
+    "Level": "41"
   },
   {
     "Name": "l3asic",
@@ -1288,7 +1368,7 @@
   },
   {
     "Name": "SlappyJr",
-    "Level": "31"
+    "Level": "33"
   },
   {
     "Name": "iCantSwim",
@@ -1296,7 +1376,7 @@
   },
   {
     "Name": "IslanderJoel",
-    "Level": "31"
+    "Level": "32"
   },
   {
     "Name": "Kasuto",
@@ -1321,7 +1401,7 @@
   },
   {
     "Name": "COM002",
-    "Level": "31"
+    "Level": "32"
   },
   {
     "Name": "PenIsland",
@@ -1498,7 +1578,7 @@
   },
   {
     "Name": "Gumptwo",
-    "Level": "30"
+    "Level": "32"
   },
   {
     "Name": "IslandTessa",
