@@ -1,5 +1,13 @@
 [
   {
+    "Name":"silliest",
+    "Level":"30"
+  },
+  {
+    "Name":"Coinicus",
+    "Level":"30"
+  },
+  {
     "Name":"wtherow",
     "Level":"30"
   },
@@ -171,7 +179,7 @@
   {
     "Name": "Lowly",
     "Level": "111",
-    "Badges":["meso2b","gomu4","witch40","chairs36","damage1000","roses","fence","omok3","workgloves","perfbrella","strlander","umbrellas","tubes","pet14","shirt3","broom30","ashes","bluexmas"]
+    "Badges":["meso2b","gomu4","witch40","chairs36","damage1000","roses","fence","omok3","workgloves","perfbrella","strlander","umbrellas","tubes","pet14","shirt3","broom30","ashes","bluexmas","slipper2"]
   },
   {
     "Name": "NamoAmituofo",
@@ -183,7 +191,7 @@
     "Name": "Annot",
     "Level": "97",
     "Alias": "Ereader",
-    "Badges": ["gomu3","pants4","perflights","perfboard","chairs12"]
+    "Badges": ["gomu3","pants4","perflights","perfboard","chairs12","slipper3"]
   },
   {
     "Name": "Mooshy",
@@ -230,8 +238,8 @@
   },
   {
     "Name": "BoatlessMonk",
-    "Level": "72",
-    "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500","broom20","bluexmas","shirt2","ashes"]
+    "Level": "73",
+    "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500","broom20","bluexmas","shirt2","ashes","dexlander","maxdodge"]
   },
   {
     "Name": "IslandSlut",
@@ -313,7 +321,7 @@
   {
     "Name": "HeroinAddict",
     "Level": "63",
-    "Badges":["dynamic","fence"]
+    "Badges":["dynamic","fence","slipper3"]
   },
   {
     "Name": "Taeha",
@@ -322,7 +330,7 @@
   {
     "Name": "Shylander",
     "Level": "56",
-    "Badges":["gomu3","pants4","witch40","perfwand","chairs36","workgloves","omok3","pet14","broom25","fence","damage500","shirt2"]
+    "Badges":["gomu3","pants4","witch40","perfwand","chairs36","workgloves","omok3","pet14","broom25","fence","damage500","shirt2","slipper2"]
   },
   {
     "Name": "Oahu",
@@ -358,7 +366,7 @@
   {
     "Name": "demosthes",
     "Level": "60",
-    "Badges":["gomu3","shirt3","damage500","fence"]
+    "Badges":["gomu3","shirt3","damage500","fence","slipper2"]
   },
   {
     "Name": "Thelslander",
@@ -379,7 +387,7 @@
   {
     "Name": "DrewIsland",
     "Level": "52",
-    "Badges":["shirt4"]
+    "Badges":["shirt4","slipper2"]
   },
   {
     "Name": "Phack",
@@ -1414,7 +1422,7 @@
   },
   {
     "Name": "NoPointer",
-    "Level": "33",
+    "Level": "35",
     "Badges":["nopointer"]
   },
   {

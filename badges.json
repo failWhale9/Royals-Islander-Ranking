@@ -108,6 +108,18 @@
     "desc": "Owns a +4 scrolled gomushin."
   },
   {
+    "id": "slipper2",
+    "type": "item",
+    "name": "Beach Slipper +2",
+    "desc": "Owns a +2 scrolled beach slipper."
+  },
+  {
+    "id": "slipper3",
+    "type": "item",
+    "name": "Beach Slipper +3",
+    "desc": "Owns a +3 scrolled beach slipper."
+  },
+  {
     "id": "witch50",
     "type": "item",
     "name": "50 Stat Witch Hat",
