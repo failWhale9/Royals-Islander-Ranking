@@ -518,6 +518,9 @@ label.menuText {
 .guildTable {
 	display: flex; 
     justify-content: center;
+	font-family: Verdana, sans-serif;
+	font-size: 12px;
+	margin-bottom: 20px;
 }
 
 .guildTag {
@@ -531,6 +534,20 @@ label.menuText {
 
 .guildNotesTd {
 	max-width:400px;
+}
+
+.gthumb {
+	border-radius: 8px;
+	width:80px;  
+	padding:5px;
+}
+
+tr.trInactive > td {
+	background-color: #5e775d;
+}
+
+tr.trInactive:hover td {
+	background-color: #6e8a6d;  
 }
 
 li.equip {
