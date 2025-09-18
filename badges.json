@@ -201,7 +201,13 @@
     "id": "tubes",
     "type": "item",
     "name": "Tube Collector",
-    "desc": "Owns one of each tube (Blue Flowery, Red Flowery, Purple, Emergency Rescue, Black, Colorful, Duck (50), Duck (100)."
+    "desc": "Owns one of each tube (Blue Flowery, Red Flowery, Purple, Emergency Rescue, Black, Colorful, Duck (50), Duck (100))."
+  },
+  {
+    "id": "boards",
+    "type": "item",
+    "name": "Surfboard Collector",
+    "desc": "Owns one of each surfboard (Surfboard, Red, Green, Black, Gold, Purple)."
   },
   {
     "id": "workgloves",

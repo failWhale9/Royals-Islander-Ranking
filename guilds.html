@@ -12,6 +12,12 @@
 </head>
 <body>
 
+<div id="overlay" class="overlay">
+  <div class="overlay-content">
+    <img id="full-image" class="full-image" src="" alt="Full size image">
+  </div>
+</div>
+
 <img src="images/title.png" id="titleImage"></img>
 
 <div id="navbar"></div>
@@ -57,6 +63,39 @@ fetch('/navbar.html')
             }
         });
     }).catch(error => console.error('Error loading navbar:', error));
+
+
+// thumbnail code
+const thumbnails = document.querySelectorAll('.gthumb');
+const overlay = document.getElementById('overlay');
+const fullImage = document.getElementById('full-image');
+
+// Function to open the image in the overlay
+thumbnails.forEach(thumbnail => {
+  thumbnail.addEventListener('click', () => {
+    const img = new Image();
+    img.src = thumbnail.src.replace('thumb', 'full'); // Assuming full images have a similar filename pattern
+    
+    img.onload = () => {
+      fullImage.src = img.src;
+      overlay.style.display = 'flex'; // Make overlay visible immediately
+      // Wait for the next tick to apply opacity change
+      setTimeout(() => {
+        overlay.classList.add('show'); // Trigger the opacity transition
+      }, 10);
+    };
+  });
+});
+
+// Close overlay if clicked outside of the image
+overlay.addEventListener('click', (e) => {
+  if (e.target === overlay) {
+    overlay.classList.remove('show'); // Remove 'show' class to trigger fade-out effect
+    setTimeout(() => {
+      overlay.style.display = 'none'; // Hide the overlay after the fade-out
+    }, 500); // Matches the fade-out time
+  }
+});
 
 </script>
 
