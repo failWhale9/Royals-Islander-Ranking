@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapleRoyals Islander Ranking - Detail</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="islander.css">
+
+</head>
+<body>
+
+<img src="images/title.png" id="titleImage"></img>
+
+<div id="navbar"></div>
+
+<div id="detail1">
+    <span id="dlvl">Lv.50</span>
+    <span id="dname">Testlander</span>
+</div>
+
+<div id="detail2">
+    <span id="dbad">Badnews</span>
+</div>
+
+<div id="detail3">
+    <span id="dalias">Previous names:</span>
+</div>
+
+<div id="detail4">
+    <span id="dalt">Alts:</span>
+</div>
+
+<div id="detail5">
+    <span id="dstart">Islanding Since 2020</span>
+</div>
+
+<div id="dbadges">
+    
+</div>
+
+<div id="dgallery">
+
+</div>
+
+<div class="BadgeHover" id="sharedTooltip">
+    <div id="tooltipTitle"></div>
+    <span id="tooltipDesc"></span>
+</div>
+
+<div id="footer">
+    <p>Page written and maintained by <img src="/images/shy.png"></p> 
+</div>
+
+<script>
+
+function createTable(jsons) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('n');
+    console.log(name);
+}
+
+//navbar code
+fetch('/navbar.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const currentPage = location.pathname;
+        document.querySelectorAll('#navbar a').forEach(link => {
+            //console.log("href:" + link.getAttribute('href') + "   currentpage:" + currentPage);
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add("navInactive");
+                link.removeAttribute('href');
+            }
+        });
+    }).catch(error => console.error('Error loading navbar:', error));
+
+// badge tooltip code
+function applyBadgeTooltips() {
+    const tooltip = document.getElementById('sharedTooltip');
+    const tooltiptitle = document.getElementById('tooltipTitle');
+    const tooltipdesc = document.getElementById('tooltipDesc');
+    const badgeContainers = document.querySelectorAll('.BadgeContainer');
+
+    badgeContainers.forEach(container => {
+        container.addEventListener('mouseenter', () => {
+            const rect = container.getBoundingClientRect();
+            tooltip.style.top = `${rect.bottom + 8}px`;
+            tooltip.style.left = `${rect.left}px`;
+            tooltipDesc.textContent = container.dataset.tooltip;
+            tooltiptitle.textContent = container.dataset.title;
+            void tooltip.offsetWidth;
+            tooltip.classList.add('visible');
+        });
+
+        container.addEventListener('mouseleave', () => {
+        tooltip.classList.remove('visible');
+        });
+    });
+}
+
+// json code
+async function getJsonData() {
+    const jsons = ["islanders.json", "badges.json"];
+    const reqs = jsons.map(u=>fetch(u).then(response => {
+    if(!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+    })
+    );
+
+    const results = await Promise.all(reqs);
+
+    createTable(results);
+}
+
+getJsonData();
+
+</script>
+
+</body>
+</html>
