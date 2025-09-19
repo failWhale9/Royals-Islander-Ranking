@@ -526,6 +526,34 @@ label.menuText {
 	margin-bottom: 20px;
 }
 
+@media (pointer: coarse) {
+	.table-wrapper {
+		max-width: 90%;
+		overflow-x: auto;
+		margin-left:auto;
+		margin-right: auto;
+	}
+	.guildTable {
+		display: flex; 
+		max-width: 80%;
+		justify-content: center;
+		font-family: Verdana, sans-serif;
+		font-size: 12px;
+		margin-bottom: 20px;
+	}
+
+	.guildTag {
+		width:230px; 
+		transform: rotate(90deg);
+		image-rendering: pixelated;
+		position: absolute;
+		left: -32px;
+	}
+	.guildTagTd {
+		max-width:30px !important;
+	}
+}
+
 .guildTag {
 	width:230px; 
 	image-rendering: pixelated;

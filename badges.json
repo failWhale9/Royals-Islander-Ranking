@@ -141,25 +141,25 @@
     "id": "chairs12",
     "type": "item",
     "name": "Chair Collector (12)",
-    "desc": "Owns at least 12 different chairs."
+    "desc": "Owns at least 12 different (non-RP) chairs."
   },
   {
     "id": "chairs24",
     "type": "item",
     "name": "Chair Collector (24)",
-    "desc": "Owns at least 24 different chairs."
+    "desc": "Owns at least 24 different (non-RP) chairs."
   },
   {
     "id": "chairs36",
     "type": "item",
     "name": "Chair Collector (36)",
-    "desc": "Owns at least 36 different chairs."
+    "desc": "Owns at least 36 different (non-RP) chairs."
   },
   {
     "id": "chairs48",
     "type": "item",
     "name": "Chair Collector (48)",
-    "desc": "Owns at least 48 different chairs."
+    "desc": "Owns at least 48 different (non-RP) chairs."
   },
   {
     "id": "meso500",
