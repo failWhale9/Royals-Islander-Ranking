@@ -1,7 +1,7 @@
 [
   {
     "Name":"NewbieMia",
-    "Level":"30"
+    "Level":"32"
   },
   {
     "Name":"silliest",
@@ -326,7 +326,7 @@
   {
     "Name": "HeroinAddict",
     "Level": "64",
-    "Badges":["dynamic","fence","slipper3"]
+    "Badges":["dynamic","fence","slipper3","pet14"]
   },
   {
     "Name": "Taeha",
@@ -602,7 +602,7 @@
   },
   {
     "Name": "StarTropics",
-    "Level": "50",
+    "Level": "51",
     "Badges": ["damage800","chairs24","gomu3","pet14"]
   },
   {
