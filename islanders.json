@@ -1,4 +1,8 @@
 [
+    {
+    "Name":"DayDreeam",
+    "Level":"32"
+  },
   {
     "Name":"NewbieMia",
     "Level":"32"
@@ -226,7 +230,7 @@
   {
     "Name": "Adaryn",
     "Level": "80",
-    "Badges":["shirt5","pants4","witch40","broom20","maxdodge","gomu3","omok3","roses","umbrellas","tubes","boards","workgloves","chairs36","pet14","perflights","perfbrella","fence","bluexmas","meso750","knifestrats","lemons300","slipper2"]
+    "Badges":["shirt5","pants4","witch40","broom20","maxdodge","gomu3","omok3","roses","umbrellas","tubes","boards","workgloves","chairs36","pet14","perflights","perfbrella","fence","bluexmas","meso750","knifestrats","lemons300","slipper2","ashes"]
   },
   {
     "Name": "IslandChrizz",
@@ -300,7 +304,8 @@
   },
   {
     "Name": "MICKYISLAND",
-    "Level": "62"
+    "Level": "62",
+    "Badges":["fence","broom20"]
   },
   {
     "Name": "Snowbelle",
@@ -370,8 +375,8 @@
   },
   {
     "Name": "demosthes",
-    "Level": "61",
-    "Badges":["gomu3","shirt3","damage500","fence","slipper2"]
+    "Level": "62",
+    "Badges":["gomu3","shirt3","damage1000","fence","slipper2"]
   },
   {
     "Name": "Thelslander",
@@ -486,7 +491,7 @@
   {
     "Name": "Pienor",
     "Alias":"Fundlander",
-    "Level": "57"
+    "Level": "58"
   },
   {
     "Name": "Oreliel",
