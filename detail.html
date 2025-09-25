@@ -14,33 +14,38 @@
 
 <div id="navbar"></div>
 
-<div id="detail1">
-    <span id="dlvl">Lv.50</span>
-    <span id="dname">Testlander</span>
-</div>
+<div class="profileContainer">
+    <div class="topRow">
+        <span class="detailSide">
+            <div class="detailRow" id="detail1">
+                <span class="detailBox" id="dlvl">Lv.50</span>
+                <span class="detailBox" id="dname">Testlander</span>
+            </div>
 
-<div id="detail2">
-    <span id="dbad">Badnews</span>
-</div>
+            <div class="detailBoxShort" id="detail2">
+                <span id="dbad">Badnews</span>
+            </div>
 
-<div id="detail3">
-    <span id="dalias">Previous names:</span>
-</div>
+            <div class="detailBoxShort" id="detail3">
+                <span id="dalias">Previous names:</span>
+            </div>
 
-<div id="detail4">
-    <span id="dalt">Alts:</span>
-</div>
+            <div class="detailBoxShort" id="detail4">
+                <span id="dalt">Alts:</span>
+            </div>
 
-<div id="detail5">
-    <span id="dstart">Islanding Since 2020</span>
-</div>
+            <div class="detailBoxShort" id="detail5">
+                <span id="dstart">Islanding Since 2020</span>
+            </div>
+        </span>
 
-<div id="dbadges">
-    
-</div>
+        <span class="detailBox" id="dportContainer">
+            <img id="dport" src="">
+        </span>
+    </div>
 
-<div id="dgallery">
-
+    <div class="detailBox" id="dbadges"></div>
+    <div class="detailBox" id="dgallery"></div>
 </div>
 
 <div class="BadgeHover" id="sharedTooltip">
@@ -57,7 +62,61 @@
 function createTable(jsons) {
     const urlParams = new URLSearchParams(window.location.search);
     const name = urlParams.get('n');
-    console.log(name);
+    const badges = jsons[1];
+    const character = jsons[0].find(item => item.Name.toLowerCase() === name);
+    const dname = document.getElementById('dname');
+    const dlvl = document.getElementById('dlvl');
+    const dbad = document.getElementById('dbad');
+    const dalias = document.getElementById('dalias');
+    const dalt = document.getElementById('dalt');
+    const dport = document.getElementById('dport');
+
+    if(character == null) {
+        console.log("Character not found");
+    }
+    else{
+        dname.textContent = character.Name;
+        dlvl.textContent = "Lv." + character.Level;
+
+        const baseName = character.Name.toLowerCase();
+        const formats = ['png', 'gif'];
+        let formatIndex = 0;
+
+        function tryLoadImage() {
+            if (formatIndex < formats.length) {
+                try {
+                    dport.src = `images/islanders/${baseName}.${formats[formatIndex]}`;
+                }
+                catch {
+
+                }
+                dport.onerror = () => {
+                    formatIndex++;
+                    tryLoadImage(); // Try next format
+                };
+            } else {
+                dport.onerror = null; // Prevent loop
+                dport.src = 'images/placeholder.png'; // Fallback image
+            }
+        }
+
+        tryLoadImage();
+
+        if(character.BadNews != null) {
+            dbad.textContent = character.BadNews;
+        }
+
+        if(character.Alias != null) {
+            dalias.textContent = "Previous names: " + character.Alias;
+        }
+        
+        if(character.Alt != null) {
+            dalt.textContent = "(" + character.Alt + "'s Alt)";
+        }
+
+        
+    }
+
 }
 
 //navbar code
