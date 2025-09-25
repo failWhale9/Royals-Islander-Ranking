@@ -31,6 +31,12 @@
 
 <script>
 
+function getRandomInteger(min, max) {
+    min = Math.ceil(min); 
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 //navbar code
 fetch('/navbar.html')
     .then(response => response.text())
@@ -93,7 +99,7 @@ function createTable(jsons) {
 
     thead.appendChild(headerRow);
     table.appendChild(thead);
-    
+
     // Create table body
     const tbody = document.createElement('tbody');
 
@@ -129,7 +135,19 @@ function createTable(jsons) {
                         }
                     }
 
-                    tryLoadImage();
+                    function tryLoadRandom(min, max) {
+
+                        const val = getRandomInteger(min,max);
+                        img.src = `images/islanders/${baseName}${val}.png`;
+                    }
+
+                    if(baseName == "ioizor") {
+                        img.id = "ioizor";
+                        tryLoadRandom(0,26);
+                    }
+                    else {
+                        tryLoadImage();
+                    }
                     img.classList.add("portrait");
                     td.appendChild(img);
                     row.appendChild(td);
@@ -221,6 +239,7 @@ function createTable(jsons) {
         },
         "drawCallback": function(settings) {
             applyBadgeTooltips();
+            randomImgObserver();
         }
      });
 }
@@ -248,6 +267,28 @@ function applyBadgeTooltips() {
     });
 }
 
+// Random image code
+function randomImgObserver() {
+    const target = document.getElementById('ioizor');
+
+    const observer = new IntersectionObserver(
+    ([entry]) => {
+        if (!entry.isIntersecting) {
+            const val = getRandomInteger(0,26);
+            target.src = `images/islanders/ioizor${val}.png`;
+
+        }
+    },
+    {
+        root: null,
+        threshold: 0, 
+    }
+    );
+
+    observer.observe(target);
+}
+
+// Load json code
 async function getJsonData() {
     const jsons = ["islanders.json", "badges.json"];
     const reqs = jsons.map(u=>fetch(u).then(response => {
