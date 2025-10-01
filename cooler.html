@@ -23,6 +23,10 @@
   <label for="option1" class="tooltip" data-tooltip-content="Probabilities based on actual data from opening 2079 coolers. (Thanks Adaryn, Rally, and jung1e!)">2024 Dataset</label><br>
   <input type="radio" id="option2" name="dataSet" value="Norm">
   <label for="option2" class="tooltip" data-tooltip-content="Probabilities extrapolated and normalized from 2024 data based on assumptions: Probability of each category is an integer number, each item within a category has the same probability.">Theoretical Normalized</label><br>
+  <div id="valtarre" style="display:none">
+    <input type="radio" id="option3" name="dataSet" value="valt">
+    <label for="option3" class="tooltip" data-tooltip-content="A 180 cooler dataset designed to encourage empathy and understanding">Valtarre Mode</label><br>
+  </div>
 </div>
 <img src="/images/cooler/cooler.png" style="image-rendering: pixelated; width:62px;" onclick="openCooler()">
 
@@ -99,7 +103,7 @@
 <div id="coolerTooltip"></div>
 
 <div id="footer">
-    <p>Page written and maintained by <img src="/images/shy.png"></p> 
+    <p>Page written and maintained by <img src="/images/shy.png"  onclick="moreOption()"></p> 
 </div>
 <script>
 
@@ -144,59 +148,59 @@ fetch('/navbar.html')
 // You have gained an item in the Eqp tab (item)
 
 const items = [
-  {name: "Beach Slippers", type: "Sandals", chance:1.05820105820106, id:"eq_slip", norm:0.16666666666667},
-  {name: "Black Surfboard", type: "Weapon", chance:0.432900432900433, id:"eq_surfb", norm:0.16666666666667},
-  {name: "Duck Tube", type: "Weapon", chance:0.336700336700337, id:"eq_tubed", norm:0.16666666666667},
-  {name: "Sky Blue Umbrella", type: "Weapon", chance:0.288600288600289, id:"eq_brellau", norm:0.16666666666667},
-  {name: "Colorful Tube", type: "Weapon", chance:0.240500240500241, id:"eq_tubec", norm:0.16666666666667},
-  {name: "Hula Hoop", type: "Weapon", chance:0.240500240500241, id:"eq_hula", norm:0.16666666666667},
-  {name: "Purple Tube", type: "Weapon", chance:0.240500240500241, id:"eq_tubep", norm:0.16666666666667},
-  {name: "Red Surfboard", type: "Weapon", chance:0.240500240500241, id:"eq_surfr", norm:0.16666666666667},
-  {name: "Yellow Umbrella", type: "Weapon", chance:0.240500240500241, id:"eq_brellay", norm:0.16666666666667},
-  {name: "Black Umbrella", type: "Weapon", chance:0.192400192400192, id:"eq_brellab", norm:0.16666666666667},
-  {name: "Emergency Rescue Tube", type: "Weapon", chance:0.192400192400192, id:"eq_tubee", norm:0.16666666666667},
-  {name: "Red Flowery Tube", type: "Weapon", chance:0.192400192400192, id:"eq_tuber", norm:0.16666666666667},
-  {name: "Surfboard", type: "Weapon", chance:0.192400192400192, id:"eq_surf", norm:0.16666666666667},
-  {name: "Blue Flowery Tube", type: "Weapon", chance:0.144300144300144, id:"eq_tubeu", norm:0.16666666666667},
-  {name: "Lifeguard Saver", type: "Weapon", chance:0.144300144300144, id:"eq_lifeg", norm:0.16666666666667},
-  {name: "Purple Surfboard", type: "Weapon", chance:0.144300144300144, id:"eq_surfp", norm:0.16666666666667},
-  {name: "Black Tube", type: "Weapon", chance:0.0962000962000962, id:"eq_tubeb", norm:0.16666666666667},
-  {name: "Gold Surfboard", type: "Weapon", chance:0.0962000962000962, id:"eq_surfg", norm:0.16666666666667},
-  {name: "Green Umbrella", type: "Weapon", chance:0.0962000962000962, id:"eq_brellag", norm:0.16666666666667},
-  {name: "Red Umbrella", type: "Weapon", chance:0.0962000962000962, id:"eq_brellar", norm:0.16666666666667},
-  {name: "Beige Umbrella", type: "Weapon", chance:0.0481000481000481, id:"eq_brellai", norm:0.16666666666667},
-  {name: "Duck Tube (Yellow)", type: "Weapon", chance:0.0481000481000481, id:"eq_tubedy", norm:0.16666666666667},
-  {name: "Frozen Tuna", type: "Weapon", chance:0.0481000481000481, id:"eq_tuna", norm:0.16666666666667},
-  {name: "Green Surfboard", type: "Weapon", chance:0.0481000481000481, id:"eq_surfgr", norm:0.16666666666667},
-  {name: "Light Purple Umbrella", type: "Weapon", chance:0.0481000481000481, id:"eq_brellalp", norm:0.16666666666667},
-  {name: "Palm Tree Beach Chair", type: "Chair", chance:0.577200577200577, id:"ch_palm", norm:0.4},
-  {name: "Beach Chair", type: "Chair", chance:0.336700336700337, id:"ch_beach", norm:0.4},
-  {name: "Blue Beach Chair", type: "Chair", chance:0.336700336700337, id:"ch_beachb", norm:0.4},
-  {name: "Mirror Chair", type: "Chair", chance:0.240500240500241, id:"ch_mirror", norm:0.4},
-  {name: "Red Beach Chair", type: "Chair", chance:0.240500240500241, id:"ch_beachr", norm:0.4},
-  {name: "Melon Popsicle", type: "Popsicle Equip", chance:0.288600288600289, id:"pp_melon", norm:0.25},
-  {name: "Strawberry Popsicle", type: "Popsicle Equip", chance:0.288600288600289, id:"pp_straw", norm:0.25},
-  {name: "Watermelon Popsicle", type: "Popsicle Equip", chance:0.240500240500241, id:"pp_water", norm:0.25},
-  {name: "Chocolate Popsicle (Eqp)", type: "Popsicle Equip", chance:0.144300144300144, id:"pp_choc", norm:0.25},
-  {name: "Cloudy Swimming Goggles", type: "NX Equip", chance:0.625300625300625, id:"nx_gogg", norm:0.4},
-  {name: "Tiny Blue Swimshorts", type: "NX Equip", chance:0.432900432900433, id:"nx_shortsu", norm:0.4},
-  {name: "Tiny Black Swimshorts", type: "NX Equip", chance:0.288600288600289, id:"nx_shortsb", norm:0.4},
-  {name: "Pink Strapless Bikini", type: "NX Equip", chance:0.144300144300144, id:"nx_bikp", norm:0.4},
-  {name: "Blue Strapless Bikini", type: "NX Equip", chance:0.0481000481000481, id:"nx_bikb", norm:0.4},
-  {name: "Coconut Drink", type: "Potion", chance:10.966810966811, id:"pt_coco", norm:10},
-  {name: "Slimecream Cone", type: "Potion", chance:10.9187109187109, id:"pt_cone", norm:10},
-  {name: "Chocolate Popsicle", type: "Potion", chance:9.47570947570948, id:"pt_choco", norm:10},
-  {name: "Hydration Flask", type: "Potion", chance:8.70610870610871, id:"pt_flask", norm:10},
-  {name: "Sunblock", type: "Potion", chance:5.72390572390572, id:"pt_sunb", norm:5},
-  {name: "Ice Cream Pop", type: "Potion", chance:5.62770562770563, id:"pt_icepop", norm:5},
-  {name: "Bubble Gum", type: "Potion", chance:5.29100529100529, id:"pt_bubble", norm:5},
-  {name: "Bubble Tea", type: "Potion", chance:5.14670514670515, id:"pt_boba", norm:5},
-  {name: "Sunset Dew", type: "Potion", chance:5.14670514670515, id:"pt_setdew", norm:5},
-  {name: "Watermelon", type: "Potion", chance:4.90620490620491, id:"pt_melon", norm:5},
-  {name: "Red Bean Sundae", type: "Potion", chance:4.81000481000481, id:"pt_redbean", norm:5},
-  {name: "Royal Cola", type: "Potion", chance:4.76190476190476, id:"pt_royal", norm:5},
-  {name: "Sunrise Dew", type: "Potion", chance:4.71380471380471, id:"pt_risedew", norm:5},
-  {name: "Maple BBQ", type: "Potion", chance:4.42520442520443, id:"pt_bbq", norm:5}
+  {name: "Beach Slippers", type: "Sandals", chance:1.05820105820106, id:"eq_slip", norm:0.16666666666667, valt:0},
+  {name: "Black Surfboard", type: "Weapon", chance:0.432900432900433, id:"eq_surfb", norm:0.16666666666667, valt:0},
+  {name: "Duck Tube", type: "Weapon", chance:0.336700336700337, id:"eq_tubed", norm:0.16666666666667, valt:0},
+  {name: "Sky Blue Umbrella", type: "Weapon", chance:0.288600288600289, id:"eq_brellau", norm:0.16666666666667, valt:0},
+  {name: "Colorful Tube", type: "Weapon", chance:0.240500240500241, id:"eq_tubec", norm:0.16666666666667, valt:0},
+  {name: "Hula Hoop", type: "Weapon", chance:0.240500240500241, id:"eq_hula", norm:0.16666666666667, valt:0},
+  {name: "Purple Tube", type: "Weapon", chance:0.240500240500241, id:"eq_tubep", norm:0.16666666666667, valt:0},
+  {name: "Red Surfboard", type: "Weapon", chance:0.240500240500241, id:"eq_surfr", norm:0.16666666666667, valt:0},
+  {name: "Yellow Umbrella", type: "Weapon", chance:0.240500240500241, id:"eq_brellay", norm:0.16666666666667, valt:0},
+  {name: "Black Umbrella", type: "Weapon", chance:0.192400192400192, id:"eq_brellab", norm:0.16666666666667, valt:0.56},
+  {name: "Emergency Rescue Tube", type: "Weapon", chance:0.192400192400192, id:"eq_tubee", norm:0.16666666666667, valt:0},
+  {name: "Red Flowery Tube", type: "Weapon", chance:0.192400192400192, id:"eq_tuber", norm:0.16666666666667, valt:0},
+  {name: "Surfboard", type: "Weapon", chance:0.192400192400192, id:"eq_surf", norm:0.16666666666667, valt:0},
+  {name: "Blue Flowery Tube", type: "Weapon", chance:0.144300144300144, id:"eq_tubeu", norm:0.16666666666667, valt:0},
+  {name: "Lifeguard Saver", type: "Weapon", chance:0.144300144300144, id:"eq_lifeg", norm:0.16666666666667, valt:0},
+  {name: "Purple Surfboard", type: "Weapon", chance:0.144300144300144, id:"eq_surfp", norm:0.16666666666667, valt:0.56},
+  {name: "Black Tube", type: "Weapon", chance:0.0962000962000962, id:"eq_tubeb", norm:0.16666666666667, valt:0.56},
+  {name: "Gold Surfboard", type: "Weapon", chance:0.0962000962000962, id:"eq_surfg", norm:0.16666666666667, valt:0},
+  {name: "Green Umbrella", type: "Weapon", chance:0.0962000962000962, id:"eq_brellag", norm:0.16666666666667, valt:0},
+  {name: "Red Umbrella", type: "Weapon", chance:0.0962000962000962, id:"eq_brellar", norm:0.16666666666667, valt:0},
+  {name: "Beige Umbrella", type: "Weapon", chance:0.0481000481000481, id:"eq_brellai", norm:0.16666666666667, valt:0},
+  {name: "Duck Tube (Yellow)", type: "Weapon", chance:0.0481000481000481, id:"eq_tubedy", norm:0.16666666666667, valt:0},
+  {name: "Frozen Tuna", type: "Weapon", chance:0.0481000481000481, id:"eq_tuna", norm:0.16666666666667, valt:0},
+  {name: "Green Surfboard", type: "Weapon", chance:0.0481000481000481, id:"eq_surfgr", norm:0.16666666666667, valt:0},
+  {name: "Light Purple Umbrella", type: "Weapon", chance:0.0481000481000481, id:"eq_brellalp", norm:0.16666666666667, valt:0},
+  {name: "Palm Tree Beach Chair", type: "Chair", chance:0.577200577200577, id:"ch_palm", norm:0.4, valt:0},
+  {name: "Beach Chair", type: "Chair", chance:0.336700336700337, id:"ch_beach", norm:0.4, valt:0},
+  {name: "Blue Beach Chair", type: "Chair", chance:0.336700336700337, id:"ch_beachb", norm:0.4, valt:1.67},
+  {name: "Mirror Chair", type: "Chair", chance:0.240500240500241, id:"ch_mirror", norm:0.4, valt:0.56},
+  {name: "Red Beach Chair", type: "Chair", chance:0.240500240500241, id:"ch_beachr", norm:0.4, valt:0.56},
+  {name: "Melon Popsicle", type: "Popsicle Equip", chance:0.288600288600289, id:"pp_melon", norm:0.25, valt:0},
+  {name: "Strawberry Popsicle", type: "Popsicle Equip", chance:0.288600288600289, id:"pp_straw", norm:0.25, valt:0},
+  {name: "Watermelon Popsicle", type: "Popsicle Equip", chance:0.240500240500241, id:"pp_water", norm:0.25, valt:0},
+  {name: "Chocolate Popsicle (Eqp)", type: "Popsicle Equip", chance:0.144300144300144, id:"pp_choc", norm:0.25, valt:0},
+  {name: "Cloudy Swimming Goggles", type: "NX Equip", chance:0.625300625300625, id:"nx_gogg", norm:0.4, valt:1.11},
+  {name: "Tiny Blue Swimshorts", type: "NX Equip", chance:0.432900432900433, id:"nx_shortsu", norm:0.4, valt:0.56},
+  {name: "Tiny Black Swimshorts", type: "NX Equip", chance:0.288600288600289, id:"nx_shortsb", norm:0.4, valt:1.11},
+  {name: "Pink Strapless Bikini", type: "NX Equip", chance:0.144300144300144, id:"nx_bikp", norm:0.4, valt:0},
+  {name: "Blue Strapless Bikini", type: "NX Equip", chance:0.0481000481000481, id:"nx_bikb", norm:0.4, valt:0},
+  {name: "Coconut Drink", type: "Potion", chance:10.966810966811, id:"pt_coco", norm:10, valt:8.89},
+  {name: "Slimecream Cone", type: "Potion", chance:10.9187109187109, id:"pt_cone", norm:10, valt:7.22},
+  {name: "Chocolate Popsicle", type: "Potion", chance:9.47570947570948, id:"pt_choco", norm:10, valt:11.67},
+  {name: "Hydration Flask", type: "Potion", chance:8.70610870610871, id:"pt_flask", norm:10, valt:13.33},
+  {name: "Sunblock", type: "Potion", chance:5.72390572390572, id:"pt_sunb", norm:5, valt:7.22},
+  {name: "Ice Cream Pop", type: "Potion", chance:5.62770562770563, id:"pt_icepop", norm:5, valt:6.11},
+  {name: "Bubble Gum", type: "Potion", chance:5.29100529100529, id:"pt_bubble", norm:5, valt:2.78},
+  {name: "Bubble Tea", type: "Potion", chance:5.14670514670515, id:"pt_boba", norm:5, valt:6.67},
+  {name: "Sunset Dew", type: "Potion", chance:5.14670514670515, id:"pt_setdew", norm:5, valt:3.33},
+  {name: "Watermelon", type: "Potion", chance:4.90620490620491, id:"pt_melon", norm:5, valt:5},
+  {name: "Red Bean Sundae", type: "Potion", chance:4.81000481000481, id:"pt_redbean", norm:5, valt:3.33},
+  {name: "Royal Cola", type: "Potion", chance:4.76190476190476, id:"pt_royal", norm:5, valt:3.89},
+  {name: "Sunrise Dew", type: "Potion", chance:4.71380471380471, id:"pt_risedew", norm:5, valt:7.78},
+  {name: "Maple BBQ", type: "Potion", chance:4.42520442520443, id:"pt_bbq", norm:5, valt:5.56}
 ];
 
 function getRandomInteger(min, max) {
@@ -241,6 +245,12 @@ function getDataset() {
   return(selectedValue);
   }
 
+function moreOption() {
+  const label = document.getElementById('valtarre');
+  console.log(label);
+  label.style.display = "block";
+}
+
 function openCooler() {
 
   let cProb = 0;
@@ -253,6 +263,15 @@ function openCooler() {
   if(getDataset() == "Norm") {
     for (const item of items) {
       cProb += item.norm;
+      if (roll < cProb) {
+        selectedItem = item;
+        break;
+      }
+    }
+  }
+  else if(getDataset() == "valt") {
+    for (const item of items) {
+      cProb += item.valt;
       if (roll < cProb) {
         selectedItem = item;
         break;
