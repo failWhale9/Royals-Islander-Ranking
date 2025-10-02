@@ -22,19 +22,19 @@
                 <span class="detailBox" id="dname">Testlander</span>
             </div>
 
-            <div class="detailBoxShort" id="detail2">
+            <div class="detailBoxShort" id="detail2" style="display:none">
                 <span id="dbad">Badnews</span>
             </div>
 
-            <div class="detailBoxShort" id="detail3">
+            <div class="detailBoxShort" id="detail3" style="display:none">
                 <span id="dalias">Previous names:</span>
             </div>
 
-            <div class="detailBoxShort" id="detail4">
-                <span id="dalt">Alts:</span>
+            <div class="detailBoxShort" id="detail4" style="display:none">
+                <span id="dalt">Alts</span>
             </div>
 
-            <div class="detailBoxShort" id="detail5">
+            <div class="detailBoxShort" id="detail5" style="display:none">
                 <span id="dstart">Islanding Since 2020</span>
             </div>
         </div>
@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <div class="detailBox" id="dbadges">Badges:</div>
+    <div class="detailBox" id="dbadges">Badges:<br/></div>
     <div class="detailBox" id="dgallery">Gallery:</div>
 </div>
 
@@ -70,6 +70,13 @@ function createTable(jsons) {
     const dalias = document.getElementById('dalias');
     const dalt = document.getElementById('dalt');
     const dport = document.getElementById('dport');
+    const dstart = document.getElementById('dstart');
+    const dbadges = document.getElementById('dbadges');
+    const detail1 = document.getElementById('detail1');
+    const detail2 = document.getElementById('detail2');
+    const detail3 = document.getElementById('detail3');
+    const detail4 = document.getElementById('detail4');
+    const detail5 = document.getElementById('detail5');
 
     if(character == null) {
         console.log("Character not found");
@@ -104,17 +111,50 @@ function createTable(jsons) {
 
         if(character.BadNews != null) {
             dbad.textContent = character.BadNews;
+            detail2.style.display = "block";
         }
 
         if(character.Alias != null) {
             dalias.textContent = "Previous names: " + character.Alias;
+            detail3.style.display = "block";
         }
         
         if(character.Alt != null) {
             dalt.textContent = "(" + character.Alt + "'s Alt)";
+            detail4.style.display = "block";
         }
 
-        
+        if(character.Since != null) {
+            dstart.textContent = "Islanding Since " + character.Since;
+            detail5.style.display = "block";
+        }
+
+        // Fetch badges
+        if (character.hasOwnProperty('Badges') && character['Badges'] !== "")
+        {
+            const badgeType = ["build","achievement","item"];
+            badgeType.forEach(function(type){
+            character['Badges'].forEach(function(badge){
+                const targetBadge = badges.find(item => item.id === badge)
+                if(targetBadge.id === badge ) {
+                    if(targetBadge.type === type)
+                    {
+                        const div = document.createElement('div');
+                        const img = document.createElement('img');
+                        const tooltip = 'data-tooltip';
+                        const title = 'data-title';
+                        div.classList.add("BadgeContainer");
+                        div.setAttribute(title, "♦ "+ targetBadge.name + " ♦");          
+                        div.setAttribute(tooltip,targetBadge.desc);
+                        img.classList.add("Badge");
+                        img.src = '/images/badges/' + badge + '.png';
+                        div.appendChild(img);
+                        dbadges.appendChild(div);
+                    }
+                }
+            })})
+            applyBadgeTooltips();
+        }
     }
 
 }
