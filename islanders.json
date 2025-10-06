@@ -1,5 +1,17 @@
 [
   {
+    "Name":"IslanderIsh",
+    "Level":"36"
+  },
+  {
+    "Name":"singa",
+    "Level":"30"
+  },
+  {
+    "Name":"Islander0001",
+    "Level":"30"
+  },
+  {
     "Name":"RAPlST",
     "Level":"34"
   },
@@ -9,7 +21,7 @@
   },
   {
     "Name":"Tubular",
-    "Level":"31"
+    "Level":"32"
   },
   {
     "Name":"DayDreeam",
@@ -342,8 +354,8 @@
   },
   {
     "Name": "HeroinAddict",
-    "Level": "66",
-    "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2"]
+    "Level": "67",
+    "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards"]
   },
   {
     "Name": "Taeha",
@@ -449,7 +461,7 @@
   {
     "Name": "Delfino",
     "Level": "52",
-    "Badges":["fence"]
+    "Badges":["fence","gomu4"]
   },
   {
     "Name": "BananaIsland",
@@ -505,7 +517,7 @@
     "Name": "Pienor",
     "Alias":"Fundlander",
     "Alt":"Wienor",
-    "Level": "59"
+    "Level": "60"
   },
   {
     "Name": "Oreliel",
@@ -764,7 +776,7 @@
   },
   {
     "Name": "ZakoZantern",
-    "Level": "42",
+    "Level": "44",
     "Badges":["dynamic"]
   },
   {
@@ -1240,7 +1252,7 @@
   },
   {
     "Name": "Ailand",
-    "Level": "53"
+    "Level": "54"
   },
   {
     "Name": "Nooburt",
