@@ -46,7 +46,7 @@
     </div>
 
     <div class="detailBox" id="dbadges">Badges:<br/></div>
-    <div class="detailBox" id="dgallery">Gallery:</div>
+    <div class="detailBox image-set" id="dgallery">Gallery:<br/></div>
 </div>
 
 <div class="BadgeHover" id="sharedTooltip">
@@ -63,6 +63,7 @@
 function createTable(jsons) {
     const urlParams = new URLSearchParams(window.location.search);
     const name = urlParams.get('n');
+    const gallery = jsons[2];
     const badges = jsons[1];
     const character = jsons[0].find(item => item.Name.toLowerCase() === name);
     const dname = document.getElementById('dname');
@@ -73,11 +74,17 @@ function createTable(jsons) {
     const dport = document.getElementById('dport');
     const dstart = document.getElementById('dstart');
     const dbadges = document.getElementById('dbadges');
+    const dgallery = document.getElementById('dgallery');
     const detail1 = document.getElementById('detail1');
     const detail2 = document.getElementById('detail2');
     const detail3 = document.getElementById('detail3');
     const detail4 = document.getElementById('detail4');
     const detail5 = document.getElementById('detail5');
+
+    lightbox.option({
+        'resizeDuration': 200,
+        'imageFadeDuration': 200
+    })
 
     if(character == null) {
         console.log("Character not found");
@@ -156,6 +163,37 @@ function createTable(jsons) {
             })})
             applyBadgeTooltips();
         }
+
+        // Get gallery images
+        gallery.forEach(picture => {
+            console.log(picture.ppl);
+            if(picture.ppl.includes(name)) {
+                console.log(name);
+                const pic = document.createElement('a');
+                const thumb = document.createElement('img');
+                const yrbox = document.createElement('div');
+                const data1 = 'data-lightbox';
+                const data2 = 'data-title';
+                yrbox.textContent = picture.year;
+                yrbox.classList.add("gyyear");
+                thumb.src = "images/gallery/" + picture.src;
+                thumb.classList.add("gythumb");
+                pic.href = "images/gallery/" + picture.src;
+                pic.classList.add("gycont");
+                pic.setAttribute(data1,name);
+                if(picture.hasOwnProperty('caption')) {
+                    pic.setAttribute(data2,picture.caption);
+                }
+                else {
+                    pic.setAttribute(data2,picture.year);
+                }
+                
+                pic.appendChild(thumb);
+                pic.appendChild(yrbox);
+                dgallery.appendChild(pic);
+            }
+        });
+
     }
 
 }
@@ -201,7 +239,7 @@ function applyBadgeTooltips() {
 
 // json code
 async function getJsonData() {
-    const jsons = ["islanders.json", "badges.json"];
+    const jsons = ["islanders.json", "badges.json", "gallery.json"];
     const reqs = jsons.map(u=>fetch(u).then(response => {
     if(!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

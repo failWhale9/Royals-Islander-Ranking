@@ -722,3 +722,36 @@ li.potion {
     padding: 1rem;
     box-sizing: border-box;
 }
+
+.gythumb {
+	height: 80px;
+	border-radius: 8px;
+	padding:5px;
+}
+
+.gyyear {
+	position: absolute;
+	top:-20px;
+	left:8px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 14px;
+	background-color: #333333dc;
+	padding:5px 10px 5px 10px;
+	border-radius: 8px;
+}
+
+.gycont {
+	position:relative;
+	color:#ffffff;
+}
+
+.lb-caption {
+	position: relative;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 24px;
+	top: 10px;
+	left: 0px;
+	background-color: #333333dc;
+	padding:10px;
+	border-radius: 8px;
+}
