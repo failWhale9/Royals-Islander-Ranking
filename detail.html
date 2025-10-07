@@ -35,7 +35,10 @@
                 <span id="dalt">Alts</span>
             </div>
 
-            <div class="detailBoxShort" id="detail5" style="display:none">
+            <div class="detailBoxShort" id="detail5">
+                <span id="drank"></span>
+            </div>
+            <div class="detailBoxShort" id="detail6" style="display:none">
                 <span id="dstart">Islanding Since 2020</span>
             </div>
         </div>
@@ -44,7 +47,7 @@
             <img id="dport" src="">
         </div>
     </div>
-
+    <div class="detailBox" id="dbio">Bio:<br/></div>
     <div class="detailBox" id="dbadges">Badges:<br/></div>
     <div class="detailBox image-set" id="dgallery">Gallery:<br/></div>
 </div>
@@ -58,6 +61,7 @@
     <p>Page written and maintained by <img src="/images/shy.png"></p> 
 </div>
 
+<script src="Lightbox2/dist/js/lightbox-plus-jquery.js"></script>
 <script>
 
 function createTable(jsons) {
@@ -65,7 +69,13 @@ function createTable(jsons) {
     const name = urlParams.get('n');
     const gallery = jsons[2];
     const badges = jsons[1];
-    const character = jsons[0].find(item => item.Name.toLowerCase() === name);
+    const islanders = jsons[0].filter(item => !item.hasOwnProperty('BadNews')).sort((a, b) => {
+        const valA = a["Level"];
+        const valB = b["Level"];
+        return valB - valA;
+    });
+    const character = islanders.find(item => item.Name.toLowerCase() === name);
+    const rank = islanders.findIndex(item => item.Name.toLowerCase() === name)+1;
     const dname = document.getElementById('dname');
     const dlvl = document.getElementById('dlvl');
     const dbad = document.getElementById('dbad');
@@ -80,6 +90,9 @@ function createTable(jsons) {
     const detail3 = document.getElementById('detail3');
     const detail4 = document.getElementById('detail4');
     const detail5 = document.getElementById('detail5');
+    const detail6 = document.getElementById('detail6');
+
+    
 
     lightbox.option({
         'resizeDuration': 200,
@@ -132,9 +145,11 @@ function createTable(jsons) {
             detail4.style.display = "block";
         }
 
+        detail5.textContent = "Rank #" + rank;
+
         if(character.Since != null) {
             dstart.textContent = "Islanding Since " + character.Since;
-            detail5.style.display = "block";
+            detail6.style.display = "block";
         }
 
         // Fetch badges
@@ -256,6 +271,5 @@ async function getJsonData() {
 getJsonData();
 
 </script>
-<script src="Lightbox2/dist/js/lightbox-plus-jquery.js"></script>
 </body>
 </html>
