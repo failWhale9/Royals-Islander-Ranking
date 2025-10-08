@@ -285,19 +285,25 @@ div.BadgeContainer {
 }
 
 #footer {
-	margin-top:10px;
+	margin: 0 auto;
+	display: flex;
+	margin-top:30px;
+  	text-align: center;
 	background-color: var(--cell);
 	color: white !important;
 	padding: 0px 20px;
 	border-radius: 8px;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 	font-family: Arial, sans-serif !important;
-	position:absolute;
-	left:38%;
+	position:relative;
+	width:30%;
 	p {
-		display: flex;
-		align-items: center;
-		margin: 8px 0px;
+		width: 90%; /* Or any specific width */
+  		margin: 0 auto;
+		vertical-align: middle;
+		display: inline-flex;
+    	align-items: center;
+    	justify-content: center;
 	}
 	img {
 		margin: 8px 10px;

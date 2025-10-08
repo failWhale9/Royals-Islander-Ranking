@@ -47,7 +47,7 @@
             <img id="dport" src="">
         </div>
     </div>
-    <div class="detailBox" id="dbio">Bio:<br/></div>
+    <div class="detailBox" id="dbio" style="display:none">Bio:<br/></div>
     <div class="detailBox" id="dbadges">Badges:<br/></div>
     <div class="detailBox image-set" id="dgallery">Gallery:<br/></div>
 </div>
@@ -82,9 +82,11 @@ function createTable(jsons) {
     const dalias = document.getElementById('dalias');
     const dalt = document.getElementById('dalt');
     const dport = document.getElementById('dport');
+    const dportcontainer = document.getElementById('dportContainer');
     const dstart = document.getElementById('dstart');
     const dbadges = document.getElementById('dbadges');
     const dgallery = document.getElementById('dgallery');
+    const dbio = document.getElementById('dbio');
     const detail1 = document.getElementById('detail1');
     const detail2 = document.getElementById('detail2');
     const detail3 = document.getElementById('detail3');
@@ -100,7 +102,12 @@ function createTable(jsons) {
     })
 
     if(character == null) {
-        console.log("Character not found");
+        dlvl.style.display = "none";
+        detail5.style.display = "none";
+        dportcontainer.style.display = "none";
+        dbadges.style.display = "none";
+        dgallery.style.display = "none";
+        dname.textContent = "Character not Found.";
     }
     else{
         dname.textContent = character.Name;
@@ -178,11 +185,22 @@ function createTable(jsons) {
             })})
             applyBadgeTooltips();
         }
+        else {
+            dbadges.style.display = "none";
+        }
+
+        if(character.Bio != null) {
+            dbio.textContent = character.Bio;
+            dbio.style.display = "block";
+        }
+
+        let picCount = 0;
 
         // Get gallery images
         gallery.forEach(picture => {
             console.log(picture.ppl);
             if(picture.ppl.includes(name)) {
+                picCount += 1;
                 console.log(name);
                 const pic = document.createElement('a');
                 const thumb = document.createElement('img');
@@ -208,6 +226,10 @@ function createTable(jsons) {
                 dgallery.appendChild(pic);
             }
         });
+
+        if(picCount == 0) {
+            dgallery.style.display = "none";
+        }
 
     }
 
