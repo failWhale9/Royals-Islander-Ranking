@@ -5,6 +5,16 @@
     "ppl": ["shylander","heroinaddict","valtarre","startropics","islandlizard"]
   },
   {
+    "src": "lunar2024.png",
+    "year": 2024,
+    "ppl": ["princesquidd","thelslander","crylou"]
+  },
+  {
+    "src": "winter2023.png",
+    "year": 2023,
+    "ppl": ["adaryn","annot","natscape"]
+  },
+  {
     "src": "2025-5thchairs.png",
     "year": 2025,
     "ppl": ["heroinaddict","islander"]
@@ -19,5 +29,6 @@
     "year": 2025,
     "ppl": ["heroinaddict","delfino"]
   }
+  
 
 ]

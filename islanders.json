@@ -271,7 +271,7 @@
   {
     "Name": "BoatlessMonk",
     "Level": "74",
-    "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500","broom20","bluexmas","shirt3","ashes","dexlander","maxdodge","umbrellas","boards"]
+    "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500","broom20","bluexmas","shirt3","ashes","dexlander","maxdodge","umbrellas","boards","tubes"]
   },
   {
     "Name": "IslandSlut",
@@ -518,7 +518,8 @@
     "Name": "Pienor",
     "Alias":"Fundlander",
     "Alt":"Wienor",
-    "Level": "60"
+    "Level": "60",
+    "Badges":["damage1000"]
   },
   {
     "Name": "Oreliel",

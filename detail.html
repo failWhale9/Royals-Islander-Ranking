@@ -67,7 +67,11 @@
 function createTable(jsons) {
     const urlParams = new URLSearchParams(window.location.search);
     const name = urlParams.get('n');
-    const gallery = jsons[2];
+    const gallery = jsons[2].sort((a, b) => {
+        const valA = a["year"];
+        const valB = b["year"];
+        return valB - valA;
+    });
     const badges = jsons[1];
     const islanders = jsons[0].filter(item => !item.hasOwnProperty('BadNews')).sort((a, b) => {
         const valA = a["Level"];
@@ -198,10 +202,8 @@ function createTable(jsons) {
 
         // Get gallery images
         gallery.forEach(picture => {
-            console.log(picture.ppl);
             if(picture.ppl.includes(name)) {
                 picCount += 1;
-                console.log(name);
                 const pic = document.createElement('a');
                 const thumb = document.createElement('img');
                 const yrbox = document.createElement('div');

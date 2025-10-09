@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapleRoyals Islander Ranking - Gallery</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="islander.css">
+    <link href="/Lightbox2/src/css/lightbox.css" rel="stylesheet" />
+
+</head>
+<body>
+
+<img src="images/title.png" id="titleImage"></img>
+
+<div id="navbar"></div>
+
+<div class="profileContainer">
+    <div class="scrolldiv" id="gcontrols" style="max-width:760px">
+        <label class="menuText">Search: </label> 
+        <input type="text" class="ginput" oninput="search(this.value)">
+    </div>
+    <div class="detailBox image-set" id="dgallery"></div>
+</div>
+
+
+<div id="footer">
+    <p>Page written and maintained by <img src="/images/shy.png"></p> 
+</div>
+
+<script src="Lightbox2/dist/js/lightbox-plus-jquery.js"></script>
+<script>
+
+function search(query) {
+
+    const pics = document.querySelectorAll('.gycont');
+    const terms = query.split(" ");
+    const data1 = 'data-lightbox';
+    let years = [];
+    let ppls = [];
+
+    if(query == "") {
+        pics.forEach(pic => {
+            pic.style.display = "inline";
+        });
+        return;
+    }
+
+    terms.forEach(term => {
+        if (parseInt(term) > 2014 && parseInt(term) < 2100 ) {
+            years.push(parseInt(term));
+        }
+        else {
+            ppls.push(term.toLowerCase());
+        }
+
+    });
+
+    //console.log("years: " + years);
+    //console.log("ppls: " + ppls);
+
+    pics.forEach(pic => {
+        const year = parseInt(pic.dataset.year);
+        const ppl = pic.dataset.ppl.split(',');
+
+        if(years.includes(year) || years.length === 0 ) {
+            if(ppls.every(item => ppl.includes(item))) {
+                pic.style.display = "inline";
+                pic.setAttribute(data1,"gallery");
+            }
+            else {
+                pic.style.display = "none";
+                pic.setAttribute(data1,"hidden");
+            }
+        }
+        else {
+            pic.style.display = "none";
+            pic.setAttribute(data1,"hidden");
+        }
+
+    });
+
+
+}
+
+function createTable(jsons) {
+
+    const gallery = jsons[0].sort((a, b) => {
+        const valA = a["year"];
+        const valB = b["year"];
+        return valB - valA;
+    });
+    
+    const dgallery = document.getElementById('dgallery');
+
+    lightbox.option({
+        'resizeDuration': 200,
+        'imageFadeDuration': 200
+    })
+
+  
+
+    // Get gallery images
+    gallery.forEach(picture => {
+        const pic = document.createElement('a');
+        const thumb = document.createElement('img');
+        const yrbox = document.createElement('div');
+        const data1 = 'data-lightbox';
+        const data2 = 'data-title';
+        const data3 = 'data-year';
+        const data4 = 'data-ppl';
+        yrbox.textContent = picture.year;
+        yrbox.classList.add("gyyear");
+        thumb.src = "images/gallery/" + picture.src;
+        thumb.classList.add("gythumb");
+        pic.href = "images/gallery/" + picture.src;
+        pic.classList.add("gycont");
+        pic.setAttribute(data1,"gallery");
+        if(picture.hasOwnProperty('caption')) {
+            pic.setAttribute(data2,picture.caption);
+        }
+        else {
+            pic.setAttribute(data2,picture.year);
+        }
+        pic.setAttribute(data3,picture.year);
+        pic.setAttribute(data4,picture.ppl);
+        
+        pic.appendChild(thumb);
+        pic.appendChild(yrbox);
+        dgallery.appendChild(pic);
+    });
+}
+
+//navbar code
+fetch('/navbar.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const currentPage = location.pathname;
+        document.querySelectorAll('#navbar a').forEach(link => {
+            //console.log("href:" + link.getAttribute('href') + "   currentpage:" + currentPage);
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add("navInactive");
+                link.removeAttribute('href');
+            }
+        });
+    }).catch(error => console.error('Error loading navbar:', error));
+
+// badge tooltip code
+function applyBadgeTooltips() {
+    const tooltip = document.getElementById('sharedTooltip');
+    const tooltiptitle = document.getElementById('tooltipTitle');
+    const tooltipdesc = document.getElementById('tooltipDesc');
+    const badgeContainers = document.querySelectorAll('.BadgeContainer');
+
+    badgeContainers.forEach(container => {
+        container.addEventListener('mouseenter', () => {
+            const rect = container.getBoundingClientRect();
+            tooltip.style.top = `${rect.bottom + 8}px`;
+            tooltip.style.left = `${rect.left}px`;
+            tooltipDesc.textContent = container.dataset.tooltip;
+            tooltiptitle.textContent = container.dataset.title;
+            void tooltip.offsetWidth;
+            tooltip.classList.add('visible');
+        });
+
+        container.addEventListener('mouseleave', () => {
+        tooltip.classList.remove('visible');
+        });
+    });
+}
+
+// json code
+async function getJsonData() {
+    const jsons = ["gallery.json"];
+    const reqs = jsons.map(u=>fetch(u).then(response => {
+    if(!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+    })
+    );
+
+    const results = await Promise.all(reqs);
+
+    createTable(results);
+}
+
+getJsonData();
+
+</script>
+</body>
+</html>

@@ -732,7 +732,8 @@ li.potion {
 .gythumb {
 	height: 80px;
 	border-radius: 8px;
-	padding:5px;
+	margin:5px;
+	box-shadow: 5px 5px 4px rgba(0,0,0,0.5);
 }
 
 .gyyear {
@@ -760,4 +761,18 @@ li.potion {
 	background-color: #333333dc;
 	padding:10px;
 	border-radius: 8px;
+}
+
+.galleryBox {
+	display: flex;
+    width: 80%;
+    margin: 0 auto;
+    min-height: 100px;
+    background-color: var(--cell);
+	color: white !important;
+	padding: 20px 20px 20px 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    padding: 1rem;
+    box-sizing: border-box;
 }
