@@ -146,7 +146,6 @@ function createTable(jsons) {
                     }
 
                     function tryLoadRandom(min, max) {
-
                         const val = getRandomInteger(min,max);
                         img.src = `images/islanders/${baseName}${val}.png`;
                     }
@@ -164,24 +163,27 @@ function createTable(jsons) {
                     break;
                 case "Name":
                     const pname = document.createElement('p');
+                    const link = document.createElement('a');
+                    link.href = "/detail.html?n=" + item[header].toLowerCase();
                     pname.textContent = item[header];
                     pname.classList.add("Name");
-                    td.appendChild(pname);
+                    
+                    link.appendChild(pname);
 
                     if (item.hasOwnProperty("Alias") && item['Alias'] != "") {
                         const palias = document.createElement('p');
                         palias.textContent = "(formerly " + item['Alias'] + ")";
                         palias.classList.add("Alias");
-                        td.appendChild(palias);
+                        link.appendChild(palias);
                     }
 
                     if (item.hasOwnProperty("Alt") && item['Alt'] != "") {
                         const palt = document.createElement('p');
                         palt.textContent = "(" + item['Alt'] + "'s alt)";
                         palt.classList.add("Alt");
-                        td.appendChild(palt);
+                        link.appendChild(palt);
                     }
-
+                    td.appendChild(link);
                     row.appendChild(td);
                     break;
                 case "Level":

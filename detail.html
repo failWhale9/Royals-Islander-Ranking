@@ -64,6 +64,12 @@
 <script src="Lightbox2/dist/js/lightbox-plus-jquery.js"></script>
 <script>
 
+function getRandomInteger(min, max) {
+    min = Math.ceil(min); 
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function createTable(jsons) {
     const urlParams = new URLSearchParams(window.location.search);
     const name = urlParams.get('n');
@@ -121,6 +127,11 @@ function createTable(jsons) {
         const formats = ['png', 'gif'];
         let formatIndex = 0;
 
+        function tryLoadRandom(min, max) {
+            const val = getRandomInteger(min,max);
+            dport.src = `images/islanders/${baseName}${val}.png`;
+        }
+
         function tryLoadImage() {
             if (formatIndex < formats.length) {
                 try {
@@ -139,7 +150,12 @@ function createTable(jsons) {
             }
         }
 
-        tryLoadImage();
+        if(baseName == "mooshy") {
+            tryLoadRandom(0,31);
+        }
+        else {
+            tryLoadImage();
+        }
 
         if(character.BadNews != null) {
             dbad.textContent = character.BadNews;
@@ -199,10 +215,20 @@ function createTable(jsons) {
         }
 
         let picCount = 0;
+        let aliases = [];
+
+        // get aliases
+        if(character.Alias != null) {
+            let anames = [];
+            anames = character.Alias.split(",");
+            anames = anames.map(item => item.trim());
+            anames = anames.map(item => item.toLowerCase());
+            aliases = anames;
+        }
 
         // Get gallery images
         gallery.forEach(picture => {
-            if(picture.ppl.includes(name)) {
+            if(picture.ppl.includes(name) || aliases.some(element => picture.ppl.includes(element))) {
                 picCount += 1;
                 const pic = document.createElement('a');
                 const thumb = document.createElement('img');

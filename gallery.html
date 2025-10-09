@@ -16,9 +16,13 @@
 <div id="navbar"></div>
 
 <div class="profileContainer">
-    <div class="scrolldiv" id="gcontrols" style="max-width:760px">
+    <div class="scrolldiv" id="gcontrols" style="max-width:760px;display:flex;align-items:center;">
         <label class="menuText">Search: </label> 
-        <input type="text" class="ginput" oninput="search(this.value)">
+        <input type="text" class="ginput" oninput="search(this.value)" style="margin-left:10px">
+        <span class="gtooltip">
+            <img src="images/tip.png" style="margin-left:10px">
+            <span class="gtooltiptext">Type the names of islanders you want to filter for.<br/> You can enter multiple names separated by spaces to filter for images containing all listed islanders together.<br/> Type a year (or multiple years separated by spaces) to limit to images from that timespan. </span>
+        </span>
     </div>
     <div class="detailBox image-set" id="dgallery"></div>
 </div>
@@ -47,7 +51,7 @@ function search(query) {
     }
 
     terms.forEach(term => {
-        if (parseInt(term) > 2014 && parseInt(term) < 2100 ) {
+        if (parseInt(term) > 2013 && parseInt(term) < 2100 ) {
             years.push(parseInt(term));
         }
         else {
