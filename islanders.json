@@ -311,7 +311,7 @@
   {
     "Name": "jung1e",
     "Level": "66",
-    "BadNews":"Took the Boat in 2025"
+    "Badges":["artifacthunt"]
   },
   {
     "Name": "saulgoodman",
@@ -354,7 +354,7 @@
   },
   {
     "Name": "HeroinAddict",
-    "Level": "67",
+    "Level": "68",
     "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards"]
   },
   {
@@ -518,7 +518,7 @@
     "Name": "Pienor",
     "Alias":"Fundlander",
     "Alt":"Wienor",
-    "Level": "60",
+    "Level": "61",
     "Badges":["damage1000"]
   },
   {
@@ -635,7 +635,7 @@
   },
   {
     "Name": "StarTropics",
-    "Level": "53",
+    "Level": "54",
     "Badges": ["damage800","chairs24","gomu3","pet14","omok3"]
   },
   {
@@ -778,8 +778,8 @@
   },
   {
     "Name": "ZakoZantern",
-    "Level": "45",
-    "Badges":["dynamic","gomu2"]
+    "Level": "46",
+    "Badges":["dynamic","gomu2","shirt3"]
   },
   {
     "Name": "IslandBoyz",
@@ -1254,7 +1254,7 @@
   },
   {
     "Name": "Ailand",
-    "Level": "56"
+    "Level": "57"
   },
   {
     "Name": "Nooburt",
