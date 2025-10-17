@@ -37,7 +37,7 @@
   },
   {
     "Name":"Coinicus",
-    "Level":"33"
+    "Level":"34"
   },
   {
     "Name":"wtherow",
@@ -365,7 +365,7 @@
   {
     "Name": "HeroinAddict",
     "Level": "68",
-    "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards"]
+    "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge"]
   },
   {
     "Name": "Taeha",
@@ -391,7 +391,8 @@
   {
     "Name": "Ekob",
     "Level": "55",
-    "Badges":["gomu3","pants4"]
+    "Badges":["gomu3","pants4"],
+    "Since":"2022"
   },
   {
     "Name": "TheIslander",
@@ -1270,7 +1271,7 @@
   },
   {
     "Name": "Ailand",
-    "Level": "57"
+    "Level": "58"
   },
   {
     "Name": "Nooburt",
