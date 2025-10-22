@@ -364,7 +364,7 @@
   },
   {
     "Name": "HeroinAddict",
-    "Level": "68",
+    "Level": "69",
     "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge"]
   },
   {
@@ -530,7 +530,7 @@
     "Name": "Pienor",
     "Alias":"Fundlander",
     "Alt":"Wienor",
-    "Level": "61",
+    "Level": "62",
     "Badges":["damage1000"]
   },
   {
@@ -650,7 +650,7 @@
   {
     "Name": "StarTropics",
     "Level": "54",
-    "Badges": ["damage800","chairs24","gomu3","pet14","omok3"]
+    "Badges": ["damage1000","chairs24","gomu3","pet14","omok3"]
   },
   {
     "Name": "Ataynep",
@@ -1271,7 +1271,7 @@
   },
   {
     "Name": "Ailand",
-    "Level": "58"
+    "Level": "59"
   },
   {
     "Name": "Nooburt",
