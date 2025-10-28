@@ -1,5 +1,9 @@
 [
   {
+    "Name":"Navigating",
+    "Level":"30"
+  },
+  {
     "Name":"IslanderIsh",
     "Level":"36"
   },
@@ -530,7 +534,7 @@
     "Name": "Pienor",
     "Alias":"Fundlander",
     "Alt":"Wienor",
-    "Level": "62",
+    "Level": "63",
     "Badges":["damage1000"]
   },
   {
@@ -795,7 +799,7 @@
   {
     "Name": "ZakoZantern",
     "Level": "46",
-    "Badges":["dynamic","gomu2","shirt3"]
+    "Badges":["dynamic","gomu2","shirt3","pet14"]
   },
   {
     "Name": "IslandBoyz",
@@ -807,7 +811,7 @@
   },
   {
     "Name": "DevOnIsland",
-    "Level": "40"
+    "Level": "41"
   },
   {
     "Name": "Tsukishima",
