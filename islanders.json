@@ -806,7 +806,8 @@
   },
   {
     "Name": "DevOnIsland",
-    "Level": "40"
+    "Level": "42",
+    "Badges":["dynamic","gomu2"]
   },
   {
     "Name": "Tsukishima",
