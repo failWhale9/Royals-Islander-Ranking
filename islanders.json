@@ -699,7 +699,7 @@
   },
   {
     "Name": "Valtarre",
-    "Level": "56",
+    "Level": "57",
     "Badges":["dexlander","damage300","gomu2","fence","lemons300"]
   },
   {
@@ -799,7 +799,7 @@
   {
     "Name": "ZakoZantern",
     "Level": "46",
-    "Badges":["dynamic","gomu2","shirt3","pet14"]
+    "Badges":["dynamic","gomu2","shirt3","pet14","workgloves"]
   },
   {
     "Name": "IslandBoyz",
@@ -1275,8 +1275,9 @@
     "Level": "33"
   },
   {
-    "Name": "Ailand",
-    "Level": "59"
+    "Name": "Voldsoy",
+    "Level": "59",
+    "Alias":"Ailand"
   },
   {
     "Name": "Nooburt",
