@@ -33,7 +33,7 @@
   },
   {
     "Name":"NewbieMia",
-    "Level":"32"
+    "Level":"34"
   },
   {
     "Name":"silliest",
@@ -368,7 +368,7 @@
   },
   {
     "Name": "HeroinAddict",
-    "Level": "69",
+    "Level": "70",
     "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge"]
   },
   {
@@ -446,7 +446,8 @@
   },
   {
     "Name": "DwightK",
-    "Level": "52"
+    "Level": "53",
+    "Badges": ["gomu3","lemons300"]
   },
   {
     "Name": "Anchorage",
@@ -534,7 +535,7 @@
     "Name": "Pienor",
     "Alias":"Fundlander",
     "Alt":"Wienor",
-    "Level": "63",
+    "Level": "64",
     "Badges":["damage1000"]
   },
   {
@@ -750,7 +751,7 @@
   },
   {
     "Name": "Snooze",
-    "Level": "42"
+    "Level": "44"
   },
   {
     "Name": "gunpoint",
@@ -811,8 +812,8 @@
   },
   {
     "Name": "DevOnIsland",
-    "Level": "42",
-    "Badges":["dynamic","gomu2"]
+    "Level": "43",
+    "Badges":["dynamic","gomu2","witch30"]
   },
   {
     "Name": "Tsukishima",
@@ -1357,8 +1358,8 @@
     "Level": "32"
   },
   {
-    "Name": "Nullbyte",
-    "Level": "33",
+    "Name": "NuIIbyte",
+    "Level": "34",
     "Alias": "SirNyanta"
   },
   {
