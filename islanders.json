@@ -1,5 +1,9 @@
 [
   {
+    "Name":"analogue",
+    "Level":"39"
+  },
+  {
     "Name":"Navigating",
     "Level":"30"
   },
@@ -33,7 +37,7 @@
   },
   {
     "Name":"NewbieMia",
-    "Level":"34"
+    "Level":"35"
   },
   {
     "Name":"silliest",
@@ -41,7 +45,7 @@
   },
   {
     "Name":"Coinicus",
-    "Level":"34"
+    "Level":"36"
   },
   {
     "Name":"wtherow",
@@ -280,7 +284,7 @@
   {
     "Name": "BoatlessMonk",
     "Level": "74",
-    "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500","broom20","bluexmas","shirt3","ashes","dexlander","maxdodge","umbrellas","boards","tubes"]
+    "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500","broom20","bluexmas","shirt3","ashes","dexlander","maxdodge","umbrellas","boards","tubes","witch30"]
   },
   {
     "Name": "IslandSlut",
@@ -1277,7 +1281,7 @@
   },
   {
     "Name": "Voldsoy",
-    "Level": "59",
+    "Level": "60",
     "Alias":"Ailand"
   },
   {
