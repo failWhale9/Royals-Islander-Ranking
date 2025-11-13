@@ -340,7 +340,8 @@
   },
   {
     "Name": "DjSammie",
-    "Level": "62"
+    "Level": "62",
+    "Badges":["dynamic"]
   },
   {
     "Name": "MICKYISLAND",
@@ -1281,7 +1282,7 @@
   },
   {
     "Name": "Voldsoy",
-    "Level": "60",
+    "Level": "61",
     "Alias":"Ailand"
   },
   {
