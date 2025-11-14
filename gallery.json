@@ -1,34 +1,10 @@
 [
-  {
-    "src": "2025-df-summer.png",
-    "year": 2025,
-    "ppl": ["shylander","heroinaddict","valtarre","startropics","islandlizard"]
-  },
-  {
-    "src": "lunar2024.png",
-    "year": 2024,
-    "ppl": ["princesquidd","thelslander","crylou"]
-  },
-  {
-    "src": "winter2023.png",
-    "year": 2023,
-    "ppl": ["adaryn","annot","natscape"]
-  },
-  {
-    "src": "2025-5thchairs.png",
-    "year": 2025,
-    "ppl": ["heroinaddict","islander"]
-  },
-  {
-    "src": "2025-beachparty.png",
-    "year": 2025,
-    "ppl": ["heroinaddict","startropics","valtarre"]
-  },
-  {
-    "src": "2025-fences.png",
-    "year": 2025,
-    "ppl": ["heroinaddict","delfino"]
-  },
+  {"src": "2025-df-summer.png","year": 2025,"ppl": ["shylander","heroinaddict","valtarre","startropics","islandlizard"]},
+  {"src": "lunar2024.png","year": 2024,"ppl": ["princesquidd","thelslander","crylou"]},
+  {"src": "winter2023.png","year": 2023,"ppl": ["adaryn","annot","natscape"]},
+  {"src": "2025-5thchairs.png","year": 2025,"ppl": ["heroinaddict","islander"]},
+  {"src": "2025-beachparty.png","year": 2025,"ppl": ["heroinaddict","startropics","valtarre"]},
+  {"src": "2025-fences.png","year": 2025,"ppl": ["heroinaddict","delfino"]},
   {"src":"am-2020-mid.png","year":2020,"ppl":["gert","aborigine"]},
   {"src":"am-2021-mid.png","year":2021,"ppl":["djsammie","princesquidd"]},
   {"src":"am-2024-mid_2.png","year":2024,"ppl":["startropics"]},
