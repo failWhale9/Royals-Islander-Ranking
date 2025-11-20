@@ -291,25 +291,22 @@
     "hidden": true
   },
   {
-    "id": "weenjq225",
+    "id": "weenjq330",
     "type": "achievement",
-    "name": "Halloween Jumper (225s)",
-    "desc": "Completed the Halloween Challenge in 225s or less.",
-    "hidden": true
+    "name": "Halloween Jumper (3m30s)",
+    "desc": "Completed the Halloween Challenge in 3m30s or less."
   },
   {
-    "id": "weenjq270",
+    "id": "weenjq400",
     "type": "achievement",
-    "name": "Halloween Jumper (270s)",
-    "desc": "Completed the Halloween Challenge in 270s or less.",
-    "hidden": true
+    "name": "Halloween Jumper (4m00s)",
+    "desc": "Completed the Halloween Challenge in 4 minutes or less."
   },
   {
-    "id": "weenjq300",
+    "id": "weenjq500",
     "type": "achievement",
-    "name": "Halloween Jumper (300s)",
-    "desc": "Completed the Halloween Challenge in 300s or less.",
-    "hidden": true
+    "name": "Halloween Jumper (5m00s)",
+    "desc": "Completed the Halloween Challenge in 5 minutes or less."
   },
   {
     "id": "damage200",
