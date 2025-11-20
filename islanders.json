@@ -293,7 +293,7 @@
   {
     "Name": "BoatlessMonk",
     "Level": "74",
-    "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500","broom20","bluexmas","shirt3","ashes","dexlander","maxdodge","umbrellas","boards","tubes","witch30"]
+    "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500","broom20","bluexmas","shirt3","ashes","dexlander","maxdodge","umbrellas","boards","tubes","witch30","weenjq400"]
   },
   {
     "Name": "IslandSlut",
@@ -383,7 +383,7 @@
   {
     "Name": "HeroinAddict",
     "Level": "70",
-    "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge","chairs24"]
+    "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge","chairs24","weenjq330"]
   },
   {
     "Name": "Taeha",
@@ -392,7 +392,7 @@
   {
     "Name": "Shylander",
     "Level": "58",
-    "Badges":["gomu2","pants4","witch40","perfwand","chairs36","workgloves","omok3","pet14","broom25","fence","damage500","shirt2","slipper2","weenjq330"],
+    "Badges":["gomu3","pants4","witch40","perfwand","chairs36","workgloves","omok3","pet14","broom25","fence","damage500","shirt2","slipper2","weenjq330"],
     "Since": "2022",
     "Bio": "Shylander mostly plays challenge modes on Royals, having been a part of Islander, Caveman, World Tour, Legoman, Ironman, and Nostalegion. He usually plays remotely via the steam link Android app. Usually only around during events, he likes the island for the community and long history."
   },
@@ -716,7 +716,7 @@
   {
     "Name": "Valtarre",
     "Level": "57",
-    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3"]
+    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400"]
   },
   {
     "Name": "inland",
@@ -828,7 +828,7 @@
   {
     "Name": "DevOnIsland",
     "Level": "45",
-    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage200","pet14","omok3"]
+    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage200","pet14","omok3","weenjq330"]
   },
   {
     "Name": "Tsukishima",
@@ -1293,7 +1293,8 @@
   {
     "Name": "Voldsoy",
     "Level": "61",
-    "Alias":"Ailand"
+    "Alias":"Ailand",
+    "Badges":["weenjq400"]
   },
   {
     "Name": "Nooburt",
