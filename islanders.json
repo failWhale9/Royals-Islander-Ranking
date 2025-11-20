@@ -1,7 +1,12 @@
 [
   {
+  "Name":"Immergold",
+  "Level":"35",
+  "Badges":["pants2"]
+  },
+  {
     "Name":"snailee",
-    "Level":"31"
+    "Level":"37"
   },
   {
     "Name":"analogue",
@@ -378,7 +383,7 @@
   {
     "Name": "HeroinAddict",
     "Level": "70",
-    "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge"]
+    "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge","chairs24"]
   },
   {
     "Name": "Taeha",
@@ -386,7 +391,7 @@
   },
   {
     "Name": "Shylander",
-    "Level": "57",
+    "Level": "58",
     "Badges":["gomu3","pants4","witch40","perfwand","chairs36","workgloves","omok3","pet14","broom25","fence","damage500","shirt2","slipper2"],
     "Since": "2022",
     "Bio": "Shylander mostly plays challenge modes on Royals, having been a part of Islander, Caveman, World Tour, Legoman, Ironman, and Nostalegion. He usually plays remotely via the steam link Android app. Usually only around during events, he likes the island for the community and long history."
@@ -496,7 +501,8 @@
   },
   {
     "Name": "Evacchi",
-    "Level": "51"
+    "Level": "51",
+    "Badges":["dynamic"]
   },
   {
     "Name": "WatIsHarbor",
@@ -710,7 +716,7 @@
   {
     "Name": "Valtarre",
     "Level": "57",
-    "Badges":["dexlander","damage300","gomu2","fence","lemons300"]
+    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3"]
   },
   {
     "Name": "inland",
@@ -808,8 +814,8 @@
   },
   {
     "Name": "ZakoZantern",
-    "Level": "46",
-    "Badges":["dynamic","gomu2","shirt3","pet14","workgloves"]
+    "Level": "47",
+    "Badges":["dynamic","gomu2","shirt3","pet14","workgloves","witch30"]
   },
   {
     "Name": "IslandBoyz",
@@ -821,8 +827,8 @@
   },
   {
     "Name": "DevOnIsland",
-    "Level": "44",
-    "Badges":["dynamic","gomu2","witch40","shirt2","lemons300","damage200","pet14"]
+    "Level": "45",
+    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage200","pet14","omok3"]
   },
   {
     "Name": "Tsukishima",
