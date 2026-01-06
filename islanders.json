@@ -372,7 +372,7 @@
   },
   {
     "Name": "MICKYISLAND",
-    "Level": "65",
+    "Level": "66",
     "Badges":["fence","broom20"]
   },
   {
@@ -401,7 +401,7 @@
   {
     "Name": "HeroinAddict",
     "Level": "73",
-    "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge","chairs36","weenjq330","broom20"]
+    "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge","chairs36","weenjq330","broom20","bluexmas"]
   },
   {
     "Name": "Taeha",
@@ -410,7 +410,7 @@
   {
     "Name": "Shylander",
     "Level": "58",
-    "Badges":["gomu3","pants4","witch40","perfwand","chairs36","workgloves","omok3","pet14","broom25","fence","damage500","shirt2","slipper2","weenjq330"],
+    "Badges":["gomu3","pants4","witch40","perfwand","chairs36","workgloves","omok3","pet14","broom25","fence","damage500","shirt2","slipper2","weenjq330","bluexmas"],
     "Since": "2022",
     "Bio": "Shylander mostly plays challenge modes on Royals, having been a part of Islander, Caveman, World Tour, Legoman, Ironman, and Nostalegion. He usually plays remotely via the steam link Android app. Usually only around during events, he likes the island for the community and long history."
   },
@@ -534,7 +534,7 @@
   },
   {
     "Name": "IslandKush",
-    "Level": "50"
+    "Level": "52"
   },
   {
     "Name": "Bella",
@@ -687,8 +687,8 @@
   },
   {
     "Name": "StarTropics",
-    "Level": "56",
-    "Badges": ["damage1000","chairs24","gomu3","pet14","omok3","weenjq400"]
+    "Level": "57",
+    "Badges": ["damage1000","chairs24","gomu3","pet14","omok3","weenjq400","broom20"]
   },
   {
     "Name": "Ataynep",
@@ -734,7 +734,7 @@
   {
     "Name": "Valtarre",
     "Level": "58",
-    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400"]
+    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas"]
   },
   {
     "Name": "inland",
@@ -845,8 +845,8 @@
   },
   {
     "Name": "DevOnIsland",
-    "Level": "51",
-    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage300","pet14","omok3","weenjq330","workgloves","pants2","broom20"]
+    "Level": "53",
+    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage300","pet14","omok3","weenjq330","workgloves","pants2","broom20","chairs12"]
   },
   {
     "Name": "Tsukishima",
@@ -1169,7 +1169,7 @@
   },
   {
     "Name": "Vaudeville",
-    "Level": "34"
+    "Level": "35"
   },
   {
     "Name": "VaudeviIle",
