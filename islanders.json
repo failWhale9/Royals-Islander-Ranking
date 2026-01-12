@@ -1,5 +1,9 @@
 [
   {
+    "Name":"SouperSayin",
+    "Level": "30"
+  },
+  {
     "Name":"IslandSam",
     "Level": "31"
   },
@@ -957,7 +961,7 @@
   },
   {
     "Name": "Deryn",
-    "Level": "38",
+    "Level": "39",
     "Alt": "Adaryn",
     "Badges":["magelander"]
   },
