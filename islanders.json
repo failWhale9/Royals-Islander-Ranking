@@ -1,5 +1,10 @@
 [
   {
+    "Name":"IslanderSage",
+    "Level": "30",
+    "Badges":["dexlander"]
+  },
+  {
     "Name":"SouperSayin",
     "Level": "30"
   },
