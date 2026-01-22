@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<img src="images/title.png" id="titleImage"></img>
+<img src="https://ik.imagekit.io/islander/images/title.png" id="titleImage"></img>
 
 <div id="navbar"></div>
 
@@ -58,7 +58,7 @@
 </div>
 
 <div id="footer">
-    <p>Page written and maintained by <img src="/images/shy.png"></p> 
+    <p>Page written and maintained by <img src="https://ik.imagekit.io/islander/images/shy.png"></p> 
 </div>
 
 <script src="Lightbox2/dist/js/lightbox-plus-jquery.js"></script>
@@ -129,13 +129,13 @@ function createTable(jsons) {
 
         function tryLoadRandom(min, max) {
             const val = getRandomInteger(min,max);
-            dport.src = `images/islanders/${baseName}${val}.png`;
+            dport.src = `https://ik.imagekit.io/islander/images/islanders/${baseName}${val}.png`;
         }
 
         function tryLoadImage() {
             if (formatIndex < formats.length) {
                 try {
-                    dport.src = `images/islanders/${baseName}.${formats[formatIndex]}`;
+                    dport.src = `https://ik.imagekit.io/islander/images/islanders/${baseName}.${formats[formatIndex]}`;
                 }
                 catch {
 
@@ -146,7 +146,7 @@ function createTable(jsons) {
                 };
             } else {
                 dport.onerror = null; // Prevent loop
-                dport.src = 'images/placeholder.png'; // Fallback image
+                dport.src = 'https://ik.imagekit.io/islander/images/placeholder.png'; // Fallback image
             }
         }
 
@@ -197,7 +197,7 @@ function createTable(jsons) {
                         div.setAttribute(title, "♦ "+ targetBadge.name + " ♦");          
                         div.setAttribute(tooltip,targetBadge.desc);
                         img.classList.add("Badge");
-                        img.src = '/images/badges/' + badge + '.png';
+                        img.src = 'https://ik.imagekit.io/islander/images/badges/' + badge + '.png';
                         div.appendChild(img);
                         dbadges.appendChild(div);
                     }
@@ -237,9 +237,9 @@ function createTable(jsons) {
                 const data2 = 'data-title';
                 yrbox.textContent = picture.year;
                 yrbox.classList.add("gyyear");
-                thumb.src = "images/gallery/" + picture.src;
+                thumb.src = "https://ik.imagekit.io/islander/images/" + picture.src + "?tr=h-80";
                 thumb.classList.add("gythumb");
-                pic.href = "images/gallery/" + picture.src;
+                pic.href = "https://ik.imagekit.io/islander/images/gallery/" + picture.src;
                 pic.classList.add("gycont");
                 pic.setAttribute(data1,name);
                 if(picture.hasOwnProperty('caption')) {

@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<img src="images/title.png" id="titleImage"></img>
+<img src="https://ik.imagekit.io/islander/images/title.png" id="titleImage"></img>
 
 <div id="navbar"></div>
 
@@ -28,7 +28,7 @@
     <label for="option3" class="tooltip" data-tooltip-content="A 180 cooler dataset designed to encourage empathy and understanding">Valtarre Mode</label><br>
   </div>
 </div>
-<img src="/images/cooler/cooler.png" style="image-rendering: pixelated; width:62px;" onclick="openCooler()">
+<img src="https://ik.imagekit.io/islander/images/cooler/cooler.png" style="image-rendering: pixelated; width:62px;" onclick="openCooler()">
 
 <p>
   <span>Coolers Opened: </span><span id="coolerQty">0</span>
@@ -103,7 +103,7 @@
 <div id="coolerTooltip"></div>
 
 <div id="footer">
-    <p>Page written and maintained by <img src="/images/shy.png"  onclick="moreOption()"></p> 
+    <p>Page written and maintained by <img src="https://ik.imagekit.io/islander/images/shy.png"  onclick="moreOption()"></p> 
 </div>
 <script>
 
@@ -748,7 +748,7 @@ function openCooler() {
   itemQty.textContent = parseInt(itemQty.textContent) + qty;
   msgBox.textContent = msg;
   coolerQty.textContent = parseInt(coolerQty.textContent) + 1;
-  itemThumb.src = "/images/cooler/" + selectedItem.id + ".png";
+  itemThumb.src = "https://ik.imagekit.io/islander/images/cooler/" + selectedItem.id + ".png";
   itemThumb.style.display = "inline";
   statMsg.textContent = stat;
   

@@ -83,7 +83,7 @@ function addClutter(skipFirst) {
         clutter.setAttribute(desc2,"power. Recovers 90% HP & MP,");
         clutter.setAttribute(desc3,"and provides +100 W.Att, +100 M.");
         clutter.setAttribute(desc4,"Att, +20 Def for 10 minutes.");
-        clutter.src = "images/scroll/appo.png";
+        clutter.src = "https://ik.imagekit.io/islander/images/scroll/appo.png";
         clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
         clutter.setAttribute(top,yOff);
         clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
@@ -103,7 +103,7 @@ function addClutter(skipFirst) {
         clutter.setAttribute(desc2,"Recovers 50 HP.");
         clutter.setAttribute(desc3,"");
         clutter.setAttribute(desc4,"");
-        clutter.src = "images/scroll/redpot.png";
+        clutter.src = "https://ik.imagekit.io/islander/images/scroll/redpot.png";
         clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
         clutter.setAttribute(top,yOff);
         clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
@@ -120,7 +120,7 @@ function addClutter(skipFirst) {
         clutter.setAttribute(desc2,"Recovers 100 MP.");
         clutter.setAttribute(desc3,"");
         clutter.setAttribute(desc4,"");
-        clutter.src = "images/scroll/bluepot.png";
+        clutter.src = "https://ik.imagekit.io/islander/images/scroll/bluepot.png";
         clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
         clutter.setAttribute(top,yOff);
         clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
@@ -137,7 +137,7 @@ function addClutter(skipFirst) {
         clutter.setAttribute(desc2,"Only usable with bows.");
         clutter.setAttribute(desc3,"Attack +1");
         clutter.setAttribute(desc4,"");
-        clutter.src = "images/scroll/arrows.png";
+        clutter.src = "https://ik.imagekit.io/islander/images/scroll/arrows.png";
         clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
         clutter.setAttribute(top,yOff);
         clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
@@ -154,7 +154,7 @@ function addClutter(skipFirst) {
         clutter.setAttribute(desc2,"Only usable with crossbows.");
         clutter.setAttribute(desc3,"Attack +1");
         clutter.setAttribute(desc4,"");
-        clutter.src = "images/scroll/bolts.png";
+        clutter.src = "https://ik.imagekit.io/islander/images/scroll/bolts.png";
         clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
         clutter.setAttribute(top,yOff);
         clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
@@ -171,7 +171,7 @@ function addClutter(skipFirst) {
         clutter.setAttribute(desc2,"Recovers MP +30.");
         clutter.setAttribute(desc3,"");
         clutter.setAttribute(desc4,"");
-        clutter.src = "images/scroll/apple.png";
+        clutter.src = "https://ik.imagekit.io/islander/images/scroll/apple.png";
         clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
         clutter.setAttribute(top,yOff);
         clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
@@ -188,7 +188,7 @@ function addClutter(skipFirst) {
         clutter.setAttribute(desc2,"Recovers around 150 MP.");
         clutter.setAttribute(desc3,"");
         clutter.setAttribute(desc4,"");
-        clutter.src = "images/scroll/lemon.png";
+        clutter.src = "https://ik.imagekit.io/islander/images/scroll/lemon.png";
         clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
         clutter.setAttribute(top,yOff);
         clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
@@ -205,7 +205,7 @@ function addClutter(skipFirst) {
         clutter.setAttribute(desc2,"contains numerous bullets and");
         clutter.setAttribute(desc3,"once they are used up, they'll");
         clutter.setAttribute(desc4,"need to be recharged. Attack + 10");
-        clutter.src = "images/scroll/bullet.png";
+        clutter.src = "https://ik.imagekit.io/islander/images/scroll/bullet.png";
         clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
         clutter.setAttribute(top,yOff);
         clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
@@ -222,7 +222,7 @@ function addClutter(skipFirst) {
         clutter.setAttribute(desc2,"Recovers around 100 HP.");
         clutter.setAttribute(desc3,"");
         clutter.setAttribute(desc4,"");
-        clutter.src = "images/scroll/meat.png";
+        clutter.src = "https://ik.imagekit.io/islander/images/scroll/meat.png";
         clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
         clutter.setAttribute(top,yOff);
         clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
@@ -239,7 +239,7 @@ function addClutter(skipFirst) {
         clutter.setAttribute(desc2,"Recovers around 50 MP.");
         clutter.setAttribute(desc3,"");
         clutter.setAttribute(desc4,"");
-        clutter.src = "images/scroll/orange.png";
+        clutter.src = "https://ik.imagekit.io/islander/images/scroll/orange.png";
         clutter.style.top = (parseInt(clutter.style.top) - parseInt(clutter.getAttribute(top))) + "px";
         clutter.setAttribute(top,yOff);
         clutter.style.top = (parseInt(clutter.style.top) + yOff) + "px";
@@ -1496,7 +1496,7 @@ function badResult()
   playSound("no");
   noAnim.style.display = 'block';
   const timestamp = new Date().getTime();
-  noAnim.src = 'images/scroll/no.gif?t=' + timestamp;
+  noAnim.src = 'https://ik.imagekit.io/islander/images/scroll/no.gif?t=' + timestamp;
   emote("cry");
 }
 
@@ -1508,7 +1508,7 @@ function goodResult(em)
   //yesAnim.src = '';
   //yesAnim.src = 'images/scroll/yes.gif';
   const timestamp = new Date().getTime();
-  yesAnim.src = 'images/scroll/yes.gif?t=' + timestamp;
+  yesAnim.src = 'https://ik.imagekit.io/islander/images/scroll/yes.gif?t=' + timestamp;
   if(em == null)
     em = "smile";
   emote(em);

@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<img src="images/title.png" id="titleImage"></img>
+<img src="https://ik.imagekit.io/islander/images/title.png" id="titleImage"></img>
 
 <div id="navbar"></div>
 
@@ -26,7 +26,7 @@
 </div>
 
 <div id="footer">
-    <p>Page written and maintained by <img src="/images/shy.png"></p> 
+    <p>Page written and maintained by <img src="https://ik.imagekit.io/islander/images/shy.png"></p> 
 </div>
 
 <script>
@@ -120,7 +120,7 @@ function createTable(jsons) {
                     function tryLoadImage() {
                         if (formatIndex < formats.length) {
                             try {
-                                img.src = `images/islanders/${baseName}.${formats[formatIndex]}`;
+                                img.src = `https://ik.imagekit.io/islander/images/islanders/${baseName}.${formats[formatIndex]}`;
                             }
                             catch {
 
@@ -131,14 +131,14 @@ function createTable(jsons) {
                             };
                         } else {
                             img.onerror = null; // Prevent loop
-                            img.src = 'images/placeholder.png'; // Fallback image
+                            img.src = 'https://ik.imagekit.io/islander/images/placeholder.png'; // Fallback image
                         }
                     }
 
                     function tryLoadRandom(min, max) {
 
                         const val = getRandomInteger(min,max);
-                        img.src = `images/islanders/${baseName}${val}.png`;
+                        img.src = `https://ik.imagekit.io/islander/images/islanders/${baseName}${val}.png`;
                     }
 
                     if(baseName == "ioizor") {
@@ -204,7 +204,7 @@ function createTable(jsons) {
                                     div.setAttribute(title, "♦ "+ targetBadge.name + " ♦");          
                                     div.setAttribute(tooltip,targetBadge.desc);
                                     img.classList.add("Badge");
-                                    img.src = '/images/badges/' + badge + '.png';
+                                    img.src = 'https://ik.imagekit.io/islander/images/badges/' + badge + '.png';
                                     div.appendChild(img);
                                     td.appendChild(div);
                                 }
@@ -275,7 +275,7 @@ function randomImgObserver() {
     ([entry]) => {
         if (!entry.isIntersecting) {
             const val = getRandomInteger(0,26);
-            target.src = `images/islanders/ioizor${val}.png`;
+            target.src = `https://ik.imagekit.io/islander/images/islanders/ioizor${val}.png`;
 
         }
     },

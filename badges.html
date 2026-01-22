@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<img src="images/title.png" id="titleImage"></img>
+<img src="https://ik.imagekit.io/islander/images/title.png" id="titleImage"></img>
 
 <div id="navbar"></div>
 
@@ -25,7 +25,7 @@
 </div>
 
 <div id="footer">
-    <p>Page written and maintained by <img src="/images/shy.png"></p> 
+    <p>Page written and maintained by <img src="https://ik.imagekit.io/islander/images/shy.png"></p> 
 </div>
 
 <script>
@@ -78,7 +78,7 @@ function createTable(jsons) {
             div.setAttribute(tooltip,badge.desc);
             div.setAttribute(ownedby, "Owned by: " + badge.ownedBy.join(', '));
             img.classList.add("Badge");
-            img.src = '/images/badges/' + badge.id + '.png';
+            img.src = 'https://ik.imagekit.io/islander/images/badges/' + badge.id + '.png';
             div.appendChild(img);
             container.appendChild(div);
         }
