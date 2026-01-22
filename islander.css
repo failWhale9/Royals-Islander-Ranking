@@ -13,7 +13,7 @@
 @media only screen and (min-width: 981px) {
 body {
 	background-color: #3366cc;
-	background-image: url("/images/clouds2.png");
+	background-image: url("https://ik.imagekit.io/islander/images/clouds2.png");
 	background-repeat: repeat-x;
 	background-attachment: fixed;
 	animation: slideleft 600s infinite linear;
@@ -22,11 +22,11 @@ body {
 }
 
 .custom-cursor {
-	cursor: url('images/scroll/cursor1.png'), pointer;
+	cursor: url('https://ik.imagekit.io/islander/images/scroll/cursor1.png'), pointer;
 }
 
 .custom-cursor-clicked {
-    cursor: url('images/scroll/cursor2.png'), pointer;
+    cursor: url('https://ik.imagekit.io/islander/images/scroll/cursor2.png'), pointer;
 }
 
 img.Badge {
@@ -44,7 +44,7 @@ div.BadgeContainer {
 @media only screen and (max-width: 980px) {
 body {
 	background-color: #3366cc;
-	background-image: url("/images/clouds2.png");
+	background-image: url("https://ik.imagekit.io/islander/images/clouds2.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center bottom;
@@ -329,7 +329,7 @@ div.scrolldiv {
 }
 
 div.scrollsim {
-	background-image: url('images/scroll/background1.png');
+	background-image: url('https://ik.imagekit.io/islander/images/scroll/background1.png');
 	background-size: cover;
 	position:relative;
 	width: 946px;
