@@ -867,7 +867,7 @@ function baseChange(event) {
         shoedex10.style.display = "block";
         gomu.style.display = "block";
         gomu.classList.add("activeBase");
-        bg.style.backgroundImage = "url(images/scroll/background1.png)";
+        bg.style.backgroundImage = "url(https://ik.imagekit.io/islander/images/scroll/background1.png)";
         addClutter(true);
         break;
       }
@@ -877,7 +877,7 @@ function baseChange(event) {
           topdef10.style.display = "block";
           stripeM.style.display = "block";
           stripeM.classList.add("activeBase");
-          bg.style.backgroundImage = "url(images/scroll/background1.png)";
+          bg.style.backgroundImage = "url(https://ik.imagekit.io/islander/images/scroll/background1.png)";
           addClutter(false);
         break;
       }
@@ -887,7 +887,7 @@ function baseChange(event) {
           topdef10.style.display = "block";
           stripeF.style.display = "block";
           stripeF.classList.add("activeBase");
-          bg.style.backgroundImage = "url(images/scroll/background1.png)";
+          bg.style.backgroundImage = "url(https://ik.imagekit.io/islander/images/scroll/background1.png)";
           addClutter(false);
         break;
       }
@@ -897,7 +897,7 @@ function baseChange(event) {
           botdef10.style.display = "block";
           ice.style.display = "block";
           ice.classList.add("activeBase");
-          bg.style.backgroundImage = "url(images/scroll/background1.png)";
+          bg.style.backgroundImage = "url(https://ik.imagekit.io/islander/images/scroll/background1.png)";
           addClutter(false);
         break;
       }
@@ -907,7 +907,7 @@ function baseChange(event) {
           botdef10.style.display = "block";
           sweat.style.display = "block";
           sweat.classList.add("activeBase");
-          bg.style.backgroundImage = "url(images/scroll/background1.png)";
+          bg.style.backgroundImage = "url(https://ik.imagekit.io/islander/images/scroll/background1.png)";
           addClutter(false);
         break;
       }
@@ -919,7 +919,7 @@ function baseChange(event) {
         hatdef60.style.display = "block";
         wdana.style.display = "block";
         wdana.classList.add("activeBase");
-        bg.style.backgroundImage = "url(images/scroll/background1.png)";
+        bg.style.backgroundImage = "url(https://ik.imagekit.io/islander/images/scroll/background1.png)";
         addClutter(true);
         break;
       }
@@ -929,7 +929,7 @@ function baseChange(event) {
         witchscr.style.display = "block";
         witch.style.display = "block";
         witch.classList.add("activeBase");
-        bg.style.backgroundImage = "url(images/scroll/background2.png)";
+        bg.style.backgroundImage = "url(https://ik.imagekit.io/islander/images/scroll/background2.png)";
         addClutter(false);
         break;
       }
@@ -939,7 +939,7 @@ function baseChange(event) {
         witchscr.style.display = "block";
         broom.style.display = "block";
         broom.classList.add("activeBase");
-        bg.style.backgroundImage = "url(images/scroll/background2.png)";
+        bg.style.backgroundImage = "url(https://ik.imagekit.io/islander/images/scroll/background2.png)";
         addClutter(false);
         break;
       }
@@ -949,7 +949,7 @@ function baseChange(event) {
         beltscr.style.display = "block";
         wbeltR.style.display = "block";
         wbeltR.classList.add("activeBase");
-        bg.style.backgroundImage = "url(images/scroll/background2.png)";
+        bg.style.backgroundImage = "url(https://ik.imagekit.io/islander/images/scroll/background2.png)";
         addClutter(false);
         break;
       }
@@ -959,7 +959,7 @@ function baseChange(event) {
         beltscr.style.display = "block";
         wbeltB.style.display = "block";
         wbeltB.classList.add("activeBase");
-        bg.style.backgroundImage = "url(images/scroll/background2.png)";
+        bg.style.backgroundImage = "url(https://ik.imagekit.io/islander/images/scroll/background2.png)";
         addClutter(false);
         break;
       }
@@ -969,7 +969,7 @@ function baseChange(event) {
         beltscr.style.display = "block";
         wbeltP.style.display = "block";
         wbeltP.classList.add("activeBase");
-        bg.style.backgroundImage = "url(images/scroll/background2.png)";
+        bg.style.backgroundImage = "url(https://ik.imagekit.io/islander/images/scroll/background2.png)";
         addClutter(false);
         break;
       }
@@ -981,7 +981,7 @@ function baseChange(event) {
         chaos.style.display = "block";
         lights.style.display = "block";
         lights.classList.add("activeBase");
-        bg.style.backgroundImage = "url(images/scroll/background1.png)";
+        bg.style.backgroundImage = "url(https://ik.imagekit.io/islander/images/scroll/background1.png)";
         addClutter(true);
         break;
       }
@@ -993,7 +993,7 @@ function baseChange(event) {
         chaos.style.display = "block";
         basket.style.display = "block";
         basket.classList.add("activeBase");
-        bg.style.backgroundImage = "url(images/scroll/background2.png)";
+        bg.style.backgroundImage = "url(https://ik.imagekit.io/islander/images/scroll/background2.png)";
         addClutter(true);
         break;
       }
@@ -1049,7 +1049,7 @@ function getRandomInteger(min, max) {
 function playSound(sound) {
   const sfxBox = document.getElementById("sfxBox");
   if (sfxBox.checked) {
-    let sfx = new Audio("/images/scroll/" + sound + ".mp3");
+    let sfx = new Audio("https://ik.imagekit.io/islander/images/scroll/" + sound + ".mp3");
     sfx.play();
   }
 }
@@ -1484,7 +1484,7 @@ function emote(emo)
 {
   const face = document.getElementById('face');
   const char = document.querySelectorAll('.activeChar');
-  face.src = "/images/scroll/" + char[0].id + "-" + emo + ".png";
+  face.src = "https://ik.imagekit.io/islander/images/scroll/" + char[0].id + "-" + emo + ".png";
   setTimeout(function() {
     face.src ='';
   }, 1000);
