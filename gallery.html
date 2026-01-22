@@ -115,9 +115,9 @@ function createTable(jsons) {
         const data4 = 'data-ppl';
         yrbox.textContent = picture.year;
         yrbox.classList.add("gyyear");
-        thumb.src = "images/gallery/" + picture.src;
+        thumb.src = "https://ik.imagekit.io/islander/images/gallery/" + picture.src + "?tr=h-80";
         thumb.classList.add("gythumb");
-        pic.href = "images/gallery/" + picture.src;
+        pic.href = "https://ik.imagekit.io/islander/images/gallery/" + picture.src;
         pic.classList.add("gycont");
         pic.setAttribute(data1,"gallery");
         if(picture.hasOwnProperty('caption')) {
