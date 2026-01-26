@@ -391,5 +391,11 @@
     "type": "item",
     "name": "Oreder",
     "desc": "Owns 100 of each obtainable ore (Bronze, Steel, Mithril, Adamantium, Silver, Orihalcon, Gold, Garnet, Amethyst, AquaMarine, Emerald, Opal, Sapphire, Topaz, Diamond"
+  },
+  {
+    "id": "perfbeg",
+    "type": "item",
+    "name": "Perfect Beginner Weapons",
+    "desc": "Owns a perfect Sky Snowboard (25wa), Double Axe (35wa), and Leather Purse (43wa)."
   }
 ]
