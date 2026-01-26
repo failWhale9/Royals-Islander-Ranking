@@ -385,5 +385,11 @@
     "type": "item",
     "name": "Blue Maplemas",
     "desc": "Owns blue-tagged versions of each Christmas weapon (Maplemas lights, Christmas Tree, Maplemas Tree, Versalmas Cactus)."
+  },
+  {
+    "id": "ore100",
+    "type": "item",
+    "name": "Oreder",
+    "desc": "Owns 100 of each obtainable ore (Bronze, Steel, Mithril, Adamantium, Silver, Orihalcon, Gold, Garnet, Amethyst, AquaMarine, Emerald, Opal, Sapphire, Topaz, Diamond"
   }
 ]
