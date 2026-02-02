@@ -1,5 +1,9 @@
 [
   {
+    "Name":"Timmys",
+    "Level": "31"
+  },
+  {
     "Name": "Adaryn",
     "Level": "83",
     "Badges":["shirt5","pants4","witch40","broom20","maxdodge","gomu3","omok3","roses","umbrellas","tubes","boards","workgloves","chairs36","pet14","perflights","perfbrella","fence","bluexmas","meso750","knifestrats","lemons300","slipper2","ashes","meso1b","ore100"]
@@ -696,8 +700,8 @@
   },
   {
     "Name": "StarTropics",
-    "Level": "60",
-    "Badges": ["damage1000","chairs24","gomu3","pet14","omok3","weenjq400","broom20","bluexmas"]
+    "Level": "61",
+    "Badges": ["damage1000","chairs24","gomu3","pet14","omok3","weenjq400","broom20","bluexmas","shirt2"]
   },
   {
     "Name": "Ataynep",
@@ -743,7 +747,7 @@
   {
     "Name": "Valtarre",
     "Level": "59",
-    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas","chairs12","shirt2"]
+    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas","chairs12","shirt2","perfbeg"]
   },
   {
     "Name": "inland",
@@ -855,7 +859,7 @@
   {
     "Name": "DevOnIsland",
     "Level": "57",
-    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage300","pet14","omok3","weenjq330","workgloves","pants2","broom20","chairs12","ashes","bluexmas"]
+    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage300","pet14","omok3","weenjq330","workgloves","pants2","broom20","chairs12","ashes","bluexmas","perfbeg"]
   },
   {
     "Name": "Tsukishima",
@@ -966,7 +970,7 @@
   },
   {
     "Name": "Deryn",
-    "Level": "39",
+    "Level": "42",
     "Alt": "Adaryn",
     "Badges":["magelander"]
   },
