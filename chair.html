@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<link href="DataTables/datatables.min.css" rel="stylesheet">
+ 
+<script src="DataTables/datatables.min.js"></script>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapleRoyals Chair Database</title>
+    <link rel="icon" href="https://ik.imagekit.io/islander/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="chair.css">
+
+</head>
+<body>
+
+<div class="baseBox" id="sharedTooltip">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span id="tooltipTitle" class="itemTitle"></span>
+  <div class="baseTop">
+    <div class="chairImgBox">
+        <img class="chairImg "src="" id="tooltipImg">
+    </div>
+    <span class="chairID" id="tooltipID"></span>
+    <span class="chairDesc" id="tooltipDesc"></span>
+  </div>
+</div>
+
+<div id="table-container"></div>
+
+<div id="footer">
+    <p>Page written and maintained by <img src="https://ik.imagekit.io/islander/images/shy.png"></p> 
+</div>
+
+<script>
+// TODO
+// - gather secondary pictures
+// - implement secondary pictures and push to imagekit
+// - fix column widths
+// - ludi style?
+// - filter bar (category dropdown, unreleased checkbox)
+// - custom placeholder icon and image
+// - custom title image
+
+// Function to create and populate the table
+function createTable(jsons) {
+    data = jsons[0];
+
+    $.fn.DataTable.ext.pager.numbers_length = 7;
+    const container = document.getElementById('table-container');
+    const table = document.createElement('table');
+    table.id = "myTable";
+    table.classList.add('display');
+    table.classList.add('mainTable');
+
+    // Sort table by name descending
+    data.sort((a, b) => {
+        const valA = a["name"];
+        const valB = b["name"];
+        return valB - valA;
+    });
+
+    // Create table headers
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    const headers = ["name","icon","image","obtained","note","trade"];
+    
+    headers.forEach(header => {
+            const th = document.createElement('th');
+            th.textContent = header.charAt(0).toUpperCase() + header.slice(1);
+            th.classList.add(header);
+            headerRow.appendChild(th);
+    });
+
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+    
+    // Create table body
+    const tbody = document.createElement('tbody');
+
+    data.forEach(item => {
+
+        const row = document.createElement('tr');
+        
+        headers.forEach(header => {
+            const td = document.createElement('td');
+            td.classList.add(header);
+
+            switch (header) {
+                case "icon":
+                    const img = document.createElement('img');
+                    const id = "0" + item['id'].toString();
+                    const formats = ['png', 'gif'];
+                    let formatIndex = 0;
+
+                    function tryLoadImage() {
+                        try {
+                            img.src = `https://ik.imagekit.io/islander/chair/icon/${id}.png`;
+                        }
+                        catch {
+                            img.src = 'https://ik.imagekit.io/islander/images/placeholder.png'; // Fallback image
+                        }
+                            img.onerror = () => {
+                                formatIndex++;
+                                tryLoadImage(); // Try next format
+                            };
+                    } 
+
+                    tryLoadImage();
+
+                    img.classList.add("portrait");
+
+                    // Apply tooltip
+                    const div = document.createElement('div');
+                    const desc = 'data-desc';
+                    const title = 'data-title';
+                    const imgid = 'data-id';
+                    div.classList.add("BadgeContainer");
+                    div.setAttribute(desc, item['desc']);         
+                    div.setAttribute(title, item['name']);    
+                    div.setAttribute(imgid, "0" + item['id']);
+                    div.appendChild(img);
+                    td.appendChild(div);
+
+
+                    td.appendChild(div);
+                    row.appendChild(td);
+                    break;
+
+                case "image":
+                    const img2 = document.createElement('img');
+                    const id2 = "0" + item['id'].toString();
+                    const formats2 = ['png', 'gif'];
+                    let formatIndex2 = 0;
+
+                    function tryLoadImage2() {
+                        if (formatIndex2 < formats2.length) {
+                            try {
+                                img2.src = `https://ik.imagekit.io/islander/chair/image/${id2}.${formats2[formatIndex2]}`;
+                            }
+                            catch {
+
+                            }
+                            img2.onerror = () => {
+                                formatIndex2++;
+                                tryLoadImage2(); // Try next format
+                            };
+                        } else {
+                            img2.onerror = null; // Prevent loop
+                            img2.src = 'https://ik.imagekit.io/islander/images/placeholder.png'; // Fallback image
+                        }
+                    }
+
+                    tryLoadImage2();
+
+                    img2.classList.add("portrait");
+                    td.appendChild(img2);
+                    row.appendChild(td);
+                    break;
+
+                case "name":
+                    const pname = document.createElement('p');
+                    pname.textContent = item[header];
+                    pname.classList.add("Name");  
+                    td.appendChild(pname);    
+                    row.appendChild(td);           
+                    break;
+
+                case "obtained":
+                    const pobt = document.createElement('p');
+                    pobt.textContent = item[header];
+                    pobt.classList.add("Obtained");     
+                    td.appendChild(pobt);    
+                    row.appendChild(td);             
+                    break;
+
+                case "note":
+                    const pnote = document.createElement('p');
+                    pnote.textContent = item[header];
+                    pnote.classList.add("Note");   
+                    td.appendChild(pnote);    
+                    row.appendChild(td);               
+                    break;
+
+                case "trade":
+                    const ptrade = document.createElement('p');
+                    ptrade.textContent = item[header];
+                    ptrade.classList.add("Trade"); 
+                    td.appendChild(ptrade);    
+                    row.appendChild(td);                 
+                    break;
+        
+                default:
+            }
+        });
+        tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+    container.appendChild(table);
+
+     $('#myTable').DataTable({
+        pageLength: 20,
+        pagingType: 'numbers',
+        layout: {
+            topStart:'search',
+            topEnd:'paging',
+            bottomStart:'info',
+            bottomEnd:'paging'
+        },
+        "drawCallback": function(settings) {
+            applyBadgeTooltips();
+        }
+     });
+}
+
+// Chair Tooltip code
+function applyBadgeTooltips() {
+    const tooltip = document.getElementById('sharedTooltip');
+    const tooltiptitle = document.getElementById('tooltipTitle');
+    const tooltipdesc = document.getElementById('tooltipDesc');
+    const tooltipid = document.getElementById('tooltipID');
+    const tooltipimg = document.getElementById('tooltipImg');
+    const badgeContainers = document.querySelectorAll('.BadgeContainer');
+
+    badgeContainers.forEach(container => {
+        container.addEventListener('mouseenter', () => {
+            const rect = container.getBoundingClientRect();
+            tooltip.style.top = `${rect.bottom + 8}px`;
+            tooltip.style.left = `${rect.left}px`;
+            tooltipdesc.textContent = container.dataset.desc;
+            tooltiptitle.textContent = container.dataset.title;
+            tooltipid.textContent = "ID: " + container.dataset.id;
+            tooltipimg.src = `https://ik.imagekit.io/islander/chair/icon/${container.dataset.id}.png`;
+            void tooltip.offsetWidth;
+            tooltip.classList.add('visible');
+        });
+
+        container.addEventListener('mouseleave', () => {
+        tooltip.classList.remove('visible');
+        });
+    });
+}
+
+// Load json code
+async function getJsonData() {
+    const jsons = ["chair.json"];
+    const reqs = jsons.map(u=>fetch(u).then(response => {
+    if(!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+    })
+    );
+
+    const results = await Promise.all(reqs);
+
+    createTable(results);
+}
+
+getJsonData();
+
+</script>
+
+</body>
+</html>

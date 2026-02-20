@@ -1,7 +1,8 @@
 [
   {
     "Name":"Vinlander",
-    "Level": "33",
+    "Level": "34",
+    "BadNews":"Banned - Vote Abuse",
     "Badges":["dexlander","gomu3"]
   },
   {
@@ -975,7 +976,7 @@
   },
   {
     "Name": "Deryn",
-    "Level": "43",
+    "Level": "44",
     "Alt": "Adaryn",
     "Badges":["magelander"]
   },
