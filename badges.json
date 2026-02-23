@@ -24,6 +24,12 @@
     "desc": "Has not invested any AP or SP."
   },
   {
+    "id": "camper",
+    "type": "build",
+    "name": "Camper",
+    "desc": "Has never left the Training Camp map."
+  },
+  {
     "id": "maxdodge",
     "type": "build",
     "name": "Max Dodge",

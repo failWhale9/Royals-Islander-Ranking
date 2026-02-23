@@ -1,5 +1,11 @@
 [
   {
+    "Name":"CampLeader",
+    "Alt":"HeroinAddict",
+    "Level": "30",
+    "Badges":["camper","pet14"]
+  },
+  {
     "Name":"Vinlander",
     "Level": "34",
     "BadNews":"Banned - Vote Abuse",
