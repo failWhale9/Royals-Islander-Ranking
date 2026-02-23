@@ -14,6 +14,37 @@
 </head>
 <body>
 
+<img src="https://ik.imagekit.io/islander/chair/title.png" id="titleImage"></img>
+
+<div class="chairControl">
+    <label class="menuText">Category: </label> 
+      <select id="catSelect" onchange="catChange(event)">
+          <option value ="all">All Chairs</option>
+          <option value ="quest">Quest Reward</option>
+          <option value ="party">PQ Reward</option>
+          <option value ="store">Store Purchase</option>
+          <option value ="boss">Boss Drops</option>
+          <option value ="donor">RP Donor</option>
+          <option value ="gach">Normal Gachapon</option>
+          <option value ="chairgach">Chair Gachapon</option>
+          <option value ="gmevent">GM Event Prize</option>
+          <option value ="season">All Seasonal Events</option>
+          <option value ="anni">Anniversary Event</option>
+          <option value ="xmas">Christmas Event</option>
+          <option value ="easter">Easter Event</option>
+          <option value ="ween">Halloween Event</option>
+          <option value ="lny">Lunar New Year</option>
+          <option value ="nye">New Year's Eve</option>
+          <option value ="summer">Summer Events</option>
+          <option value ="thanks">Thanksgiving Event</option>
+          <option value ="valen">Valentine's Event</option>
+          <option value ="gmonly">GM Only</option>
+          <option value ="uncat">Uncategorized</option>
+      </select>
+
+    <span style="float:right"><label class="menuText">Hide Unreleased/Incomplete/Duplicate: </label><input type="checkbox" id="relBox" checked onclick="showUnreleased()"></span>
+</div>
+
 <div class="baseBox" id="sharedTooltip">
   <span style="color:#55ccff; padding-left:5px;">●</span> <span id="tooltipTitle" class="itemTitle"></span>
   <div class="baseTop">
@@ -33,13 +64,156 @@
 
 <script>
 // TODO
-// - gather secondary pictures
-// - implement secondary pictures and push to imagekit
 // - fix column widths
 // - ludi style?
-// - filter bar (category dropdown, unreleased checkbox)
 // - custom placeholder icon and image
 // - custom title image
+// - nice css tags for "tradable" and "untradable"
+// - fix padding on page numbers
+// - fix quest URLs
+
+function showUnreleased() {
+    const sel = document.getElementById('catSelect');
+    const relBox = document.getElementById('relBox');
+    sel.value = 'all';
+
+    if(relBox.checked) {
+        const opt1 = sel.querySelector(`option[value="${dupe}"]`);
+        const opt2 = sel.querySelector(`option[value="${inc}"]`);
+        const opt3 = sel.querySelector(`option[value="${unrel}"]`);
+        if (opt1) {opt1.remove();}
+        if (opt2) {opt2.remove();}
+        if (opt3) {opt3.remove();}
+    }
+    else {
+        let opt1 = document.createElement('option');
+        let opt2 = document.createElement('option');
+        let opt3 = document.createElement('option');
+        opt1.value = "dupe";
+        opt1.innerHTML = "Duplicate Entry";
+        opt2.value = "inc";
+        opt2.innerHTML = "Incomplete Entry";
+        opt3.value = "unrel";
+        opt3.innerHTML = "Unreleased";
+        sel.appendChild(opt1);
+        sel.appendChild(opt2);
+        sel.appendChild(opt3);
+    }
+
+    sel.dispatchEvent(new Event('change', {'bubbles': true }));
+
+}
+
+function catChange(event) {
+
+    const table = $('#myTable').DataTable();
+    const unrel = document.getElementById('relBox');
+
+    switch(event.target.value) {
+        case "quest": {
+            table.column(6).search('Quest Reward').draw();
+            break;
+        }
+        case "party": {
+            table.column(6).search('PQ Reward').draw();
+            break;
+        }
+        case "store": {
+            table.column(6).search('Store Purchase').draw();
+            break;
+        }
+        case "boss": {
+            table.column(6).search('Boss Drop').draw();
+            break;
+        }
+        case "donor": {
+            table.column(6).search('Donor Chair').draw();
+            break;
+        }
+        case "gach": {
+            table.column(6).search('Normal Gacha').draw();
+            break;
+        }
+        case "chairgach": {
+            table.column(6).search('Chair Gacha').draw();
+            break;
+        }
+        case "gmevent": {
+            table.column(6).search('GM Event').draw();
+            break;
+        }
+        case "season": {
+            table.column(6).search('Anniversary Event|Halloween Event|Christmas Event|Valentines Event|Easter Event|Lunar New Year|New Year Event|Summer Event|Thanksgiving Event',true,false).draw();
+            break;
+        }
+        case "anni": {
+            table.column(6).search('Anniversary Event').draw();
+            break;
+        }
+        case "xmas": {
+            table.column(6).search('Christmas Event').draw();
+            break;
+        }
+        case "easter": {
+            table.column(6).search('Easter Event').draw();
+            break;
+        }
+        case "ween": {
+            table.column(6).search('Halloween Event').draw();
+            break;
+        }
+        case "lny": {
+            table.column(6).search('Lunar New Year').draw();
+            break;
+        }
+        case "nye": {
+            table.column(6).search('^(?=.*New Year Event)(?!.*Lunar).*$',true,false).draw();
+            break;
+        }
+        case "summer": {
+            table.column(6).search('Summer Event').draw();
+            break;
+        }
+        case "thanks": {
+            table.column(6).search('Thanksgiving Event').draw();
+            break;
+        }
+        case "valen": {
+            table.column(6).search('Valentines Event').draw();
+            break;
+        }
+        case "gmonly": {
+            table.column(6).search('GM Only').draw();
+            break;
+        }
+        case "uncat": {
+            table.column(6).search('Uncategorized').draw();
+            break;
+        }
+        case "unrel": {
+            table.column(6).search('Unreleased').draw();
+            break;
+        }
+        case "dupe": {
+            table.column(6).search('Duplicate Entry').draw();
+            break;
+        }
+        case "inc": {
+            table.column(6).search('Incomplete Entry').draw();
+            break;
+        }
+        case "all": {
+            if(unrel.checked) {
+                table.column(6).search('^(?!.*(Unreleased|Duplicate Entry)).*$',true,false).draw();
+            }
+            else {
+                table.column(6).search('').draw();
+            }
+            break;
+        }
+    }
+}
+
 
 // Function to create and populate the table
 function createTable(jsons) {
@@ -62,7 +236,7 @@ function createTable(jsons) {
     // Create table headers
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
-    const headers = ["name","icon","image","obtained","note","trade"];
+    const headers = ["name","icon","image","obtained","note","trade","category"];
     
     headers.forEach(header => {
             const th = document.createElement('th');
@@ -93,20 +267,12 @@ function createTable(jsons) {
                     const formats = ['png', 'gif'];
                     let formatIndex = 0;
 
-                    function tryLoadImage() {
-                        try {
-                            img.src = `https://ik.imagekit.io/islander/chair/icon/${id}.png`;
-                        }
-                        catch {
-                            img.src = 'https://ik.imagekit.io/islander/images/placeholder.png'; // Fallback image
-                        }
-                            img.onerror = () => {
-                                formatIndex++;
-                                tryLoadImage(); // Try next format
-                            };
-                    } 
-
-                    tryLoadImage();
+                    try {
+                        img.src = `https://ik.imagekit.io/islander/chair/icon/${id}.png`;
+                    }
+                    catch {
+                        img.src = 'https://ik.imagekit.io/islander/images/placeholder.png'; // Fallback image
+                    }
 
                     img.classList.add("portrait");
 
@@ -129,32 +295,38 @@ function createTable(jsons) {
 
                 case "image":
                     const img2 = document.createElement('img');
+                    const img3 = document.createElement('img');
                     const id2 = "0" + item['id'].toString();
                     const formats2 = ['png', 'gif'];
                     let formatIndex2 = 0;
 
-                    function tryLoadImage2() {
-                        if (formatIndex2 < formats2.length) {
-                            try {
-                                img2.src = `https://ik.imagekit.io/islander/chair/image/${id2}.${formats2[formatIndex2]}`;
-                            }
-                            catch {
+                    img2.onerror = function() {
+                        img2.onerror = function() 
+                        {
+                            img2.src = 'https://ik.imagekit.io/islander/images/placeholder.png';
+                        };
+                        img2.src = `https://ik.imagekit.io/islander/chair/image/${id2}.gif`;
+                    };
 
-                            }
-                            img2.onerror = () => {
-                                formatIndex2++;
-                                tryLoadImage2(); // Try next format
-                            };
-                        } else {
-                            img2.onerror = null; // Prevent loop
-                            img2.src = 'https://ik.imagekit.io/islander/images/placeholder.png'; // Fallback image
-                        }
-                    }
-
-                    tryLoadImage2();
+                    img2.src = `https://ik.imagekit.io/islander/chair/image/${id2}.png`;
 
                     img2.classList.add("portrait");
                     td.appendChild(img2);
+
+                    if(item['extraImg'] == true) {
+                        img3.onerror = function() 
+                        {
+                            img3.onerror = function() 
+                            {
+                                img3.src = 'https://ik.imagekit.io/islander/images/placeholder.png';
+                            };
+                        img3.src = `https://ik.imagekit.io/islander/chair/image/${id2}_2.gif`;
+                        };
+
+                        img3.src = `https://ik.imagekit.io/islander/chair/image/${id2}_2.png`;
+                        td.appendChild(img3)
+                    }
+
                     row.appendChild(td);
                     break;
 
@@ -189,12 +361,29 @@ function createTable(jsons) {
                     td.appendChild(ptrade);    
                     row.appendChild(td);                 
                     break;
-        
+
+                case "category":
+                    if(item[header] === null) {
+                        break;
+                    }
+                    const pcat = document.createElement('div');
+                    const cats = item[header];
+                    cats.forEach(cat => {
+                        const tag = document.createElement('p');
+                        tag.textContent = cat;
+                        tag.classList.add(cat.replace(/\s/g, ''));
+                        pcat.appendChild(tag);
+                    });
+                    td.appendChild(pcat);    
+                    row.appendChild(td);  
+                    break;
                 default:
             }
         });
         tbody.appendChild(row);
     });
+
+    
 
     table.appendChild(tbody);
     container.appendChild(table);
@@ -212,6 +401,8 @@ function createTable(jsons) {
             applyBadgeTooltips();
         }
      });
+    const table2 = $('#myTable').DataTable();
+     table2.column(6).search('^(?!.*(Unreleased|Duplicate Entry)).*$',true,false).draw();
 }
 
 // Chair Tooltip code
