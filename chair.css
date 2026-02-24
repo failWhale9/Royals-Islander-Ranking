@@ -1,13 +1,13 @@
 :root{
-	--cell: rgba(120, 0, 168, 0.9);
-	--hover: rgba(127, 0, 212, 0.9);
-	--darker: rgb(45, 22, 59);
-	--header: rgba(153, 0, 255, 0.9);
+	--cell: rgba(53, 36, 59, 0.9);
+	--hover: rgba(102, 79, 117, 0.9);
+	--darker: rgb(58, 48, 65);
+	--header: rgba(90, 61, 107, 0.9);
 }
 
 @keyframes slideleft {
-  from { background-position: center, 1400% 0; }
-  to { background-position: center, 0% 0; }
+  from { background-position: center, 1400% -400px; }
+  to { background-position: center, 0% -400px; }
 }
 
 @media only screen and (min-width: 981px) {
@@ -16,10 +16,9 @@
     background-image: url("chair/eos.png"), url("chair/clouds2.png");
     background-repeat: repeat-y, repeat-x;
     background-attachment: scroll, fixed;
-    background-position: center, 1400% 0;
-	background-size: 80%, 50%;
+    background-position: center, 1400% -400px;
+	background-size: 90%, 70%;
     animation: slideleft 600s linear infinite;
-    margin-bottom: 200px;
   }
 
 	img.Badge {

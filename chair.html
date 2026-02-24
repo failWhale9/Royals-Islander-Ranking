@@ -65,8 +65,6 @@
 </div>
 
 <script>
-// TODO
-// - ludi style?
 
 function showUnreleased() {
     const sel = document.getElementById('catSelect');
@@ -107,11 +105,11 @@ function catChange(event) {
 
     switch(event.target.value) {
         case "trade": {
-            table.column(5).search('Tradable').draw();
+            table.column(5).search('^(?=.*Tradable)(?!.*Untradable)(?!.*Duplicate Entry)(?!.*Unreleased)(?!.*Incomplete Entry).*$',true,false).draw();
             break;
         }
         case "untrade": {
-            table.column(5).search('Untradable').draw();
+            table.column(5).search('^(?=.*Untradable)(?!.*Duplicate Entry)(?!.*Unreleased)(?!.*Incomplete Entry).*$',true,false).draw();
             break;
         }
         case "quest": {
