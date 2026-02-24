@@ -214,6 +214,22 @@ function catChange(event) {
     }
 }
 
+function bbcodeToHtml(str) {
+  if (!str) return '';
+
+  // Match patterns like [URL=link]text[/URL]
+  return str.replace(
+    /\[URL=(https?:\/\/[^\]]+|\bwww\.[^\]]+)\](.*?)\[\/URL\]/gi,
+    (match, url, text) => {
+      // Ensure protocol
+      if (!/^https?:\/\//i.test(url)) {
+        url = 'https://' + url;
+      }
+      return `<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+    }
+  );
+}
+
 
 // Function to create and populate the table
 function createTable(jsons) {
@@ -268,7 +284,7 @@ function createTable(jsons) {
                     let formatIndex = 0;
 
                     try {
-                        img.src = `https://ik.imagekit.io/islander/chair/icon/${id}.png`;
+                        img.src = `/chair/icon/${id}.png`;
                     }
                     catch {
                         img.src = 'https://ik.imagekit.io/islander/images/placeholder.png'; // Fallback image
@@ -305,10 +321,10 @@ function createTable(jsons) {
                         {
                             img2.src = 'https://ik.imagekit.io/islander/images/placeholder.png';
                         };
-                        img2.src = `https://ik.imagekit.io/islander/chair/image/${id2}.gif`;
+                        img2.src = `/chair/image/${id2}.gif`;
                     };
 
-                    img2.src = `https://ik.imagekit.io/islander/chair/image/${id2}.png`;
+                    img2.src = `/chair/image/${id2}.png`;
 
                     img2.classList.add("portrait");
                     td.appendChild(img2);
@@ -320,10 +336,10 @@ function createTable(jsons) {
                             {
                                 img3.src = 'https://ik.imagekit.io/islander/images/placeholder.png';
                             };
-                        img3.src = `https://ik.imagekit.io/islander/chair/image/${id2}_2.gif`;
+                        img3.src = `/chair/image/${id2}_2.gif`;
                         };
 
-                        img3.src = `https://ik.imagekit.io/islander/chair/image/${id2}_2.png`;
+                        img3.src = `/chair/image/${id2}_2.png`;
                         td.appendChild(img3)
                     }
 
@@ -348,16 +364,23 @@ function createTable(jsons) {
 
                 case "note":
                     const pnote = document.createElement('p');
-                    pnote.textContent = item[header];
                     pnote.classList.add("Note");   
+                    const html = bbcodeToHtml(item[header]);
+                    pnote.innerHTML = html;
                     td.appendChild(pnote);    
                     row.appendChild(td);               
                     break;
 
                 case "trade":
                     const ptrade = document.createElement('p');
-                    ptrade.textContent = item[header];
-                    ptrade.classList.add("Trade"); 
+                    if(item[header] == "UNTRADABLE") {
+                        ptrade.classList.add("Untradable")
+                        ptrade.textContent = "Untradable";
+                    }
+                    if(item[header] == "TRADABLE") {
+                        ptrade.classList.add("Tradable")
+                        ptrade.textContent = "Tradable";
+                    }
                     td.appendChild(ptrade);    
                     row.appendChild(td);                 
                     break;
@@ -422,7 +445,7 @@ function applyBadgeTooltips() {
             tooltipdesc.textContent = container.dataset.desc;
             tooltiptitle.textContent = container.dataset.title;
             tooltipid.textContent = "ID: " + container.dataset.id;
-            tooltipimg.src = `https://ik.imagekit.io/islander/chair/icon/${container.dataset.id}.png`;
+            tooltipimg.src = `/chair/icon/${container.dataset.id}.png`;
             void tooltip.offsetWidth;
             tooltip.classList.add('visible');
         });
