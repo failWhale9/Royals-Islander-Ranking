@@ -20,6 +20,8 @@
     <label class="menuText">Category: </label> 
       <select id="catSelect" onchange="catChange(event)">
           <option value ="all">All Chairs</option>
+          <option value ="trade">Tradable Only</option>
+          <option value ="untrade">Untradable Only</option>
           <option value ="quest">Quest Reward</option>
           <option value ="party">PQ Reward</option>
           <option value ="store">Store Purchase</option>
@@ -64,13 +66,7 @@
 
 <script>
 // TODO
-// - fix column widths
 // - ludi style?
-// - custom placeholder icon and image
-// - custom title image
-// - nice css tags for "tradable" and "untradable"
-// - fix padding on page numbers
-// - fix quest URLs
 
 function showUnreleased() {
     const sel = document.getElementById('catSelect');
@@ -78,9 +74,9 @@ function showUnreleased() {
     sel.value = 'all';
 
     if(relBox.checked) {
-        const opt1 = sel.querySelector(`option[value="${dupe}"]`);
-        const opt2 = sel.querySelector(`option[value="${inc}"]`);
-        const opt3 = sel.querySelector(`option[value="${unrel}"]`);
+        const opt1 = sel.querySelector(`option[value="${'dupe'}"]`);
+        const opt2 = sel.querySelector(`option[value="${'inc'}"]`);
+        const opt3 = sel.querySelector(`option[value="${'unrel'}"]`);
         if (opt1) {opt1.remove();}
         if (opt2) {opt2.remove();}
         if (opt3) {opt3.remove();}
@@ -110,114 +106,122 @@ function catChange(event) {
     const unrel = document.getElementById('relBox');
 
     switch(event.target.value) {
+        case "trade": {
+            table.column(5).search('Tradable').draw();
+            break;
+        }
+        case "untrade": {
+            table.column(5).search('Untradable').draw();
+            break;
+        }
         case "quest": {
-            table.column(6).search('Quest Reward').draw();
+            table.column(5).search('Quest Reward').draw();
             break;
         }
         case "party": {
-            table.column(6).search('PQ Reward').draw();
+            table.column(5).search('PQ Reward').draw();
             break;
         }
         case "store": {
-            table.column(6).search('Store Purchase').draw();
+            table.column(5).search('Store Purchase').draw();
             break;
         }
         case "boss": {
-            table.column(6).search('Boss Drop').draw();
+            table.column(5).search('Boss Drop').draw();
             break;
         }
         case "donor": {
-            table.column(6).search('Donor Chair').draw();
+            table.column(5).search('Donor Chair').draw();
             break;
         }
         case "gach": {
-            table.column(6).search('Normal Gacha').draw();
+            table.column(5).search('Normal Gacha').draw();
             break;
         }
         case "chairgach": {
-            table.column(6).search('Chair Gacha').draw();
+            table.column(5).search('Chair Gacha').draw();
             break;
         }
         case "gmevent": {
-            table.column(6).search('GM Event').draw();
+            table.column(5).search('GM Event').draw();
             break;
         }
         case "season": {
-            table.column(6).search('Anniversary Event|Halloween Event|Christmas Event|Valentines Event|Easter Event|Lunar New Year|New Year Event|Summer Event|Thanksgiving Event',true,false).draw();
+            table.column(5).search('Anniversary Event|Halloween Event|Christmas Event|Valentines Event|Easter Event|Lunar New Year|New Year Event|Summer Event|Thanksgiving Event',true,false).draw();
             break;
         }
         case "anni": {
-            table.column(6).search('Anniversary Event').draw();
+            table.column(5).search('Anniversary Event').draw();
             break;
         }
         case "xmas": {
-            table.column(6).search('Christmas Event').draw();
+            table.column(5).search('Christmas Event').draw();
             break;
         }
         case "easter": {
-            table.column(6).search('Easter Event').draw();
+            table.column(5).search('Easter Event').draw();
             break;
         }
         case "ween": {
-            table.column(6).search('Halloween Event').draw();
+            table.column(5).search('Halloween Event').draw();
             break;
         }
         case "lny": {
-            table.column(6).search('Lunar New Year').draw();
+            table.column(5).search('Lunar New Year').draw();
             break;
         }
         case "nye": {
-            table.column(6).search('^(?=.*New Year Event)(?!.*Lunar).*$',true,false).draw();
+            table.column(5).search('^(?=.*New Year Event)(?!.*Lunar).*$',true,false).draw();
             break;
         }
         case "summer": {
-            table.column(6).search('Summer Event').draw();
+            table.column(5).search('Summer Event').draw();
             break;
         }
         case "thanks": {
-            table.column(6).search('Thanksgiving Event').draw();
+            table.column(5).search('Thanksgiving Event').draw();
             break;
         }
         case "valen": {
-            table.column(6).search('Valentines Event').draw();
+            table.column(5).search('Valentines Event').draw();
             break;
         }
         case "gmonly": {
-            table.column(6).search('GM Only').draw();
+            table.column(5).search('GM Only').draw();
             break;
         }
         case "uncat": {
-            table.column(6).search('Uncategorized').draw();
+            table.column(5).search('Uncategorized').draw();
             break;
         }
         case "unrel": {
-            table.column(6).search('Unreleased').draw();
+            table.column(5).search('Unreleased').draw();
             break;
         }
         case "dupe": {
-            table.column(6).search('Duplicate Entry').draw();
+            table.column(5).search('Duplicate Entry').draw();
             break;
         }
         case "inc": {
-            table.column(6).search('Incomplete Entry').draw();
+            table.column(5).search('Incomplete Entry').draw();
             break;
         }
         case "all": {
             if(unrel.checked) {
-                table.column(6).search('^(?!.*(Unreleased|Duplicate Entry)).*$',true,false).draw();
+                table.column(5).search('^(?!.*(Unreleased|Duplicate Entry)).*$',true,false).draw();
             }
             else {
-                table.column(6).search('').draw();
+                table.column(5).search('').draw();
             }
             break;
         }
     }
 }
 
+// Function to convert BBcode links to <a> links
 function bbcodeToHtml(str) {
   if (!str) return '';
 
-  // Match patterns like [URL=link]text[/URL]
   return str.replace(
     /\[URL=(https?:\/\/[^\]]+|\bwww\.[^\]]+)\](.*?)\[\/URL\]/gi,
     (match, url, text) => {
@@ -252,7 +256,7 @@ function createTable(jsons) {
     // Create table headers
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
-    const headers = ["name","icon","image","obtained","note","trade","category"];
+    const headers = ["name","icon","image","obtained","note","category"];
     
     headers.forEach(header => {
             const th = document.createElement('th');
@@ -287,7 +291,7 @@ function createTable(jsons) {
                         img.src = `/chair/icon/${id}.png`;
                     }
                     catch {
-                        img.src = 'https://ik.imagekit.io/islander/images/placeholder.png'; // Fallback image
+                        img.src = 'chair/placeholder.png'; // Fallback image
                     }
 
                     img.classList.add("portrait");
@@ -297,7 +301,7 @@ function createTable(jsons) {
                     const desc = 'data-desc';
                     const title = 'data-title';
                     const imgid = 'data-id';
-                    div.classList.add("BadgeContainer");
+                    div.classList.add("IconContainer");
                     div.setAttribute(desc, item['desc']);         
                     div.setAttribute(title, item['name']);    
                     div.setAttribute(imgid, "0" + item['id']);
@@ -319,7 +323,7 @@ function createTable(jsons) {
                     img2.onerror = function() {
                         img2.onerror = function() 
                         {
-                            img2.src = 'https://ik.imagekit.io/islander/images/placeholder.png';
+                            img2.src = 'chair/placeholder.png';
                         };
                         img2.src = `/chair/image/${id2}.gif`;
                     };
@@ -334,7 +338,7 @@ function createTable(jsons) {
                         {
                             img3.onerror = function() 
                             {
-                                img3.src = 'https://ik.imagekit.io/islander/images/placeholder.png';
+                                img3.src = 'chair/placeholder.png';
                             };
                         img3.src = `/chair/image/${id2}_2.gif`;
                         };
@@ -371,26 +375,25 @@ function createTable(jsons) {
                     row.appendChild(td);               
                     break;
 
-                case "trade":
-                    const ptrade = document.createElement('p');
-                    if(item[header] == "UNTRADABLE") {
-                        ptrade.classList.add("Untradable")
-                        ptrade.textContent = "Untradable";
-                    }
-                    if(item[header] == "TRADABLE") {
-                        ptrade.classList.add("Tradable")
-                        ptrade.textContent = "Tradable";
-                    }
-                    td.appendChild(ptrade);    
-                    row.appendChild(td);                 
-                    break;
-
                 case "category":
                     if(item[header] === null) {
                         break;
                     }
                     const pcat = document.createElement('div');
                     const cats = item[header];
+
+                    const ptrade = document.createElement('p');
+                    if(item['trade'] == "UNTRADABLE") {
+                        ptrade.classList.add("Untradable")
+                        ptrade.textContent = "Untradable";
+                    }
+                    if(item['trade'] == "TRADABLE") {
+                        ptrade.classList.add("Tradable")
+                        ptrade.textContent = "Tradable";
+                    }
+
+                    pcat.appendChild(ptrade)
+
                     cats.forEach(cat => {
                         const tag = document.createElement('p');
                         tag.textContent = cat;
@@ -425,7 +428,7 @@ function createTable(jsons) {
         }
      });
     const table2 = $('#myTable').DataTable();
-     table2.column(6).search('^(?!.*(Unreleased|Duplicate Entry)).*$',true,false).draw();
+     table2.column(5).search('^(?!.*(Unreleased|Duplicate Entry)).*$',true,false).draw();
 }
 
 // Chair Tooltip code
@@ -435,9 +438,9 @@ function applyBadgeTooltips() {
     const tooltipdesc = document.getElementById('tooltipDesc');
     const tooltipid = document.getElementById('tooltipID');
     const tooltipimg = document.getElementById('tooltipImg');
-    const badgeContainers = document.querySelectorAll('.BadgeContainer');
+    const iconContainers = document.querySelectorAll('.IconContainer');
 
-    badgeContainers.forEach(container => {
+    iconContainers.forEach(container => {
         container.addEventListener('mouseenter', () => {
             const rect = container.getBoundingClientRect();
             tooltip.style.top = `${rect.bottom + 8}px`;

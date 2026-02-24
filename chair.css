@@ -1,24 +1,36 @@
 :root{
-	--cell: #388E3C;
-	--hover: #66BB6A;
-	--darker: #163b18;
-	--header: #4CAF50;
+	--cell: rgba(120, 0, 168, 0.9);
+	--hover: rgba(127, 0, 212, 0.9);
+	--darker: rgb(45, 22, 59);
+	--header: rgba(153, 0, 255, 0.9);
+}
+
+@keyframes slideleft {
+  from { background-position: center, 1400% 0; }
+  to { background-position: center, 0% 0; }
 }
 
 @media only screen and (min-width: 981px) {
-body {
-	background-color: #3366cc;
-}
+  body {
+    background-color: #3366cc;
+    background-image: url("chair/eos.png"), url("chair/clouds2.png");
+    background-repeat: repeat-y, repeat-x;
+    background-attachment: scroll, fixed;
+    background-position: center, 1400% 0;
+	background-size: 80%, 50%;
+    animation: slideleft 600s linear infinite;
+    margin-bottom: 200px;
+  }
 
-img.Badge {
-	max-width: 60px;
-}
+	img.Badge {
+		max-width: 60px;
+	}
 
-div.BadgeContainer {
-	max-width:60px;
-	max-height:60px;
-	display:inline-block;
-}
+	div.IconContainer {
+		max-width:60px;
+		max-height:60px;
+		display:inline-block;
+	}
 
 }
 
@@ -31,7 +43,7 @@ img.Badge {
 	max-width: 55px;
 }
 
-div.BadgeContainer {
+div.IconContainer {
 	max-width:55px;
 	max-height:55px;
 	display:inline-block;
@@ -44,6 +56,7 @@ div.BadgeContainer {
 	margin: auto;
 	width: 90%;
 	max-width: 1000px;
+	filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.705));
 }
 
 p.Tradable {
@@ -511,7 +524,7 @@ th, td {
 	text-align: left;
 	border: none;                 
 	border-radius: 8px;          
-	box-shadow: 2px 2px 8px rgba(0, 32, 1, 0.628)!important;
+	box-shadow: 2px 2px 8px rgba(25, 0, 32, 0.628)!important;
 	transition: background 0.3s;
 }
 
