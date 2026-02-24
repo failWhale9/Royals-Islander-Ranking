@@ -5579,17 +5579,6 @@
    "MP": 50
  },
  {
-   "id": 3010286,
-   "name": "Nautilus Chair",
-   "desc": "Mayday, mayday! Recovers 50 HP every 10 seconds.",
-   "obtained": "???",
-   "note": "",
-   "trade": "TRADABLE",
-   "category": ["Unreleased"],
-   "HP": null,
-   "MP": 50
- },
- {
    "id": 3010066,
    "name": "Navy Velvet Sofa",
    "desc": "A luxurious velvet sofa dyed with a beautiful shade of navy. Restores 60 HP every 10 seconds.",
@@ -7382,17 +7371,6 @@
    "category": ["Unreleased"],
    "HP": 50,
    "MP": 50
- },
- {
-   "id": 3013002,
-   "name": "Fireworks Chair",
-   "desc": "When you sit in Fireworks Chair, 30 HP and 30 MP are restored every 10 seconds.",
-   "obtained": "???",
-   "note": "",
-   "trade": "TRADABLE",
-   "category": ["Unreleased"],
-   "HP": null,
-   "MP": 30000
  },
  {
    "id": 3015011,
