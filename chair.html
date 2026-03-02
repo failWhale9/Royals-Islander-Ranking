@@ -426,7 +426,7 @@ function createTable(jsons) {
         }
      });
     const table2 = $('#myTable').DataTable();
-     table2.column(5).search('^(?!.*(Unreleased|Duplicate Entry)).*$',true,false).draw();
+     table2.column(5).search('^(?!.*(Unreleased|Duplicate Entry|Incomplete Entry)).*$',true,false).draw();
 }
 
 // Chair Tooltip code
