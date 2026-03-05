@@ -6,30 +6,63 @@
 }
 
 @keyframes slideleft {
-  from { background-position: center, 1400% -400px; }
-  to { background-position: center, 0% -400px; }
+  from { background-position: 1400% -400px; }
+  to   { background-position: 0% -400px; }
 }
 
 @media only screen and (min-width: 981px) {
+
   body {
     background-color: #3366cc;
-    background-image: url("chair/eos.png"), url("chair/clouds2.png");
-    background-repeat: repeat-y, repeat-x;
-    background-attachment: scroll, fixed;
-    background-position: center, 1400% -400px;
-	background-size: 90%, 70%;
-    animation: slideleft 600s linear infinite;
+    position: relative;
   }
+
+  /* clouds — back layer, fixed + animated */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("chair/clouds2.png");
+    background-repeat: repeat-x;
+    background-position: 1400% -400px;
+    background-size: 70%;
+
+    animation: slideleft 600s linear infinite;
+
+    z-index: -2;
+    pointer-events: none;
+  }
+
+  /* eos — scrolling middle layer */
+  body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("chair/eos.png");
+    background-repeat: repeat-y;
+    background-position: center top;
+    background-size: 90%;
+
+    z-index: -1;
+    pointer-events: none;
+  }
+
 }
 
 @media only screen and (max-width: 980px) {
-body {
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
 	background-color: #3366cc;
 	background-image: url("chair/eos.png"), url("chair/clouds2.png");
     background-repeat: repeat-y, repeat-x;
     background-attachment: scroll, fixed;
 	background-position: -40px 0px, 100% 200px;
 	background-size: 130%, 180%;
+	z-index: -1;
 }
 
 }
@@ -497,6 +530,9 @@ div.chairControl {
 	margin-right: auto;
 	margin-top: 15px;
 	margin-bottom: 15px;
+	a:link {color: rgb(255, 255, 0);}
+	a:visited {color: rgb(255, 255, 0);}
+	a:hover {color: rgb(255, 255, 255);}
 }
 
 table.mainTable {
@@ -589,6 +625,12 @@ th.name {
 	font-size:16px;
 }
 
+td.note {
+	a:link {color: rgb(255, 255, 0);}
+	a:visited {color: rgb(255, 255, 0);}
+	a:hover {color: rgb(255, 255, 255);}
+}
+
 td.icon {
 	text-align: center !important;
 }
@@ -599,7 +641,7 @@ td.name {
 }
 
 td.obtained {
-	font-size:24px;
+	font-size:20px;
 }
 
 th {

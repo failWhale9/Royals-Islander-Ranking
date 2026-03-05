@@ -46,6 +46,17 @@
 
     <span style="float:right"><label class="menuText">Hide Unreleased/Incomplete/Duplicate: </label><input type="checkbox" id="relBox" checked onclick="showUnreleased()"></span>
 </div>
+<div class="chairControl">
+    <p id="DefaultDesc">
+        Welcome to my chair guide. Please, have a seat. This is a comprehensive list of all chairs (650+!!) available in Mapleroyals. 
+        <br/><br/>I'm counting on the community to provide corrections and additions to this guide, because I'm not a chair collector and I've only been playing since 8th anniversary so I'm missing a lot of history.
+        Information on chairs can be very hard to nail down, because many chairs have been available from multiple sources over the years.
+        <br/><br/>If you want to contribute a picture, have a look at <a href="/chair/chairsNeeded.txt">this list</a>.
+    </p>
+    <p id="CategoryDesc">
+        
+    </p>
+</div>
 
 <div class="baseBox" id="sharedTooltip">
   <span style="color:#55ccff; padding-left:5px;">●</span> <span id="tooltipTitle" class="itemTitle"></span>
@@ -102,109 +113,163 @@ function catChange(event) {
 
     const table = $('#myTable').DataTable();
     const unrel = document.getElementById('relBox');
+    const desc = document.getElementById('CategoryDesc');
+    const defaultDesc = document.getElementById('DefaultDesc');
 
     switch(event.target.value) {
         case "trade": {
             table.column(5).search('^(?=.*Tradable)(?!.*Untradable)(?!.*Duplicate Entry)(?!.*Unreleased)(?!.*Incomplete Entry).*$',true,false).draw();
+            desc.textContent = "";
+            defaultDesc.style.display = "block";
             break;
         }
         case "untrade": {
             table.column(5).search('^(?=.*Untradable)(?!.*Duplicate Entry)(?!.*Unreleased)(?!.*Incomplete Entry).*$',true,false).draw();
+            desc.textContent = "";
+            defaultDesc.style.display = "block";
             break;
         }
         case "quest": {
             table.column(5).search('Quest Reward').draw();
+            desc.textContent = "These chairs are given as rewards for non-event quests.";
+            defaultDesc.style.display = "none";
             break;
         }
         case "party": {
+            desc.textContent = "These chairs are rare drops from party quests.";
+            defaultDesc.style.display = "none";
             table.column(5).search('PQ Reward').draw();
             break;
         }
         case "store": {
+            desc.textContent = "These chairs can be purchased directly from a store NPC.";
+            defaultDesc.style.display = "none";
             table.column(5).search('Store Purchase').draw();
             break;
         }
         case "boss": {
+            desc.textContent = "These chairs are rare drops from bosses.";
+            defaultDesc.style.display = "none";
             table.column(5).search('Boss Drop').draw();
             break;
         }
         case "donor": {
+            desc.textContent = "These chairs are only available for purchase from the cash shop with the server donor currency, Royal Points (RP).";
+            defaultDesc.style.display = "none";
             table.column(5).search('Donor Chair').draw();
             break;
         }
         case "gach": {
+            desc.textContent = "These chairs can be rewarded from the normal gachapon machines found in towns across the Maple world.";
+            defaultDesc.style.display = "none";
             table.column(5).search('Normal Gacha').draw();
             break;
         }
         case "chairgach": {
+            desc.textContent = "These chairs can be won from the Chair Gachapon machine in Ludibrium while the event is running. Many of these chairs have other sources, like GM event prizes.";
+            defaultDesc.style.display = "none";
             table.column(5).search('Chair Gacha').draw();
             break;
         }
         case "gmevent": {
+            desc.textContent = "These chairs have been known to be given out for winning first place in a GM Event (like Ola Ola, Fitness Challenge, etc.)";
+            defaultDesc.style.display = "none";
             table.column(5).search('GM Event').draw();
             break;
         }
         case "season": {
+            desc.textContent = "These chairs typically only available during a seasonal event. Sometimes the pool of event prizes changes from year to year, so there's no guarantee all of the listed chairs will be available for the next event.";
+            defaultDesc.style.display = "none";
             table.column(5).search('Anniversary Event|Halloween Event|Christmas Event|Valentines Event|Easter Event|Lunar New Year|New Year Event|Summer Event|Thanksgiving Event',true,false).draw();
             break;
         }
         case "anni": {
+            desc.textContent = "These chairs are usually available during the Mapleroyals Anniversary event (typically around May-July). Some of them are limited to a specific year.";
+            defaultDesc.style.display = "none";
             table.column(5).search('Anniversary Event').draw();
             break;
         }
         case "xmas": {
+            desc.textContent = "These chairs are usually available during the Christmas / Versalmas event (typically around November-January).";
+            defaultDesc.style.display = "none";
             table.column(5).search('Christmas Event').draw();
             break;
         }
         case "easter": {
+            desc.textContent = "These chairs are usually available during the Easter event (typically around March-April).";
+            defaultDesc.style.display = "none";
             table.column(5).search('Easter Event').draw();
             break;
         }
         case "ween": {
+            desc.textContent = "These chairs are usually available during the Halloween event (typically around October-November).";
+            defaultDesc.style.display = "none";
             table.column(5).search('Halloween Event').draw();
             break;
         }
         case "lny": {
+            desc.textContent = "These chairs are usually available during the Lunar New Year event (typically around January-February).";
+            defaultDesc.style.display = "none";
             table.column(5).search('Lunar New Year').draw();
             break;
         }
         case "nye": {
+            desc.textContent = "These chairs are available from a New Year quest that gives horoscope chairs is (usually only available for a single day, Jan 1st).";
+            defaultDesc.style.display = "none";
             table.column(5).search('^(?=.*New Year Event)(?!.*Lunar).*$',true,false).draw();
             break;
         }
         case "summer": {
+            desc.textContent = "These chairs are available during various summer events (typically July-August).";
+            defaultDesc.style.display = "none";
             table.column(5).search('Summer Event').draw();
             break;
         }
         case "thanks": {
+            desc.textContent = "These chairs are sometimes available during the Thanksgiving event (typically November-December).";
+            defaultDesc.style.display = "none";
             table.column(5).search('Thanksgiving Event').draw();
             break;
         }
         case "valen": {
+            desc.textContent = "These chairs are usually available during the Valentine's event (typically February-March).";
+            defaultDesc.style.display = "none";
             table.column(5).search('Valentines Event').draw();
             break;
         }
         case "gmonly": {
+            desc.textContent = "These chairs have been spotted in the server but only in the possession of GMs. If you've seen a normal player with one of these chairs, let me know.";
+            defaultDesc.style.display = "none";
             table.column(5).search('GM Only').draw();
             break;
         }
         case "uncat": {
+            desc.textContent = "These chairs are definitely available on the server, because I've seen them mentioned on these forums, but I don't know where they're from. Let me know if you have any info about the chairs below. With your help, we can make this section disappear!";
+            defaultDesc.style.display = "none";
             table.column(5).search('Uncategorized').draw();
             break;
         }
         case "unrel": {
+            desc.textContent = "These are chairs I found by browsing the Owl's list of items in-game, but I don't believe they are available. If you've seen one of these chairs in-game, let me know!";
+            defaultDesc.style.display = "none";
             table.column(5).search('Unreleased').draw();
             break;
         }
         case "dupe": {
+            desc.textContent = "These chairs entries in the game files that appear to be almost identical to another entry, with only minor differences to the name, description, or stats.";
+            defaultDesc.style.display = "none";
             table.column(5).search('Duplicate Entry').draw();
             break;
         }
         case "inc": {
+            desc.textContent = "These chairs are rare drops from bosses.";
+            defaultDesc.style.display = "none";
             table.column(5).search('Incomplete Entry').draw();
             break;
         }
         case "all": {
+            desc.textContent = "";
+            defaultDesc.style.display = "block";
             if(unrel.checked) {
                 table.column(5).search('^(?!.*(Unreleased|Duplicate Entry)).*$',true,false).draw();
             }
@@ -358,9 +423,13 @@ function createTable(jsons) {
 
                 case "obtained":
                     const pobt = document.createElement('p');
+                    const hid = document.createElement('p');
                     pobt.textContent = item[header];
-                    pobt.classList.add("Obtained");     
-                    td.appendChild(pobt);    
+                    hid.textContent = item['id'];
+                    hid.style.display = 'none';
+                    pobt.classList.add("Obtained"); 
+                    td.appendChild(pobt); 
+                    td.appendChild(hid);   
                     row.appendChild(td);             
                     break;
 
