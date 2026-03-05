@@ -349,6 +349,7 @@ function createTable(jsons) {
                     const id = "0" + item['id'].toString();
                     const formats = ['png', 'gif'];
                     let formatIndex = 0;
+                    img.loading = "lazy";
 
                     try {
                         img.src = `/chair/icon/${id}.png`;
@@ -382,6 +383,8 @@ function createTable(jsons) {
                     const id2 = "0" + item['id'].toString();
                     const formats2 = ['png', 'gif'];
                     let formatIndex2 = 0;
+                    img2.loading = "lazy";
+                    img3.loading = "lazy";
 
                     img2.onerror = function() {
                         img2.onerror = function() 
