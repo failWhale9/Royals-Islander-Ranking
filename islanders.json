@@ -433,7 +433,7 @@
   {
     "Name": "HeroinAddict",
     "Level": "77",
-    "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge","chairs36","weenjq330","broom20","bluexmas","meso250","perfbeg","workgloves"]
+    "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge","chairs36","weenjq330","broom20","bluexmas","meso250","perfbeg","workgloves","roses"]
   },
   {
     "Name": "Taeha",
@@ -719,8 +719,8 @@
   },
   {
     "Name": "StarTropics",
-    "Level": "62",
-    "Badges": ["damage1000","chairs24","gomu3","pet14","omok3","weenjq400","broom20","bluexmas","shirt2"]
+    "Level": "63",
+    "Badges": ["damage1000","chairs24","gomu3","pet14","omok3","weenjq400","broom20","bluexmas","roses"]
   },
   {
     "Name": "Ataynep",
@@ -1342,7 +1342,7 @@
   },
   {
     "Name": "Voldsoy",
-    "Level": "61",
+    "Level": "62",
     "Alias":"Ailand",
     "Badges":["weenjq400"]
   },
