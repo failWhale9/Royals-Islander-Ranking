@@ -7,28 +7,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MapleRoyals Chair Database</title>
+    <title>MapleRoyals NX Database</title>
     <link rel="icon" href="https://ik.imagekit.io/islander/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="chair.css">
+    <link rel="stylesheet" href="nx.css">
 
 </head>
 <body>
 
-<img src="https://ik.imagekit.io/islander/chair/title.png" id="titleImage"></img>
+<img src="https://ik.imagekit.io/islander/nx/title.png" id="titleImage"></img>
 
-<div class="chairControl">
+<div class="nxControl">
     <label class="menuText">Category: </label> 
       <select id="catSelect" onchange="catChange(event)">
-          <option value ="all">All Chairs</option>
-          <option value ="trade">Tradable Only</option>
-          <option value ="untrade">Untradable Only</option>
+          <option value ="all">All NX</option>
+          <option value ="nx">Shop (NX)</option>
+          <option value ="rp">Shop (RP)</option>
+          <option value ="limit">Shop (Limited)</option>
           <option value ="quest">Quest Reward</option>
-          <option value ="party">PQ Reward</option>
-          <option value ="store">Store Purchase</option>
-          <option value ="boss">Boss Drops</option>
-          <option value ="donor">RP Donor</option>
-          <option value ="gach">Normal Gachapon</option>
-          <option value ="chairgach">Chair Gachapon</option>
+          <option value ="team">Token of Teamwork</option>
           <option value ="gmevent">GM Event Prize</option>
           <option value ="season">All Seasonal Events</option>
           <option value ="anni">Anniversary Event</option>
@@ -36,22 +32,18 @@
           <option value ="easter">Easter Event</option>
           <option value ="ween">Halloween Event</option>
           <option value ="lny">Lunar New Year</option>
-          <option value ="nye">New Year's Eve</option>
           <option value ="summer">Summer Events</option>
-          <option value ="thanks">Thanksgiving Event</option>
           <option value ="valen">Valentine's Event</option>
-          <option value ="gmonly">GM Only</option>
-          <option value ="uncat">Uncategorized</option>
+          <option value ="forum">Forum Contest</option>
+          <option value ="unk">Unknown</option>
       </select>
 
-    <span style="float:right"><label class="menuText">Hide Unreleased/Incomplete/Duplicate: </label><input type="checkbox" id="relBox" checked onclick="showUnreleased()"></span>
+    <span style="float:right"><label class="menuText">Hide Unreleased/Duplicate: </label><input type="checkbox" id="relBox" checked onclick="showUnreleased()"></span>
 </div>
-<div class="chairControl">
+<div class="nxControl">
     <p id="DefaultDesc">
-        Welcome to my chair guide. Please, have a seat. This is a comprehensive list of all chairs (650+!!) available in Mapleroyals. 
-        <br/><br/>I'm counting on the community to provide corrections and additions to this guide, because I'm not a chair collector and I've only been playing since 8th anniversary so I'm missing a lot of history.
-        Information on chairs can be very hard to nail down, because many chairs have been available from multiple sources over the years.
-        <br/><br/>If you want to contribute a picture, have a look at <a href="/chair/chairsNeeded.txt">this list</a>.
+        Welcome to the searchable NX guide. This is a comprehensive list of the over 6000 cosmetic items available in Mapleroyals. 
+        <br/><br/>If you want to contribute a picture, INSERT LINK TO GUIDE HERE</a>.
     </p>
     <p id="CategoryDesc">
         
@@ -61,11 +53,11 @@
 <div class="baseBox" id="sharedTooltip">
   <span style="color:#55ccff; padding-left:5px;">●</span> <span id="tooltipTitle" class="itemTitle"></span>
   <div class="baseTop">
-    <div class="chairImgBox">
-        <img class="chairImg "src="" id="tooltipImg">
+    <div class="nxImgBox">
+        <img class="nxImg "src="" id="tooltipImg">
     </div>
-    <span class="chairID" id="tooltipID"></span>
-    <span class="chairDesc" id="tooltipDesc"></span>
+    <span class="nxID" id="tooltipID"></span>
+    <span class="nxDesc" id="tooltipDesc"></span>
   </div>
 </div>
 
@@ -84,25 +76,19 @@ function showUnreleased() {
 
     if(relBox.checked) {
         const opt1 = sel.querySelector(`option[value="${'dupe'}"]`);
-        const opt2 = sel.querySelector(`option[value="${'inc'}"]`);
-        const opt3 = sel.querySelector(`option[value="${'unrel'}"]`);
+        const opt2 = sel.querySelector(`option[value="${'unrel'}"]`);
         if (opt1) {opt1.remove();}
         if (opt2) {opt2.remove();}
-        if (opt3) {opt3.remove();}
     }
     else {
         let opt1 = document.createElement('option');
         let opt2 = document.createElement('option');
-        let opt3 = document.createElement('option');
         opt1.value = "dupe";
         opt1.innerHTML = "Duplicate Entry";
-        opt2.value = "inc";
-        opt2.innerHTML = "Incomplete Entry";
-        opt3.value = "unrel";
-        opt3.innerHTML = "Unreleased";
+        opt2.value = "unrel";
+        opt2.innerHTML = "Unreleased";
         sel.appendChild(opt1);
         sel.appendChild(opt2);
-        sel.appendChild(opt3);
     }
 
     sel.dispatchEvent(new Event('change', {'bubbles': true }));
@@ -117,154 +103,106 @@ function catChange(event) {
     const defaultDesc = document.getElementById('DefaultDesc');
 
     switch(event.target.value) {
-        case "trade": {
-            table.column(5).search('^(?=.*Tradable)(?!.*Untradable)(?!.*Duplicate Entry)(?!.*Unreleased)(?!.*Incomplete Entry).*$',true,false).draw();
-            desc.textContent = "";
-            defaultDesc.style.display = "block";
+        case "nx": {
+            table.column(5).search('Shop (NX)').draw();
+            desc.textContent = "These items can be purchased in the cash shop for NX.";
+            defaultDesc.style.display = "none";
             break;
         }
-        case "untrade": {
-            table.column(5).search('^(?=.*Untradable)(?!.*Duplicate Entry)(?!.*Unreleased)(?!.*Incomplete Entry).*$',true,false).draw();
-            desc.textContent = "";
-            defaultDesc.style.display = "block";
+        case "rp": {
+            table.column(5).search('Shop (RP)').draw();
+            desc.textContent = "These donor items can be purchased in the cash shop for Royal Points.";
+            defaultDesc.style.display = "none";
+            break;
+        }
+        case "limit": {
+            table.column(5).search('Limited').draw();
+            desc.textContent = "These items can be purchased in the cash shop for NX.";
+            defaultDesc.style.display = "none";
             break;
         }
         case "quest": {
             table.column(5).search('Quest Reward').draw();
-            desc.textContent = "These chairs are given as rewards for non-event quests.";
+            desc.textContent = "These items are given as rewards for non-event quests.";
             defaultDesc.style.display = "none";
             break;
         }
-        case "party": {
-            desc.textContent = "These chairs are rare drops from party quests.";
+        case "team": {
+            table.column(5).search('Token of Teamwork Reward').draw();
+            desc.textContent = "These items can be purchased from Cody in Henesys using Tokens of Teamwork awarded from PQs.";
             defaultDesc.style.display = "none";
-            table.column(5).search('PQ Reward').draw();
-            break;
-        }
-        case "store": {
-            desc.textContent = "These chairs can be purchased directly from a store NPC.";
-            defaultDesc.style.display = "none";
-            table.column(5).search('Store Purchase').draw();
-            break;
-        }
-        case "boss": {
-            desc.textContent = "These chairs are rare drops from bosses.";
-            defaultDesc.style.display = "none";
-            table.column(5).search('Boss Drop').draw();
-            break;
-        }
-        case "donor": {
-            desc.textContent = "These chairs are only available for purchase from the cash shop with the server donor currency, Royal Points (RP).";
-            defaultDesc.style.display = "none";
-            table.column(5).search('Donor Chair').draw();
-            break;
-        }
-        case "gach": {
-            desc.textContent = "These chairs can be rewarded from the normal gachapon machines found in towns across the Maple world.";
-            defaultDesc.style.display = "none";
-            table.column(5).search('Normal Gacha').draw();
-            break;
-        }
-        case "chairgach": {
-            desc.textContent = "These chairs can be won from the Chair Gachapon machine in Ludibrium while the event is running. Many of these chairs have other sources, like GM event prizes.";
-            defaultDesc.style.display = "none";
-            table.column(5).search('Chair Gacha').draw();
             break;
         }
         case "gmevent": {
-            desc.textContent = "These chairs have been known to be given out for winning first place in a GM Event (like Ola Ola, Fitness Challenge, etc.)";
+            desc.textContent = "These items have been known to be given out for winning first place in a GM Event (like Ola Ola, Fitness Challenge, etc.)";
             defaultDesc.style.display = "none";
-            table.column(5).search('GM Event').draw();
+            table.column(5).search('Event - GM Prize').draw();
             break;
         }
-        case "season": {
-            desc.textContent = "These chairs typically only available during a seasonal event. Sometimes the pool of event prizes changes from year to year, so there's no guarantee all of the listed chairs will be available for the next event.";
+        case "forum": {
+            desc.textContent = "These items can be awarded for winning forum events (like Valentines Card, Tree Decorating, Fashion Week, etc.).";
             defaultDesc.style.display = "none";
-            table.column(5).search('Anniversary Event|Halloween Event|Christmas Event|Valentines Event|Easter Event|Lunar New Year|New Year Event|Summer Event|Thanksgiving Event',true,false).draw();
+            table.column(5).search('Event - Forum Contest').draw();
             break;
         }
         case "anni": {
-            desc.textContent = "These chairs are usually available during the Mapleroyals Anniversary event (typically around May-July). Some of them are limited to a specific year.";
+            desc.textContent = "These items are usually available during the Mapleroyals Anniversary event (typically around May-July). Some of them are limited to a specific year.";
             defaultDesc.style.display = "none";
-            table.column(5).search('Anniversary Event').draw();
+            table.column(5).search('Event - Anniversary').draw();
             break;
         }
         case "xmas": {
-            desc.textContent = "These chairs are usually available during the Christmas / Versalmas event (typically around November-January).";
+            desc.textContent = "These items are usually available during the Christmas / Versalmas event (typically around November-January).";
             defaultDesc.style.display = "none";
-            table.column(5).search('Christmas Event').draw();
+            table.column(5).search('Event - Christmas').draw();
             break;
         }
         case "easter": {
-            desc.textContent = "These chairs are usually available during the Easter event (typically around March-April).";
+            desc.textContent = "These items are usually available during the Easter event (typically around March-April).";
             defaultDesc.style.display = "none";
-            table.column(5).search('Easter Event').draw();
+            table.column(5).search('Event - Easter').draw();
             break;
         }
         case "ween": {
-            desc.textContent = "These chairs are usually available during the Halloween event (typically around October-November).";
+            desc.textContent = "These items are usually available during the Halloween event (typically around October-November).";
             defaultDesc.style.display = "none";
-            table.column(5).search('Halloween Event').draw();
+            table.column(5).search('Event - Halloween').draw();
             break;
         }
         case "lny": {
-            desc.textContent = "These chairs are usually available during the Lunar New Year event (typically around January-February).";
+            desc.textContent = "These items are usually available during the Lunar New Year event (typically around January-February).";
             defaultDesc.style.display = "none";
-            table.column(5).search('Lunar New Year').draw();
-            break;
-        }
-        case "nye": {
-            desc.textContent = "These chairs are available from a New Year quest that gives horoscope chairs is (usually only available for a single day, Jan 1st).";
-            defaultDesc.style.display = "none";
-            table.column(5).search('^(?=.*New Year Event)(?!.*Lunar).*$',true,false).draw();
+            table.column(5).search('Event - Lunar New Year').draw();
             break;
         }
         case "summer": {
-            desc.textContent = "These chairs are available during various summer events (typically July-August).";
+            desc.textContent = "These items are available during various summer events (typically July-August).";
             defaultDesc.style.display = "none";
-            table.column(5).search('Summer Event').draw();
-            break;
-        }
-        case "thanks": {
-            desc.textContent = "These chairs are sometimes available during the Thanksgiving event (typically November-December).";
-            defaultDesc.style.display = "none";
-            table.column(5).search('Thanksgiving Event').draw();
+            table.column(5).search('Event - Summer').draw();
             break;
         }
         case "valen": {
-            desc.textContent = "These chairs are usually available during the Valentine's event (typically February-March).";
+            desc.textContent = "These items are usually available during the Valentine's event (typically February-March).";
             defaultDesc.style.display = "none";
-            table.column(5).search('Valentines Event').draw();
+            table.column(5).search('Event - Valentines').draw();
             break;
         }
-        case "gmonly": {
-            desc.textContent = "These chairs have been spotted in the server but only in the possession of GMs. If you've seen a normal player with one of these chairs, let me know.";
+        case "unk": {
+            desc.textContent = "These items may have been available on the server, because I've seen them mentioned on the forums, but I don't know if they're still around.";
             defaultDesc.style.display = "none";
-            table.column(5).search('GM Only').draw();
-            break;
-        }
-        case "uncat": {
-            desc.textContent = "These chairs are definitely available on the server, because I've seen them mentioned on these forums, but I don't know where they're from. Let me know if you have any info about the chairs below. With your help, we can make this section disappear!";
-            defaultDesc.style.display = "none";
-            table.column(5).search('Uncategorized').draw();
+            table.column(5).search('Unknown').draw();
             break;
         }
         case "unrel": {
-            desc.textContent = "These are chairs I found by browsing the Owl's list of items in-game, but I don't believe they are available. If you've seen one of these chairs in-game, let me know!";
+            desc.textContent = "These are items found in the game files that are probably not yet implemented. If you've seen one of these items in-game, let me know!";
             defaultDesc.style.display = "none";
             table.column(5).search('Unreleased').draw();
             break;
         }
         case "dupe": {
-            desc.textContent = "These chairs entries in the game files that appear to be almost identical to another entry, with only minor differences to the name, description, or stats.";
+            desc.textContent = "These nx entries in the game files that appear to be almost identical to another entry, with only minor differences to the name, description, or data.";
             defaultDesc.style.display = "none";
             table.column(5).search('Duplicate Entry').draw();
-            break;
-        }
-        case "inc": {
-            desc.textContent = "These chairs are rare drops from bosses.";
-            defaultDesc.style.display = "none";
-            table.column(5).search('Incomplete Entry').draw();
             break;
         }
         case "all": {
@@ -319,7 +257,7 @@ function createTable(jsons) {
     // Create table headers
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
-    const headers = ["name","icon","image","obtained","note","category"];
+    const headers = ["name","icon","image","slot","price","note","category"];
     
     headers.forEach(header => {
             const th = document.createElement('th');
@@ -352,10 +290,10 @@ function createTable(jsons) {
                     img.loading = "lazy";
 
                     try {
-                        img.src = `/chair/icon/${id}.png`;
+                        img.src = `/nx/icon/${id}.png`;
                     }
                     catch {
-                        img.src = 'chair/placeholder.png'; // Fallback image
+                        img.src = 'nx/placeholder.png'; // Fallback image
                     }
 
                     img.classList.add("portrait");
@@ -389,12 +327,12 @@ function createTable(jsons) {
                     img2.onerror = function() {
                         img2.onerror = function() 
                         {
-                            img2.src = 'chair/placeholder.png';
+                            img2.src = 'nx/placeholder.png';
                         };
-                        img2.src = `/chair/image/${id2}.gif`;
+                        img2.src = `/nx/image/${id2}.gif`;
                     };
 
-                    img2.src = `/chair/image/${id2}.png`;
+                    img2.src = `/nx/image/${id2}.png`;
 
                     img2.classList.add("portrait");
                     td.appendChild(img2);
@@ -404,12 +342,12 @@ function createTable(jsons) {
                         {
                             img3.onerror = function() 
                             {
-                                img3.src = 'chair/placeholder.png';
+                                img3.src = 'nx/placeholder.png';
                             };
-                        img3.src = `/chair/image/${id2}_2.gif`;
+                        img3.src = `/nx/image/${id2}_2.gif`;
                         };
 
-                        img3.src = `/chair/image/${id2}_2.png`;
+                        img3.src = `/nx/image/${id2}_2.png`;
                         td.appendChild(img3)
                     }
 
@@ -501,7 +439,7 @@ function createTable(jsons) {
      table2.column(5).search('^(?!.*(Unreleased|Duplicate Entry|Incomplete Entry)).*$',true,false).draw();
 }
 
-// Chair Tooltip code
+// NX Tooltip code
 function applyBadgeTooltips() {
     const tooltip = document.getElementById('sharedTooltip');
     const tooltiptitle = document.getElementById('tooltipTitle');
@@ -518,7 +456,7 @@ function applyBadgeTooltips() {
             tooltipdesc.textContent = container.dataset.desc;
             tooltiptitle.textContent = container.dataset.title;
             tooltipid.textContent = "ID: " + container.dataset.id;
-            tooltipimg.src = `/chair/icon/${container.dataset.id}.png`;
+            tooltipimg.src = `/nx/icon/${container.dataset.id}.png`;
             void tooltip.offsetWidth;
             tooltip.classList.add('visible');
         });
@@ -531,7 +469,7 @@ function applyBadgeTooltips() {
 
 // Load json code
 async function getJsonData() {
-    const jsons = ["chair.json"];
+    const jsons = ["nx.json"];
     const reqs = jsons.map(u=>fetch(u).then(response => {
     if(!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
