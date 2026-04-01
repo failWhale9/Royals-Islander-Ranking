@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<link href="DataTables/datatables.min.css" rel="stylesheet">
+ 
+<script src="DataTables/datatables.min.js"></script>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapleRoyals Chair Database</title>
+    <link rel="icon" href="https://ik.imagekit.io/islander/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="chair.css">
+
+</head>
+<body>
+
+<img src="https://ik.imagekit.io/islander/chair/title.png" id="titleImage"></img>
+
+<div class="chairControl">
+    <label class="menuText">Category: </label> 
+      <select id="catSelect" onchange="catChange(event)">
+          <option value ="all">All Chairs</option>
+          <option value ="trade">Tradable Only</option>
+          <option value ="untrade">Untradable Only</option>
+          <option value ="quest">Quest Reward</option>
+          <option value ="party">PQ Reward</option>
+          <option value ="store">Store Purchase</option>
+          <option value ="boss">Boss Drops</option>
+          <option value ="donor">RP Donor</option>
+          <option value ="gach">Normal Gachapon</option>
+          <option value ="chairgach">Chair Gachapon</option>
+          <option value ="gmevent">GM Event Prize</option>
+          <option value ="season">All Seasonal Events</option>
+          <option value ="anni">Anniversary Event</option>
+          <option value ="xmas">Christmas Event</option>
+          <option value ="easter">Easter Event</option>
+          <option value ="ween">Halloween Event</option>
+          <option value ="lny">Lunar New Year</option>
+          <option value ="nye">New Year's Eve</option>
+          <option value ="summer">Summer Events</option>
+          <option value ="thanks">Thanksgiving Event</option>
+          <option value ="valen">Valentine's Event</option>
+          <option value ="gmonly">GM Only</option>
+          <option value ="uncat">Uncategorized</option>
+      </select>
+
+    <span style="float:right"><label class="menuText">Hide Unreleased/Incomplete/Duplicate: </label><input type="checkbox" id="relBox" checked onclick="showUnreleased()"></span>
+</div>
+<div class="chairControl">
+    <p id="DefaultDesc">
+        Welcome to my chair guide. Please, have a seat. This is a comprehensive list of all chairs (650+!!) available in Mapleroyals. 
+        <br/><br/>I'm counting on the community to provide corrections and additions to this guide, because I'm not a chair collector and I've only been playing since 8th anniversary so I'm missing a lot of history.
+        Information on chairs can be very hard to nail down, because many chairs have been available from multiple sources over the years.
+        <br/><br/>If you want to contribute a picture, have a look at <a href="/chair/chairsNeeded.txt">this list</a>.
+    </p>
+    <p id="CategoryDesc">
+        
+    </p>
+</div>
+
+<div class="baseBox" id="sharedTooltip">
+  <span style="color:#55ccff; padding-left:5px;">●</span> <span id="tooltipTitle" class="itemTitle"></span>
+  <div class="baseTop">
+    <div class="chairImgBox">
+        <img class="chairImg "src="" id="tooltipImg">
+    </div>
+    <span class="chairID" id="tooltipID"></span>
+    <span class="chairDesc" id="tooltipDesc"></span>
+  </div>
+</div>
+
+<div id="table-container"></div>
+
+<div id="footer">
+    <p>Page written and maintained by <img src="https://ik.imagekit.io/islander/images/shy.png"></p> 
+</div>
+
+<script>
+
+function showUnreleased() {
+    const sel = document.getElementById('catSelect');
+    const relBox = document.getElementById('relBox');
+    sel.value = 'all';
+
+    if(relBox.checked) {
+        const opt1 = sel.querySelector(`option[value="${'dupe'}"]`);
+        const opt2 = sel.querySelector(`option[value="${'inc'}"]`);
+        const opt3 = sel.querySelector(`option[value="${'unrel'}"]`);
+        if (opt1) {opt1.remove();}
+        if (opt2) {opt2.remove();}
+        if (opt3) {opt3.remove();}
+    }
+    else {
+        let opt1 = document.createElement('option');
+        let opt2 = document.createElement('option');
+        let opt3 = document.createElement('option');
+        opt1.value = "dupe";
+        opt1.innerHTML = "Duplicate Entry";
+        opt2.value = "inc";
+        opt2.innerHTML = "Incomplete Entry";
+        opt3.value = "unrel";
+        opt3.innerHTML = "Unreleased";
+        sel.appendChild(opt1);
+        sel.appendChild(opt2);
+        sel.appendChild(opt3);
+    }
+
+    sel.dispatchEvent(new Event('change', {'bubbles': true }));
+
+}
+
+function catChange(event) {
+
+    const table = $('#myTable').DataTable();
+    const unrel = document.getElementById('relBox');
+    const desc = document.getElementById('CategoryDesc');
+    const defaultDesc = document.getElementById('DefaultDesc');
+
+    switch(event.target.value) {
+        case "trade": {
+            table.column(5).search('^(?=.*Tradable)(?!.*Untradable)(?!.*Duplicate Entry)(?!.*Unreleased)(?!.*Incomplete Entry).*$',true,false).draw();
+            desc.textContent = "";
+            defaultDesc.style.display = "block";
+            break;
+        }
+        case "untrade": {
+            table.column(5).search('^(?=.*Untradable)(?!.*Duplicate Entry)(?!.*Unreleased)(?!.*Incomplete Entry).*$',true,false).draw();
+            desc.textContent = "";
+            defaultDesc.style.display = "block";
+            break;
+        }
+        case "quest": {
+            table.column(5).search('Quest Reward').draw();
+            desc.textContent = "These chairs are given as rewards for non-event quests.";
+            defaultDesc.style.display = "none";
+            break;
+        }
+        case "party": {
+            desc.textContent = "These chairs are rare drops from party quests.";
+            defaultDesc.style.display = "none";
+            table.column(5).search('PQ Reward').draw();
+            break;
+        }
+        case "store": {
+            desc.textContent = "These chairs can be purchased directly from a store NPC.";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Store Purchase').draw();
+            break;
+        }
+        case "boss": {
+            desc.textContent = "These chairs are rare drops from bosses.";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Boss Drop').draw();
+            break;
+        }
+        case "donor": {
+            desc.textContent = "These chairs are only available for purchase from the cash shop with the server donor currency, Royal Points (RP).";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Donor Chair').draw();
+            break;
+        }
+        case "gach": {
+            desc.textContent = "These chairs can be rewarded from the normal gachapon machines found in towns across the Maple world.";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Normal Gacha').draw();
+            break;
+        }
+        case "chairgach": {
+            desc.textContent = "These chairs can be won from the Chair Gachapon machine in Ludibrium while the event is running. Many of these chairs have other sources, like GM event prizes.";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Chair Gacha').draw();
+            break;
+        }
+        case "gmevent": {
+            desc.textContent = "These chairs have been known to be given out for winning first place in a GM Event (like Ola Ola, Fitness Challenge, etc.)";
+            defaultDesc.style.display = "none";
+            table.column(5).search('GM Event').draw();
+            break;
+        }
+        case "season": {
+            desc.textContent = "These chairs typically only available during a seasonal event. Sometimes the pool of event prizes changes from year to year, so there's no guarantee all of the listed chairs will be available for the next event.";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Anniversary Event|Halloween Event|Christmas Event|Valentines Event|Easter Event|Lunar New Year|New Year Event|Summer Event|Thanksgiving Event',true,false).draw();
+            break;
+        }
+        case "anni": {
+            desc.textContent = "These chairs are usually available during the Mapleroyals Anniversary event (typically around May-July). Some of them are limited to a specific year.";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Anniversary Event').draw();
+            break;
+        }
+        case "xmas": {
+            desc.textContent = "These chairs are usually available during the Christmas / Versalmas event (typically around November-January).";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Christmas Event').draw();
+            break;
+        }
+        case "easter": {
+            desc.textContent = "These chairs are usually available during the Easter event (typically around March-April).";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Easter Event').draw();
+            break;
+        }
+        case "ween": {
+            desc.textContent = "These chairs are usually available during the Halloween event (typically around October-November).";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Halloween Event').draw();
+            break;
+        }
+        case "lny": {
+            desc.textContent = "These chairs are usually available during the Lunar New Year event (typically around January-February).";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Lunar New Year').draw();
+            break;
+        }
+        case "nye": {
+            desc.textContent = "These chairs are available from a New Year quest that gives horoscope chairs is (usually only available for a single day, Jan 1st).";
+            defaultDesc.style.display = "none";
+            table.column(5).search('^(?=.*New Year Event)(?!.*Lunar).*$',true,false).draw();
+            break;
+        }
+        case "summer": {
+            desc.textContent = "These chairs are available during various summer events (typically July-August).";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Summer Event').draw();
+            break;
+        }
+        case "thanks": {
+            desc.textContent = "These chairs are sometimes available during the Thanksgiving event (typically November-December).";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Thanksgiving Event').draw();
+            break;
+        }
+        case "valen": {
+            desc.textContent = "These chairs are usually available during the Valentine's event (typically February-March).";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Valentines Event').draw();
+            break;
+        }
+        case "gmonly": {
+            desc.textContent = "These chairs have been spotted in the server but only in the possession of GMs. If you've seen a normal player with one of these chairs, let me know.";
+            defaultDesc.style.display = "none";
+            table.column(5).search('GM Only').draw();
+            break;
+        }
+        case "uncat": {
+            desc.textContent = "These chairs are definitely available on the server, because I've seen them mentioned on these forums, but I don't know where they're from. Let me know if you have any info about the chairs below. With your help, we can make this section disappear!";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Uncategorized').draw();
+            break;
+        }
+        case "unrel": {
+            desc.textContent = "These are chairs I found by browsing the Owl's list of items in-game, but I don't believe they are available. If you've seen one of these chairs in-game, let me know!";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Unreleased').draw();
+            break;
+        }
+        case "dupe": {
+            desc.textContent = "These chairs entries in the game files that appear to be almost identical to another entry, with only minor differences to the name, description, or stats.";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Duplicate Entry').draw();
+            break;
+        }
+        case "inc": {
+            desc.textContent = "These chairs are rare drops from bosses.";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Incomplete Entry').draw();
+            break;
+        }
+        case "all": {
+            desc.textContent = "";
+            defaultDesc.style.display = "block";
+            if(unrel.checked) {
+                table.column(5).search('^(?!.*(Unreleased|Duplicate Entry)).*$',true,false).draw();
+            }
+            else {
+                table.column(5).search('').draw();
+            }
+            break;
+        }
+    }
+}
+
+// Function to convert BBcode links to <a> links
+function bbcodeToHtml(str) {
+  if (!str) return '';
+
+  return str.replace(
+    /\[URL=(https?:\/\/[^\]]+|\bwww\.[^\]]+)\](.*?)\[\/URL\]/gi,
+    (match, url, text) => {
+      // Ensure protocol
+      if (!/^https?:\/\//i.test(url)) {
+        url = 'https://' + url;
+      }
+      return `<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+    }
+  );
+}
+
+
+// Function to create and populate the table
+function createTable(jsons) {
+    data = jsons[0];
+
+    $.fn.DataTable.ext.pager.numbers_length = 7;
+    const container = document.getElementById('table-container');
+    const table = document.createElement('table');
+    table.id = "myTable";
+    table.classList.add('display');
+    table.classList.add('mainTable');
+
+    // Sort table by name descending
+    data.sort((a, b) => {
+        const valA = a["name"];
+        const valB = b["name"];
+        return valB - valA;
+    });
+
+    // Create table headers
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    const headers = ["name","icon","image","obtained","note","category"];
+    
+    headers.forEach(header => {
+            const th = document.createElement('th');
+            th.textContent = header.charAt(0).toUpperCase() + header.slice(1);
+            th.classList.add(header);
+            headerRow.appendChild(th);
+    });
+
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+    
+    // Create table body
+    const tbody = document.createElement('tbody');
+
+    data.forEach(item => {
+
+        const row = document.createElement('tr');
+        
+        headers.forEach(header => {
+            const td = document.createElement('td');
+            td.classList.add(header);
+
+            switch (header) {
+                case "icon":
+                    const img = document.createElement('img');
+                    const id = "0" + item['id'].toString();
+                    const formats = ['png', 'gif'];
+                    let formatIndex = 0;
+                    img.loading = "lazy";
+
+                    try {
+                        img.src = `/chair/icon/${id}.png`;
+                    }
+                    catch {
+                        img.src = 'chair/placeholder.png'; // Fallback image
+                    }
+
+                    img.classList.add("portrait");
+
+                    // Apply tooltip
+                    const div = document.createElement('div');
+                    const desc = 'data-desc';
+                    const title = 'data-title';
+                    const imgid = 'data-id';
+                    div.classList.add("IconContainer");
+                    div.setAttribute(desc, item['desc']);         
+                    div.setAttribute(title, item['name']);    
+                    div.setAttribute(imgid, "0" + item['id']);
+                    div.appendChild(img);
+                    td.appendChild(div);
+
+
+                    td.appendChild(div);
+                    row.appendChild(td);
+                    break;
+
+                case "image":
+                    const img2 = document.createElement('img');
+                    const img3 = document.createElement('img');
+                    const id2 = "0" + item['id'].toString();
+                    const formats2 = ['png', 'gif'];
+                    let formatIndex2 = 0;
+                    img2.loading = "lazy";
+                    img3.loading = "lazy";
+
+                    img2.onerror = function() {
+                        img2.onerror = function() 
+                        {
+                            img2.src = 'chair/placeholder.png';
+                        };
+                        img2.src = `/chair/image/${id2}.gif`;
+                    };
+
+                    img2.src = `/chair/image/${id2}.png`;
+
+                    img2.classList.add("portrait");
+                    td.appendChild(img2);
+
+                    if(item['extraImg'] == true) {
+                        img3.onerror = function() 
+                        {
+                            img3.onerror = function() 
+                            {
+                                img3.src = 'chair/placeholder.png';
+                            };
+                        img3.src = `/chair/image/${id2}_2.gif`;
+                        };
+
+                        img3.src = `/chair/image/${id2}_2.png`;
+                        td.appendChild(img3)
+                    }
+
+                    row.appendChild(td);
+                    break;
+
+                case "name":
+                    const pname = document.createElement('p');
+                    pname.textContent = item[header];
+                    pname.classList.add("Name");  
+                    td.appendChild(pname);    
+                    row.appendChild(td);           
+                    break;
+
+                case "obtained":
+                    const pobt = document.createElement('p');
+                    const hid = document.createElement('p');
+                    pobt.textContent = item[header];
+                    hid.textContent = item['id'];
+                    hid.style.display = 'none';
+                    pobt.classList.add("Obtained"); 
+                    td.appendChild(pobt); 
+                    td.appendChild(hid);   
+                    row.appendChild(td);             
+                    break;
+
+                case "note":
+                    const pnote = document.createElement('p');
+                    pnote.classList.add("Note");   
+                    const html = bbcodeToHtml(item[header]);
+                    pnote.innerHTML = html;
+                    td.appendChild(pnote);    
+                    row.appendChild(td);               
+                    break;
+
+                case "category":
+                    if(item[header] === null) {
+                        break;
+                    }
+                    const pcat = document.createElement('div');
+                    const cats = item[header];
+
+                    const ptrade = document.createElement('p');
+                    if(item['trade'] == "UNTRADABLE") {
+                        ptrade.classList.add("Untradable")
+                        ptrade.textContent = "Untradable";
+                    }
+                    if(item['trade'] == "TRADABLE") {
+                        ptrade.classList.add("Tradable")
+                        ptrade.textContent = "Tradable";
+                    }
+
+                    pcat.appendChild(ptrade)
+
+                    cats.forEach(cat => {
+                        const tag = document.createElement('p');
+                        tag.textContent = cat;
+                        tag.classList.add(cat.replace(/\s/g, ''));
+                        pcat.appendChild(tag);
+                    });
+                    td.appendChild(pcat);    
+                    row.appendChild(td);  
+                    break;
+                default:
+            }
+        });
+        tbody.appendChild(row);
+    });
+
+    
+
+    table.appendChild(tbody);
+    container.appendChild(table);
+
+     $('#myTable').DataTable({
+        pageLength: 20,
+        pagingType: 'numbers',
+        layout: {
+            topStart:'search',
+            topEnd:'paging',
+            bottomStart:'info',
+            bottomEnd:'paging'
+        },
+        "drawCallback": function(settings) {
+            applyBadgeTooltips();
+        }
+     });
+    const table2 = $('#myTable').DataTable();
+     table2.column(5).search('^(?!.*(Unreleased|Duplicate Entry|Incomplete Entry)).*$',true,false).draw();
+}
+
+// Chair Tooltip code
+function applyBadgeTooltips() {
+    const tooltip = document.getElementById('sharedTooltip');
+    const tooltiptitle = document.getElementById('tooltipTitle');
+    const tooltipdesc = document.getElementById('tooltipDesc');
+    const tooltipid = document.getElementById('tooltipID');
+    const tooltipimg = document.getElementById('tooltipImg');
+    const iconContainers = document.querySelectorAll('.IconContainer');
+
+    iconContainers.forEach(container => {
+        container.addEventListener('mouseenter', () => {
+            const rect = container.getBoundingClientRect();
+            tooltip.style.top = `${rect.bottom + 8}px`;
+            tooltip.style.left = `${rect.left}px`;
+            tooltipdesc.textContent = container.dataset.desc;
+            tooltiptitle.textContent = container.dataset.title;
+            tooltipid.textContent = "ID: " + container.dataset.id;
+            tooltipimg.src = `/chair/icon/${container.dataset.id}.png`;
+            void tooltip.offsetWidth;
+            tooltip.classList.add('visible');
+        });
+
+        container.addEventListener('mouseleave', () => {
+        tooltip.classList.remove('visible');
+        });
+    });
+}
+
+// Load json code
+async function getJsonData() {
+    const jsons = ["chair.json"];
+    const reqs = jsons.map(u=>fetch(u).then(response => {
+    if(!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+    })
+    );
+
+    const results = await Promise.all(reqs);
+
+    createTable(results);
+}
+
+getJsonData();
+
+</script>
+
+</body>
+</html>
