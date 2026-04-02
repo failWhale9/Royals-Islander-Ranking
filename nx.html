@@ -26,7 +26,6 @@
           <option value ="quest">Quest Reward</option>
           <option value ="team">Token of Teamwork</option>
           <option value ="gmevent">GM Event Prize</option>
-          <option value ="season">All Seasonal Events</option>
           <option value ="anni">Anniversary Event</option>
           <option value ="xmas">Christmas Event</option>
           <option value ="easter">Easter Event</option>
@@ -113,6 +112,12 @@
 
 <script>
 
+// TODO:
+// loading animation
+// title image
+// placeholder image
+// rename Token of Teamwork Reward
+
 function showUnreleased() {
     const sel = document.getElementById('catSelect');
     const relBox = document.getElementById('relBox');
@@ -139,6 +144,94 @@ function showUnreleased() {
 
 }
 
+function slotChange(event) {
+
+    const table = $('#myTable').DataTable();
+
+    switch(event.target.value) {
+        case "all": {
+            table.column(3).search('').draw();
+            break;
+        }
+        case "weapon": {
+            table.column(3).search('Weapon').draw();
+            break;
+        }
+        case "shield": {
+            table.column(3).search('Shield').draw();
+            break;
+        }
+        case "hat": {
+            table.column(3).search('Hat').draw();
+            break;
+        }
+        case "top": {
+            table.column(3).search('Top').draw();
+            break;
+        }
+        case "bottom": {
+            table.column(3).search('Bottom').draw();
+            break;
+        }
+        case "overall": {
+            table.column(3).search('Overall').draw();
+            break;
+        }
+        case "glove": {
+            table.column(3).search('Glove').draw();
+            break;
+        }
+        case "shoe": {
+            table.column(3).search('Shoe').draw();
+            break;
+        }
+        case "cape": {
+            table.column(3).search('Cape').draw();
+            break;
+        }
+        case "ear": {
+            table.column(3).search('Earring').draw();
+            break;
+        }
+        case "face": {
+            table.column(3).search('Face').draw();
+            break;
+        }
+        case "eye": {
+            table.column(3).search('Eye').draw();
+            break;
+        }
+        case "neck": {
+            table.column(3).search('Neck').draw();
+            break;
+        }
+        case "ring": {
+            table.column(3).search('Ring').draw();
+            break;
+        }
+        case "pet": {
+            table.column(3).search('^(?=.*Pet)(?!.*Equip).*$',true,false).draw();
+            break;
+        }
+        case "peteq": {
+            table.column(3).search('Pet Equip').draw();
+            break;
+        }
+        case "mount": {
+            table.column(3).search('Mount').draw();
+            break;
+        }
+        case "effect": {
+            table.column(3).search('Effect').draw();
+            break;
+        }
+        case "star": {
+            table.column(3).search('Star').draw();
+            break;
+        }
+    }
+}
+
 function catChange(event) {
 
     const table = $('#myTable').DataTable();
@@ -148,31 +241,31 @@ function catChange(event) {
 
     switch(event.target.value) {
         case "nx": {
-            table.column(5).search('Shop (NX)').draw();
+            table.column(6).search('Shop (NX)').draw();
             desc.textContent = "These items can be purchased in the cash shop for NX.";
             defaultDesc.style.display = "none";
             break;
         }
         case "rp": {
-            table.column(5).search('Shop (RP)').draw();
+            table.column(6).search('Shop (RP)').draw();
             desc.textContent = "These donor items can be purchased in the cash shop for Royal Points.";
             defaultDesc.style.display = "none";
             break;
         }
         case "limit": {
-            table.column(5).search('Limited').draw();
+            table.column(6).search('Limited').draw();
             desc.textContent = "These items can be purchased in the cash shop for NX.";
             defaultDesc.style.display = "none";
             break;
         }
         case "quest": {
-            table.column(5).search('Quest Reward').draw();
+            table.column(6).search('Quest Reward').draw();
             desc.textContent = "These items are given as rewards for non-event quests.";
             defaultDesc.style.display = "none";
             break;
         }
         case "team": {
-            table.column(5).search('Token of Teamwork Reward').draw();
+            table.column(6).search('Token of Teamwork Reward').draw();
             desc.textContent = "These items can be purchased from Cody in Henesys using Tokens of Teamwork awarded from PQs.";
             defaultDesc.style.display = "none";
             break;
@@ -180,83 +273,83 @@ function catChange(event) {
         case "gmevent": {
             desc.textContent = "These items have been known to be given out for winning first place in a GM Event (like Ola Ola, Fitness Challenge, etc.)";
             defaultDesc.style.display = "none";
-            table.column(5).search('Event - GM Prize').draw();
+            table.column(6).search('Event - GM Prize').draw();
             break;
         }
         case "forum": {
             desc.textContent = "These items can be awarded for winning forum events (like Valentines Card, Tree Decorating, Fashion Week, etc.).";
             defaultDesc.style.display = "none";
-            table.column(5).search('Event - Forum Contest').draw();
+            table.column(6).search('Event - Forum Contest').draw();
             break;
         }
         case "anni": {
             desc.textContent = "These items are usually available during the Mapleroyals Anniversary event (typically around May-July). Some of them are limited to a specific year.";
             defaultDesc.style.display = "none";
-            table.column(5).search('Event - Anniversary').draw();
+            table.column(6).search('Event - Anniversary').draw();
             break;
         }
         case "xmas": {
             desc.textContent = "These items are usually available during the Christmas / Versalmas event (typically around November-January).";
             defaultDesc.style.display = "none";
-            table.column(5).search('Event - Christmas').draw();
+            table.column(6).search('Event - Christmas').draw();
             break;
         }
         case "easter": {
             desc.textContent = "These items are usually available during the Easter event (typically around March-April).";
             defaultDesc.style.display = "none";
-            table.column(5).search('Event - Easter').draw();
+            table.column(6).search('Event - Easter').draw();
             break;
         }
         case "ween": {
             desc.textContent = "These items are usually available during the Halloween event (typically around October-November).";
             defaultDesc.style.display = "none";
-            table.column(5).search('Event - Halloween').draw();
+            table.column(6).search('Event - Halloween').draw();
             break;
         }
         case "lny": {
             desc.textContent = "These items are usually available during the Lunar New Year event (typically around January-February).";
             defaultDesc.style.display = "none";
-            table.column(5).search('Event - Lunar New Year').draw();
+            table.column(6).search('Event - Lunar New Year').draw();
             break;
         }
         case "summer": {
             desc.textContent = "These items are available during various summer events (typically July-August).";
             defaultDesc.style.display = "none";
-            table.column(5).search('Event - Summer').draw();
+            table.column(6).search('Event - Summer').draw();
             break;
         }
         case "valen": {
             desc.textContent = "These items are usually available during the Valentine's event (typically February-March).";
             defaultDesc.style.display = "none";
-            table.column(5).search('Event - Valentines').draw();
+            table.column(6).search('Event - Valentines').draw();
             break;
         }
         case "unk": {
             desc.textContent = "These items may have been available on the server, because I've seen them mentioned on the forums, but I don't know if they're still around.";
             defaultDesc.style.display = "none";
-            table.column(5).search('Unknown').draw();
+            table.column(6).search('Unknown').draw();
             break;
         }
         case "unrel": {
             desc.textContent = "These are items found in the game files that are probably not yet implemented. If you've seen one of these items in-game, let me know!";
             defaultDesc.style.display = "none";
-            table.column(5).search('Unreleased').draw();
+            table.column(6).search('Unreleased').draw();
             break;
         }
         case "dupe": {
             desc.textContent = "These nx entries in the game files that appear to be almost identical to another entry, with only minor differences to the name, description, or data.";
             defaultDesc.style.display = "none";
-            table.column(5).search('Duplicate Entry').draw();
+            table.column(6).search('Duplicate Entry').draw();
             break;
         }
         case "all": {
             desc.textContent = "";
             defaultDesc.style.display = "block";
             if(unrel.checked) {
-                table.column(5).search('^(?!.*(Unreleased|Duplicate Entry)).*$',true,false).draw();
+                table.column(6).search('^(?!.*(Unreleased|Duplicate Entry)).*$',true,false).draw();
             }
             else {
-                table.column(5).search('').draw();
+                table.column(6).search('').draw();
             }
             break;
         }
@@ -330,14 +423,7 @@ function createTable(jsons) {
                     const img = document.createElement('img');
                     const id = item['ID'].toString();
                     img.loading = "lazy";
-
-                    try {
-                        img.src = `/nx/icon/${id}.png`;
-                    }
-                    catch {
-                        img.src = 'nx/placeholder.png'; // Fallback image
-                    }
-
+                    img.src = `/nx/icon/${id}.png`;
                     img.classList.add("portrait");
 
                     // Apply tooltip
@@ -356,7 +442,7 @@ function createTable(jsons) {
                     break;
                 
                 case "Slot":
-                     const pslot = document.createElement('p');
+                    const pslot = document.createElement('p');
                     pslot.textContent = item[header];
                     pslot.classList.add("Slot");  
                     td.appendChild(pslot);    
@@ -364,8 +450,12 @@ function createTable(jsons) {
                     break;         
                     
                 case "Price":
-                     const pprice = document.createElement('p');
-                    pprice.textContent = item[header];
+                    const pprice = document.createElement('p');
+                    let psuffix = "";
+                    if(item["Category"] == "Shop (RP)" || item["isDonor"] == 1) {psuffix = " RP";}
+                    if(item["Category"] == "Shop (NX)") {psuffix = " NX";}
+                    if(item["Category"] == "Token of Teamwork Reward") {psuffix = " Tokens";}                   
+                    pprice.textContent = item[header] + psuffix;
                     pprice.classList.add("Price");  
                     td.appendChild(pprice);    
                     row.appendChild(td);           
@@ -379,18 +469,30 @@ function createTable(jsons) {
                     let formatIndex2 = 0;
                     img2.loading = "lazy";
                     img3.loading = "lazy";
+                    const ext = item['ext'];
+                    let srcStr = "nx/image/" + id2 + "." + ext; 
 
                     img2.onerror = function() {
-                        img2.onerror = function() 
-                        {
-                            img2.src = 'nx/placeholder.png';
-                        };
-                        img2.src = `/nx/image/${id2}.gif`;
+                        img2.src = 'nx/placeholder.png';
                     };
 
-                    img2.src = `/nx/image/${id2}.png`;
+                    img2.src = srcStr;
 
                     img2.classList.add("portrait");
+
+                    // Resize after image loads
+                    img2.onload = () => {
+                        const w = img2.naturalWidth;
+                        const h = img2.naturalHeight;
+                        console.log("w= " + w + " h= " + h);
+
+                     if (w < 50 && h < 50) {
+                            img2.style.imageRendering = "pixelated";
+                            img2.style.width = (w * 2) + "px";
+                            img2.style.height = (h * 2) + "px";
+                        }
+                    };
+
                     td.appendChild(img2);
 
                     if(item['extraImg'] == true) {
@@ -420,13 +522,53 @@ function createTable(jsons) {
 
                 case "note":
                     const pnote = document.createElement('p');
+                    const weps = document.createElement('p');
                     pnote.classList.add("Note");   
                     //const html = bbcodeToHtml(item[header]);
                     pnote.innerHTML = item[header];
                     td.appendChild(pnote);    
+
+                    if(item['Slot'] == "Weapon") {
+                        if(item['weaponClass'] != "") {
+                            wclass = item['weaponClass'];
+                            Object.entries(wclass).forEach(([key,value]) => {
+                                swep = document.createElement('span');
+                                swep.innerHTML = key;
+                                    if (value == 0) {
+                                        swep.classList.add("wepN");
+                                    }
+                                    else {
+                                        swep.classList.add("wepY");
+                                    }
+                                    weps.appendChild(swep);
+                            });
+                        }
+                        td.appendChild(weps);
+                    }
+
+                    if(item['setEffect'] != "") {
+                        const dset = document.createElement('div');
+                        const psetTitle = document.createElement('p');
+                        dset.classList.add("setEffect");
+                        pieces = item["setEffect"];
+                        if(item["Slot"] == "Pet") {
+                            psetTitle.textContent = "This pet has a set effect when active alongside:";
+                        }
+                        else {
+                            psetTitle.textContent = "This item has a set effect when worn with:";
+                        }
+                        dset.appendChild(psetTitle);
+
+                        Object.entries(pieces).forEach(([key,value]) => {
+                            const lpiece = document.createElement('li');
+                            lpiece.textContent = value;
+                            dset.appendChild(lpiece);
+                        });
+                        td.appendChild(dset);
+                    }
+
                     row.appendChild(td);               
                     break;
-
                 case "Category":
                     if(item[header] === null) {
                         break;
