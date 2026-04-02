@@ -773,6 +773,16 @@ span.nxID{
 	float:right;
 	width:65%;
 	margin-right:20px;
+	margin-bottom:2px;
+}
+
+span.nxGend{
+	color:rgb(160, 190, 235);
+	font-family: monospace;
+	font-size:12px;
+	float:right;
+	width:65%;
+	margin-right:20px;
 	margin-bottom:5px;
 }
 
@@ -810,19 +820,19 @@ tr.trInactive:hover td {
 span.wepY {
 	color: #ff6600;
 	padding: 3px 5px 3px 5px;
-	margin: 0px 3px 0px 3px;
+	margin: 0px 1px 0px 1px;
 	background-color:#14121c9c;
 	border-radius:6px;
-	font-size: 10px;
+	font-size: 9px;
 }
 
 span.wepN {
 	color:#776655;
 	padding: 3px 5px 3px 5px;
-	margin: 0px 3px 0px 3px;
+	margin: 0px 1px 0px 1px;
 	background-color:#14121c9c;
 	border-radius:6px;
-	font-size: 10px;
+	font-size: 9px;
 }
 
 div.setEffect {

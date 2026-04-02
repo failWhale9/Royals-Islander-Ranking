@@ -71,7 +71,7 @@
           <option value ="spear">Spear</option>
           <option value ="pole">Polearm</option>
           <option value ="bow">Bow</option>
-          <option value ="xbow">Crossbow</option>
+          <option value ="xbo">Crossbow</option>
           <option value ="claw">Claw</option>
           <option value ="knuck">Knuckle</option>
           <option value ="staff">Staff</option>
@@ -100,6 +100,7 @@
         <img class="nxImg "src="" id="tooltipImg">
     </div>
     <span class="nxID" id="tooltipID"></span>
+    <span class="nxGend" id="tooltipGender"></span>
     <span class="nxDesc" id="tooltipDesc"></span>
   </div>
 </div>
@@ -116,7 +117,6 @@
 // loading animation
 // title image
 // placeholder image
-// rename Token of Teamwork Reward
 
 function showUnreleased() {
     const sel = document.getElementById('catSelect');
@@ -147,6 +147,10 @@ function showUnreleased() {
 function slotChange(event) {
 
     const table = $('#myTable').DataTable();
+    const wepSelect = document.getElementById('wepSelect');
+
+    wepSelect.style.display = "none";
+    table.column(5).search('').draw();
 
     switch(event.target.value) {
         case "all": {
@@ -154,6 +158,7 @@ function slotChange(event) {
             break;
         }
         case "weapon": {
+            wepSelect.style.display = "inline";
             table.column(3).search('Weapon').draw();
             break;
         }
@@ -232,6 +237,83 @@ function slotChange(event) {
     }
 }
 
+function wepChange(event) {
+    const table = $('#myTable').DataTable();
+
+    switch(event.target.value) {
+        case "all": {
+            table.column(5).search('').draw();
+            break;
+        }
+        case "1hs": {
+            table.column(5).search('1hSW_YES').draw();
+            break;
+        }
+        case "1hb": {
+            table.column(5).search('1hBW_YES').draw();
+            break;
+        }
+        case "1ha": {
+            table.column(5).search('1hAXE_YES').draw();
+            break;
+        }
+        case "2hs": {
+            table.column(5).search('2hSW_YES').draw();
+            break;
+        }
+        case "2hb": {
+            table.column(5).search('2hBW_YES').draw();
+            break;
+        }
+        case "2ha": {
+            table.column(5).search('2hAXE_YES').draw();
+            break;
+        }
+        case "spear": {
+            table.column(5).search('SPEAR_YES').draw();
+            break;
+        }
+        case "pole": {
+            table.column(5).search('POLE_YES').draw();
+            break;
+        }
+        case "bow": {
+            table.column(5).search('BOW_YES').draw();
+            break;
+        }
+        case "xbo": {
+            table.column(5).search('XBO_YES').draw();
+            break;
+        }
+        case "claw": {
+            table.column(5).search('CLAW_YES').draw();
+            break;
+        }
+        case "knuck": {
+            table.column(5).search('KNUK_YES').draw();
+            break;
+        }
+        case "staff": {
+            table.column(5).search('STAFF_YES').draw();
+            break;
+        }
+        case "wand": {
+            table.column(5).search('WAND_YES').draw();
+            break;
+        }
+        case "dagg": {
+            table.column(5).search('DAGG_YES').draw();
+            break;
+        }
+        case "gun": {
+            table.column(5).search('GUN_YES').draw();
+            break;
+        }
+
+    }
+
+}
+
 function catChange(event) {
 
     const table = $('#myTable').DataTable();
@@ -265,7 +347,7 @@ function catChange(event) {
             break;
         }
         case "team": {
-            table.column(6).search('Token of Teamwork Reward').draw();
+            table.column(6).search('Token of Teamwork').draw();
             desc.textContent = "These items can be purchased from Cody in Henesys using Tokens of Teamwork awarded from PQs.";
             defaultDesc.style.display = "none";
             break;
@@ -373,6 +455,18 @@ function bbcodeToHtml(str) {
 }
 
 
+function getGender(genID) {
+    if(genID == 0) {
+        return("Male Only")
+    }
+    else if(genID == 1) {
+        return("Female Only")
+    }
+    else {
+        return("Male or Female")
+    }
+}
+
 // Function to create and populate the table
 function createTable(jsons) {
     data = jsons[0];
@@ -431,10 +525,12 @@ function createTable(jsons) {
                     const desc = 'data-desc';
                     const title = 'data-title';
                     const imgid = 'data-id';
+                    const gender = 'data-gender';
                     div.classList.add("IconContainer");
                     div.setAttribute(desc, item['desc']);         
                     div.setAttribute(title, item['name']);    
                     div.setAttribute(imgid, item['ID']);
+                    div.setAttribute(gender,getGender(item['gender']));
                     div.appendChild(img);
                     td.appendChild(div);
                     td.appendChild(div);
@@ -454,7 +550,7 @@ function createTable(jsons) {
                     let psuffix = "";
                     if(item["Category"] == "Shop (RP)" || item["isDonor"] == 1) {psuffix = " RP";}
                     if(item["Category"] == "Shop (NX)") {psuffix = " NX";}
-                    if(item["Category"] == "Token of Teamwork Reward") {psuffix = " Tokens";}                   
+                    if(item["Category"] == "Token of Teamwork") {psuffix = " Tokens";}                   
                     pprice.textContent = item[header] + psuffix;
                     pprice.classList.add("Price");  
                     td.appendChild(pprice);    
@@ -523,6 +619,7 @@ function createTable(jsons) {
                 case "note":
                     const pnote = document.createElement('p');
                     const weps = document.createElement('p');
+                    const weps_hidden = document.createElement('p');
                     pnote.classList.add("Note");   
                     //const html = bbcodeToHtml(item[header]);
                     pnote.innerHTML = item[header];
@@ -530,6 +627,7 @@ function createTable(jsons) {
 
                     if(item['Slot'] == "Weapon") {
                         if(item['weaponClass'] != "") {
+                            weps_hidden.style.display = "none";
                             wclass = item['weaponClass'];
                             Object.entries(wclass).forEach(([key,value]) => {
                                 swep = document.createElement('span');
@@ -539,11 +637,13 @@ function createTable(jsons) {
                                     }
                                     else {
                                         swep.classList.add("wepY");
+                                        weps_hidden.textContent += (key + "_YES ");
                                     }
                                     weps.appendChild(swep);
                             });
                         }
                         td.appendChild(weps);
+                        td.appendChild(weps_hidden);
                     }
 
                     if(item['setEffect'] != "") {
@@ -628,6 +728,7 @@ function applyBadgeTooltips() {
     const tooltiptitle = document.getElementById('tooltipTitle');
     const tooltipdesc = document.getElementById('tooltipDesc');
     const tooltipid = document.getElementById('tooltipID');
+    const tooltipgend = document.getElementById('tooltipGender');
     const tooltipimg = document.getElementById('tooltipImg');
     const iconContainers = document.querySelectorAll('.IconContainer');
 
@@ -639,6 +740,7 @@ function applyBadgeTooltips() {
             tooltipdesc.textContent = container.dataset.desc;
             tooltiptitle.textContent = container.dataset.title;
             tooltipid.textContent = "ID: " + container.dataset.id;
+            tooltipgend.textContent = container.dataset.gender;
             tooltipimg.src = `/nx/icon/${container.dataset.id}.png`;
             void tooltip.offsetWidth;
             tooltip.classList.add('visible');
