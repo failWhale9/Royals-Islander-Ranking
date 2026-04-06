@@ -1,8 +1,8 @@
 :root{
-	--cell: rgba(53, 36, 59, 0.9);
-	--hover: rgba(102, 79, 117, 0.9);
-	--darker: rgb(58, 48, 65);
-	--header: rgba(90, 61, 107, 0.9);
+	--cell: rgba(36, 43, 59, 0.9);
+	--hover: rgba(79, 88, 117, 0.9);
+	--darker: rgb(48, 48, 65);
+	--header: rgba(61, 76, 107, 0.9);
 }
 
 @keyframes slideleft {
@@ -12,57 +12,29 @@
 
 @media only screen and (min-width: 981px) {
 
-  body {
-    background-color: #3366cc;
-    position: relative;
-  }
-
-  /* clouds — back layer, fixed + animated */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background-image: url("chair/clouds2.png");
-    background-repeat: repeat-x;
-    background-position: 1400% -400px;
-    background-size: 70%;
-
-    animation: slideleft 600s linear infinite;
-
-    z-index: -2;
-    pointer-events: none;
-  }
-
-  /* eos — scrolling middle layer */
-  body::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background-image: url("chair/eos.png");
-    background-repeat: repeat-y;
-    background-position: center top;
-    background-size: 90%;
-
-    z-index: -1;
-    pointer-events: none;
-  }
+body {
+	background-color: #546a97;
+	background-image: url("nx/bg-top.png"), url("nx/bg-bot.png"), url("nx/bg-mid.png");
+	background-repeat: no-repeat, no-repeat, repeat-y;
+	background-position: top center, bottom center, top center;
+	background-size: 100% auto, 100% auto, 100% auto;
+}
 
 }
 
 @media only screen and (max-width: 980px) {
-body::before {
-	content: "";
-	position: fixed;
-	inset: 0;
-	background-color: #3366cc;
-	background-image: url("chair/eos.png"), url("chair/clouds2.png");
-    background-repeat: repeat-y, repeat-x;
-    background-attachment: scroll, fixed;
-	background-position: -40px 0px, 100% 200px;
-	background-size: 130%, 180%;
-	z-index: -1;
+body {
+	background-color: #546a97;
+	background-image: url("nx/bg-top.png"), url("nx/bg-bot.png"), url("nx/bg-mid.png");
+	background-repeat: no-repeat, no-repeat, repeat-y;
+	background-position: top center, bottom center, top center;
+	background-size: 100% auto,100% auto,100% auto;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 }
@@ -229,7 +201,7 @@ p.QuestReward {
 	text-align: center;
 }
 
-p.GMEvent{
+p.GMEventPrize{
 	box-shadow:inset 0px 1px 0px 0px rgb(151, 216, 254);
 	background:linear-gradient(to bottom, #047ccc 5%, #3392eb 100%);
 	background-color:#167099;
@@ -535,6 +507,24 @@ div.nxControl {
 	a:hover {color: rgb(255, 255, 255);}
 }
 
+div.nxLoading {
+	background-color: var(--cell);
+	color: white !important;
+	padding: 20px 20px 20px 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+	font-family: Arial, sans-serif !important;
+	max-width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 450px;
+	margin-bottom: 15px;
+	align-items: center;
+	text-align: center;
+	font-family: 'Trebuchet MS', sans-serif;
+	font-weight: 900;
+}
+
 table.mainTable {
 	width: 80% !important;
 	margin: 30px auto;
@@ -558,9 +548,9 @@ th, td {
 }
 
 #myTable_wrapper {	
-    margin-top: 50px;
-    margin-bottom: 50px;
-
+    margin: 50px auto 210px auto;
+	width:93%;
+	
 }
 
 div.dt-search {
@@ -623,6 +613,11 @@ th.name {
 	min-width: 240px;
 	text-align: center !important;
 	font-size:16px;
+}
+
+th.note {
+	min-width: 370px;
+	max-width: 370px;
 }
 
 td.note {
@@ -824,6 +819,9 @@ span.wepY {
 	background-color:#14121c9c;
 	border-radius:6px;
 	font-size: 9px;
+	display: inline-block;
+	width: 30px; 
+	text-align: center;
 }
 
 span.wepN {
@@ -833,6 +831,9 @@ span.wepN {
 	background-color:#14121c9c;
 	border-radius:6px;
 	font-size: 9px;
+	display: inline-block;
+	width: 30px; 
+	text-align: center;
 }
 
 div.setEffect {
@@ -841,4 +842,11 @@ div.setEffect {
 	li {
 		margin-left:20px;
 	}
+}
+
+#loader {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6); /* or match your theme */
+    z-index: 9999;
 }

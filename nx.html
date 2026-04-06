@@ -10,10 +10,21 @@
     <title>MapleRoyals NX Database</title>
     <link rel="icon" href="https://ik.imagekit.io/islander/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="nx.css">
-
+    <link rel="preload" as="image" href="nx/bg-top.png">
+    <link rel="preload" as="image" href="nx/bg-bot.png">
+    <link rel="preload" as="image" href="nx/bg-mid.png">
 </head>
 <body>
 
+<div id="loader">
+<div class="nxLoading">
+    <img src="nx/loading.gif">
+    <p>LOADING ... </p>
+</div>
+
+</div>
+
+<div id="content">
 <img src="https://ik.imagekit.io/islander/nx/title.png" id="titleImage"></img>
 
 <div class="nxControl">
@@ -110,15 +121,21 @@
 <div id="footer">
     <p>Page written and maintained by <img src="https://ik.imagekit.io/islander/images/shy.png"></p> 
 </div>
+</div>
 
 <script>
 
 // TODO:
-// loading animation
 // title image
 // placeholder image
-// new background
 // category styles
+// category descriptions
+// add token of teamwork style and sorting for chair guide
+// split 'limited' into its own tag
+
+window.addEventListener("load", function() {
+	document.getElementById("loader").style.display = "none";
+});
 
 function showUnreleased() {
     const sel = document.getElementById('catSelect');
@@ -325,13 +342,13 @@ function catChange(event) {
 
     switch(event.target.value) {
         case "nx": {
-            table.column(6).search('Shop (NX)').draw();
+            table.column(6).search('NX').draw();
             desc.textContent = "These items can be purchased in the cash shop for NX.";
             defaultDesc.style.display = "none";
             break;
         }
         case "rp": {
-            table.column(6).search('Shop (RP)').draw();
+            table.column(6).search('RP').draw();
             desc.textContent = "These donor items can be purchased in the cash shop for Royal Points.";
             defaultDesc.style.display = "none";
             break;
@@ -357,19 +374,19 @@ function catChange(event) {
         case "gmevent": {
             desc.textContent = "These items have been known to be given out for winning first place in a GM Event (like Ola Ola, Fitness Challenge, etc.)";
             defaultDesc.style.display = "none";
-            table.column(6).search('Event - GM Prize').draw();
+            table.column(6).search('GM Event Prize').draw();
             break;
         }
         case "forum": {
             desc.textContent = "These items can be awarded for winning forum events (like Valentines Card, Tree Decorating, Fashion Week, etc.).";
             defaultDesc.style.display = "none";
-            table.column(6).search('Event - Forum Contest').draw();
+            table.column(6).search('Forum Contest').draw();
             break;
         }
         case "anni": {
             desc.textContent = "These items are usually available during the Mapleroyals Anniversary event (typically around May-July). Some of them are limited to a specific year.";
             defaultDesc.style.display = "none";
-            table.column(6).search('Event - Anniversary').draw();
+            table.column(6).search('Anniversary Event').draw();
             break;
         }
         case "xmas": {
@@ -381,31 +398,31 @@ function catChange(event) {
         case "easter": {
             desc.textContent = "These items are usually available during the Easter event (typically around March-April).";
             defaultDesc.style.display = "none";
-            table.column(6).search('Event - Easter').draw();
+            table.column(6).search('Easter Event').draw();
             break;
         }
         case "ween": {
             desc.textContent = "These items are usually available during the Halloween event (typically around October-November).";
             defaultDesc.style.display = "none";
-            table.column(6).search('Event - Halloween').draw();
+            table.column(6).search('Halloween Event').draw();
             break;
         }
         case "lny": {
             desc.textContent = "These items are usually available during the Lunar New Year event (typically around January-February).";
             defaultDesc.style.display = "none";
-            table.column(6).search('Event - Lunar New Year').draw();
+            table.column(6).search('Lunar New Year').draw();
             break;
         }
         case "summer": {
             desc.textContent = "These items are available during various summer events (typically July-August).";
             defaultDesc.style.display = "none";
-            table.column(6).search('Event - Summer').draw();
+            table.column(6).search('Summer Event').draw();
             break;
         }
         case "valen": {
             desc.textContent = "These items are usually available during the Valentine's event (typically February-March).";
             defaultDesc.style.display = "none";
-            table.column(6).search('Event - Valentines').draw();
+            table.column(6).search('Valentines Event').draw();
             break;
         }
         case "unk": {
@@ -659,6 +676,7 @@ function createTable(jsons) {
                     const pnote = document.createElement('p');
                     const weps = document.createElement('p');
                     const weps_hidden = document.createElement('p');
+                    const br = document.createElement('br');
                     pnote.classList.add("Note");   
                     //const html = bbcodeToHtml(item[header]);
                     pnote.innerHTML = item[header];
@@ -679,6 +697,7 @@ function createTable(jsons) {
                                         weps_hidden.textContent += (key + "_YES ");
                                     }
                                     weps.appendChild(swep);
+                                    if(key=="SPEAR") {weps.appendChild(br)}
                             });
                         }
                         td.appendChild(weps);
