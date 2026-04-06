@@ -117,6 +117,8 @@
 // loading animation
 // title image
 // placeholder image
+// new background
+// category styles
 
 function showUnreleased() {
     const sel = document.getElementById('catSelect');
@@ -211,7 +213,7 @@ function slotChange(event) {
             break;
         }
         case "ring": {
-            table.column(3).search('Ring').draw();
+            table.column(3).search('^(?=.*Ring)(?!.*Earring).*$',true,false).draw();
             break;
         }
         case "pet": {
@@ -559,12 +561,9 @@ function createTable(jsons) {
 
                 case "image":
                     const img2 = document.createElement('img');
-                    const img3 = document.createElement('img');
                     const id2 = item['ID'].toString();
-                    const formats2 = ['png', 'gif'];
-                    let formatIndex2 = 0;
+
                     img2.loading = "lazy";
-                    img3.loading = "lazy";
                     const ext = item['ext'];
                     let srcStr = "nx/image/" + id2 + "." + ext; 
 
@@ -573,20 +572,60 @@ function createTable(jsons) {
                     };
 
                     img2.src = srcStr;
-
                     img2.classList.add("portrait");
 
-                    // Resize after image loads
+                    img2.style.cursor = "pointer"; // show it's clickable
+
                     img2.onload = () => {
                         const w = img2.naturalWidth;
                         const h = img2.naturalHeight;
-                        console.log("w= " + w + " h= " + h);
 
-                     if (w < 50 && h < 50) {
+                        const minSize = 80;
+                        const maxSize = 200;
+
+                        // Scale UP small images
+                        if (w < minSize && h < minSize) {
                             img2.style.imageRendering = "pixelated";
                             img2.style.width = (w * 2) + "px";
                             img2.style.height = (h * 2) + "px";
                         }
+
+                        // Scale DOWN large images (preserve aspect ratio)
+                        else if (w > maxSize || h > maxSize) {
+                            const scale = Math.min(maxSize / w, maxSize / h);
+                            img2.style.width = (w * scale) + "px";
+                            img2.style.height = (h * scale) + "px";
+                        }
+                    };
+
+                    // Click to view full size (lightbox)
+                    img2.onclick = () => {
+                        const overlay = document.createElement("div");
+                        overlay.style.position = "fixed";
+                        overlay.style.top = 0;
+                        overlay.style.left = 0;
+                        overlay.style.width = "100%";
+                        overlay.style.height = "100%";
+                        overlay.style.background = "rgba(0,0,0,0.8)";
+                        overlay.style.display = "flex";
+                        overlay.style.alignItems = "center";
+                        overlay.style.justifyContent = "center";
+                        overlay.style.zIndex = 9999;
+
+                        const fullImg = document.createElement("img");
+                        fullImg.src = img2.src;
+                        fullImg.style.maxWidth = "95%";
+                        fullImg.style.maxHeight = "95%";
+                        fullImg.style.boxShadow = "0 0 20px black";
+
+                        overlay.appendChild(fullImg);
+
+                        // click anywhere to close
+                        overlay.onclick = () => {
+                            document.body.removeChild(overlay);
+                        };
+
+                        document.body.appendChild(overlay);
                     };
 
                     td.appendChild(img2);
@@ -719,7 +758,13 @@ function createTable(jsons) {
         }
      });
     const table2 = $('#myTable').DataTable();
-     table2.column(5).search('^(?!.*(Unreleased|Duplicate Entry|Incomplete Entry)).*$',true,false).draw();
+     table2.column(6).search('^(?!.*(Unreleased|Duplicate Entry|Incomplete Entry)).*$',true,false).draw();
+     table2.on('page', function () {
+        document.querySelector('#myTable').scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+    });
+});
 }
 
 // NX Tooltip code
