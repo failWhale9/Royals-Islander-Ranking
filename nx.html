@@ -128,10 +128,6 @@
 // TODO:
 // title image
 // placeholder image
-// category styles
-// category descriptions
-// add token of teamwork style and sorting for chair guide
-// split 'limited' into its own tag
 
 window.addEventListener("load", function() {
 	document.getElementById("loader").style.display = "none";
@@ -355,7 +351,7 @@ function catChange(event) {
         }
         case "limit": {
             table.column(6).search('Limited').draw();
-            desc.textContent = "These items can be purchased in the cash shop for NX.";
+            desc.textContent = "These items can be purchased in the cash shop, but only during specific event periods.";
             defaultDesc.style.display = "none";
             break;
         }
@@ -392,7 +388,7 @@ function catChange(event) {
         case "xmas": {
             desc.textContent = "These items are usually available during the Christmas / Versalmas event (typically around November-January).";
             defaultDesc.style.display = "none";
-            table.column(6).search('Event - Christmas').draw();
+            table.column(6).search('Christmas Event').draw();
             break;
         }
         case "easter": {
@@ -745,9 +741,29 @@ function createTable(jsons) {
                     pcat.appendChild(ptrade)
 
                     const tag = document.createElement('p');
-                    tag.textContent = item[header];
-                    tag.classList.add(item[header].replace(/\s/g, ''));
-                    pcat.appendChild(tag);
+                    const tag2 = document.createElement('p');
+
+                    if(item[header] == "Shop (RP) - Limited") {
+                        tag.textContent = "Shop (RP)";
+                        tag.classList.add("ShopRP");
+                        pcat.appendChild(tag); 
+                        tag2.textContent = "Limited";
+                        tag2.classList.add("Limited");
+                        pcat.appendChild(tag2); 
+                    }
+                    else if(item[header] == "Shop (NX) - Limited") {
+                        tag.textContent = "Shop (NX)";
+                        tag.classList.add("ShopNX");
+                        pcat.appendChild(tag); 
+                        tag2.textContent = "Limited";
+                        tag2.classList.add("Limited");
+                        pcat.appendChild(tag2); 
+                    }
+                    else {
+                        tag.textContent = item[header];
+                        tag.classList.add(item[header].replace(/[\s()]/g, ''));
+                        pcat.appendChild(tag);
+                    }
 
                     td.appendChild(pcat);    
                     row.appendChild(td);  

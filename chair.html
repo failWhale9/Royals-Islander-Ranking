@@ -24,6 +24,7 @@
           <option value ="untrade">Untradable Only</option>
           <option value ="quest">Quest Reward</option>
           <option value ="party">PQ Reward</option>
+          <option value ="tot">Token of Teamwork</option>
           <option value ="store">Store Purchase</option>
           <option value ="boss">Boss Drops</option>
           <option value ="donor">RP Donor</option>
@@ -133,6 +134,12 @@ function catChange(event) {
             table.column(5).search('Quest Reward').draw();
             desc.textContent = "These chairs are given as rewards for non-event quests.";
             defaultDesc.style.display = "none";
+            break;
+        }
+        case "tot": {
+            desc.textContent = "These chairs are can be purchased from Cody in Henesys for Tokens of Teamwork awarded from running PQs.";
+            defaultDesc.style.display = "none";
+            table.column(5).search('Token of Teamwork').draw();
             break;
         }
         case "party": {

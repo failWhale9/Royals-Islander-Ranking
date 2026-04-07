@@ -391,6 +391,24 @@ p.PQReward {
 	text-align: center;
 }
 
+p.TokenofTeamwork {
+	box-shadow:inset 0px 1px 0px 0px rgb(254, 213, 151); 
+	background:linear-gradient(to bottom, #c59f74 5%, #ffffff 100%);
+	background-color:#c0bdba;
+	border-radius:20px;
+	border:1px solid #0040f0;
+	display:inline-block;
+	color:#0043d4;
+	font-family:Trebuchet MS;
+	font-size:10px;
+	font-weight:bold;
+	padding:3px 24px;
+	text-decoration:none;
+	text-shadow:0px 0px 6px #706035;
+	min-width:86px;
+	text-align: center;
+}
+
 p.StorePurchase {
 	box-shadow:inset 0px 1px 0px 0px rgb(151, 251, 254);
 	background:linear-gradient(to bottom, #0099ff 5%, #ffffff 100%);
