@@ -31,6 +31,8 @@
     <label class="menuText">Category: </label> 
       <select id="catSelect" onchange="catChange(event)">
           <option value ="all">All NX</option>
+          <option value ="male">Male Equippable</option>
+          <option value ="female">Female Equippable</option>
           <option value ="nx">Shop (NX)</option>
           <option value ="rp">Shop (RP)</option>
           <option value ="limit">Shop (Limited)</option>
@@ -336,6 +338,29 @@ function catChange(event) {
         case "nx": {
             table.column(6).search('NX').draw();
             desc.textContent = "These items can be purchased in the cash shop for NX.";
+            defaultDesc.style.display = "none";
+            break;
+        }
+        case "male": {
+            table.column(6).search('gen-masc').draw();
+            if(unrel.checked) {
+                table.column(6).search('^(?=.*gen-masc)(?!.*Duplicate Entry)(?!.*Unreleased).*$',true,false).draw();
+            }
+            else {
+                table.column(6).search('gen-masc').draw();
+            }
+            desc.textContent = "These items can be equipped by a male player.";
+            defaultDesc.style.display = "none";
+            break;
+        }
+        case "female": {
+            if(unrel.checked) {
+                table.column(6).search('^(?=.*gen-fem)(?!.*Duplicate Entry)(?!.*Unreleased).*$',true,false).draw();
+            }
+            else {
+                table.column(6).search('gen-fem').draw();
+            }
+            desc.textContent = "These items can be equipped by a female player.";
             defaultDesc.style.display = "none";
             break;
         }
@@ -738,6 +763,7 @@ function createTable(jsons) {
 
                     const tag = document.createElement('p');
                     const tag2 = document.createElement('p');
+                    const gender_hidden = document.createElement('p');
 
                     if(item[header] == "Shop (RP) - Limited") {
                         tag.textContent = "Shop (RP)";
@@ -760,6 +786,20 @@ function createTable(jsons) {
                         tag.classList.add(item[header].replace(/[\s()]/g, ''));
                         pcat.appendChild(tag);
                     }
+
+                    if(item['gender'] == 0) {
+                        gender_hidden.textContent = "gen-masc";
+                    }
+
+                    if(item['gender'] == 1) {
+                        gender_hidden.textContent = "gen-fem";
+                    }
+
+                    if(item['gender'] == 2) {
+                        gender_hidden.textContent = "gen-masc gen-fem";
+                    }
+                    gender_hidden.style.display = 'none';
+                    pcat.appendChild(gender_hidden);
 
                     td.appendChild(pcat);    
                     row.appendChild(td);  
