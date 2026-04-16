@@ -194,7 +194,7 @@ function createTable(jsons) {
 
                     if (item.hasOwnProperty('Badges') && item['Badges'] !== "")
                     {
-                        const badgeType = ["build","achievement","item"];
+                        const badgeType = ["build","achievement","item","event"];
                         badgeType.forEach(function(type){
                         item['Badges'].forEach(function(badge){
                             const targetBadge = badges.find(item => item.id === badge)

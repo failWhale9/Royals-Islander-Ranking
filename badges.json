@@ -403,5 +403,23 @@
     "type": "item",
     "name": "Perfect Beginner Weapons",
     "desc": "Owns a perfect Sky Snowboard (25wa), Double Axe (35wa), and Leather Purse (43wa)."
+  },
+  {
+    "id": "exp2026sprB",
+    "type": "event",
+    "name": "S2026 Island EXP Bronze",
+    "desc": "Placed third in Merino's Spring 2026 Island EXP Championship."
+  },
+  {
+    "id": "exp2026sprS",
+    "type": "event",
+    "name": "S2026 Island EXP Silver",
+    "desc": "Placed second in Merino's Spring 2026 Island EXP Championship."
+  },
+  {
+    "id": "exp2026sprG",
+    "type": "event",
+    "name": "S2026 Island EXP Gold",
+    "desc": "Placed first in Merino's Spring 2026 Island EXP Championship."
   }
 ]
