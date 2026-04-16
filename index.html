@@ -244,7 +244,6 @@ function createTable(jsons) {
         },
         "drawCallback": function(settings) {
             applyBadgeTooltips();
-            randomImgObserver();
         }
      });
 }
@@ -271,27 +270,6 @@ function applyBadgeTooltips() {
         tooltip.classList.remove('visible');
         });
     });
-}
-
-// Random image code
-function randomImgObserver() {
-    const target = document.getElementById('mooshy');
-
-    const observer = new IntersectionObserver(
-    ([entry]) => {
-        if (!entry.isIntersecting) {
-            const val = getRandomInteger(0,31);
-            target.src = `https://ik.imagekit.io/islander/images/islanders/mooshy${val}.png`;
-
-        }
-    },
-    {
-        root: null,
-        threshold: 0, 
-    }
-    );
-
-    observer.observe(target);
 }
 
 // Load json code

@@ -499,27 +499,27 @@ label.menuText {
 #navbar .navActive {
 	background-color: var(--cell);
 	color: white !important;
-	padding: 5px 20px;
+	padding: 5px 15px;
 	border-radius: 18px;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 	font-family: Arial, sans-serif !important;
-	margin-left: 10px;
-	margin-right: 10px;
 }
 
 #navbar .navInactive {
 	background-color: var(--darker);
 	color: white !important;
-	padding: 5px 20px;
+	padding: 5px 15px;
 	border-radius: 18px;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 	font-family: Arial, sans-serif !important;
-	margin-left: 10px;
-	margin-right: 10px;
 }
 
 #navbar > a {
 	text-decoration: none;
+}
+
+#navbar {
+	text-wrap: nowrap;
 }
 
 #navbar {

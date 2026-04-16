@@ -282,6 +282,7 @@
   {
     "Name": "Lowly",
     "Level": "111",
+    "BadNews":"Unranked - Gold Richie event usage",
     "Badges":["meso2b","gomu4","witch40","chairs36","damage1000","roses","fence","omok3","workgloves","perfbrella","strlander","umbrellas","tubes","pet14","shirt3","broom30","ashes","bluexmas","slipper2"]
   },
   {
@@ -300,6 +301,7 @@
     "Name": "Mooshy",
     "Level": "92",
     "Badges":["gomu3","lemons300"],
+    "BadNews":"Unranked - Gold Richie event usage",
     "Since":"2014"
   },
   {
@@ -1342,7 +1344,7 @@
   },
   {
     "Name": "Voldsoy",
-    "Level": "62",
+    "Level": "63",
     "Alias":"Ailand",
     "Badges":["weenjq400"]
   },
