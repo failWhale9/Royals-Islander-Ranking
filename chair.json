@@ -7580,5 +7580,16 @@
    "category": ["Token of Teamwork"],
    "HP": 200,
    "MP": 200
+ },
+  {
+   "id": 3018506,
+   "name": "Bunny Impostor",
+   "desc": "These bunnies don't yet realize you're not a bunny. Restores 100 HP and 100 MP every 10 seconds.",
+   "obtained": "Easter Event (Egg PQ)",
+   "note": "Trade in Ribbons to Mad Bunny",
+   "trade": "TRADABLE",
+   "category": ["Token of Teamwork"],
+   "HP": 100,
+   "MP": 100
  }
 ]
