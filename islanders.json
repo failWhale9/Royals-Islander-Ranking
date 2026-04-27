@@ -1,5 +1,9 @@
 [
-    {
+  {
+    "Name":"EdwinNoob",
+    "Level": "35"
+  },
+  {
     "Name":"Idiomlander",
     "Level": "31"
   },
@@ -28,7 +32,7 @@
   {
     "Name": "Adaryn",
     "Level": "83",
-    "Badges":["shirt5","pants4","witch40","broom20","maxdodge","gomu3","omok3","roses","umbrellas","tubes","boards","workgloves","chairs36","pet14","perflights","perfbrella","fence","bluexmas","meso750","knifestrats","lemons300","slipper2","ashes","meso1b","ore100"]
+    "Badges":["shirt5","pants4","witch40","broom20","maxdodge","gomu3","omok3","roses","umbrellas","tubes","boards","workgloves","chairs36","pet14","perflights","perfbrella","fence","bluexmas","knifestrats","lemons300","slipper2","ashes","meso1b","ore100"]
   },
   {
     "Name":"IslanderSage",
@@ -852,7 +856,7 @@
   },
   {
     "Name": "LowIy",
-    "Level": "41",
+    "Level": "42",
     "Alt": "Lowly",
     "Badges":["magelander"]
   },
@@ -884,7 +888,7 @@
   {
     "Name": "DevOnIsland",
     "Level": "58",
-    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage300","pet14","omok3","weenjq330","workgloves","pants2","broom20","chairs12","ashes","bluexmas","perfbeg"]
+    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage300","pet14","omok3","weenjq330","workgloves","pants2","broom20","chairs12","ashes","bluexmas","perfbeg","meso250","ore100"]
   },
   {
     "Name": "Tsukishima",
@@ -987,7 +991,7 @@
   },
   {
     "Name": "ChiefSmeng",
-    "Level": "38"
+    "Level": "40"
   },
   {
     "Name": "Nauset",
@@ -1348,7 +1352,7 @@
   },
   {
     "Name": "Voldsoy",
-    "Level": "63",
+    "Level": "65",
     "Alias":"Ailand",
     "Badges":["weenjq400"]
   },
@@ -1427,7 +1431,8 @@
   },
   {
     "Name": "Vista",
-    "Level": "32"
+    "Level": "35",
+    "Badges":["fence"]
   },
   {
     "Name": "NuIIbyte",
