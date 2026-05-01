@@ -1,11 +1,11 @@
 [
   {
     "Name":"BTCIslander",
-    "Level": "31"
+    "Level": "32"
   },
   {
     "Name":"DonusFactory",
-    "Level": "33"
+    "Level": "34"
   },
   {
     "Name":"EdwinNoob",
@@ -338,6 +338,7 @@
   {
     "Name": "Sawngo",
     "Level": "83",
+    "Frac": "1.1",
     "Since":"2015"
   },
   {
@@ -739,7 +740,7 @@
   },
   {
     "Name": "StarTropics",
-    "Level": "64",
+    "Level": "65",
     "Badges": ["damage1000","chairs24","gomu3","pet14","omok3","weenjq400","broom20","bluexmas","roses"]
   },
   {
@@ -785,7 +786,7 @@
   },
   {
     "Name": "Valtarre",
-    "Level": "60",
+    "Level": "61",
     "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas","chairs12","shirt2","perfbeg"]
   },
   {
