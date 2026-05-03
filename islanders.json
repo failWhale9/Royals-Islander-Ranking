@@ -124,7 +124,7 @@
   },
   {
     "Name":"Coinicus",
-    "Level":"37"
+    "Level":"38"
   },
   {
     "Name":"wtherow",
@@ -1364,8 +1364,8 @@
   },
   {
     "Name": "Voldsoy",
-    "Level": "65",
-    "Frac": "35.37",
+    "Level": "66",
+    "Frac": "0.01",
     "Alias":"Ailand",
     "Badges":["weenjq400"]
   },
@@ -1444,7 +1444,7 @@
   },
   {
     "Name": "Vista",
-    "Level": "35",
+    "Level": "37",
     "Badges":["fence"]
   },
   {
