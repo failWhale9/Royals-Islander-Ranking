@@ -54,6 +54,7 @@ fetch('/navbar.html')
 
 // Function to create and populate the table
 function createTable(jsons) {
+    let rank = 1;
     data = jsons[0];
     badges = jsons[1];
     $.fn.DataTable.ext.pager.numbers_length = 7;
@@ -80,6 +81,7 @@ function createTable(jsons) {
 
     // Add calculated columns
     headers.unshift("Image");
+    headers.unshift("Rank");
     //headers.push("Badges");
     
     headers.forEach(header => {
@@ -87,6 +89,7 @@ function createTable(jsons) {
             case "Image": 
             case "Name":
             case "Level":
+            case "Rank":
             case "Badges":
                  const th = document.createElement('th');
                  th.textContent = header.charAt(0).toUpperCase() + header.slice(1);
@@ -189,6 +192,10 @@ function createTable(jsons) {
                     td.textContent = item[header];
                     row.appendChild(td);
                     break;
+                case "Rank":
+                    td.textContent = rank++;
+                    row.appendChild(td);
+                    break;
                 case "Badges":
 
                     if (item.hasOwnProperty('Badges') && item['Badges'] !== "")
@@ -234,6 +241,7 @@ function createTable(jsons) {
 
      $('#myTable').DataTable({
         pageLength: 20,
+        bAutoWidth: false,
         pagingType: 'numbers',
         layout: {
             topStart:'search',
@@ -241,6 +249,9 @@ function createTable(jsons) {
             bottomStart:'info',
             bottomEnd:'paging'
         },
+        columnDefs: [
+            { targets: 0, visible: false }
+        ],
         "drawCallback": function(settings) {
             applyBadgeTooltips();
             randomImgObserver();
