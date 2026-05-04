@@ -1333,7 +1333,18 @@ function createTable(jsons) {
                     row.appendChild(td);
                     break;
                 case "Level":
-                    td.textContent = item[header];
+                    const lvdiv = document.createElement('div');
+                    const lvfrac = document.createElement('div');
+                    lvfrac.classList.add("lvfrac");
+                    lvdiv.textContent = item[header];
+                    if(item["Frac"] === undefined || item["Frac"] === "") {
+                        lvfrac.textContent = "";
+                    }
+                    else {
+                        lvfrac.textContent = item["Frac"] + "%";
+                    }
+                    td.appendChild(lvdiv);
+                    td.appendChild(lvfrac);
                     row.appendChild(td);
                     break;
                 case "Frac":

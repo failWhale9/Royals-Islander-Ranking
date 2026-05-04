@@ -5190,7 +5190,8 @@
    "trade": "TRADABLE",
    "category": ["Valentines Event"],
    "HP": null,
-   "MP": 50
+   "MP": 50,
+   "extraImg": true
  },
  {
    "id": 3012005,
@@ -7588,7 +7589,7 @@
    "obtained": "Easter Event (Egg PQ)",
    "note": "Trade in Ribbons to Mad Bunny",
    "trade": "TRADABLE",
-   "category": ["Token of Teamwork"],
+   "category": ["Easter Event"],
    "HP": 100,
    "MP": 100
  }

@@ -1,15 +1,23 @@
 [
   {
+    "Name":"Lv8Mushroom",
+    "Level": "30"
+  },
+  {
+    "Name":"sobiix",
+    "Level": "30"
+  },
+  {
     "Name":"BTCIslander",
     "Level": "32"
   },
   {
     "Name":"DonusFactory",
-    "Level": "34"
+    "Level": "36"
   },
   {
     "Name":"EdwinNoob",
-    "Level": "40"
+    "Level": "43"
   },
   {
     "Name":"Idiomlander",
@@ -40,7 +48,8 @@
   {
     "Name": "Adaryn",
     "Level": "84",
-    "Badges":["shirt5","pants4","witch40","broom20","maxdodge","gomu3","omok3","roses","umbrellas","tubes","boards","workgloves","chairs36","pet14","perflights","perfbrella","fence","bluexmas","knifestrats","lemons300","slipper2","ashes","meso1b","ore100"]
+    "Frac":"6.30",
+    "Badges":["shirt5","pants4","witch40","broom20","maxdodge","gomu3","omok3","roses","umbrellas","tubes","boards","workgloves","chairs36","pet14","perflights","perfbrella","fence","bluexmas","knifestrats","lemons300","slipper2","ashes","meso1b","ore100","damage500"]
   },
   {
     "Name":"IslanderSage",
@@ -313,7 +322,7 @@
     "Level": "97",
     "Frac":"59.59",
     "Alias": "Ereader",
-    "Badges": ["gomu3","pants4","chairs12","slipper3"]
+    "Badges": ["gomu3","chairs12","slipper3"]
   },
   {
     "Name": "Mooshy",
@@ -338,7 +347,7 @@
   {
     "Name": "Sawngo",
     "Level": "83",
-    "Frac": "1.1",
+    "Frac": "0.01",
     "Since":"2015"
   },
   {
@@ -363,6 +372,7 @@
   {
     "Name": "BoatlessMonk",
     "Level": "74",
+    "Frac": "89.46",
     "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500","broom20","bluexmas","shirt3","ashes","dexlander","maxdodge","umbrellas","boards","tubes","witch30","weenjq400"]
   },
   {
@@ -396,6 +406,7 @@
   {
     "Name": "PrinceSquidd",
     "Level": "67",
+    "Frac": "55.02",
     "Badges":["slipper2"]
   },
   {
@@ -454,6 +465,7 @@
   {
     "Name": "HeroinAddict",
     "Level": "77",
+    "Frac":"22.01",
     "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge","chairs36","weenjq330","broom20","bluexmas","meso250","perfbeg","workgloves","roses"]
   },
   {
@@ -788,7 +800,7 @@
     "Name": "Valtarre",
     "Level": "61",
     "Frac": "0.01",
-    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas","chairs12","shirt2","perfbeg","knifestrats"]
+    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas","chairs12","shirt2","perfbeg","knifestrats","pants4"]
   },
   {
     "Name": "inland",
@@ -1365,9 +1377,9 @@
   {
     "Name": "Voldsoy",
     "Level": "66",
-    "Frac": "0.01",
+    "Frac": "26.16",
     "Alias":"Ailand",
-    "Badges":["weenjq400"]
+    "Badges":["weenjq400","damage800","gomu3"]
   },
   {
     "Name": "Nooburt",
