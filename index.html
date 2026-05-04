@@ -22,7 +22,8 @@
 
 <div class="BadgeHover" id="sharedTooltip">
     <div id="tooltipTitle"></div>
-    <span id="tooltipDesc"></span>
+    <div id="tooltipDesc"></div>
+    <div id="tooltipExtra"></div>
 </div>
 
 <div id="footer">
@@ -1168,9 +1169,10 @@ function calculateSLURP(level,frac) {
         {SLURP: 1000, LV: 117, FRAC:10.8}
     ]
 
-    total_exp = Math.round(exptable[level-1] + exptable[level]*(frac/100));
+    total_exp = Math.round(exptable[level-1] + (exptable[level]-exptable[level-1])*(frac/100));
     slurp = Math.floor(total_exp/slurp_base);
     next = SLURPtable.find(L => L.SLURP == slurp+1);
+    console.log("Base EXP: " + exptable[level-1] + "Frac EXP: " + (exptable[level]-exptable[level-1])*(frac/100) + " Total EXP: " + total_exp);
     return [slurp,next["LV"],next["FRAC"]];
 }
 
@@ -1349,6 +1351,8 @@ function createTable(jsons) {
                     // Slurp Badge
                     const s_cont = document.createElement('div');
                     const s_div = document.createElement('div');
+                    const s_tp = document.createElement('p');
+                    const s_num = document.createElement('p');
                     const s_tooltip = 'data-tooltip';
                     const s_title = 'data-title';
                     const s_next = 'data-next';
@@ -1362,11 +1366,23 @@ function createTable(jsons) {
 
                     slurp = calculateSLURP(item["Level"],frac);
 
+                    if(item["Name"] === "Annot") {
+                        console.log(item["Level"]);
+                        console.log(frac);
+                        console.log(slurp);
+                    }
+
                     s_cont.classList.add("SlurpContainer");
                     s_cont.setAttribute(s_title,"♦ SLURP "+ slurp[0] + " ♦");
                     s_cont.setAttribute(s_tooltip,"SLURP stands for 'Standard Linear Unit of Ranked Progress', and is defined as the amount of experience needed to go from Lv.1 to Lv.30. " + item["Name"] + "'s total EXP is equivalent to " + slurp[0] + " Lv.30 islanders.");
                     s_cont.setAttribute(s_next,item["Name"] + "'s next SLURP will be at Lv." + slurp[1] + " at " + slurp[2] + "%.");
                     s_div.classList.add("Slurp");
+                    s_tp.textContent = "SLURP";
+                    s_tp.classList.add("SlurpTitle");
+                    s_num.textContent = slurp[0];
+                    s_num.classList.add("SlurpNum");
+                    s_div.appendChild(s_tp);
+                    s_div.appendChild(s_num);
                     s_cont.appendChild(s_div);
                     td.appendChild(s_cont);
                     if (item.hasOwnProperty('Badges') && item['Badges'] !== "")
@@ -1397,7 +1413,7 @@ function createTable(jsons) {
                     }
                     else
                     {
-                        td.textContent = " ";
+                        //td.textContent = " ";
                         row.appendChild(td);
                     }
                     break;
@@ -1434,7 +1450,9 @@ function applyBadgeTooltips() {
     const tooltip = document.getElementById('sharedTooltip');
     const tooltiptitle = document.getElementById('tooltipTitle');
     const tooltipdesc = document.getElementById('tooltipDesc');
+    const tooltipextra = document.getElementById('tooltipExtra');
     const badgeContainers = document.querySelectorAll('.BadgeContainer');
+    const slurpContainers = document.querySelectorAll('.SlurpContainer');
 
     badgeContainers.forEach(container => {
         container.addEventListener('mouseenter', () => {
@@ -1443,6 +1461,24 @@ function applyBadgeTooltips() {
             tooltip.style.left = `${rect.left}px`;
             tooltipDesc.textContent = container.dataset.tooltip;
             tooltiptitle.textContent = container.dataset.title;
+            tooltipextra.textContent = "";
+            void tooltip.offsetWidth;
+            tooltip.classList.add('visible');
+        });
+
+        container.addEventListener('mouseleave', () => {
+        tooltip.classList.remove('visible');
+        });
+    });
+
+    slurpContainers.forEach(container => {
+        container.addEventListener('mouseenter', () => {
+            const rect = container.getBoundingClientRect();
+            tooltip.style.top = `${rect.bottom + 8}px`;
+            tooltip.style.left = `${rect.left}px`;
+            tooltipDesc.textContent = container.dataset.tooltip;
+            tooltiptitle.textContent = container.dataset.title;
+            tooltipextra.textContent = container.dataset.next;
             void tooltip.offsetWidth;
             tooltip.classList.add('visible');
         });
