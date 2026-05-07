@@ -14,7 +14,11 @@
 </head>
 <body>
 
-<img src="https://ik.imagekit.io/islander/images/title.png" id="titleImage"></img>
+<div class="titleContainer" id="titleWrap">
+    <img src="https://ik.imagekit.io/islander/images/title.png" id="titleImage">
+    <img class="smallCh" src="https://ik.imagekit.io/islander/images/autok.gif">
+</div>
+
 
 <div id="navbar"></div>
 
@@ -1174,6 +1178,19 @@ function calculateSLURP(level,frac) {
     next = SLURPtable.find(L => L.SLURP == slurp+1);
     console.log("Base EXP: " + exptable[level-1] + "Frac EXP: " + (exptable[level]-exptable[level-1])*(frac/100) + " Total EXP: " + total_exp);
     return [slurp,next["LV"],next["FRAC"]];
+}
+
+// title image code
+
+const wrapper = document.getElementById("titleWrap");
+const overlay = wrapper.querySelector(".smallCh");
+
+wrapper.addEventListener("mouseenter", () => {
+    overlay.classList.add("hidden");
+}, { once: true });
+
+if (getRandomInteger(1,100) == 67) {
+    overlay.style.display = "block";
 }
 
 //navbar code

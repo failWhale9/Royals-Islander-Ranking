@@ -1,7 +1,8 @@
 [
   {
     "Name":"Lv8Mushroom",
-    "Level": "30"
+    "Level": "30",
+    "Badges":["pet14"]
   },
   {
     "Name":"sobiix",
@@ -13,11 +14,11 @@
   },
   {
     "Name":"DonusFactory",
-    "Level": "36"
+    "Level": "37"
   },
   {
     "Name":"EdwinNoob",
-    "Level": "43"
+    "Level": "44"
   },
   {
     "Name":"Idiomlander",
@@ -341,13 +342,14 @@
     "Name": "snayl",
     "Level": "83",
     "Alias": "NPCs, Fired",
-    "Badges":["artifacthunt"],
+    "Badges":["artifacthunt","gomu3"],
     "Since":"2014"
   },
   {
     "Name": "Sawngo",
     "Level": "83",
     "Frac": "0.01",
+    "Badges": ["strlander"],
     "Since":"2015"
   },
   {
@@ -358,7 +360,8 @@
   },
   {
     "Name": "IslandChrizz",
-    "Level": "72"
+    "Level": "72",
+    "Frac": "5.55"
   },
   {
     "Name": "BlueCream",
@@ -482,7 +485,8 @@
   },
   {
     "Name": "Oahu",
-    "Level": "57"
+    "Level": "57",
+    "Frac": "25.49"
   },
   {
     "Name": "Islander",

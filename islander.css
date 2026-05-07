@@ -418,11 +418,32 @@ div.BadgeContainer {
   	visibility: visible;
 }
 
+.titleContainer {
+    position: relative;
+    width: 70%;
+    max-width: 800px;
+    margin: auto;
+}
+
 #titleImage {
 	display: block;
-	margin: auto;
-	width: 70%;
-	max-width: 800px;
+	width: 100%;
+}
+
+.smallCh {
+	display:none;
+	width: 6%;
+	position: absolute; 
+	top: 28%;          
+	left: 64%;         
+	z-index: 1;
+	opacity: 1;
+    transition: opacity 0.4s ease;         
+}
+
+.smallCh.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 #footer {
