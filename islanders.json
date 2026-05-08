@@ -365,7 +365,8 @@
   },
   {
     "Name": "BlueCream",
-    "Level": "72"
+    "Level": "72",
+    "Frac": "36.62"
   },
   {
     "Name": "Chokladkakan",
@@ -408,8 +409,8 @@
   },
   {
     "Name": "PrinceSquidd",
-    "Level": "67",
-    "Frac": "55.02",
+    "Level": "68",
+    "Frac": "0.01",
     "Badges":["slipper2"]
   },
   {
@@ -440,6 +441,7 @@
   {
     "Name": "MICKYISLAND",
     "Level": "67",
+    "Frac": "26.21",
     "Badges":["fence","broom20"]
   },
   {
@@ -492,7 +494,7 @@
     "Name": "Islander",
     "Level": "56",
     "Alias": "CrimsonClaw",
-    "Badges":["dynamic"]
+    "Badges":["dynamic","dexlander"]
   },
   {
     "Name": "Ekob",
@@ -804,7 +806,7 @@
   {
     "Name": "Valtarre",
     "Level": "61",
-    "Frac": "26.72",
+    "Frac": "48.66",
     "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas","chairs12","shirt2","perfbeg","knifestrats","pants4"]
   },
   {
@@ -1151,7 +1153,8 @@
   },
   {
     "Name": "BestBuddy",
-    "Level": "36"
+    "Level": "36",
+    "Badges": ["gomu3"]
   },
   {
     "Name": "Soriak",
@@ -1381,8 +1384,8 @@
   },
   {
     "Name": "Voldsoy",
-    "Level": "66",
-    "Frac": "26.16",
+    "Level": "67",
+    "Frac": "0.01",
     "Alias":"Ailand",
     "Badges":["weenjq400","damage800","gomu3"]
   },
