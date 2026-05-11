@@ -18,11 +18,11 @@
   },
   {
     "Name":"EdwinNoob",
-    "Level": "44"
+    "Level": "46"
   },
   {
     "Name":"Idiomlander",
-    "Level": "31"
+    "Level": "32"
   },
   {
     "Name":"WildChild",
@@ -321,7 +321,7 @@
   {
     "Name": "Annot",
     "Level": "97",
-    "Frac":"59.59",
+    "Frac":"64.26",
     "Alias": "Ereader",
     "Badges": ["gomu3","chairs12","slipper3"]
   },
@@ -760,7 +760,8 @@
   {
     "Name": "StarTropics",
     "Level": "65",
-    "Badges": ["damage1000","chairs24","gomu3","pet14","omok3","weenjq400","broom20","bluexmas","roses"]
+    "Frac":"6.93",
+    "Badges": ["damage1000","chairs24","gomu3","pet14","omok3","weenjq400","broom20","bluexmas","roses","workgloves"]
   },
   {
     "Name": "Ataynep",
@@ -806,8 +807,8 @@
   {
     "Name": "Valtarre",
     "Level": "61",
-    "Frac": "48.66",
-    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas","chairs12","shirt2","perfbeg","knifestrats","pants4"]
+    "Frac": "82.23",
+    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas","chairs12","shirt2","perfbeg","knifestrats","pants4","pet14"]
   },
   {
     "Name": "inland",
@@ -1385,7 +1386,7 @@
   {
     "Name": "Voldsoy",
     "Level": "67",
-    "Frac": "0.01",
+    "Frac": "24.88",
     "Alias":"Ailand",
     "Badges":["weenjq400","damage800","gomu3"]
   },
