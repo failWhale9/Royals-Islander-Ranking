@@ -134,7 +134,7 @@
   },
   {
     "Name":"Coinicus",
-    "Level":"38"
+    "Level":"39"
   },
   {
     "Name":"wtherow",
@@ -392,7 +392,7 @@
     "Name": "NewIslander",
     "Level": "70",
     "Since":"2015",
-    "Badges":["fence"]
+    "Badges":["fence","damage1000"]
   },
   {
     "Name": "Buikpijn",
@@ -610,7 +610,8 @@
   },
   {
     "Name": "Bella",
-    "Level": "50"
+    "Level": "50",
+    "Badges":["shirt2"]
   },
   {
     "Name": "Lonelymoo",
@@ -806,8 +807,8 @@
   },
   {
     "Name": "Valtarre",
-    "Level": "61",
-    "Frac": "82.23",
+    "Level": "62",
+    "Frac": "0.01",
     "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas","chairs12","shirt2","perfbeg","knifestrats","pants4","pet14"]
   },
   {
@@ -1027,7 +1028,7 @@
   },
   {
     "Name": "Nauset",
-    "Level": "38"
+    "Level": "39"
   },
   {
     "Name": "Deryn",
@@ -1385,8 +1386,8 @@
   },
   {
     "Name": "Voldsoy",
-    "Level": "67",
-    "Frac": "24.88",
+    "Level": "68",
+    "Frac": "0.01",
     "Alias":"Ailand",
     "Badges":["weenjq400","damage800","gomu3"]
   },
