@@ -18,7 +18,8 @@
   },
   {
     "Name":"EdwinNoob",
-    "Level": "46"
+    "Level": "47",
+    "Frac":"47.47"
   },
   {
     "Name":"Idiomlander",
@@ -49,7 +50,7 @@
   {
     "Name": "Adaryn",
     "Level": "84",
-    "Frac":"6.30",
+    "Frac":"17.32",
     "Badges":["shirt5","pants4","witch40","broom20","maxdodge","gomu3","omok3","roses","umbrellas","tubes","boards","workgloves","chairs36","pet14","perflights","perfbrella","fence","bluexmas","knifestrats","lemons300","slipper2","ashes","meso1b","ore100","damage500"]
   },
   {
@@ -134,7 +135,7 @@
   },
   {
     "Name":"Coinicus",
-    "Level":"39"
+    "Level":"40"
   },
   {
     "Name":"wtherow",
@@ -308,7 +309,7 @@
   {
     "Name": "Lowly",
     "Level": "111",
-    "Frac": "80.08",
+    "Frac": "80.72",
     "BadNews":"Unranked - Gold Richie event usage",
     "Badges":["meso2b","gomu4","witch40","chairs36","damage1000","roses","fence","omok3","workgloves","perfbrella","strlander","umbrellas","tubes","pet14","shirt3","broom30","ashes","bluexmas","slipper2"]
   },
@@ -761,7 +762,7 @@
   {
     "Name": "StarTropics",
     "Level": "65",
-    "Frac":"6.93",
+    "Frac":"35.6",
     "Badges": ["damage1000","chairs24","gomu3","pet14","omok3","weenjq400","broom20","bluexmas","roses","workgloves"]
   },
   {
@@ -808,7 +809,7 @@
   {
     "Name": "Valtarre",
     "Level": "62",
-    "Frac": "0.01",
+    "Frac": "8.63",
     "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas","chairs12","shirt2","perfbeg","knifestrats","pants4","pet14"]
   },
   {
@@ -1387,7 +1388,7 @@
   {
     "Name": "Voldsoy",
     "Level": "68",
-    "Frac": "0.01",
+    "Frac": "40.0",
     "Alias":"Ailand",
     "Badges":["weenjq400","damage800","gomu3"]
   },
