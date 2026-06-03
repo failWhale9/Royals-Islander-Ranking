@@ -18,8 +18,8 @@
   },
   {
     "Name":"EdwinNoob",
-    "Level": "49",
-    "Frac":"40.0",
+    "Level": "50",
+    "Frac":"0",
     "Badges":["exp2026sprB"]
   },
   {
@@ -536,7 +536,8 @@
   },
   {
     "Name": "MotorollaG",
-    "Level": "53"
+    "Level": "55",
+    "Badges":["strlander","fence"]
   },
   {
     "Name": "DoctorSnail",
@@ -811,7 +812,7 @@
   {
     "Name": "Valtarre",
     "Level": "62",
-    "Frac": "44.88",
+    "Frac": "66.74",
     "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas","chairs12","shirt2","perfbeg","knifestrats","pants4","pet14"]
   },
   {
@@ -1389,8 +1390,8 @@
   },
   {
     "Name": "Voldsoy",
-    "Level": "69",
-    "Frac": "31.31",
+    "Level": "70",
+    "Frac": "0",
     "Alias":"Ailand",
     "Badges":["weenjq400","damage800","gomu3","exp2026sprG"]
   },
