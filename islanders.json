@@ -51,8 +51,8 @@
   {
     "Name": "Adaryn",
     "Level": "84",
-    "Frac":"17.32",
-    "Badges":["shirt5","pants4","witch40","broom20","maxdodge","gomu3","omok3","roses","umbrellas","tubes","boards","workgloves","chairs36","pet14","perflights","perfbrella","fence","bluexmas","knifestrats","lemons300","slipper2","ashes","meso1b","ore100","damage500"]
+    "Frac":"59.6",
+    "Badges":["shirt5","pants4","witch40","broom20","maxdodge","gomu3","omok3","roses","umbrellas","tubes","boards","workgloves","chairs36","pet14","perflights","perfbrella","fence","bluexmas","knifestrats","lemons300","slipper2","ashes","meso1b","ore100","damage500","perfstart","perfbeg"]
   },
   {
     "Name":"IslanderSage",
@@ -812,8 +812,8 @@
   {
     "Name": "Valtarre",
     "Level": "62",
-    "Frac": "66.74",
-    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas","chairs12","shirt2","perfbeg","knifestrats","pants4","pet14"]
+    "Frac": "71.73",
+    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas","chairs12","shirt2","perfbeg","knifestrats","pants4","pet14","perfstart"]
   },
   {
     "Name": "inland",
@@ -1391,9 +1391,9 @@
   {
     "Name": "Voldsoy",
     "Level": "70",
-    "Frac": "0",
+    "Frac": "30.29",
     "Alias":"Ailand",
-    "Badges":["weenjq400","damage800","gomu3","exp2026sprG"]
+    "Badges":["weenjq400","damage800","gomu3","exp2026sprG","perfbeg","lemons300","chairs12","pet14"]
   },
   {
     "Name": "Nooburt",
