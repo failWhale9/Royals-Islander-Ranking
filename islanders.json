@@ -18,7 +18,7 @@
   },
   {
     "Name":"EdwinNoob",
-    "Level": "50",
+    "Level": "51",
     "Frac":"0",
     "Badges":["exp2026sprB"]
   },
@@ -893,7 +893,8 @@
   },
   {
     "Name": "LowIy",
-    "Level": "42",
+    "Level": "45",
+    "Frac":"52.08",
     "Alt": "Lowly",
     "Badges":["magelander"]
   },
@@ -1036,7 +1037,7 @@
   },
   {
     "Name": "Deryn",
-    "Level": "44",
+    "Level": "50",
     "Alt": "Adaryn",
     "Badges":["magelander"]
   },
