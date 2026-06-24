@@ -1,5 +1,9 @@
 [
   {
+    "Name":"IslandJimly",
+    "Level": "31"
+  },
+  {
     "Name":"Lv8Mushroom",
     "Level": "30",
     "Badges":["pet14"]
@@ -30,7 +34,7 @@
     "Name":"WildChild",
     "Alt":"HeroinAddict",
     "Level": "30",
-    "Badges":["dexlander","pet15"]
+    "Badges":["dexlander","pet15","fence"]
   },
   {
     "Name":"CampLeader",
@@ -536,7 +540,7 @@
   },
   {
     "Name": "MotorollaG",
-    "Level": "55",
+    "Level": "57",
     "Badges":["strlander","fence"]
   },
   {
@@ -811,8 +815,8 @@
   },
   {
     "Name": "Valtarre",
-    "Level": "62",
-    "Frac": "71.73",
+    "Level": "63",
+    "Frac": "0.85",
     "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","bluexmas","chairs12","shirt2","perfbeg","knifestrats","pants4","pet14","perfstart"]
   },
   {
