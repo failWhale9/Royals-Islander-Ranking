@@ -382,8 +382,8 @@
   },
   {
     "Name": "BoatlessMonk",
-    "Level": "74",
-    "Frac": "89.46",
+    "Level": "75",
+    "Frac": "0",
     "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500","broom20","bluexmas","shirt3","ashes","dexlander","maxdodge","umbrellas","boards","tubes","witch30","weenjq400"]
   },
   {
@@ -930,7 +930,8 @@
   {
     "Name": "DevOnIsland",
     "Level": "58",
-    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage300","pet14","omok3","weenjq330","workgloves","pants2","broom20","chairs12","ashes","bluexmas","perfbeg","meso250","ore100"]
+    "Frac":"34.03",
+    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage300","pet14","omok3","weenjq330","workgloves","pants2","broom20","chairs12","ashes","bluexmas","perfbeg","meso250","ore100","fence"]
   },
   {
     "Name": "Tsukishima",
@@ -1395,8 +1396,8 @@
   },
   {
     "Name": "Voldsoy",
-    "Level": "70",
-    "Frac": "30.29",
+    "Level": "71",
+    "Frac": "0.01",
     "Alias":"Ailand",
     "Badges":["weenjq400","damage800","gomu3","exp2026sprG","perfbeg","lemons300","chairs12","pet14"]
   },
