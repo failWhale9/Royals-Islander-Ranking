@@ -1,5 +1,31 @@
 [
   {
+    "Name":"IslandFlavor",
+    "Level": "32"
+  },
+  {
+    "Name":"Asvins",
+    "Level": "30"
+  },
+  {
+    "Name":"Vialism",
+    "Level": "30",
+    "Alt": "Voldsoy",
+    "Badges":["magelander"]
+  },
+  {
+    "Name":"islanderboy",
+    "Level": "31"
+  },
+  {
+    "Name":"pimple4yarin",
+    "Level": "32"
+  },
+  {
+    "Name":"Skittys",
+    "Level": "34"
+  },
+  {
     "Name":"IslandJimly",
     "Level": "31"
   },
@@ -18,11 +44,11 @@
   },
   {
     "Name":"DonusFactory",
-    "Level": "37"
+    "Level": "39"
   },
   {
     "Name":"EdwinNoob",
-    "Level": "51",
+    "Level": "52",
     "Frac":"0",
     "Badges":["exp2026sprB"]
   },
@@ -1397,7 +1423,7 @@
   {
     "Name": "Voldsoy",
     "Level": "71",
-    "Frac": "0.01",
+    "Frac": "27.51",
     "Alias":"Ailand",
     "Badges":["weenjq400","damage800","gomu3","exp2026sprG","perfbeg","lemons300","chairs12","pet14"]
   },
