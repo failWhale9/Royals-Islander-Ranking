@@ -1,4 +1,15 @@
 [
+  {
+   "id": 3015522,
+   "name": "13th Anniversary Chair",
+   "desc": "Take a seat on this special 13th Anniversary chair. Restores 50 HP and 50 MP every 10 seconds.",
+   "obtained": "13th Anniversary Event",
+   "note": "",
+   "trade": "UNTRADABLE",
+   "category": ["Anniversary Event"],
+   "HP": 50,
+   "MP": 50
+ },
  {
    "id": 3019912,
    "name": "Auf Haven Chair",
