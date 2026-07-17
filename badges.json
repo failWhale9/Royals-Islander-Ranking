@@ -6,6 +6,12 @@
     "desc": "Has the stats to equip metal wand (20 LUK) and invested remaining AP into INT."
   },
   {
+    "id": "intlander",
+    "type": "build",
+    "name": "Intlander",
+    "desc": "Has invested all AP into INT."
+  },
+  {
     "id": "strlander",
     "type": "build",
     "name": "Pure STRlander",
@@ -222,6 +228,18 @@
     "desc": "Owns one of each work glove color (White, Grey, Yellow, Blue, Red, Purple)."
   },
   {
+    "id": "hats",
+    "type": "item",
+    "name": "Hat Island II",
+    "desc": "Owns one of each basic hat (Red/Black/Green/Yellow/Blue Headbands, Brown/Green skullcaps, Red/Blue Sporty Caps, and White Bandana)."
+  },
+  {
+    "id": "headbands",
+    "type": "item",
+    "name": "Headband Ninja",
+    "desc": "Owns a +7 scrolled headband of each color (Red/Black/Green/Yellow/Blue)."
+  },
+  {
     "id": "roses",
     "type": "item",
     "name": "Rose Collector",
@@ -276,25 +294,22 @@
     "desc": "Owns at least 300 lemons."
   },
   {
-    "id": "annijq180",
+    "id": "annijq250",
     "type": "achievement",
-    "name": "Anniversary Jumper (180s)",
-    "desc": "Completed Pink Bean's Birthday Challenge in 180s or less.",
-    "hidden": true
+    "name": "Anniversary Jumper (250s)",
+    "desc": "Completed Pink Bean's Birthday Challenge in 250s or less."
+  },
+  {
+    "id": "annijq200",
+    "type": "achievement",
+    "name": "Anniversary Jumper (200s)",
+    "desc": "Completed Pink Bean's Birthday Challenge in 200s or less."
   },
   {
     "id": "annijq150",
     "type": "achievement",
     "name": "Anniversary Jumper (150s)",
-    "desc": "Completed Pink Bean's Birthday Challenge in 150s or less.",
-    "hidden": true
-  },
-  {
-    "id": "annijq120",
-    "type": "achievement",
-    "name": "Anniversary Jumper (120s)",
-    "desc": "Completed Pink Bean's Birthday Challenge in 120s or less.",
-    "hidden": true
+    "desc": "Completed Pink Bean's Birthday Challenge in 150s or less."
   },
   {
     "id": "weenjq330",
