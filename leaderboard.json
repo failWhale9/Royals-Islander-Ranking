@@ -1,0 +1,38 @@
+[
+  {
+    "id": "fame",
+    "name": "Highest Fame",
+    "desc": "Islanders with the highest fame.",
+    "rules":["Buying fame is permitted","Contender must reside on Maple Island"]
+  },
+  {
+    "id": "infamy",
+    "name": "Lowest Fame",
+    "desc": "Islanders with the lowest fame.",
+    "rules":["Buying defames is permitted","Contender must reside on Maple Island"]
+  },
+  {
+    "id": "lemons",
+    "name": "Most Lemons",
+    "desc": "Islanders who own the most lemons. (The only source of lemons on-island is the Mai's Training questline)",
+    "rules":["Trading is permitted","Lemons may be stored on the contender's mules","Contender must reside on Maple Island"]
+  },
+  {
+    "id": "annijq",
+    "name": "Pink Bean's Birthday Challenge",
+    "desc": "Fastest Anniversary Jump Quest Time",
+    "rules":["JQ may be completed on the contender's mule","Transformation items are permitted","Time is measured by in-game time given by the NPC","Contender must reside on Maple Island"]
+  },
+  {
+    "id": "weenjq",
+    "name": "Halloween Challenge",
+    "desc": "Fastest Halloween Jump Quest Time",
+    "rules":["JQ may be completed on the contender's mule","Transformation items are permitted","Time is measured by in-game time given by the NPC","Contender must reside on Maple Island"]
+  },
+  {
+    "id": "strdmg",
+    "name": "Damage Range (STRlander)",
+    "desc": "Highest Damage Range",
+    "rules":["Damage is ranked by max damage","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"]
+  }
+]
