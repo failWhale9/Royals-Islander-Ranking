@@ -24,7 +24,7 @@
   {
     "Name":"Skittys",
     "Level": "40",
-    "Badges":["dexlander"]
+    "Badges":["dexlander","annijq200"]
   },
   {
     "Name":"IslandJimly",
@@ -411,7 +411,7 @@
     "Name": "BoatlessMonk",
     "Level": "75",
     "Frac": "0",
-    "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500","broom20","bluexmas","shirt3","ashes","dexlander","maxdodge","umbrellas","boards","tubes","witch30","weenjq400"]
+    "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500","broom20","bluexmas","shirt3","ashes","dexlander","maxdodge","umbrellas","boards","tubes","witch30","weenjq400","annijq150"]
   },
   {
     "Name": "IslandSlut",
@@ -515,7 +515,7 @@
     "Name": "Shylander",
     "Level": "58",
     "Frac": "11.58",
-    "Badges":["gomu3","pants4","witch40","perfwand","chairs36","workgloves","omok3","pet14","broom25","fence","damage500","shirt3","slipper2","weenjq330","bluexmas"],
+    "Badges":["gomu3","pants4","witch40","perfwand","chairs48","workgloves","omok3","pet14","broom25","fence","damage500","shirt3","slipper2","weenjq330","annijq150","bluexmas"],
     "Since": "2022",
     "Bio": "Shylander mostly plays challenge modes on Royals, having been a part of Islander, Caveman, World Tour, Legoman, Ironman, and Nostalegion. He usually plays remotely via the steam link Android app. Usually only around during events, he likes the island for the community and long history."
   },
@@ -796,9 +796,9 @@
   },
   {
     "Name": "StarTropics",
-    "Level": "65",
-    "Frac":"66.13",
-    "Badges": ["damage1000","chairs24","gomu3","pet14","omok3","weenjq400","broom20","bluexmas","roses","workgloves","dynamic"]
+    "Level": "66",
+    "Frac":"6.08",
+    "Badges": ["damage1000","chairs24","gomu3","pet14","omok3","weenjq400","annijq150","broom20","bluexmas","roses","workgloves","dynamic","lemons300"]
   },
   {
     "Name": "Ataynep",
@@ -928,7 +928,7 @@
     "Level": "50",
     "Frac":"0.0",
     "Alt": "Lowly",
-    "Badges":["magelander"]
+    "Badges":["intlander","pet14"]
   },
   {
     "Name": "Ramleh",
@@ -959,7 +959,7 @@
     "Name": "DevOnIsland",
     "Level": "58",
     "Frac":"34.03",
-    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage300","pet14","omok3","weenjq330","workgloves","pants2","broom20","chairs12","ashes","bluexmas","perfbeg","meso250","ore100","fence"]
+    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage300","pet14","omok3","weenjq330","annijq150","workgloves","pants2","broom20","chairs12","ashes","bluexmas","perfbeg","meso250","ore100","fence"]
   },
   {
     "Name": "Tsukishima",
@@ -1072,7 +1072,7 @@
     "Name": "Deryn",
     "Level": "50",
     "Alt": "Adaryn",
-    "Badges":["magelander"]
+    "Badges":["intlander"]
   },
   {
     "Name": "nuber",
@@ -1425,9 +1425,9 @@
   {
     "Name": "Voldsoy",
     "Level": "72",
-    "Frac": "0.0",
+    "Frac": "6.04",
     "Alias":"Ailand",
-    "Badges":["weenjq400","damage800","gomu3","exp2026sprG","perfbeg","lemons300","chairs12","pet14","perfbrella"]
+    "Badges":["weenjq400","annijq150","damage1000","gomu3","exp2026sprG","perfbeg","lemons300","chairs12","pet14","perfbrella"]
   },
   {
     "Name": "Nooburt",
