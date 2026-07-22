@@ -124,6 +124,12 @@
             width: 150px;
         }
 
+        span.jqYear {
+            color: #338137;
+            margin-left:10px;
+            font-size:12px;
+        }
+
         p.lbEmpty {
             background-color: var(--cell);
             color: white;
@@ -257,7 +263,13 @@ function buildPanel(board, index) {
         tr.appendChild(rankTd);
 
         const nameTd = document.createElement('td');
+        const year = document.createElement('span');
         nameTd.textContent = entry.Name;
+        if(board.id === "annijq") {
+            year.classList.add("jqYear");
+            year.textContent = "(" + entry.Year + ")";
+            nameTd.appendChild(year);
+        }
         tr.appendChild(nameTd);
 
         const valueTd = document.createElement('td');
