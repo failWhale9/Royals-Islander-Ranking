@@ -1,5 +1,45 @@
 [
   {
+    "Name":"suchislander",
+    "Level": "31"
+  },
+  {
+    "Name":"Islander66",
+    "Level": "41"
+  },
+  {
+    "Name":"lbdl",
+    "Level": "40"
+  },
+  {
+    "Name":"Islandboiiii",
+    "Level": "33"
+  },
+  {
+    "Name":"Naviphobia",
+    "Level": "32"
+  },
+  {
+    "Name":"StuckAtHome",
+    "Level": "32"
+  },
+  {
+    "Name":"Colossoul",
+    "Level": "31"
+  },
+  {
+    "Name":"TOOLMAN1",
+    "Level": "30"
+  },
+  {
+    "Name":"MysticOak",
+    "Level": "30"
+  },
+  {
+    "Name":"Japantown",
+    "Level": "30"
+  },
+  {
     "Name":"IslandFlavor",
     "Level": "32"
   },
@@ -23,11 +63,12 @@
   },
   {
     "Name":"pimple4yarin",
-    "Level": "32"
+    "Level": "33"
   },
   {
     "Name":"Skittys",
-    "Level": "40",
+    "Level": "43",
+    "Frac":"20.0",
     "Badges":["dexlander","annijq150"]
   },
   {
@@ -71,7 +112,7 @@
     "Name":"CampLeader",
     "Alt":"HeroinAddict",
     "Level": "30",
-    "Badges":["camper","pet14","damage500"]
+    "Badges":["camper","pet14","damage500","annijq150"]
   },
   {
     "Name":"Vinlander",
@@ -110,7 +151,7 @@
   },
   {
     "Name":"PepeIslander",
-    "Level": "30"
+    "Level": "31"
   },
   {
     "Name":"babyTalk",
@@ -543,7 +584,7 @@
   },
   {
     "Name": "TheIslander",
-    "Level": "55"
+    "Level": "30"
   },
   {
     "Name": "Detached",
@@ -572,7 +613,7 @@
   },
   {
     "Name": "MotorollaG",
-    "Level": "60",
+    "Level": "62",
     "Badges":["strlander","fence"]
   },
   {
@@ -603,7 +644,7 @@
   },
   {
     "Name": "ShimaPanda",
-    "Level": "52"
+    "Level": "54"
   },
   {
     "Name": "YoungLePopo",
@@ -1655,7 +1696,7 @@
   },
   {
     "Name": "FatherID",
-    "Level": "31"
+    "Level": "32"
   },
   {
     "Name": "IslandForeve",

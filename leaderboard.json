@@ -3,36 +3,84 @@
     "id": "fame",
     "name": "Highest Fame",
     "desc": "Islanders with the highest fame.",
-    "rules":["Buying fame is permitted","Contender must reside on Maple Island"]
+    "rules":["Buying fame is permitted","Contender must reside on Maple Island"],
+    "entries": [
+      {"Name":"Islander", "value": 13333},
+      {"Name":"Chokladkakan", "value": 114},
+      {"Name":"Sneils", "value": 100}
+    ]
   },
   {
     "id": "infamy",
     "name": "Lowest Fame",
     "desc": "Islanders with the lowest fame.",
-    "rules":["Buying defames is permitted","Contender must reside on Maple Island"]
+    "rules":["Buying defames is permitted","Contender must reside on Maple Island"],
+    "entries": [
+      {"Name":"Rally", "value": -6969},
+      {"Name":"Wienor", "value": -11}
+    ]
   },
   {
     "id": "lemons",
     "name": "Most Lemons",
     "desc": "Islanders who own the most lemons. (The only source of lemons on-island is the Mai's Training questline)",
-    "rules":["Trading is permitted","Lemons may be stored on the contender's mules","Contender must reside on Maple Island"]
+    "rules":["Trading is permitted","Lemons may be stored on the contender's mules","Contender must reside on Maple Island"],
+    "entries": [
+      {"Name":"Mooshy", "value": 2425},
+      {"Name":"StarTropics", "value": 309},
+      {"Name":"Voldsoy", "value": 300},
+      {"Name":"Zakozantern", "value": 305},
+      {"Name":"DevOnIsland", "value": 300},
+      {"Name":"DwightK", "value": 1800},
+      {"Name":"Valtarre", "value": 305},
+      {"Name":"Adaryn", "value": 300}
+    ]
   },
   {
     "id": "annijq",
     "name": "Pink Bean's Birthday Challenge",
-    "desc": "Fastest Anniversary Jump Quest Time",
-    "rules":["JQ may be completed on the contender's mule","Transformation items are permitted","Time is measured by in-game time given by the NPC","Contender must reside on Maple Island"]
+    "desc": "Fastest Anniversary Jump Quest Time.",
+    "rules":["JQ may be completed on the contender's mule","Transformation items are permitted","Time is measured by in-game time given by the NPC","Contender must reside on Maple Island"],
+    "entries": [
+      {"Name":"Islander", "value": 266},
+      {"Name":"Valtarre", "value": 131},
+      {"Name":"HeroinAddict", "value": 128},
+      {"Name":"Adaryn", "value": 123},
+      {"Name":"Lowly", "value": 135},
+      {"Name":"Skittys", "value": 140},
+      {"Name":"DevOnIsland", "value": 115},
+      {"Name":"Voldsoy", "value": 129},
+      {"Name":"Lv8Mushroom", "value": 139},
+      {"Name":"Shylander", "value": 126},
+      {"Name":"BoatlessMonk", "value": 145},
+      {"Name":"StarTropics", "value": 127},
+      {"Name":"demosthes", "value": 147},
+      {"Name":"ThislsHome", "value": 114},
+      {"Name":"MICKYISLAND", "value": 136}
+    ]
   },
   {
     "id": "weenjq",
     "name": "Halloween Challenge",
-    "desc": "Fastest Halloween Jump Quest Time",
+    "desc": "Fastest Halloween Jump Quest Time.",
     "rules":["JQ may be completed on the contender's mule","Transformation items are permitted","Time is measured by in-game time given by the NPC","Contender must reside on Maple Island"]
   },
   {
     "id": "strdmg",
     "name": "Damage Range (STRlander)",
-    "desc": "Highest Damage Range",
+    "desc": "Highest Damage Range for STRlanders (All AP in STR).",
     "rules":["Damage is ranked by max damage","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"]
+  },
+  {
+    "id": "dexdmg",
+    "name": "Damage Range (DEXlander)",
+    "desc": "Highest Damage Range for DEXlanders (All AP in DEX).",
+    "rules":["Damage is ranked by average of min and max damage","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"]
+  },
+  {
+    "id": "intdmg",
+    "name": "Damage Range (INTlander)",
+    "desc": "Highest Damage Range for INTlanders, Magelanders, and NoPointers (No AP in STR or DEX)",
+    "rules":["Damage is ranked by average of min and max damage","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"]
   }
 ]
