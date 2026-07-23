@@ -226,9 +226,9 @@ function buildPanel(board, index) {
         return panel;
     }
 
-    // Sort: annijq (time based) ranks fastest (lowest) first, others rank highest value first
+    // Custom sorting
     const sorted = [...entries].sort((a, b) => {
-        if (board.id === 'annijq') {
+        if (board.id === 'annijq' || board.id === 'weenjq') {
             return a.value - b.value;
         }
         if (board.id === 'infamy') {
@@ -273,7 +273,7 @@ function buildPanel(board, index) {
         nameTd.textContent = entry.Name;
 
         // Add year to name column
-        if(board.id === "annijq") {
+        if(board.id === "annijq" || board.id === "weenjq") {
             note.classList.add("nameNote");
             note.textContent = "(" + entry.Year + ")";
             nameTd.appendChild(note);
@@ -285,14 +285,15 @@ function buildPanel(board, index) {
             note.textContent = "( Lv." + entry.level + " )";
             nameTd.appendChild(note);
         }
-
         tr.appendChild(nameTd);
 
         const valueTd = document.createElement('td');
         valueTd.className = 'lbValue';
 
+        // Formatting for complex values
         switch(board.id) {
             case 'annijq':
+            case 'weenjq':
                 valueTd.textContent = formatTime(entry.value);
                 break;
             case 'intdmg':
@@ -304,9 +305,7 @@ function buildPanel(board, index) {
                 valueTd.textContent = entry.value;
         }
 
-        //valueTd.textContent = board.id === 'annijq' ? formatTime(entry.value) : entry.value;
         tr.appendChild(valueTd);
-
         table.appendChild(tr);
     });
 

@@ -105,7 +105,19 @@
     "id": "weenjq",
     "name": "Halloween Challenge",
     "desc": "Fastest Halloween Jump Quest Time.",
-    "rules":["JQ may be completed on the contender's mule","Transformation items are permitted","Time is measured by in-game time given by the NPC","Contender must reside on Maple Island"]
+    "rules":["JQ may be completed on the contender's mule","Transformation items are permitted","Time is measured by in-game time given by the NPC","Contender must reside on Maple Island"],
+    "entries": [
+      {"Name":"Zakozantern", "value": 249, "Year": 2025},
+      {"Name":"DevOnIsland", "value": 193, "Year": 2025},
+      {"Name":"StarTropics", "value": 221, "Year": 2025},
+      {"Name":"ImmergoId", "value": 187, "Year": 2025},
+      {"Name":"Voldsoy", "value": 223, "Year": 2025},
+      {"Name":"Valtarre", "value": 218, "Year": 2025},
+      {"Name":"Shylander", "value": 202, "Year": 2025},
+      {"Name":"HeroinAddict", "value": 207, "Year": 2025},
+      {"Name":"Crylou", "value": 187, "Year": 2024},
+      {"Name":"Boatphobia", "value": 213, "Year": 2023}
+    ]
   },
   {
     "id": "strdmg",
