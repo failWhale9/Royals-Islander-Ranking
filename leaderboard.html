@@ -124,7 +124,7 @@
             width: 150px;
         }
 
-        span.jqYear {
+        span.nameNote {
             color: #338137;
             margin-left:10px;
             font-size:12px;
@@ -234,6 +234,12 @@ function buildPanel(board, index) {
         if (board.id === 'infamy') {
             return a.value - b.value;
         }
+        if(board.id === "intdmg" || board.id === "dexdmg") {
+            return ((b.min + b.max) / 2) - ((a.min + a.max) / 2);
+        }
+        if(board.id === "strdmg") {
+            return b.max - a.max;
+        }
         return b.value - a.value;
     });
 
@@ -263,18 +269,42 @@ function buildPanel(board, index) {
         tr.appendChild(rankTd);
 
         const nameTd = document.createElement('td');
-        const year = document.createElement('span');
+        const note = document.createElement('span');
         nameTd.textContent = entry.Name;
+
+        // Add year to name column
         if(board.id === "annijq") {
-            year.classList.add("jqYear");
-            year.textContent = "(" + entry.Year + ")";
-            nameTd.appendChild(year);
+            note.classList.add("nameNote");
+            note.textContent = "(" + entry.Year + ")";
+            nameTd.appendChild(note);
         }
+
+        // Add level to name column
+        if(board.id === "intdmg" || board.id === "dexdmg" || board.id === "strdmg") {
+            note.classList.add("nameNote");
+            note.textContent = "( Lv." + entry.level + " )";
+            nameTd.appendChild(note);
+        }
+
         tr.appendChild(nameTd);
 
         const valueTd = document.createElement('td');
         valueTd.className = 'lbValue';
-        valueTd.textContent = board.id === 'annijq' ? formatTime(entry.value) : entry.value;
+
+        switch(board.id) {
+            case 'annijq':
+                valueTd.textContent = formatTime(entry.value);
+                break;
+            case 'intdmg':
+            case 'dexdmg': 
+            case 'strdmg': 
+                valueTd.textContent = entry.min + " ~ " + entry.max;
+                break;
+            default:
+                valueTd.textContent = entry.value;
+        }
+
+        //valueTd.textContent = board.id === 'annijq' ? formatTime(entry.value) : entry.value;
         tr.appendChild(valueTd);
 
         table.appendChild(tr);

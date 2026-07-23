@@ -6,8 +6,10 @@
     "rules":["Buying fame is permitted","Contender must reside on Maple Island"],
     "entries": [
       {"Name":"Islander", "value": 13333},
+      {"Name":"Valtarre", "value": 123},
       {"Name":"Chokladkakan", "value": 114},
-      {"Name":"Sneils", "value": 100}
+      {"Name":"Sneils", "value": 100},
+      {"Name":"DevOnIsland", "value": 354}
     ]
   },
   {
@@ -24,7 +26,7 @@
     "id": "lemons",
     "name": "Most Lemons",
     "desc": "Islanders who own the most lemons. (The only source of lemons on-island is the Mai's Training questline)",
-    "rules":["Trading is permitted","Lemons may be stored on the contender's mules","Contender must reside on Maple Island"],
+    "rules":["Trading is permitted","Lemons may be stored on the contender's island mules","Contender must reside on Maple Island"],
     "entries": [
       {"Name":"Mooshy", "value": 2425},
       {"Name":"StarTropics", "value": 309},
@@ -35,6 +37,45 @@
       {"Name":"Valtarre", "value": 305},
       {"Name":"Adaryn", "value": 300}
     ]
+  },
+  {
+    "id": "coolers",
+    "name": "Most Coolers Logged",
+    "desc": "Islanders who cracked the most summer coolers and logged the results.",
+    "rules":["Cooler openings must be documented by screenshots","Coolers opened on island mules and alts count toward total","Contender must reside on Maple Island"],
+    "entries": [
+      {"Name":"Adaryn", "value": 429},
+      {"Name":"Shylander", "value": 180},
+      {"Name":"StarTropics", "value": 256},
+      {"Name":"Valtarre", "value": 180},
+      {"Name":"Rally", "value": 280},
+      {"Name":"jung1e", "value": 1189}
+    ]
+  },
+  {
+    "id": "chairs",
+    "name": "Most Chairs",
+    "desc": "Islanders who own the greatest number of unique chairs.",
+    "rules":["Donor chairs don't count toward total","Trading is permitted","Chairs may be stored on the contender's island mules","Contender must reside on Maple Island"],
+    "entries": [
+      {"Name":"Shylander", "value": 48},
+      {"Name":"Annot", "value": 12},
+      {"Name":"Valtarre", "value": 12},
+      {"Name":"DevOnIsland", "value": 12},
+      {"Name":"Zakozantern", "value": 12},
+      {"Name":"Voldsoy", "value": 13},
+      {"Name":"HeroinAddict", "value": 36},
+      {"Name":"BoatlessMonk", "value": 24},
+      {"Name":"StarTropics", "value": 24},
+      {"Name":"Adaryn", "value": 36},
+      {"Name":"Lowly", "value": 36}
+    ]
+  },
+  {
+    "id": "pighead",
+    "name": "Most Pig Heads",
+    "desc": "Islanders who own the most pig heads.",
+    "rules":["Trading is permitted","Heads may be stored on the contender's island mules","Contender must reside on Maple Island"]
   },
   {
     "id": "annijq",
@@ -76,12 +117,18 @@
     "id": "dexdmg",
     "name": "Damage Range (DEXlander)",
     "desc": "Highest Damage Range for DEXlanders (All AP in DEX).",
-    "rules":["Damage is ranked by average of min and max damage","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"]
+    "rules":["Damage is ranked by average of min and max damage","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"],
+    "entries": [
+      {"Name":"Valtarre", "min": 345, "max": 453, "level": 63}
+    ]
   },
   {
     "id": "intdmg",
     "name": "Damage Range (INTlander)",
     "desc": "Highest Damage Range for INTlanders, Magelanders, and NoPointers (No AP in STR or DEX)",
-    "rules":["Damage is ranked by average of min and max damage","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"]
+    "rules":["Damage is ranked by average of min and max damage","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"],
+    "entries": [
+      {"Name":"Lowiy", "min": 59, "max": 217, "level": 50}
+    ]
   }
 ]
