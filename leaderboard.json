@@ -9,7 +9,10 @@
       {"Name":"Valtarre", "value": 123},
       {"Name":"Chokladkakan", "value": 114},
       {"Name":"Sneils", "value": 100},
-      {"Name":"DevOnIsland", "value": 354}
+      {"Name":"DevOnIsland", "value": 354},
+      {"Name":"HeroinAddict", "value": 265},
+      {"Name":"Lowly", "value": 2222},
+      {"Name":"StarTropics", "value": 132}
     ]
   },
   {
@@ -34,7 +37,7 @@
       {"Name":"Zakozantern", "value": 305},
       {"Name":"DevOnIsland", "value": 300},
       {"Name":"DwightK", "value": 1800},
-      {"Name":"Valtarre", "value": 305},
+      {"Name":"Valtarre", "value": 335},
       {"Name":"Adaryn", "value": 300}
     ]
   },
@@ -60,22 +63,28 @@
     "entries": [
       {"Name":"Shylander", "value": 48},
       {"Name":"Annot", "value": 12},
-      {"Name":"Valtarre", "value": 12},
+      {"Name":"Valtarre", "value": 14},
       {"Name":"DevOnIsland", "value": 12},
       {"Name":"Zakozantern", "value": 12},
       {"Name":"Voldsoy", "value": 13},
-      {"Name":"HeroinAddict", "value": 36},
+      {"Name":"HeroinAddict", "value": 45},
       {"Name":"BoatlessMonk", "value": 24},
-      {"Name":"StarTropics", "value": 24},
+      {"Name":"StarTropics", "value": 35},
       {"Name":"Adaryn", "value": 36},
-      {"Name":"Lowly", "value": 36}
+      {"Name":"Lowly", "value": 46}
     ]
   },
   {
     "id": "pighead",
     "name": "Most Pig Heads",
     "desc": "Islanders who own the most pig heads.",
-    "rules":["Trading is permitted","Heads may be stored on the contender's island mules","Contender must reside on Maple Island"]
+    "rules":["Trading is permitted","Heads may be stored on the contender's island mules","Contender must reside on Maple Island"],
+    "entries": [
+      {"Name":"Valtarre", "value": 2324},
+      {"Name":"Lowly", "value": 5745},
+      {"Name":"StarTropics", "value": 2531}
+
+    ]
   },
   {
     "id": "annijq",
@@ -85,7 +94,7 @@
     "entries": [
       {"Name":"Islander", "value": 266, "Year": 2026},
       {"Name":"Valtarre", "value": 131, "Year": 2026},
-      {"Name":"HeroinAddict", "value": 128, "Year": 2026},
+      {"Name":"HeroinAddict", "value": 122, "Year": 2026},
       {"Name":"Adaryn", "value": 123, "Year": 2026},
       {"Name":"Lowly", "value": 135, "Year": 2026},
       {"Name":"Skittys", "value": 140, "Year": 2026},
@@ -123,7 +132,10 @@
     "id": "strdmg",
     "name": "Damage Range (STRlander)",
     "desc": "Highest Damage Range for STRlanders (All AP in STR).",
-    "rules":["Damage is ranked by max damage","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"]
+    "rules":["Damage is ranked by max damage","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"],
+    "entries": [
+      {"Name":"Lowly", "min": 262, "max": 3762, "level": 111}
+    ]
   },
   {
     "id": "dexdmg",
