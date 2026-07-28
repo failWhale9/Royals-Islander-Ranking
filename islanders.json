@@ -519,9 +519,9 @@
   },
   {
     "Name": "MICKYISLAND",
-    "Level": "67",
-    "Frac": "26.21",
-    "Badges":["fence","broom20"]
+    "Level": "68",
+    "Frac": "0",
+    "Badges":["fence","broom20","perfwand"]
   },
   {
     "Name": "Snowbelle",
@@ -613,7 +613,7 @@
   },
   {
     "Name": "MotorollaG",
-    "Level": "62",
+    "Level": "63",
     "Badges":["strlander","fence"]
   },
   {
@@ -1421,7 +1421,7 @@
   },
   {
     "Name": "YuriGod",
-    "Level": "34"
+    "Level": "36"
   },
   {
     "Name": "Shave",
