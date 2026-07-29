@@ -228,19 +228,21 @@ function buildPanel(board, index) {
 
     // Custom sorting
     const sorted = [...entries].sort((a, b) => {
-        if (board.id === 'annijq' || board.id === 'weenjq') {
-            return a.value - b.value;
+        switch(board.id) {
+            case 'annijq':
+            case 'weenjq':
+            case 'speedrun1':
+            case 'speedrun2':
+            case 'infamy':
+                return a.value - b.value;
+            case 'intdmg':
+            case 'dexdmg':
+                return ((b.min + b.max) / 2) - ((a.min + a.max) / 2);
+            case 'strdmg':
+                return b.max - a.max;
+            default:
+                return b.value - a.value;
         }
-        if (board.id === 'infamy') {
-            return a.value - b.value;
-        }
-        if(board.id === "intdmg" || board.id === "dexdmg") {
-            return ((b.min + b.max) / 2) - ((a.min + a.max) / 2);
-        }
-        if(board.id === "strdmg") {
-            return b.max - a.max;
-        }
-        return b.value - a.value;
     });
 
     const top10 = sorted.slice(0, 10);
@@ -294,6 +296,8 @@ function buildPanel(board, index) {
         switch(board.id) {
             case 'annijq':
             case 'weenjq':
+            case 'speedrun1':
+            case 'speedrun2':
                 valueTd.textContent = formatTime(entry.value);
                 break;
             case 'intdmg':

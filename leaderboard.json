@@ -51,7 +51,7 @@
       {"Name":"Adaryn", "value": 429},
       {"Name":"Shylander", "value": 180},
       {"Name":"StarTropics", "value": 256},
-      {"Name":"Valtarre", "value": 180},
+      {"Name":"Valtarre", "value": 280},
       {"Name":"Rally", "value": 280},
       {"Name":"jung1e", "value": 1189}
     ]
@@ -127,6 +127,23 @@
       {"Name":"HeroinAddict", "value": 207, "Year": 2025},
       {"Name":"Crylou", "value": 187, "Year": 2024},
       {"Name":"Boatphobia", "value": 213, "Year": 2023}
+    ]
+  },
+  {
+    "id": "speedrun1",
+    "name": "Maple Island Speedrun (Clean)",
+    "desc": "Fastest time to complete Maple Island with a new character.",
+    "rules":["A new character must be used","Run time uses the in-game clock","Time starts at the first full-brightness frame on fade-in entering the training camp balcony","Time ends at the last full-brightness frame before the boat cutscene","Trading is not permitted","Pre-farming maps for mob placement is not permitted (just be cool mmkay?)","Cash shop items are not permitted","Partying is not permitted"],
+    "entries": [
+    ]
+  },
+  {
+    "id": "speedrun2",
+    "name": "Maple Island Speedrun (Assisted)",
+    "desc": "Fastest time to complete Maple Island with a new character.",
+    "rules":["A new character must be used","Run time uses the in-game clock","Time starts at the first full-brightness frame on fade-in entering the training camp balcony","Time ends at the last full-brightness frame before the boat cutscene","Trading is permitted","Pre-farming maps for mob placement is permitted","Cash shop items are permitted","Partying and leeching is permitted"],
+    "entries": [
+      {"Name":"Shylander", "value": 494}
     ]
   },
   {

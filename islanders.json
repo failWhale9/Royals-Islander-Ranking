@@ -1,7 +1,29 @@
 [
   {
-    "Name":"suchislander",
+    "Name":"LegendLand",
+    "Level": "30"
+  },
+  {
+    "Name":"islandPizza",
     "Level": "31"
+  },
+  {
+    "Name":"Slowtown",
+    "Level": "32",
+    "Alt":"Voldsoy"
+  },
+  {
+    "Name":"Jeb2016",
+    "Level": "35"
+  },
+  {
+    "Name":"Ashdex",
+    "Level": "31"
+  },
+  {
+    "Name":"suchislander",
+    "Level": "31",
+    "Alt": "Ashdex"
   },
   {
     "Name":"Islander66",
@@ -1470,9 +1492,9 @@
   {
     "Name": "Voldsoy",
     "Level": "72",
-    "Frac": "6.04",
+    "Frac": "14.09",
     "Alias":"Ailand",
-    "Badges":["weenjq400","annijq150","damage1000","gomu3","exp2026sprG","perfbeg","lemons300","chairs12","pet14","perfbrella"]
+    "Badges":["weenjq400","annijq150","damage1000","gomu3","exp2026sprG","perfbeg","lemons300","chairs12","pet14","perfbrella","workgloves","hats","omok3"]
   },
   {
     "Name": "Nooburt",
