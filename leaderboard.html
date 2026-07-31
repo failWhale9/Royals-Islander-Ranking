@@ -6,6 +6,7 @@
     <title>MapleRoyals Islander Ranking: Leaderboard</title>
     <link rel="icon" href="https://ik.imagekit.io/islander/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="islander.css">
+    <link href="/Lightbox2/src/css/lightbox.css" rel="stylesheet" />
 
     <style>
         .lbTabs {
@@ -130,6 +131,12 @@
             font-size:12px;
         }
 
+        a.nameLink{
+            font-size:12px;
+            margin-left:10px;
+            color: #338137;
+        }
+
         p.lbEmpty {
             background-color: var(--cell);
             color: white;
@@ -158,6 +165,7 @@
     <p>Page written and maintained by <img src="https://ik.imagekit.io/islander/images/shy.png"></p>
 </div>
 
+<script src="Lightbox2/dist/js/lightbox-plus-jquery.js"></script>
 <script>
 
 //navbar code
@@ -176,6 +184,11 @@ fetch('/navbar.html')
 
 
 // leaderboard code
+
+lightbox.option({
+    'resizeDuration': 200,
+    'imageFadeDuration': 200
+});
 
 // Format seconds as XmYs
 function formatTime(seconds) {
@@ -226,6 +239,25 @@ function buildPanel(board, index) {
         return panel;
     }
 
+    // Custom values for ranking
+    entries.forEach((entry,index) => {
+        switch(board.id) {
+            case 'intdmg':
+            case 'dexdmg':
+                entry.value = (entry.min + entry.max)/2;
+                break;
+            case 'strdmg':
+                entry.value = entry.max;
+                break;
+            case 'gomus':
+                entry.value = entry.speed + entry.jump + (entry.wdef/100);
+                break;
+            default:
+                break;
+        }
+    });
+    
+
     // Custom sorting
     const sorted = [...entries].sort((a, b) => {
         switch(board.id) {
@@ -240,6 +272,8 @@ function buildPanel(board, index) {
                 return ((b.min + b.max) / 2) - ((a.min + a.max) / 2);
             case 'strdmg':
                 return b.max - a.max;
+            case 'gomus':
+                return (b.speed + b.jump) - (a.speed + a.jump) || b.wdef - a.wdef;
             default:
                 return b.value - a.value;
         }
@@ -272,24 +306,37 @@ function buildPanel(board, index) {
 
         const nameTd = document.createElement('td');
         const note = document.createElement('span');
+        const link = document.createElement("a");
         nameTd.textContent = entry.Name;
 
-        // Add year to name column
-        if(board.id === "annijq" || board.id === "weenjq") {
-            note.classList.add("nameNote");
-            note.textContent = "(" + entry.Year + ")";
-            nameTd.appendChild(note);
-        }
-
-        // Add level to name column
-        if(board.id === "intdmg" || board.id === "dexdmg" || board.id === "strdmg") {
-            note.classList.add("nameNote");
-            note.textContent = "( Lv." + entry.level + " )";
-            nameTd.appendChild(note);
+        // Add custom note to name column
+        switch(board.id) {
+            case 'annijq':
+            case 'weenjq':
+                note.classList.add("nameNote");
+                note.textContent = "(" + entry.Year + ")";
+                nameTd.appendChild(note);
+                break;
+            case 'intdmg':
+            case 'dexdmg':
+            case 'strdmg':
+                note.classList.add("nameNote");
+                note.textContent = "( Lv." + entry.level + " )";
+                nameTd.appendChild(note);
+                break;
+            case 'gomus':
+                link.classList.add("nameLink");
+                link.textContent = "(Image)";
+                link.href = "/leaderboard/" + entry.src + ".png";
+                link.setAttribute('data-lightbox', 'gomus-' + i);
+                link.setAttribute('data-title', entry.Name);
+                nameTd.appendChild(link);
+                break;
         }
         tr.appendChild(nameTd);
 
         const valueTd = document.createElement('td');
+        const subVal = document.createElement('span');
         valueTd.className = 'lbValue';
 
         // Formatting for complex values
@@ -304,6 +351,12 @@ function buildPanel(board, index) {
             case 'dexdmg': 
             case 'strdmg': 
                 valueTd.textContent = entry.min + " ~ " + entry.max;
+                break;
+            case 'gomus':
+                valueTd.textContent = entry.speed + entry.jump;
+                subVal.classList.add("nameNote");
+                subVal.textContent = "SPD: " + entry.speed + " JMP: " + entry.jump + " DEX:" + entry.dex + " WDEF: " + entry.wdef;
+                valueTd.appendChild(subVal);
                 break;
             default:
                 valueTd.textContent = entry.value;

@@ -173,5 +173,18 @@
     "entries": [
       {"Name":"Lowiy", "min": 59, "max": 217, "level": 50}
     ]
+  },
+  {
+    "id": "gomus",
+    "name": "Best Gomus",
+    "desc": "Highest stat scrolled white gomushins",
+    "rules":["Item must currently exist on maple island","Items are ranked by (speed+jump) with wdef as a tiebreaker"],
+    "entries": [
+      {"Name":"NamoAmituofo", "src":"namogomu",   "speed": 12, "jump": 20, "dex": 12, "wdef":9},
+      {"Name":"Lowly",        "src":"lowlygomu",  "speed": 7,  "jump": 20, "dex": 12, "wdef":3},
+      {"Name":"Annot",        "src":"annotgomu",  "speed": 11, "jump": 15, "dex": 9,  "wdef":3},
+      {"Name":"Mooshy",       "src":"mooshygomu", "speed": 10, "jump": 15, "dex": 9,  "wdef":6},
+      {"Name":"Ekob",         "src":"ekobgomu",   "speed": 10, "jump": 15, "dex": 9,  "wdef":5}
+    ]
   }
 ]
