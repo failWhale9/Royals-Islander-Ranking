@@ -13,7 +13,8 @@
       {"Name":"HeroinAddict", "value": 265},
       {"Name":"Lowly", "value": 2222},
       {"Name":"StarTropics", "value": 132},
-      {"Name":"Adaryn", "value": 777}
+      {"Name":"Adaryn", "value": 777},
+      {"Name":"BL00", "value": 125}
     ]
   },
   {
@@ -184,7 +185,30 @@
       {"Name":"Lowly",        "src":"lowlygomu",  "speed": 7,  "jump": 20, "dex": 12, "wdef":3},
       {"Name":"Annot",        "src":"annotgomu",  "speed": 11, "jump": 15, "dex": 9,  "wdef":3},
       {"Name":"Mooshy",       "src":"mooshygomu", "speed": 10, "jump": 15, "dex": 9,  "wdef":6},
-      {"Name":"Ekob",         "src":"ekobgomu",   "speed": 10, "jump": 15, "dex": 9,  "wdef":5}
+      {"Name":"Ekob",         "src":"ekobgomu",   "speed": 10, "jump": 15, "dex": 9,  "wdef":5},
+      {"Name":"Valtarre",      "src":"valtgomu",  "speed": 10, "jump": 10, "dex": 6,  "wdef":10}
+    ]
+  },
+  {
+    "id": "slippers",
+    "name": "Best Beach Slippers",
+    "desc": "Highest stat scrolled beach slippers (available only from summer cooler boxes)",
+    "rules":["Item must currently exist on maple island","Items are ranked by (speed+jump) with str+dex+int+luk as a tiebreaker"],
+    "entries": [
+      {"Name":"Annot",      "src":"annotbeach",   "speed": 8, "jump": 15, "str": 0, "dex":11, "int": 0, "luk": 2},
+      {"Name":"DrewIsland", "src":"drewbeach",    "speed": 12, "jump": 10, "str": 0, "dex":9, "int": 6, "luk": 6},
+      {"Name":"Lowly",      "src":"lowlybeach",   "speed": 8, "jump": 10, "str": 1, "dex":8, "int": 0, "luk": 2},
+      {"Name":"HeroinAddict", "src":"harrybeach", "speed": 7, "jump": 10, "str": 2, "dex":8, "int": 0, "luk": 1}
+    ]
+  },
+    {
+    "id": "noobshoes",
+    "name": "Best Lv.0 Shoes",
+    "desc": "Highest stat scrolled Lv.0 shoes (Leather Sandals, Red/Yellow/Blue Rubber Boots)",
+    "rules":["Item must currently exist on maple island","Items are ranked by (speed+jump) with wdef as a tiebreaker"],
+    "entries": [
+      {"Name":"Adaryn", "src":"adaryn0shoe",   "speed": 4, "jump": 20, "dex": 12, "wdef":2},
+      {"Name":"BlueCream", "src":"cream0shoe",   "speed": 2, "jump": 10, "dex": 6, "wdef":2}
     ]
   }
 ]

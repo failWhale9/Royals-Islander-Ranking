@@ -250,8 +250,11 @@ function buildPanel(board, index) {
                 entry.value = entry.max;
                 break;
             case 'gomus':
+            case 'noobshoes':
                 entry.value = entry.speed + entry.jump + (entry.wdef/100);
                 break;
+            case 'slippers':
+                entry.value = entry.speed + entry.jump + (entry.str + entry.dex + entry.int + entry.luk)/100;
             default:
                 break;
         }
@@ -273,7 +276,10 @@ function buildPanel(board, index) {
             case 'strdmg':
                 return b.max - a.max;
             case 'gomus':
+            case 'noobshoes':
                 return (b.speed + b.jump) - (a.speed + a.jump) || b.wdef - a.wdef;
+            case 'slippers':
+                return (b.speed + b.jump) - (a.speed + a.jump) || (b.str + b.dex + b.int + b.luk) - (a.str + a.dex + a.int + a.luk);
             default:
                 return b.value - a.value;
         }
@@ -325,6 +331,8 @@ function buildPanel(board, index) {
                 nameTd.appendChild(note);
                 break;
             case 'gomus':
+            case 'noobshoes':
+            case 'slippers':
                 link.classList.add("nameLink");
                 link.textContent = "(Image)";
                 link.href = "/leaderboard/" + entry.src + ".png";
@@ -353,9 +361,16 @@ function buildPanel(board, index) {
                 valueTd.textContent = entry.min + " ~ " + entry.max;
                 break;
             case 'gomus':
+            case 'noobshoes':
                 valueTd.textContent = entry.speed + entry.jump;
                 subVal.classList.add("nameNote");
                 subVal.textContent = "SPD: " + entry.speed + " JMP: " + entry.jump + " DEX:" + entry.dex + " WDEF: " + entry.wdef;
+                valueTd.appendChild(subVal);
+                break;
+            case 'slippers':
+                valueTd.textContent = entry.speed + entry.jump;
+                subVal.classList.add("nameNote");
+                subVal.textContent = "SPD: " + entry.speed + " JMP: " + entry.jump + " STR:" + entry.str + " DEX:" + entry.dex + " INT:" + entry.int + " LUK:" + entry.luk;
                 valueTd.appendChild(subVal);
                 break;
             default:
