@@ -255,6 +255,13 @@ function buildPanel(board, index) {
                 break;
             case 'slippers':
                 entry.value = entry.speed + entry.jump + (entry.str + entry.dex + entry.int + entry.luk)/100;
+                break;
+            case 'brooms':
+                entry.value = entry.speed + (entry.watk / 100);
+                break;
+            case 'witchhats':
+                entry.value = entry.str + entry.dex + entry.int + entry.luk;
+                break;
             default:
                 break;
         }
@@ -280,6 +287,8 @@ function buildPanel(board, index) {
                 return (b.speed + b.jump) - (a.speed + a.jump) || b.wdef - a.wdef;
             case 'slippers':
                 return (b.speed + b.jump) - (a.speed + a.jump) || (b.str + b.dex + b.int + b.luk) - (a.str + a.dex + a.int + a.luk);
+            case 'brooms':
+                return b.speed - a.speed || b.watk - a.watk;
             default:
                 return b.value - a.value;
         }
@@ -333,6 +342,8 @@ function buildPanel(board, index) {
             case 'gomus':
             case 'noobshoes':
             case 'slippers':
+            case 'brooms':
+            case 'witchhats':
                 link.classList.add("nameLink");
                 link.textContent = "(Image)";
                 link.href = "/leaderboard/" + entry.src + ".png";
@@ -357,8 +368,16 @@ function buildPanel(board, index) {
                 break;
             case 'intdmg':
             case 'dexdmg': 
+                subVal.classList.add("nameNote");
+                subVal.textContent = entry.min + " ~ " + entry.max;
+                valueTd.textContent = (entry.max + entry.min)/2;
+                valueTd.appendChild(subVal);
+                break;
             case 'strdmg': 
-                valueTd.textContent = entry.min + " ~ " + entry.max;
+                subVal.classList.add("nameNote");
+                subVal.textContent = entry.min + " ~ " + entry.max;
+                valueTd.textContent = entry.max;
+                valueTd.appendChild(subVal);
                 break;
             case 'gomus':
             case 'noobshoes':
@@ -371,6 +390,18 @@ function buildPanel(board, index) {
                 valueTd.textContent = entry.speed + entry.jump;
                 subVal.classList.add("nameNote");
                 subVal.textContent = "SPD: " + entry.speed + " JMP: " + entry.jump + " STR:" + entry.str + " DEX:" + entry.dex + " INT:" + entry.int + " LUK:" + entry.luk;
+                valueTd.appendChild(subVal);
+                break;
+            case 'brooms':
+                valueTd.textContent = entry.speed;
+                subVal.classList.add("nameNote");
+                subVal.textContent = "SPD: " + entry.speed + " WATK:" + entry.watk;
+                valueTd.appendChild(subVal);
+                break;
+            case 'witchhats':
+                valueTd.textContent = entry.str + entry.dex + entry.int + entry.luk;
+                subVal.classList.add("nameNote");
+                subVal.textContent = " STR:" + entry.str + " DEX:" + entry.dex + " INT:" + entry.int + " LUK:" + entry.luk;
                 valueTd.appendChild(subVal);
                 break;
             default:

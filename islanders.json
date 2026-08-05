@@ -22,7 +22,8 @@
   },
   {
     "Name":"Ashdex",
-    "Level": "31"
+    "Level": "36",
+    "Badges":["gomu3"]
   },
   {
     "Name":"Islander66",
@@ -1304,7 +1305,7 @@
   },
   {
     "Name": "BL00",
-    "Level": "48"
+    "Level": "49"
   },
   {
     "Name": "Boatophobic",

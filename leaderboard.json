@@ -14,7 +14,7 @@
       {"Name":"Lowly", "value": 2222},
       {"Name":"StarTropics", "value": 132},
       {"Name":"Adaryn", "value": 777},
-      {"Name":"BL00", "value": 125}
+      {"Name":"BL00", "value": 128}
     ]
   },
   {
@@ -149,28 +149,29 @@
   },
   {
     "id": "strdmg",
-    "name": "Damage Range (STRlander)",
-    "desc": "Highest Damage Range for STRlanders (All AP in STR).",
-    "rules":["Damage is ranked by max damage","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"],
+    "name": "Max Damage",
+    "desc": "Highest max damage.",
+    "rules":["Damage is ranked by max damage as listed in character stats","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"],
     "entries": [
       {"Name":"Lowly", "min": 262, "max": 3762, "level": 111}
     ]
   },
   {
     "id": "dexdmg",
-    "name": "Damage Range (DEXlander)",
-    "desc": "Highest Damage Range for DEXlanders (All AP in DEX).",
-    "rules":["Damage is ranked by average of min and max damage","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"],
+    "name": "Average Damage",
+    "desc": "Highest average damage.",
+    "rules":["Damage is ranked by average of min and max damage as listed in character stats","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"],
     "entries": [
       {"Name":"Valtarre", "min": 345, "max": 453, "level": 63},
-      {"Name":"Skittys", "min": 176, "max": 193, "level": 43}
+      {"Name":"Skittys", "min": 176, "max": 193, "level": 43},
+      {"Name":"Lowly", "min": 262, "max": 3762, "level": 111}
     ]
   },
   {
     "id": "intdmg",
-    "name": "Damage Range (INTlander)",
+    "name": "Average Damage (INTlander)",
     "desc": "Highest Damage Range for INTlanders, Magelanders, and NoPointers (No AP in STR or DEX)",
-    "rules":["Damage is ranked by average of min and max damage","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"],
+    "rules":["Damage is ranked by average of min and max damage as listed in character stats","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"],
     "entries": [
       {"Name":"Lowiy", "min": 59, "max": 217, "level": 50}
     ]
@@ -208,7 +209,35 @@
     "rules":["Item must currently exist on maple island","Items are ranked by (speed+jump) with wdef as a tiebreaker"],
     "entries": [
       {"Name":"Adaryn", "src":"adaryn0shoe",   "speed": 4, "jump": 20, "dex": 12, "wdef":2},
-      {"Name":"BlueCream", "src":"cream0shoe",   "speed": 2, "jump": 10, "dex": 6, "wdef":2}
+      {"Name":"BlueCream", "src":"cream0shoe",   "speed": 2, "jump": 10, "dex": 6, "wdef":2},
+      {"Name":"Valtarre", "src":"valt0shoe",   "speed": 2, "jump": 10, "dex": 6, "wdef":8}
+    ]
+  },
+  {
+    "id": "brooms",
+    "name": "Best Broomstick",
+    "desc": "Highest speed broomstick (Available during Halloween Event)",
+    "rules":["Item must currently exist on maple island","Items are ranked by speed with watk as a tiebreaker"],
+    "entries": [
+      {"Name":"Lowly",        "src":"lowlybroom",   "speed": 30, "watk": 31},
+      {"Name":"Adaryn",       "src":"adarynbroom",  "speed": 21, "watk": 41},
+      {"Name":"Shylander",    "src":"shybroom",     "speed": 25, "watk": 28},
+      {"Name":"BoatlessMonk", "src":"boatbroom",    "speed": 21, "watk": 37}
+    ]
+  },
+  {
+    "id": "witchhats",
+    "name": "Best Witch Hat",
+    "desc": "Highest stat Talking Witch Hat (Available during Halloween Event)",
+    "rules":["Item must currently exist on maple island","Items are ranked by str+dex+int+luk"],
+    "entries": [
+      {"Name":"Adaryn",       "src":"adarynwitch",  "str": 0, "dex": 20, "int":0, "luk":24},
+      {"Name":"Shylander",    "src":"shywitch",     "str": 10,"dex": 18, "int":0, "luk":13},
+      {"Name":"Rally",        "src":"rallywitch",   "str": 25,"dex": 0, "int":6, "luk":0},
+      {"Name":"Fabia",        "src":"fabiawitch",   "str": 23, "dex": 0, "int":9, "luk":0},
+      {"Name":"Permit",       "src":"permitwitch",  "str": 17, "dex": 10, "int":0, "luk":9},
+      {"Name":"gunpoint",     "src":"gunwitch",     "str": 10, "dex": 22, "int":0, "luk":0},
+      {"Name":"Islander",     "src":"davewitch",    "str": 3, "dex": 20, "int":0, "luk":0}
     ]
   }
 ]
