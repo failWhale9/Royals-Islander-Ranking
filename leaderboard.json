@@ -6,11 +6,11 @@
     "rules":["Buying fame is permitted","Contender must reside on Maple Island"],
     "entries": [
       {"Name":"Islander", "value": 13333},
-      {"Name":"Valtarre", "value": 123},
+      {"Name":"Valtarre", "value": 130},
       {"Name":"Chokladkakan", "value": 114},
       {"Name":"Sneils", "value": 100},
       {"Name":"DevOnIsland", "value": 354},
-      {"Name":"HeroinAddict", "value": 265},
+      {"Name":"HeroinAddict", "value": 267},
       {"Name":"Lowly", "value": 2222},
       {"Name":"StarTropics", "value": 132},
       {"Name":"Adaryn", "value": 777},
@@ -40,7 +40,8 @@
       {"Name":"DevOnIsland", "value": 300},
       {"Name":"DwightK", "value": 1800},
       {"Name":"Valtarre", "value": 335},
-      {"Name":"Adaryn", "value": 300}
+      {"Name":"Adaryn", "value": 300},
+      {"Name":"Shylander", "value": 207}
     ]
   },
   {
@@ -65,8 +66,8 @@
     "entries": [
       {"Name":"Shylander", "value": 48},
       {"Name":"Annot", "value": 12},
-      {"Name":"Valtarre", "value": 14},
-      {"Name":"DevOnIsland", "value": 12},
+      {"Name":"Valtarre", "value": 21},
+      {"Name":"DevOnIsland", "value": 29},
       {"Name":"Zakozantern", "value": 12},
       {"Name":"Voldsoy", "value": 13},
       {"Name":"HeroinAddict", "value": 45},
@@ -84,7 +85,9 @@
     "entries": [
       {"Name":"Valtarre", "value": 2324},
       {"Name":"Lowly", "value": 5745},
-      {"Name":"StarTropics", "value": 2531}
+      {"Name":"StarTropics", "value": 2531},
+      {"Name":"Shylander", "value": 389},
+      {"Name":"DevOnIsland", "value": 444}
 
     ]
   },
@@ -98,7 +101,7 @@
       {"Name":"Valtarre", "value": 131, "Year": 2026},
       {"Name":"HeroinAddict", "value": 122, "Year": 2026},
       {"Name":"Adaryn", "value": 123, "Year": 2026},
-      {"Name":"Lowly", "value": 135, "Year": 2026},
+      {"Name":"Lowly", "value": 122, "Year": 2026},
       {"Name":"Skittys", "value": 124, "Year": 2026},
       {"Name":"DevOnIsland", "value": 115, "Year": 2026},
       {"Name":"Voldsoy", "value": 129, "Year": 2026},
@@ -153,18 +156,22 @@
     "desc": "Highest max damage.",
     "rules":["Damage is ranked by max damage as listed in character stats","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"],
     "entries": [
-      {"Name":"Lowly", "min": 262, "max": 3762, "level": 111}
+      {"Name":"Lowly", "min": 262, "max": 3762, "level": 111},
+      {"Name":"Valtarre", "min": 345, "max": 453, "level": 63},
+      {"Name":"Skittys", "min": 176, "max": 193, "level": 43},
+      {"Name":"Shylander", "min": 290, "max": 811, "level": 58}
     ]
   },
   {
     "id": "dexdmg",
-    "name": "Average Damage",
-    "desc": "Highest average damage.",
-    "rules":["Damage is ranked by average of min and max damage as listed in character stats","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"],
+    "name": "Min Damage",
+    "desc": "Highest minimum damage.",
+    "rules":["Damage is ranked by min damage as listed in character stats","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"],
     "entries": [
       {"Name":"Valtarre", "min": 345, "max": 453, "level": 63},
       {"Name":"Skittys", "min": 176, "max": 193, "level": 43},
-      {"Name":"Lowly", "min": 262, "max": 3762, "level": 111}
+      {"Name":"Lowly", "min": 262, "max": 3762, "level": 111},
+      {"Name":"Shylander", "min": 290, "max": 811, "level": 58}
     ]
   },
   {
@@ -187,7 +194,8 @@
       {"Name":"Annot",        "src":"annotgomu",  "speed": 11, "jump": 15, "dex": 9,  "wdef":3},
       {"Name":"Mooshy",       "src":"mooshygomu", "speed": 10, "jump": 15, "dex": 9,  "wdef":6},
       {"Name":"Ekob",         "src":"ekobgomu",   "speed": 10, "jump": 15, "dex": 9,  "wdef":5},
-      {"Name":"Valtarre",      "src":"valtgomu",  "speed": 10, "jump": 10, "dex": 6,  "wdef":10}
+      {"Name":"Valtarre",     "src":"valtgomu",  "speed": 10, "jump": 10, "dex": 6,  "wdef":10},
+      {"Name":"DevOnIsland",  "src":"devgomu",  "speed": 9, "jump": 15, "dex": 9,  "wdef":5}
     ]
   },
   {
@@ -199,7 +207,8 @@
       {"Name":"Annot",      "src":"annotbeach",   "speed": 8, "jump": 15, "str": 0, "dex":11, "int": 0, "luk": 2},
       {"Name":"DrewIsland", "src":"drewbeach",    "speed": 12, "jump": 10, "str": 0, "dex":9, "int": 6, "luk": 6},
       {"Name":"Lowly",      "src":"lowlybeach",   "speed": 8, "jump": 10, "str": 1, "dex":8, "int": 0, "luk": 2},
-      {"Name":"HeroinAddict", "src":"harrybeach", "speed": 7, "jump": 10, "str": 2, "dex":8, "int": 0, "luk": 1}
+      {"Name":"HeroinAddict", "src":"harrybeach", "speed": 7, "jump": 15, "str": 2, "dex":11, "int": 0, "luk": 2},
+      {"Name":"Shylander", "src":"shybeach", "speed": 7, "jump": 10, "str": 0, "dex":6, "int": 1, "luk": 0}
     ]
   },
     {
@@ -210,7 +219,8 @@
     "entries": [
       {"Name":"Adaryn", "src":"adaryn0shoe",   "speed": 4, "jump": 20, "dex": 12, "wdef":2},
       {"Name":"BlueCream", "src":"cream0shoe",   "speed": 2, "jump": 10, "dex": 6, "wdef":2},
-      {"Name":"Valtarre", "src":"valt0shoe",   "speed": 2, "jump": 10, "dex": 6, "wdef":8}
+      {"Name":"Valtarre", "src":"valt0shoe",   "speed": 2, "jump": 10, "dex": 6, "wdef":8},
+      {"Name":"Shylander", "src":"shy0shoe",   "speed": 3, "jump": 15, "dex": 9, "wdef":2}
     ]
   },
   {
@@ -222,7 +232,8 @@
       {"Name":"Lowly",        "src":"lowlybroom",   "speed": 30, "watk": 31},
       {"Name":"Adaryn",       "src":"adarynbroom",  "speed": 21, "watk": 41},
       {"Name":"Shylander",    "src":"shybroom",     "speed": 25, "watk": 28},
-      {"Name":"BoatlessMonk", "src":"boatbroom",    "speed": 21, "watk": 37}
+      {"Name":"BoatlessMonk", "src":"boatbroom",    "speed": 21, "watk": 37},
+      {"Name":"DevOnIsland",  "src":"devbroom",    "speed": 23, "watk": 27}
     ]
   },
   {
@@ -237,7 +248,49 @@
       {"Name":"Fabia",        "src":"fabiawitch",   "str": 23, "dex": 0, "int":9, "luk":0},
       {"Name":"Permit",       "src":"permitwitch",  "str": 17, "dex": 10, "int":0, "luk":9},
       {"Name":"gunpoint",     "src":"gunwitch",     "str": 10, "dex": 22, "int":0, "luk":0},
-      {"Name":"Islander",     "src":"davewitch",    "str": 3, "dex": 20, "int":0, "luk":0}
+      {"Name":"Islander",     "src":"davewitch",    "str": 3, "dex": 20, "int":0, "luk":0},
+      {"Name":"Valtarre",     "src":"valtwitch",    "str": 12, "dex": 14, "int":0, "luk":0},
+      {"Name":"Lowly",        "src":"lowlywitch",   "str": 20, "dex": 21, "int":0, "luk":0},
+      {"Name":"DevOnIsland",  "src":"devwitch",     "str": 14, "dex": 7, "int":19, "luk":0}
+    ]
+  },
+  {
+    "id": "shirts",
+    "name": "Best Shirt",
+    "desc": "Highest stat scrolled topwear.",
+    "rules":["Item must currently exist on maple island","Items are ranked by wdef"],
+    "entries": [
+      {"Name":"Laxz", "src":"laxzshirt",  "wdef": 43},
+      {"Name":"Niikasd", "src":"niikshirt",  "wdef": 38},
+      {"Name":"Adaryn", "src":"adarynshirt",  "wdef": 38},
+      {"Name":"DrewIsand", "src":"drewshirt",  "wdef": 33}
+    ]
+  },
+  {
+    "id": "pants",
+    "name": "Best Pants",
+    "desc": "Highest stat scrolled bottomwear.",
+    "rules":["Item must currently exist on maple island","Items are ranked by wdef"],
+    "entries": [
+      {"Name":"Annot", "src":"annotpants",  "wdef": 28},
+      {"Name":"Ekob", "src":"ekobpants",  "wdef": 36},
+      {"Name":"BegPride", "src":"begpants",  "wdef": 35},
+      {"Name":"Adaryn", "src":"adarynpants",  "wdef": 35},
+      {"Name":"Shylander", "src":"shypants",  "wdef": 35}
+    ]
+  },
+  {
+    "id": "hats",
+    "name": "Best Vanilla Hat",
+    "desc": "Highest stat scrolled hat. (Not including Witch Hats)",
+    "rules":["Item must currently exist on maple island","Items are ranked by wdef"],
+    "entries": [
+      {"Name":"Lowly (Originally Virus17)", "src":"thedana",  "wdef": 48},
+      {"Name":"Schwer", "src":"schwerhat",  "wdef": 24},
+      {"Name":"Nature", "src":"naturehat",  "wdef": 23},
+      {"Name":"Chokladkakan", "src":"chokhat",  "wdef": 28},
+      {"Name":"Sawngo", "src":"sawngohat",  "wdef": 22},
+      {"Name":"Adaryn", "src":"adarynhat",  "wdef": 22}
     ]
   }
 ]

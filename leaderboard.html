@@ -244,7 +244,7 @@ function buildPanel(board, index) {
         switch(board.id) {
             case 'intdmg':
             case 'dexdmg':
-                entry.value = (entry.min + entry.max)/2;
+                entry.value = entry.min;
                 break;
             case 'strdmg':
                 entry.value = entry.max;
@@ -262,6 +262,11 @@ function buildPanel(board, index) {
             case 'witchhats':
                 entry.value = entry.str + entry.dex + entry.int + entry.luk;
                 break;
+            case 'hats':
+            case 'shirts':
+            case 'pants':
+                entry.value = entry.wdef;
+                break;
             default:
                 break;
         }
@@ -277,8 +282,9 @@ function buildPanel(board, index) {
             case 'speedrun2':
             case 'infamy':
                 return a.value - b.value;
-            case 'intdmg':
             case 'dexdmg':
+                return b.min - a.min;
+            case 'intdmg':
                 return ((b.min + b.max) / 2) - ((a.min + a.max) / 2);
             case 'strdmg':
                 return b.max - a.max;
@@ -289,6 +295,10 @@ function buildPanel(board, index) {
                 return (b.speed + b.jump) - (a.speed + a.jump) || (b.str + b.dex + b.int + b.luk) - (a.str + a.dex + a.int + a.luk);
             case 'brooms':
                 return b.speed - a.speed || b.watk - a.watk;
+            case 'hats':
+            case 'shirts':
+            case 'pants':
+                return b.wdef - a.wdef;
             default:
                 return b.value - a.value;
         }
@@ -344,6 +354,9 @@ function buildPanel(board, index) {
             case 'slippers':
             case 'brooms':
             case 'witchhats':
+            case 'hats':
+            case 'shirts':
+            case 'pants':
                 link.classList.add("nameLink");
                 link.textContent = "(Image)";
                 link.href = "/leaderboard/" + entry.src + ".png";
@@ -366,8 +379,13 @@ function buildPanel(board, index) {
             case 'speedrun2':
                 valueTd.textContent = formatTime(entry.value);
                 break;
+            case 'dexdmg':
+                subVal.classList.add("nameNote");
+                subVal.textContent = entry.min + " ~ " + entry.max;
+                valueTd.textContent = entry.min;
+                valueTd.appendChild(subVal);
+                break;
             case 'intdmg':
-            case 'dexdmg': 
                 subVal.classList.add("nameNote");
                 subVal.textContent = entry.min + " ~ " + entry.max;
                 valueTd.textContent = (entry.max + entry.min)/2;

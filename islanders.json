@@ -22,7 +22,7 @@
   },
   {
     "Name":"Ashdex",
-    "Level": "36",
+    "Level": "41",
     "Badges":["gomu3"]
   },
   {
@@ -1026,7 +1026,7 @@
     "Name": "DevOnIsland",
     "Level": "58",
     "Frac":"34.03",
-    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage300","pet14","omok3","weenjq330","annijq150","workgloves","pants2","broom20","chairs12","ashes","bluexmas","perfbeg","meso250","ore100","fence"]
+    "Badges":["dynamic","gomu3","witch40","shirt2","lemons300","damage300","pet14","omok3","weenjq330","annijq150","workgloves","pants2","broom20","chairs24","ashes","bluexmas","perfbeg","meso250","ore100","fence"]
   },
   {
     "Name": "Tsukishima",
@@ -1305,7 +1305,7 @@
   },
   {
     "Name": "BL00",
-    "Level": "49"
+    "Level": "50"
   },
   {
     "Name": "Boatophobic",
