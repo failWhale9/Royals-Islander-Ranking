@@ -1,5 +1,10 @@
 [
   {
+    "Name":"Scoobywoods",
+    "Level": "30",
+    "Badges":["fence"]
+  },
+  {
     "Name":"LegendLand",
     "Level": "30"
   },
@@ -22,8 +27,8 @@
   },
   {
     "Name":"Ashdex",
-    "Level": "41",
-    "Badges":["gomu3"]
+    "Level": "45",
+    "Badges":["gomu3","omok3","workgloves","hats"]
   },
   {
     "Name":"Islander66",
@@ -531,7 +536,7 @@
     "Since":"2015"
   },
   {
-    "Name": "Crylou",
+    "Name": "CryIou",
     "Level": "63"
   },
   {
@@ -570,8 +575,8 @@
   },
   {
     "Name": "HeroinAddict",
-    "Level": "77",
-    "Frac":"22.01",
+    "Level": "78",
+    "Frac":"0.0",
     "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge","chairs36","weenjq330","broom20","bluexmas","meso250","perfbeg","workgloves","roses"]
   },
   {
@@ -594,7 +599,7 @@
   {
     "Name": "Islander",
     "Level": "57",
-    "Frac":"7.91",
+    "Frac":"30.75",
     "Alias": "CrimsonClaw",
     "Badges":["dynamic","dexlander"]
   },
@@ -910,8 +915,8 @@
   },
   {
     "Name": "Valtarre",
-    "Level": "63",
-    "Frac": "0.85",
+    "Level": "64",
+    "Frac": "0.0",
     "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","annijq150","bluexmas","chairs12","shirt2","perfbeg","knifestrats","pants4","pet14","perfstart","hats"]
   },
   {

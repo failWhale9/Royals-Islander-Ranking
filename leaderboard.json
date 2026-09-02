@@ -5,7 +5,7 @@
     "desc": "Islanders with the highest fame.",
     "rules":["Buying fame is permitted","Contender must reside on Maple Island"],
     "entries": [
-      {"Name":"Islander", "value": 13333},
+      {"Name":"Islander", "value": 16300},
       {"Name":"Valtarre", "value": 130},
       {"Name":"Chokladkakan", "value": 114},
       {"Name":"Sneils", "value": 100},
@@ -14,7 +14,7 @@
       {"Name":"Lowly", "value": 2222},
       {"Name":"StarTropics", "value": 132},
       {"Name":"Adaryn", "value": 777},
-      {"Name":"BL00", "value": 128}
+      {"Name":"BL00", "value": 407}
     ]
   },
   {
@@ -84,7 +84,7 @@
     "rules":["Trading is permitted","Heads may be stored on the contender's island mules","Contender must reside on Maple Island"],
     "entries": [
       {"Name":"Valtarre", "value": 2324},
-      {"Name":"Lowly", "value": 5745},
+      {"Name":"Lowly", "value": 6000},
       {"Name":"StarTropics", "value": 2531},
       {"Name":"Shylander", "value": 389},
       {"Name":"DevOnIsland", "value": 444}
@@ -129,7 +129,7 @@
       {"Name":"Valtarre", "value": 218, "Year": 2025},
       {"Name":"Shylander", "value": 202, "Year": 2025},
       {"Name":"HeroinAddict", "value": 207, "Year": 2025},
-      {"Name":"Crylou", "value": 187, "Year": 2024},
+      {"Name":"CryIou", "value": 187, "Year": 2024},
       {"Name":"Boatphobia", "value": 213, "Year": 2023}
     ]
   },
@@ -157,7 +157,7 @@
     "rules":["Damage is ranked by max damage as listed in character stats","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"],
     "entries": [
       {"Name":"Lowly", "min": 262, "max": 3762, "level": 111},
-      {"Name":"Valtarre", "min": 345, "max": 453, "level": 63},
+      {"Name":"Valtarre", "min": 378, "max": 471, "level": 64},
       {"Name":"Skittys", "min": 176, "max": 193, "level": 43},
       {"Name":"Shylander", "min": 290, "max": 811, "level": 58}
     ]
@@ -168,7 +168,7 @@
     "desc": "Highest minimum damage.",
     "rules":["Damage is ranked by min damage as listed in character stats","Any gear is permitted (and gear can be borrowed)","Weather buffs are the only buffs permitted","Contender must reside on Maple Island"],
     "entries": [
-      {"Name":"Valtarre", "min": 345, "max": 453, "level": 63},
+      {"Name":"Valtarre", "min": 378, "max": 471, "level": 64},
       {"Name":"Skittys", "min": 176, "max": 193, "level": 43},
       {"Name":"Lowly", "min": 262, "max": 3762, "level": 111},
       {"Name":"Shylander", "min": 290, "max": 811, "level": 58}
@@ -263,7 +263,8 @@
       {"Name":"Laxz", "src":"laxzshirt",  "wdef": 43},
       {"Name":"Niikasd", "src":"niikshirt",  "wdef": 38},
       {"Name":"Adaryn", "src":"adarynshirt",  "wdef": 38},
-      {"Name":"DrewIsand", "src":"drewshirt",  "wdef": 33}
+      {"Name":"DrewIsand", "src":"drewshirt",  "wdef": 33},
+      {"Name":"Valtarre", "src":"valtshirt",  "wdef": 23}
     ]
   },
   {
@@ -272,7 +273,7 @@
     "desc": "Highest stat scrolled bottomwear.",
     "rules":["Item must currently exist on maple island","Items are ranked by wdef"],
     "entries": [
-      {"Name":"Annot", "src":"annotpants",  "wdef": 28},
+      {"Name":"Valtarre", "src":"annotpants",  "wdef": 28},
       {"Name":"Ekob", "src":"ekobpants",  "wdef": 36},
       {"Name":"BegPride", "src":"begpants",  "wdef": 35},
       {"Name":"Adaryn", "src":"adarynpants",  "wdef": 35},
@@ -290,7 +291,8 @@
       {"Name":"Nature", "src":"naturehat",  "wdef": 23},
       {"Name":"Chokladkakan", "src":"chokhat",  "wdef": 28},
       {"Name":"Sawngo", "src":"sawngohat",  "wdef": 22},
-      {"Name":"Adaryn", "src":"adarynhat",  "wdef": 22}
+      {"Name":"Adaryn", "src":"adarynhat",  "wdef": 22},
+      {"Name":"Valtarre", "src":"valthat",  "wdef": 22}
     ]
   }
 ]
