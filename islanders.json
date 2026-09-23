@@ -1,5 +1,14 @@
 [
   {
+    "Name":"SirSnorlax",
+    "Level": "30"
+  },
+  {
+    "Name":"AshNoPointer",
+    "Level": "30",
+    "Badges":["nopointer"]
+  },
+  {
     "Name":"Scoobywoods",
     "Level": "30",
     "Badges":["fence"]
@@ -27,7 +36,7 @@
   },
   {
     "Name":"Ashdex",
-    "Level": "45",
+    "Level": "50",
     "Badges":["gomu3","omok3","workgloves","hats"]
   },
   {
@@ -76,7 +85,7 @@
   },
   {
     "Name":"Asvins",
-    "Level": "33"
+    "Level": "41"
   },
   {
     "Name":"Vialism",
@@ -211,7 +220,7 @@
   },
   {
     "Name":"Islander0001",
-    "Level":"31"
+    "Level":"32"
   },
   {
     "Name":"RAPlST",
@@ -723,7 +732,8 @@
   },
   {
     "Name": "Lonelymoo",
-    "Level": "50"
+    "Level": "51",
+    "Badges":["shirt3"]
   },
   {
     "Name": "Vallug",
