@@ -1,5 +1,60 @@
 [
   {
+   "id": 3010212,
+   "name": "Tibetan Mastiff Chair",
+   "desc": "Does he bite? Only one way to find out... Recovers 50 HP and MP every 10 seconds.",
+   "obtained": "Chair Gacha Event",
+   "note": "",
+   "trade": "TRADABLE",
+   "category": ["Chair Gacha"],
+   "HP": 50,
+   "MP": 50
+ },
+  {
+   "id": 3010735,
+   "name": "Lonesome Bench",
+   "desc": "Talk with the lonesome man on a park bench. Recovers 50 HP and MP every 10 seconds.",
+   "obtained": "Chair Gacha Event",
+   "note": "",
+   "trade": "UNTRADABLE",
+   "category": ["Chair Gacha"],
+   "HP": 50,
+   "MP": 50
+ },
+  {
+   "id": 3010865,
+   "name": "Zakum Likes",
+   "desc": "What does Zakum like? Who knows? Be the first of your friends to sit on this!",
+   "obtained": "Chair Gacha Event",
+   "note": "",
+   "trade": "UNTRADABLE",
+   "category": ["Chair Gacha"],
+   "HP": 50,
+   "MP": 50
+ },
+  {
+   "id": 3015028,
+   "name": "Mermaid in a Bulb",
+   "desc": "Designed by Chinese MapleStory player A,Ci.",
+   "obtained": "Chair Gacha Event",
+   "note": "",
+   "trade": "TRADABLE",
+   "category": ["Chair Gacha"],
+   "HP": 500,
+   "MP": 500
+ },
+  {
+   "id": 3015060,
+   "name": "Candyflower Chair",
+   "desc": "Don't just stop to smell the flowers... Eat them! Recovers 100 HP and MP every 10 seconds.",
+   "obtained": "Chair Gacha Event",
+   "note": "",
+   "trade": "TRADABLE",
+   "category": ["Chair Gacha"],
+   "HP": 100,
+   "MP": 100
+ },
+  {
    "id": 3015522,
    "name": "13th Anniversary Chair",
    "desc": "Take a seat on this special 13th Anniversary chair. Restores 50 HP and 50 MP every 10 seconds.",
