@@ -36,8 +36,8 @@
   },
   {
     "Name":"Ashdex",
-    "Level": "50",
-    "Badges":["gomu3","omok3","workgloves","hats"]
+    "Level": "63",
+    "Badges":["gomu3","omok3","workgloves","hats","ashes","ore100","dexlander","knifestrats"]
   },
   {
     "Name":"Islander66",
@@ -248,7 +248,7 @@
   },
   {
     "Name":"Coinicus",
-    "Level":"42"
+    "Level":"43"
   },
   {
     "Name":"wtherow",
@@ -408,8 +408,7 @@
   },
   {
     "Name": "nezukochan",
-    "Level": "35",
-    "BadNews":"Banned - Ban Evasion"
+    "Level": "36"
   },
   {
     "Name":"IslandLizard",
@@ -422,8 +421,8 @@
   },
   {
     "Name": "Lowly",
-    "Level": "111",
-    "Frac": "89.17",
+    "Level": "112",
+    "Frac": "0.0",
     "BadNews":"Unranked - Gold Richie event usage",
     "Badges":["exp2026sprS","meso2b","gomu4","witch40","chairs36","damage1000","roses","fence","omok3","workgloves","perfbrella","strlander","umbrellas","tubes","boards","pet14","shirt3","broom30","ashes","bluexmas","slipper2","annijq150"]
   },
@@ -435,8 +434,8 @@
   },
   {
     "Name": "Annot",
-    "Level": "97",
-    "Frac":"64.26",
+    "Level": "98",
+    "Frac":"0.0",
     "Alias": "Ereader",
     "Badges": ["gomu3","chairs12","slipper3"]
   },
@@ -620,7 +619,8 @@
   },
   {
     "Name": "TheIslander",
-    "Level": "30"
+    "Level": "44",
+    "Badges":["shirt2"]
   },
   {
     "Name": "Detached",
@@ -732,7 +732,7 @@
   },
   {
     "Name": "Lonelymoo",
-    "Level": "51",
+    "Level": "55",
     "Badges":["shirt3"]
   },
   {
@@ -926,8 +926,8 @@
   {
     "Name": "Valtarre",
     "Level": "64",
-    "Frac": "0.0",
-    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","annijq150","bluexmas","chairs12","shirt2","perfbeg","knifestrats","pants4","pet14","perfstart","hats"]
+    "Frac": "30.0",
+    "Badges":["dexlander","damage300","gomu2","fence","lemons300","omok3","weenjq400","annijq150","bluexmas","chairs12","shirt2","perfbeg","knifestrats","pants4","pet14","perfstart","hats","workgloves"]
   },
   {
     "Name": "inland",
@@ -1506,8 +1506,8 @@
   },
   {
     "Name": "Voldsoy",
-    "Level": "72",
-    "Frac": "14.09",
+    "Level": "73",
+    "Frac": "0.0",
     "Alias":"Ailand",
     "Badges":["weenjq400","annijq150","damage1000","gomu3","exp2026sprG","perfbeg","lemons300","chairs12","pet14","perfbrella","workgloves","hats","omok3"]
   },
@@ -1641,7 +1641,7 @@
   },
   {
     "Name": "geologic",
-    "Level": "37"
+    "Level": "40"
   },
   {
     "Name": "DBIslander",
