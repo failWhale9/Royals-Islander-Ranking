@@ -1,5 +1,9 @@
 [
   {
+    "Name":"Attribution",
+    "Level": "32"
+  },
+  {
     "Name":"SirSnorlax",
     "Level": "30"
   },
@@ -36,8 +40,9 @@
   },
   {
     "Name":"Ashdex",
-    "Level": "64",
-    "Badges":["gomu3","omok3","workgloves","hats","ashes","ore100","dexlander","knifestrats"]
+    "Level": "66",
+    "Frac":"10.0",
+    "Badges":["gomu3","omok3","workgloves","hats","ashes","ore100","dexlander","knifestrats","tubes","perfbeg"]
   },
   {
     "Name":"Islander66",
@@ -162,8 +167,8 @@
   },
   {
     "Name": "Adaryn",
-    "Level": "84",
-    "Frac":"61.44",
+    "Level": "85",
+    "Frac":"1.0",
     "Badges":["shirt5","pants4","witch40","broom20","maxdodge","gomu3","omok3","roses","umbrellas","tubes","boards","workgloves","chairs36","pet14","perflights","perfbrella","fence","bluexmas","knifestrats","lemons300","slipper2","ashes","meso1b","ore100","damage500","perfstart","perfbeg","annijq150"]
   },
   {
