@@ -40,8 +40,8 @@
   },
   {
     "Name":"Ashdex",
-    "Level": "66",
-    "Frac":"10.0",
+    "Level": "67",
+    "Frac":"36.80",
     "Badges":["gomu3","omok3","workgloves","hats","ashes","ore100","dexlander","knifestrats","tubes","perfbeg"]
   },
   {
@@ -153,7 +153,7 @@
     "Name":"CampLeader",
     "Alt":"HeroinAddict",
     "Level": "30",
-    "Badges":["camper","pet14","damage500","annijq150"]
+    "Badges":["camper","pet14","damage500"]
   },
   {
     "Name":"Vinlander",
@@ -588,9 +588,9 @@
   },
   {
     "Name": "HeroinAddict",
-    "Level": "78",
+    "Level": "79",
     "Frac":"0.0",
-    "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge","chairs36","weenjq330","broom20","bluexmas","meso250","perfbeg","workgloves","roses"]
+    "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge","chairs36","weenjq330","broom20","bluexmas","meso250","perfbeg","workgloves","roses","annijq150"]
   },
   {
     "Name": "Taeha",
@@ -1514,7 +1514,7 @@
     "Level": "73",
     "Frac": "0.0",
     "Alias":"Ailand",
-    "Badges":["weenjq400","annijq150","damage1000","gomu3","exp2026sprG","perfbeg","lemons300","chairs12","pet14","perfbrella","workgloves","hats","omok3"]
+    "Badges":["weenjq400","annijq150","damage1000","gomu3","exp2026sprG","perfbeg","lemons300","chairs12","pet14","perfbrella","workgloves","hats","omok3","shirt3"]
   },
   {
     "Name": "Nooburt",
