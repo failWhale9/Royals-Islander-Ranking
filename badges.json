@@ -436,5 +436,23 @@
     "type": "event",
     "name": "S2026 Island EXP Gold",
     "desc": "Placed first in Merino's Spring 2026 Island EXP Championship."
+  },
+  {
+    "id": "snap2026B",
+    "type": "event",
+    "name": "2026 Island Snap Bronze",
+    "desc": "Placed third in Shylander's 2026 Island Snap Contest."
+  },
+  {
+    "id": "snap2026S",
+    "type": "event",
+    "name": "2026 Island Snap Silver",
+    "desc": "Placed second in Shylander's 2026 Island Snap Contest."
+  },
+  {
+    "id": "snap2026G",
+    "type": "event",
+    "name": "2026 Island Snap Gold",
+    "desc": "Placed first in Shylander's 2026 Island Snap Contest."
   }
 ]
