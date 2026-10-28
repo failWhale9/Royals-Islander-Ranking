@@ -480,12 +480,14 @@
   {
     "Name": "IslandChrizz",
     "Level": "72",
-    "Frac": "5.55"
+    "Frac": "5.55",
+    "Since":"2016"
   },
   {
     "Name": "BlueCream",
     "Level": "72",
-    "Frac": "36.62"
+    "Frac": "36.62",
+    "Since": "2015"
   },
   {
     "Name": "Chokladkakan",
@@ -496,6 +498,7 @@
     "Name": "BoatlessMonk",
     "Level": "75",
     "Frac": "0",
+    "Since": "2016",
     "Badges":["knifestrats","gomu3","chairs24","roses","fence","damage500","broom20","bluexmas","shirt3","ashes","dexlander","maxdodge","umbrellas","boards","tubes","witch30","weenjq400","annijq150"]
   },
   {
@@ -505,7 +508,8 @@
   },
   {
     "Name": "kitsunyChang",
-    "Level": "68"
+    "Level": "68",
+    "Since": "2018"
   },
   {
     "Name": "NewIslander",
@@ -524,12 +528,14 @@
   },
   {
     "Name": "Slain",
-    "Level": "66"
+    "Level": "66",
+    "Since":"2016"
   },
   {
     "Name": "PrinceSquidd",
     "Level": "68",
     "Frac": "0.01",
+    "Since":"2015",
     "Badges":["slipper2"]
   },
   {
@@ -540,6 +546,7 @@
   {
     "Name": "jung1e",
     "Level": "66",
+    "Since":"2018",
     "Badges":["artifacthunt"]
   },
   {
@@ -550,7 +557,8 @@
   },
   {
     "Name": "CryIou",
-    "Level": "63"
+    "Level": "63",
+    "Since":"2015"
   },
   {
     "Name": "DjSammie",
@@ -584,12 +592,14 @@
   },
   {
     "Name": "Beaktoria",
-    "Level": "58"
+    "Level": "58",
+    "Since": "2015"
   },
   {
     "Name": "HeroinAddict",
     "Level": "79",
     "Frac":"0.0",
+    "Since":"2016",
     "Badges":["dynamic","fence","slipper3","pet14","damage800","gomu2","boards","maxdodge","chairs36","weenjq330","broom20","bluexmas","meso250","perfbeg","workgloves","roses","annijq150","snap2026B"]
   },
   {
@@ -607,13 +617,15 @@
   {
     "Name": "Oahu",
     "Level": "57",
-    "Frac": "25.49"
+    "Frac": "25.49",
+    "Since":"2016"
   },
   {
     "Name": "Islander",
     "Level": "57",
     "Frac":"30.75",
     "Alias": "CrimsonClaw",
+    "Since":"2017",
     "Badges":["dynamic","dexlander"]
   },
   {
@@ -650,11 +662,13 @@
   },
   {
     "Name": "Zheedie",
-    "Level": "58"
+    "Level": "58",
+    "Since":"2016"
   },
   {
     "Name": "MotorollaG",
     "Level": "64",
+    "Since":"2018",
     "Badges":["strlander","fence"]
   },
   {
