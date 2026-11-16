@@ -1,5 +1,13 @@
 [
   {
+    "Name":"deadisland",
+    "Level": "30"
+  },
+  {
+    "Name":"xNesno",
+    "Level": "32"
+  },
+  {
     "Name":"Attribution",
     "Level": "32"
   },
@@ -40,9 +48,9 @@
   },
   {
     "Name":"Ashdex",
-    "Level": "67",
-    "Frac":"36.80",
-    "Badges":["gomu3","omok3","workgloves","hats","ashes","ore100","dexlander","knifestrats","tubes","perfbeg","annijq150","snap2026S"]
+    "Level": "70",
+    "Frac":"0.0",
+    "Badges":["gomu3","omok3","workgloves","hats","ashes","ore100","dexlander","knifestrats","tubes","perfbeg","annijq150","snap2026S","weenjq330","headbands"]
   },
   {
     "Name":"Islander66",
@@ -90,7 +98,7 @@
   },
   {
     "Name":"Asvins",
-    "Level": "41"
+    "Level": "48"
   },
   {
     "Name":"Vialism",
@@ -108,7 +116,7 @@
   },
   {
     "Name":"Skittys",
-    "Level": "45",
+    "Level": "46",
     "Frac":"0.0",
     "Badges":["dexlander","annijq150"]
   },
@@ -200,7 +208,7 @@
   },
   {
   "Name":"ImmergoId",
-  "Level":"35",
+  "Level":"36",
   "Badges":["pants2","dexlander","weenjq330","witch30"]
   },
   {
@@ -636,7 +644,7 @@
   },
   {
     "Name": "TheIslander",
-    "Level": "44",
+    "Level": "50",
     "Badges":["shirt2"]
   },
   {
@@ -667,7 +675,7 @@
   },
   {
     "Name": "MotorollaG",
-    "Level": "64",
+    "Level": "65",
     "Since":"2018",
     "Badges":["strlander","fence"]
   },
@@ -751,7 +759,7 @@
   },
   {
     "Name": "Lonelymoo",
-    "Level": "55",
+    "Level": "57",
     "Badges":["shirt3"]
   },
   {

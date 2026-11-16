@@ -14,7 +14,7 @@
       {"Name":"Lowly", "value": 2222},
       {"Name":"StarTropics", "value": 132},
       {"Name":"Adaryn", "value": 777},
-      {"Name":"BL00", "value": 407}
+      {"Name":"BL00", "value": 1234}
     ]
   },
   {
@@ -251,7 +251,8 @@
       {"Name":"Islander",     "src":"davewitch",    "str": 3, "dex": 20, "int":0, "luk":0},
       {"Name":"Valtarre",     "src":"valtwitch",    "str": 12, "dex": 14, "int":0, "luk":0},
       {"Name":"Lowly",        "src":"lowlywitch",   "str": 20, "dex": 21, "int":0, "luk":0},
-      {"Name":"DevOnIsland",  "src":"devwitch",     "str": 14, "dex": 7, "int":19, "luk":0}
+      {"Name":"DevOnIsland",  "src":"devwitch",     "str": 14, "dex": 7, "int":19, "luk":0},
+      {"Name":"Skittys",      "src":"skitwitch",    "str": 6, "dex": 8, "int":11, "luk":0}
     ]
   },
   {
